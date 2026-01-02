@@ -1,28 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslations, getTranslation } from '$lib/i18n';
-	import { loadEvents, getUpcomingEvents, getPastEvents, type Event } from '$lib/content';
+	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-	let events = $state<Event[]>([]);
-	let upcomingEvents = $state<Event[]>([]);
-	let pastEvents = $state<Event[]>([]);
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-		events = await loadEvents(locale);
-		upcomingEvents = getUpcomingEvents(events);
-		pastEvents = getPastEvents(events);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 
 	function getEventUrl(locale: string, slug: string): string {
@@ -47,13 +31,13 @@
 					{t('pages.events.upcomingEventsIntro')}
 				</p>
 
-				{#if upcomingEvents.length > 0}
+				{#if data.upcomingEvents.length > 0}
 					<div class="space-y-8">
-						{#each upcomingEvents as event}
+						{#each data.upcomingEvents as event}
 							<article class="card">
 								<div class="card__header">
 									<h3 class="card__title">
-										<a href={getEventUrl(getLocaleFromPath(page.url.pathname), event.slug)}>
+										<a href={getEventUrl(data.locale, event.slug)}>
 											{event.title}
 										</a>
 									</h3>
@@ -79,13 +63,13 @@
 					{t('pages.events.pastEventsIntro')}
 				</p>
 
-				{#if pastEvents.length > 0}
+				{#if data.pastEvents.length > 0}
 					<div class="space-y-8">
-						{#each pastEvents as event}
+						{#each data.pastEvents as event}
 							<article class="card">
 								<div class="card__header">
 									<h3 class="card__title">
-										<a href={getEventUrl(getLocaleFromPath(page.url.pathname), event.slug)}>
+										<a href={getEventUrl(data.locale, event.slug)}>
 											{event.title}
 										</a>
 									</h3>

@@ -1,23 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslations, getTranslation } from '$lib/i18n';
-	import { loadPeople, type Person } from '$lib/content';
+	import { getTranslation } from '$lib/i18n';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-	let people = $state<Person[]>([]);
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-		people = await loadPeople(locale);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 </script>
 
@@ -33,9 +21,9 @@
 						</p>
 					</div>
 
-					{#if people.length > 0}
+					{#if data.people.length > 0}
 						<div class="grid grid--2">
-							{#each people as person}
+							{#each data.people as person}
 								<article class="card">
 									<h2 class="card__title">{person.name}</h2>
 									<p class="card__subtitle">{person.role}</p>

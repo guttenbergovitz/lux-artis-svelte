@@ -1,20 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslation, getTranslations } from '$lib/i18n';
+	import { getTranslation } from '$lib/i18n';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 
 	function splitParagraphs(text: string): string[] {
@@ -56,8 +47,8 @@
 		<section>
 			<h2>{t('pages.about.values.title')}</h2>
 			<div class="grid grid--2" style="margin-top: 3rem;">
-				{#if translations.pages?.about?.values?.items}
-					{#each translations.pages.about.values.items as item}
+				{#if data.translations.pages?.about?.values?.items}
+					{#each data.translations.pages.about.values.items as item}
 						<article>
 							<h3>{item.title}</h3>
 							<p>{item.text}</p>
@@ -68,7 +59,7 @@
 		</section>
 
 		<!-- Extended sections -->
-		{#if translations.pages?.about?.extended}
+		{#if data.translations.pages?.about?.extended}
 			<section>
 				<h2>{t('pages.about.extended.culture.title')}</h2>
 				{#each splitParagraphs(t('pages.about.extended.culture.text')) as paragraph}

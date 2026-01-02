@@ -1,20 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslations, getTranslation } from '$lib/i18n';
+	import { getTranslation } from '$lib/i18n';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 
 	function handleSubmit(event: SubmitEvent) {

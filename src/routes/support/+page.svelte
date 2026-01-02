@@ -1,20 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslations, getTranslation } from '$lib/i18n';
+	import { getTranslation } from '$lib/i18n';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 
 	function handleSubmit(event: SubmitEvent) {
@@ -59,8 +50,8 @@
 									{t('pages.support.partners.description')}
 								</p>
 								<ul class="card__list">
-									{#if translations.pages?.support?.partners?.points}
-										{#each translations.pages.support.partners.points as point}
+									{#if data.translations.pages?.support?.partners?.points}
+										{#each data.translations.pages.support.partners.points as point}
 											<li>{point}</li>
 										{/each}
 									{/if}
@@ -83,8 +74,8 @@
 									{t('pages.support.internships.description')}
 								</p>
 								<ul class="card__list">
-									{#if translations.pages?.support?.internships?.points}
-										{#each translations.pages.support.internships.points as point}
+									{#if data.translations.pages?.support?.internships?.points}
+										{#each data.translations.pages.support.internships.points as point}
 											<li>{point}</li>
 										{/each}
 									{/if}
@@ -107,8 +98,8 @@
 									{t('pages.support.artists.description')}
 								</p>
 								<ul class="card__list">
-									{#if translations.pages?.support?.artists?.points}
-										{#each translations.pages.support.artists.points as point}
+									{#if data.translations.pages?.support?.artists?.points}
+										{#each data.translations.pages.support.artists.points as point}
 											<li>{point}</li>
 										{/each}
 									{/if}

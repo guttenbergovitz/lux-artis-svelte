@@ -1,21 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslations, getTranslation } from '$lib/i18n';
+	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 
 	function getHomeUrl(locale: string): string {
@@ -38,7 +29,7 @@
 	</div>
 
 	<p class="my-4">
-		<a href={getHomeUrl(getLocaleFromPath(page.url.pathname))} class="text-sky-600 hover:underline">
+		<a href={getHomeUrl(data.locale)} class="text-sky-600 hover:underline">
 			{t('home')}
 		</a>
 	</p>
