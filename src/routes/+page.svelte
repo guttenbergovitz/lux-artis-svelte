@@ -1,27 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { getLocaleFromPath, getTranslations, getTranslation } from '$lib/i18n';
-	import { loadEvents, getUpcomingEvents, type Event } from '$lib/content';
-	import { onMount } from 'svelte';
+	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import type { PageData } from './$types';
 
-	let translations = $state<any>({});
-	let events = $state<Event[]>([]);
-	let upcomingEvents = $state<Event[]>([]);
-
-	$effect(() => {
-		const locale = getLocaleFromPath(page.url.pathname);
-		loadData(locale);
-	});
-
-	async function loadData(locale: 'pl' | 'en' | 'de') {
-		translations = await getTranslations(locale);
-		events = await loadEvents(locale);
-		upcomingEvents = getUpcomingEvents(events).slice(0, 3);
-	}
+	let { data }: { data: any } = $props();
 
 	function t(path: string): string {
-		return getTranslation(translations, path);
+		return getTranslation(data.translations, path);
 	}
 
 	function getEventUrl(locale: string, slug: string): string {
@@ -68,8 +53,8 @@
 				<div class="content-block__sections">
 					<h2 class="text-center mb-12">{t('pages.home.focus.title')}</h2>
 					<div class="grid grid--3">
-						{#if translations.pages?.home?.focus?.items}
-							{#each translations.pages.home.focus.items as item}
+						{#if data.translations.pages?.home?.focus?.items}
+							{#each data.translations.pages.home.focus.items as item}
 								<article class="card">
 									<h3 class="card__title">{item.title}</h3>
 									<div class="card__body">
@@ -87,8 +72,8 @@
 						<h2 class="card__title text-center mb-6">{t('pages.home.values.title')}</h2>
 						<div class="card__body">
 							<ul class="card__list">
-								{#if translations.pages?.home?.values?.items}
-									{#each translations.pages.home.values.items as item}
+								{#if data.translations.pages?.home?.values?.items}
+									{#each data.translations.pages.home.values.items as item}
 										<li class="card__list-item">{item}</li>
 									{/each}
 								{/if}
@@ -116,7 +101,7 @@
 
 				<!-- Learn More -->
 				<div class="text-center content-block__sections">
-					<a href={getAboutUrl(getLocaleFromPath(page.url.pathname))} class="button button--outlined">
+					<a href={getAboutUrl(data.locale)} class="button button--outlined">
 						{t('pages.home.learnMore')} →
 					</a>
 				</div>
@@ -125,9 +110,9 @@
 				<article class="card">
 					<h2 class="card__title text-center mb-8">{t('pages.home.upcomingEvents')}</h2>
 					<div class="card__body">
-						{#if upcomingEvents.length > 0}
+						{#if data.upcomingEvents.length > 0}
 							<div class="card__events">
-								{#each upcomingEvents as event}
+								{#each data.upcomingEvents as event}
 									<div class="card card--clickable">
 										<div class="card__event-content">
 											<h3 class="card__event-title">{event.title}</h3>
@@ -136,7 +121,7 @@
 												{event.venue}, {event.city}
 											</p>
 											<a
-												href={getEventUrl(getLocaleFromPath(page.url.pathname), event.slug)}
+												href={getEventUrl(data.locale, event.slug)}
 												class="button button--text button--sm"
 											>
 												{t('pages.home.readMore')} →
@@ -147,7 +132,7 @@
 
 								<div class="text-center card__events-footer">
 									<a
-										href={getEventsUrl(getLocaleFromPath(page.url.pathname))}
+										href={getEventsUrl(data.locale)}
 										class="button button--outlined"
 									>
 										{t('pages.home.viewAllEvents')}
