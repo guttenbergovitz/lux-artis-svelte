@@ -20,7 +20,7 @@
   "pages": {
     "home": {
       "title": "Lux Artis",
-      "subtitle": "Lux Artis creates context for artistic events.",
+      "subtitle": "We create context for cultural experiences.\nProcess. Openness. Dialogue.",
       "mission": {
         "title": "Platform",
         "text": "Lux Artis is a space for cultural production. We focus on quality of execution, context of presentation and long-term thinking about culture."
@@ -63,14 +63,16 @@
         "title": "Process",
         "text": "Culture needs time. Our projects mature in dialogue with artists. We do not organize seasons – each event has its own rhythm and logic."
       },
-      "upcomingEvents": "Upcoming",
-      "viewAllEvents": "View program →",
-      "learnMore": "Learn more →",
-      "readMore": "Read more →"
+      "upcomingEvents": "Upcoming events",
+      "upcomingEventsIntro": "Concerts, residencies, curatorial projects. Each event is built from context, place and form. We don't organize seasons – each event has its own rhythm and logic.",
+      "viewAllEvents": "View program",
+      "learnMoreIntro": "If you want to learn more about our philosophy and how we build conditions for culture, we invite you to explore our approach.",
+      "learnMore": "Learn more",
+      "readMore": "Read more"
     },
     "about": {
-      "title": "About Lux Artis",
-      "subtitle": "Context, process, long-term perspective",
+      "title": "Discover Lux Artis",
+      "subtitle": "We don't build institutions. We create conditions in which art can exist. We operate in the field of contemporary culture, organizing concerts, residencies and curatorial projects. Each event is built from context, place and form – not from a calendar or expectations.",
       "mission": {
         "title": "Mission",
         "text": "We create conditions for encounters with contemporary culture. We focus on quality of experience, artistic integrity and building space for dialogue between creators and audiences."
@@ -153,13 +155,27 @@
       "noPastEvents": "No past events",
       "artists": "Artists",
       "description": "Description",
-      "readMore": "Read more →",
+      "readMore": "Read more",
       "notFound": "Event not found",
       "backToEvents": "← Back to events"
     },
     "people": {
       "title": "Team",
-      "subtitle": "Curators, artists and collaborators. People who build conditions for culture.",
+      "subtitle": "Curators, artists and collaborators. People who build conditions for culture. We come together around the conviction that art needs time, space, and attention. Each of us brings a different perspective – curatorial, artistic, organizational – but what unites us is a shared approach: we don't produce events, we create conditions in which culture can exist authentically.",
+      "intro": {
+        "perspective": {
+          "title": "Different perspectives, shared approach",
+          "text": "We came together around the conviction that culture needs time, space, and attention. Each of us brings a different perspective – curatorial, artistic, organizational – but what unites us is a shared approach: we don't produce events, we create conditions in which art can exist."
+        },
+        "place": {
+          "title": "Place of action",
+          "text": "We work from Szczecin, a city that gives us space to act without the pressure of the mainstream. This allows us to focus on quality and authenticity, not scale. We build each project from context, place, and form, not from a calendar or expectations."
+        },
+        "competencies": {
+          "title": "Competencies in practice",
+          "text": "What connects us is experience in different areas – from event production to working with artists, from education to communication. These different competencies meet in practice that requires both artistic sensitivity and organizational reliability. We believe that culture is a process, not a product – and that's how we work."
+        }
+      },
       "loading": "Loading...",
       "error": "Failed to load the list of people.",
       "noPeople": "No people to display."

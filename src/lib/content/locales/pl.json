@@ -63,14 +63,16 @@
         "title": "Proces",
         "text": "Kultura potrzebuje czasu. Nasze projekty dojrzewają w dialogu z artystami. Nie organizujemy sezonów – każde wydarzenie ma swój rytm i swoją logikę."
       },
-      "upcomingEvents": "Nadchodzące",
-      "viewAllEvents": "Zobacz program →",
-      "learnMore": "Dowiedz się więcej →",
-      "readMore": "Czytaj więcej →"
+      "upcomingEvents": "Nadchodzące wydarzenia",
+      "upcomingEventsIntro": "Koncerty, rezydencje, projekty kuratorskie. Każde wydarzenie budujemy od kontekstu, miejsca i formy. Nie organizujemy sezonów – każde zdarzenie ma swój rytm i swoją logikę.",
+      "viewAllEvents": "Zobacz program",
+      "learnMoreIntro": "Jeśli chcesz dowiedzieć się więcej o naszej filozofii działania i sposobie, w jaki budujemy warunki dla kultury, zapraszamy do zapoznania się z naszym podejściem.",
+      "learnMore": "Dowiedz się więcej",
+      "readMore": "Czytaj więcej"
     },
     "about": {
-      "title": "O Lux Artis",
-      "subtitle": "Kontekst, proces, długofalowa perspektywa",
+      "title": "Poznaj Lux Artis",
+      "subtitle": "Nie budujemy instytucji. Tworzymy warunki, w których sztuka może zaistnieć. Działamy w obszarze współczesnej kultury, organizując koncerty, rezydencje i projekty kuratorskie. Każde wydarzenie budujemy od kontekstu, miejsca i formy – nie od kalendarza czy oczekiwań.",
       "mission": {
         "title": "Misja",
         "text": "Tworzymy warunki dla spotkań z kulturą współczesną. Koncentrujemy się na jakości doświadczenia, integralności artystycznej i budowaniu przestrzeni dla dialogu między twórcami a odbiorcami."
@@ -153,13 +155,27 @@
       "noPastEvents": "Brak minionych wydarzeń",
       "artists": "Artyści",
       "description": "Opis",
-      "readMore": "Czytaj więcej →",
+      "readMore": "Czytaj więcej",
       "notFound": "Wydarzenie nie znalezione",
       "backToEvents": "← Powrót do wydarzeń"
     },
     "people": {
       "title": "Zespół",
-      "subtitle": "Kuratorzy, artyści i współtwórcy. Ludzie, którzy budują warunki dla kultury.",
+      "subtitle": "Kuratorzy, artyści i współtwórcy. Ludzie, którzy budują warunki dla kultury. Zbieramy się wokół przekonania, że sztuka potrzebuje czasu, przestrzeni i uważności. Każdy z nas wnosi inną perspektywę – kuratorską, artystyczną, organizacyjną – ale łączy nas wspólne podejście: nie produkujemy wydarzeń, tworzymy warunki, w których kultura może zaistnieć w sposób autentyczny.",
+      "intro": {
+        "perspective": {
+          "title": "Różne perspektywy, wspólne podejście",
+          "text": "Zebraliśmy się wokół przekonania, że kultura potrzebuje czasu, przestrzeni i uważności. Każdy z nas wnosi inną perspektywę – kuratorską, artystyczną, organizacyjną – ale łączy nas wspólne podejście: nie produkujemy wydarzeń, tworzymy warunki, w których sztuka może zaistnieć."
+        },
+        "place": {
+          "title": "Miejsce działania",
+          "text": "Pracujemy ze Szczecina, miasta, które daje nam przestrzeń do działania bez presji głównego obiegu. To pozwala nam skupić się na jakości i autentyczności, nie na skali. Każdy projekt budujemy od kontekstu, miejsca i formy, a nie od kalendarza czy oczekiwań."
+        },
+        "competencies": {
+          "title": "Kompetencje w praktyce",
+          "text": "Łączy nas doświadczenie w różnych obszarach – od produkcji wydarzeń po pracę z artystami, od edukacji po komunikację. Te różne kompetencje spotykają się w praktyce, która wymaga zarówno wrażliwości artystycznej, jak i rzetelności organizacyjnej. Wierzymy, że kultura to proces, nie produkt – i tak też pracujemy."
+        }
+      },
       "loading": "Ładowanie...",
       "error": "Nie udało się załadować listy osób.",
       "noPeople": "Brak osób do wyświetlenia."

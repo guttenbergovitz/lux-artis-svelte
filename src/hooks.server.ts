@@ -6,6 +6,15 @@ import { paraglideMiddleware } from '$lib/paraglide/server';
 const handleParaglide: Handle = async ({ event, resolve }) => {
 	const originalPath = event.url.pathname;
 
+	// Skip Paraglide middleware for static assets (fonts, app assets, etc.)
+	if (
+		originalPath.startsWith('/fonts/') ||
+		originalPath.startsWith('/_app/') ||
+		originalPath.startsWith('/favicon')
+	) {
+		return resolve(event);
+	}
+
 	return paraglideMiddleware(event.request, async ({ request, locale }) => {
 		event.request = request;
 

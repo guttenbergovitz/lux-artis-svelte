@@ -20,7 +20,7 @@
   "pages": {
     "home": {
       "title": "Lux Artis",
-      "subtitle": "Lux Artis schafft Kontext für künstlerische Ereignisse.",
+      "subtitle": "Wir schaffen Kontext für kulturelle Erfahrungen.\nProzess. Offenheit. Dialog.",
       "mission": {
         "title": "Plattform",
         "text": "Lux Artis ist ein Raum für Kulturproduktion. Wir konzentrieren uns auf Qualität der Ausführung, Kontext der Präsentation und langfristiges Denken über Kultur."
@@ -63,14 +63,16 @@
         "title": "Prozess",
         "text": "Kultur braucht Zeit. Unsere Projekte reifen im Dialog mit Künstlern. Wir organisieren keine Saisons – jede Veranstaltung hat ihren eigenen Rhythmus und ihre eigene Logik."
       },
-      "upcomingEvents": "Bevorstehend",
-      "viewAllEvents": "Programm ansehen →",
-      "learnMore": "Mehr erfahren →",
-      "readMore": "Mehr lesen →"
+      "upcomingEvents": "Kommende Veranstaltungen",
+      "upcomingEventsIntro": "Konzerte, Residenzen, kuratorische Projekte. Jede Veranstaltung wird aus Kontext, Ort und Form gebaut. Wir organisieren keine Saisons – jede Veranstaltung hat ihren eigenen Rhythmus und ihre eigene Logik.",
+      "viewAllEvents": "Programm ansehen",
+      "learnMoreIntro": "Wenn Sie mehr über unsere Philosophie und unsere Art, Bedingungen für Kultur zu schaffen, erfahren möchten, laden wir Sie ein, unseren Ansatz kennenzulernen.",
+      "learnMore": "Mehr erfahren",
+      "readMore": "Mehr lesen"
     },
     "about": {
-      "title": "Über Lux Artis",
-      "subtitle": "Kontext, Prozess, langfristige Perspektive",
+      "title": "Lux Artis entdecken",
+      "subtitle": "Wir bauen keine Institutionen. Wir schaffen Bedingungen, unter denen Kunst existieren kann. Wir arbeiten im Bereich der zeitgenössischen Kultur, organisieren Konzerte, Residenzen und kuratorische Projekte. Jede Veranstaltung wird aus Kontext, Ort und Form gebaut – nicht aus einem Kalender oder Erwartungen.",
       "mission": {
         "title": "Mission",
         "text": "Wir schaffen Bedingungen für Begegnungen mit zeitgenössischer Kultur. Wir konzentrieren uns auf Erfahrungsqualität, künstlerische Integrität und den Aufbau eines Raums für Dialog zwischen Schöpfern und Publikum."
@@ -153,13 +155,27 @@
       "noPastEvents": "Keine vergangenen Veranstaltungen",
       "artists": "Künstler",
       "description": "Beschreibung",
-      "readMore": "Mehr lesen →",
+      "readMore": "Mehr lesen",
       "notFound": "Veranstaltung nicht gefunden",
       "backToEvents": "← Zurück zu Veranstaltungen"
     },
     "people": {
       "title": "Team",
-      "subtitle": "Kuratoren, Künstler und Mitgestalter. Menschen, die Bedingungen für Kultur schaffen.",
+      "subtitle": "Kuratoren, Künstler und Mitgestalter. Menschen, die Bedingungen für Kultur schaffen. Wir haben uns zusammengefunden aus der Überzeugung, dass Kunst Zeit, Raum und Aufmerksamkeit braucht. Jeder von uns bringt eine andere Perspektive mit – kuratorisch, künstlerisch, organisatorisch – aber was uns verbindet, ist ein gemeinsamer Ansatz: Wir produzieren keine Veranstaltungen, wir schaffen Bedingungen, unter denen Kultur authentisch existieren kann.",
+      "intro": {
+        "perspective": {
+          "title": "Verschiedene Perspektiven, gemeinsamer Ansatz",
+          "text": "Wir haben uns zusammengefunden aus der Überzeugung, dass Kultur Zeit, Raum und Aufmerksamkeit braucht. Jeder von uns bringt eine andere Perspektive mit – kuratorisch, künstlerisch, organisatorisch – aber was uns verbindet, ist ein gemeinsamer Ansatz: Wir produzieren keine Veranstaltungen, wir schaffen Bedingungen, unter denen Kunst existieren kann."
+        },
+        "place": {
+          "title": "Ort des Handelns",
+          "text": "Wir arbeiten aus Szczecin, einer Stadt, die uns Raum zum Handeln ohne den Druck des Mainstreams gibt. Das ermöglicht es uns, uns auf Qualität und Authentizität zu konzentrieren, nicht auf Größe. Wir bauen jedes Projekt aus Kontext, Ort und Form, nicht aus einem Kalender oder Erwartungen."
+        },
+        "competencies": {
+          "title": "Kompetenzen in der Praxis",
+          "text": "Was uns verbindet, ist Erfahrung in verschiedenen Bereichen – von der Veranstaltungsproduktion bis zur Arbeit mit Künstlern, von der Bildung bis zur Kommunikation. Diese verschiedenen Kompetenzen treffen in einer Praxis zusammen, die sowohl künstlerische Sensibilität als auch organisatorische Zuverlässigkeit erfordert. Wir glauben, dass Kultur ein Prozess ist, kein Produkt – und so arbeiten wir auch."
+        }
+      },
       "loading": "Wird geladen...",
       "error": "Die Liste der Personen konnte nicht geladen werden.",
       "noPeople": "Keine Personen zum Anzeigen vorhanden."
