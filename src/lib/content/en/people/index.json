@@ -1,0 +1,37 @@
+[
+  {
+    "id": "anna-obsynska",
+    "name": "Anna Obszyńska",
+    "role": "Artistic Curator",
+    "bio": "Graduate of the State High School of Fine Arts in Szczecin, curator of the International Festival of Fine Art Color Art, facilitator and organizer of the nationwide plein air Mosty Sztuki. She works daily at the Goleniów Cultural Center as an instructor of art classes. She was also the organizer of the educational and artistic program for children and youth \"Goleniów – Legendy 2.0\". At Lux Artis Foundation, she serves as Artistic Curator, supporting the organization in the areas of aesthetics, logistics, planning and implementation of new projects. Her experience in working with children and youth sensitive to art is of particular value to the foundation and the community we work with.",
+    "position": "board"
+  },
+  {
+    "id": "iga-oliwiak",
+    "name": "Iga Oliwiak",
+    "role": "Artist and Illustrator",
+    "bio": "Iga Oliwiak (born 1986 in Szczecin) – artist, painter, drafter, graphic designer, illustrator and photographer. Graduate of the Academy of Art in Szczecin and postgraduate studies at University of Arts London. Lives and works nomadically, documenting the world through drawing, painting and photography. Collaborated on projects such as \"Loving Vincent\" (Oscar-nominated animated film), \"Magic: The Gathering\" (worldwide bestselling card game) and with international brands (Uber, Samsung, Deutsche Telekom). Her works have been presented at London Design Festival and in art salons and galleries (e.g. Tate Modern, V&A Museum).",
+    "position": "collaborator"
+  },
+  {
+    "id": "lukasz-przybysz",
+    "name": "Łukasz Przybysz",
+    "role": "President of the Board",
+    "bio": "Łukasz Przybysz – co-founder and President of the Board of Lux Artis Foundation – combines managerial experience with long-term engagement in artistic and social activities. As a vocalist, DJ and art enthusiast, he brings to the foundation a unique perspective of creator, organizer and recipient, actively shaping the cultural life of the region. For many years he worked in business development, sales and structural management, creating and leading teams, introducing brands to the market and collaborating with experts and opinion leaders. He translates these experiences into reliable planning, effective project implementation and skillful building of cooperation with institutional partners and artists. At Lux Artis Foundation, he is responsible for strategy, development of key initiatives and coordination of program activities. He emphasizes high organizational quality, transparency of decisions and long-term thinking about the role of culture in social life. His approach is based on mindfulness, responsibility and respect for people creating artistic projects. Thanks to this, the foundation develops ventures that combine professionalism, artistic value and have a real impact not only on the local community.",
+    "position": "board"
+  },
+  {
+    "id": "magdalena-fidecka",
+    "name": "Magdalena Fidecka",
+    "role": "Vocalist and Music Communication Specialist",
+    "bio": "Vocalist focused on voice and interpretation as the core of the live experience. Author of original singles broadcast on radio stations. Experienced in live and television performances. Music and event industry specialist with experience in communication strategy, social media, event production and artist relations. Previously worked for Kayax Production & Publishing.",
+    "position": "collaborator"
+  },
+  {
+    "id": "tomasz-grotkowski",
+    "name": "Tomasz Grotkowski",
+    "role": "Artistic Advisor and Program Concept Curator",
+    "bio": "Tomasz Grotkowski has been active in the music market since 1995 as a DJ holding professional qualifications issued by the Polish Association of Music Presenters in Warsaw. For years he has been actively involved in creating social and cultural events. He was the founder and President of the PACA Association in Peterborough. Journalist, publisher and radio presenter for 6 years associated with Polish Radio London. In his work he uses educational competences – he is an instructor and author of DJ workshops for seniors in Szczecin. As co-organizer of concerts at Willa Lentza, he contributed to the realization of events with artists such as Xantone Blacq and Emma Rawicz. In 2024, he contributed to the \"Niewidzialni\" program, collaborating with Program III of Polish Radio. At Lux Artis Foundation, he is responsible for the music program and event coordination. He ensures the artistic quality of implemented projects, supports the planning process and develops program concepts that strengthen the foundation's activities and give it a coherent identity. His experience in the music and media industry brings professionalism, stability and practical knowledge needed to conduct artistic and social projects to the team.",
+    "position": "collaborator"
+  }
+]

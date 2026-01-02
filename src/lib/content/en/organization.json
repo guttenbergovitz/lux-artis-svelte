@@ -1,0 +1,32 @@
+{
+  "legalName": "Lux Artis Foundation",
+  "krs": "0001189456",
+  "nip": "9552590323",
+  "regon": "542492621",
+  "registrationDate": "2025-08-20",
+  "address": {
+    "street": "Xawerego Dunikowskiego 30/8",
+    "postal": "70-123",
+    "city": "Szczecin",
+    "country": "Poland"
+  },
+  "supervisingAuthorities": [
+    "Mayor of the City of Szczecin",
+    "Minister of Culture and National Heritage"
+  ],
+  "board": [
+    {
+      "name": "Łukasz Przybysz",
+      "position": "Board President",
+      "bio": "[no-data]"
+    },
+    {
+      "name": "Anna Obszyńska",
+      "position": "Board Member",
+      "bio": "[no-data]"
+    }
+  ],
+  "purpose": "1. supporting the development of culture and arts through the production of artistic and cultural events.\n2. supporting cultural education.\n3. supporting and promoting physical culture and sports.\n4. maintaining national traditions, cultivating Polish identity and developing national, civic and cultural awareness.\n5. activities for European integration and developing contacts and cooperation between societies.\n6. promoting the Republic of Poland abroad.\n7. activities supporting the development of communities and local societies.\n8. activities supporting economic development, including entrepreneurship development.",
+  "representation": "Each Board member is authorized to make declarations of will on behalf of the Foundation acting independently.",
+  "history": "[no-data]"
+}

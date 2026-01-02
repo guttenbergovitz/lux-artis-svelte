@@ -1,0 +1,37 @@
+[
+  {
+    "id": "anna-obsynska",
+    "name": "Anna Obszyńska",
+    "role": "Opiekun artystyczny",
+    "bio": "Absolwentka Państwowego Liceum Sztuk Plastycznych w Szczecinie, kuratorka Międzynarodowego Festiwalu Sztuki Pięknej Color Art, animatorka oraz organizatorka ogólnopolskiego pleneru Mosty Sztuki. Na co dzień pracuje w Goleniowskim Domu Kultury jako instruktorka zajęć artystycznych. Była również organizatorką programu edukacyjno-artystycznego dla dzieci i młodzieży Goleniów – Legendy 2.0. W Fundacji Lux Artis pełni rolę Opiekuna Artystycznego, wspierając organizację zarówno w obszarze estetyki, jak i logistyki, planowania oraz wdrażania nowych projektów. Jej doświadczenie w pracy z dziećmi i młodzieżą wrażliwą na sztukę stanowi szczególną wartość dla fundacji i społeczności, z którą współpracujemy.",
+    "position": "board"
+  },
+  {
+    "id": "iga-oliwiak",
+    "name": "Iga Oliwiak",
+    "role": "Artystka i ilustratorka",
+    "bio": "Iga Oliwiak (ur. 1986 w Szczecinie) – artystka, malarką, rysowniczka, graficzka, ilustratorka i fotografka. Absolwentka Akademii Sztuki w Szczecinie oraz studiów podyplomowych na University of Arts London. Żyje i pracuje nomadycznie, dokumentując świat poprzez rysunek, malarstwo i fotografię. Współpracowała przy takich projektach jak \"Twój Vincent\" (nominowany do Oscara film animowany), \"Magic: The Gathering\" (światowy bestseller gier karcianych) oraz z międzynarodowymi markami (Uber, Samsung, Deutsche Telekom). Jej prace prezentowane były m.in. na London Design Festival oraz w salonach sztuki i galeriach (np. Tate Modern, V&A Museum).",
+    "position": "collaborator"
+  },
+  {
+    "id": "lukasz-przybysz",
+    "name": "Łukasz Przybysz",
+    "role": "Prezes Zarządu",
+    "bio": "Łukasz Przybysz – współtwórca i Prezes Zarządu Fundacji Lux Artis – łączy doświadczenie menedżerskie z wieloletnim zaangażowaniem w działalność artystyczną i społeczną. Jako wokalista, DJ i entuzjasta sztuki, wnosi do fundacji unikalną perspektywę twórcy, organizatora i odbiorcy, aktywnie kształtując życie kulturalne regionu. Przez wiele lat pracował w obszarach rozwoju biznesu, sprzedaży i zarządzania strukturami, tworząc i prowadząc zespoły, wprowadzając marki na rynek oraz współpracując z ekspertami i liderami opinii. Te doświadczenia przekłada na rzetelne planowanie, skuteczną realizację projektów i umiejętne budowanie współpracy z partnerami instytucjonalnymi oraz artystami. W Fundacji Lux Artis odpowiada za strategię, rozwój kluczowych inicjatyw i koordynację działań programowych. Kładzie nacisk na wysoką jakość organizacyjną, przejrzystość decyzji oraz długofalowe myślenie o roli kultury w życiu społecznym. Jego podejście opiera się na uważności, odpowiedzialności i szacunku do osób tworzących projekty artystyczne. Dzięki temu fundacja rozwija przedsięwzięcia, które łączą profesjonalizm, wartość artystyczną oraz mają realny wpływ na nie tylko lokalną społeczność.",
+    "position": "board"
+  },
+  {
+    "id": "magdalena-fidecka",
+    "name": "Magdalena Fidecka",
+    "role": "Wokalistka i specjalistka ds. komunikacji muzycznej",
+    "bio": "Wokalistka skupiająca się na głosie i interpretacji jako istocie występu na żywo. Autorka oryginalnych singli emitowanych w radiostacjach. Doświadczenie w występach na żywo i telewizyjnych. Specjalistka z branży muzycznej i eventowej, z doświadczeniem w strategii komunikacji, mediach społecznościowych, produkcji wydarzeń i relacjach z artystami. Wcześniej pracowała dla Kayax Production & Publishing.",
+    "position": "collaborator"
+  },
+  {
+    "id": "tomasz-grotkowski",
+    "name": "Tomasz Grotkowski",
+    "role": "Doradca artystyczny i kurator koncepcji programowych",
+    "bio": "Tomasz Grotkowski od 1995 roku działa na rynku muzycznym jako DJ posiadający profesjonalne uprawnienia wydane przez Polskie Stowarzyszenie Prezenterów Muzyki w Warszawie. Od lat aktywnie uczestniczy w tworzeniu wydarzeń społecznych i kulturalnych. Był założycielem i Prezesem Stowarzyszenia PACA w Peterborough. Dziennikarz, wydawca i prezenter radiowy przez 6 lat związany z Polskim Radiem Londyn. W swojej działalności wykorzystuje kompetencje edukacyjne – jest instruktorem oraz autorem warsztatów DJ-skich dla seniorów w Szczecinie. Jako współorganizator koncertów w Willi Lentza przyczynił się do realizacji wydarzeń z udziałem takich artystów jak Xantone Blacq i Emma Rawicz. W 2024 roku wniósł swój wkład w audycję \"Niewidzialni\", współpracując z Programem III Polskiego Radia. W Fundacji Lux Artis odpowiada za program muzyczny i koordynację wydarzeń. Dba o jakość artystyczną realizowanych przedsięwzięć, wspiera proces planowania oraz rozwija koncepcje programowe, które wzmacniają działalność fundacji i nadają jej spójną tożsamość. Jego doświadczenie w branży muzycznej i medialnej wnosi do zespołu profesjonalizm, stabilność i praktyczną wiedzę potrzebną do prowadzenia projektów artystycznych i społecznych.",
+    "position": "collaborator"
+  }
+]

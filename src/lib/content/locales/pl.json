@@ -1,0 +1,355 @@
+{
+  "site": {
+    "title": "Fundacja Lux Artis",
+    "description": "Platforma kuratorska. Przestrzeń dla współczesnej ekspresji artystycznej."
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "noUpcomingEvents": "Brak nadchodzących wydarzeń",
+    "errorLoadingEvents": "Nie udało się załadować wydarzeń"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "events": "Wydarzenia",
+    "people": "Ludzie",
+    "support": "Współpraca",
+    "contact": "Kontakt",
+    "legal": "Informacje prawne"
+  },
+  "pages": {
+    "home": {
+      "title": "Lux Artis",
+      "subtitle": "Tworzymy kontekst dla doświadczeń kulturalnych.\nProces. Obecność. Dialog.",
+      "mission": {
+        "title": "Platforma",
+        "text": "Lux Artis to przestrzeń produkcji kulturalnej. Koncentrujemy się na jakości wykonania, kontekście prezentacji i długofalowym myśleniu o kulturze."
+      },
+      "approach": {
+        "title": "Metoda",
+        "text": "Pracujemy z artystami, kuratorami i instytucjami. Każdy projekt budujemy z uwagą na atmosferę, doświadczenie odbiorców i integralność artystyczną."
+      },
+      "focus": {
+        "title": "Obszary działania",
+        "items": [
+          {
+            "title": "Produkcja wydarzeń",
+            "text": "Realizacja koncertów i wydarzeń kulturalnych. Od koncepcji po wykonanie."
+          },
+          {
+            "title": "Kuratorstwo",
+            "text": "Budowanie programów i kontekstów. Dialog między formą a treścią."
+          },
+          {
+            "title": "Współpraca",
+            "text": "Partnerstwa z artystami, instytucjami i producentami kulturalnymi."
+          }
+        ]
+      },
+      "values": {
+        "title": "Zasady pracy",
+        "items": [
+          "Jakość ponad ilość",
+          "Proces równie ważny jak rezultat",
+          "Długofalowa perspektywa",
+          "Transparentność i profesjonalizm"
+        ]
+      },
+      "context": {
+        "title": "Kontekst",
+        "text": "Każde wydarzenie budujemy od miejsca, czasu i sytuacji artystycznej. Nie ma uniwersalnych rozwiązań – jest konkretna muzyka, konkretni artyści, konkretna przestrzeń."
+      },
+      "process": {
+        "title": "Proces",
+        "text": "Kultura potrzebuje czasu. Nasze projekty dojrzewają w dialogu z artystami. Nie organizujemy sezonów – każde wydarzenie ma swój rytm i swoją logikę."
+      },
+      "upcomingEvents": "Nadchodzące",
+      "viewAllEvents": "Zobacz program →",
+      "learnMore": "Dowiedz się więcej →",
+      "readMore": "Czytaj więcej →"
+    },
+    "about": {
+      "title": "O Lux Artis",
+      "subtitle": "Kontekst, proces, długofalowa perspektywa",
+      "mission": {
+        "title": "Misja",
+        "text": "Tworzymy warunki dla spotkań z kulturą współczesną. Koncentrujemy się na jakości doświadczenia, integralności artystycznej i budowaniu przestrzeni dla dialogu między twórcami a odbiorcami."
+      },
+      "vision": {
+        "title": "Wizja",
+        "text": "Platforma kulturalna działająca poza schematami instytucjonalnymi. Miejsce, gdzie proces twórczy, kuratorska precyzja i uwaga na kontekst tworzą spójną całość."
+      },
+      "values": {
+        "title": "Wartości",
+        "items": [
+          {
+            "title": "Jakość",
+            "text": "Staranność w każdym aspekcie realizacji. Od koncepcji przez produkcję po prezentację."
+          },
+          {
+            "title": "Kontekst",
+            "text": "Świadomość miejsca, czasu i kulturowego tła. Każdy projekt w dialogu z otoczeniem."
+          },
+          {
+            "title": "Proces",
+            "text": "Uwaga na drogę, nie tylko cel. Praca z artystami oparta na zaufaniu i długofalowej współpracy."
+          },
+          {
+            "title": "Dialog",
+            "text": "Kultura jako przestrzeń wymiany. Między artystami, odbiorcami i kontekstami."
+          }
+        ]
+      },
+      "approach": {
+        "title": "Podejście",
+        "text": "Działamy z przekonaniem, że kultura potrzebuje czasu, przestrzeni i odpowiednich warunków. Nie gonim za skalą ani rozgłosem. Koncentrujemy się na tym, co robimy i jak to robimy."
+      },
+      "extended": {
+        "intro": {
+          "text": "Lux Artis tworzy kontekst dla wydarzeń artystycznych.\n\nDziałamy w obszarze współczesnej kultury, skupiając się na muzyce jako medium spotkania i doświadczenia. Organizujemy koncerty, rezydencje i projekty kuratorskie, które łączą artystów z publicznością w przestrzeniach sprzyjających uważności.\n\nNie budujemy instytucji. Budujemy warunki do tego, by sztuka mogła zaistnieć."
+        },
+        "culture": {
+          "title": "Jak myślimy o kulturze",
+          "text": "Kultura artystyczna nie jest ani edukacją, ani rozrywką. Jest procesem tworzenia przestrzeni, w której możliwe staje się doświadczenie wykraczające poza zwykłą konsumpcję treści.\n\nNie wierzymy w kulturę jako produkt. Wierzymy w kulturę jako relację – między artystą a dziełem, dziełem a odbiorcą, odbiorcą a kontekstem. Każdy z tych elementów wymaga uwagi, czasu i przestrzeni do zaistnienia.\n\nNasze projekty powstają powoli. Nie organizujemy sezonów ani cykli. Każde wydarzenie traktujemy jako autonomiczny format – nie punkt w kalendarzu, ale zdarzenie zbudowane od kontekstu, miejsca i formy."
+        },
+        "activities": {
+          "title": "Co robimy",
+          "text": "Organizujemy koncerty i wydarzenia artystyczne, które nie mieszczą się w standardowych ramach instytucjonalnych ani komercyjnych. Pracujemy z muzyką współczesną, jazzem, improwizacją, projektami cross-genre – bez ograniczeń gatunkowych, z naciskiem na rzetelność artystyczną.\n\nWybieramy przestrzenie, które pozwalają na inny rodzaj obecności. Nie zawsze są to sale koncertowe. Czasem są to miejsca, które wymagają od publiczności innego rodzaju uwagi – bardziej kameralnej, skupionej, bez rutyny instytucjonalnego odbioru.\n\nTworzymy rezydencje artystyczne. Wspieramy proces twórczy, nie tylko jego prezentację. Dajemy artystom czas i warunki do pracy bez presji szybkiego rezultatu."
+        },
+        "location": {
+          "title": "Gdzie działamy",
+          "text": "Lux Artis działa ze Szczecina – miasta, które łączy potencjał infrastruktury kulturalnej z pozycją poza głównym obiegiem medialnym. To pozwala nam pracować bez presji reprezentacji i bez konieczności potwierdzania status quo.\n\nSzczecin leży w bezpośredniej bliskości Berlina, w obszarze Morza Bałtyckiego, na skrzyżowaniu kultur. Ta geografia sprzyja wymianie, nie izolacji. Pracujemy lokalnie, ale nie jesteśmy zamknięci lokalnie.\n\nNie traktujemy miejsca jako dekoracji. Miejsce jest częścią kuracji."
+        },
+        "audience": {
+          "title": "Dla kogo to robimy",
+          "text": "Nie myślimy kategoriami grup docelowych. Myślimy o ludziach, którzy szukają w kulturze czegoś więcej niż powierzchownego kontaktu z formą.\n\nDla artystów, którzy potrzebują przestrzeni do rzetelnej prezentacji pracy – bez redukcji formy do wymogów kalendarzowych ani komercyjnych.\n\nDla publiczności, która przychodzi po doświadczenie, nie po rozrywkę. Dla tych, którzy rozumieją, że kultura wymaga zaangażowania, nie tylko pasywnej konsumpcji.\n\nDla tych, którzy nie potrzebują instrukcji odbioru."
+        },
+        "philosophy": {
+          "title": "Filozofia działania",
+          "text": "Każdy projekt rozpoczynamy od pytania o kontekst. Nie o to, co chcemy pokazać, ale o to, w jakich warunkach sztuka może zaistnieć w sposób autentyczny. To podejście wymaga czasu, cierpliwości i gotowości do rezygnacji z efektownych, ale pustych rozwiązań.\n\nNie organizujemy wydarzeń dla samych wydarzeń. Każda decyzja – od wyboru miejsca po sposób komunikacji – jest częścią kuratorskiej całości. Wierzymy, że forma i treść są nierozłączne, a jakość doświadczenia zależy od uwagi poświęconej każdemu elementowi."
+        },
+        "collaboration": {
+          "title": "Współpraca z artystami",
+          "text": "Pracujemy z artystami jako partnerzy, nie jako organizatorzy ich występów. Oznacza to czas na rozmowy, zrozumienie intencji, wspólne poszukiwanie najlepszych warunków dla prezentacji pracy.\n\nNie narzucamy gotowych formatów. Każdy projekt budujemy od specyfiki artystycznej propozycji. Czasem oznacza to rezygnację z utartych schematów koncertowych na rzecz rozwiązań, które lepiej służą konkretnej muzyce czy konkretnej sytuacji artystycznej."
+        },
+        "community": {
+          "title": "Budowanie wspólnoty",
+          "text": "Kultura potrzebuje wspólnoty, ale nie każde zgromadzenie ludzi tworzy wspólnotę kulturalną. Zależy nam na budowaniu przestrzeni, w której możliwy jest rzeczywisty dialog – między artystami a publicznością, między różnymi formami ekspresji, między tradycją a nowością.\n\nNie organizujemy imprez. Tworzymy sytuacje, w których kultura może się wydarzyć. To różnica między konsumpcją a uczestnictwem, między rozrywką a doświadczeniem."
+        },
+        "future": {
+          "title": "Perspektywa długofalowa",
+          "text": "Myślimy o kulturze w kategoriach procesu, nie produktu. Każdy projekt jest częścią większej całości – budowania warunków, w których sztuka współczesna może się rozwijać bez presji komercyjnej czy instytucjonalnej.\n\nNie gonim za skalą. Koncentrujemy się na jakości i autentyczności. Wierzymy, że kultura potrzebuje czasu – czasu na dojrzewanie projektów, na budowanie relacji, na głębokie zrozumienie tego, co robimy i dlaczego to robimy."
+        }
+      }
+    },
+    "events": {
+      "title": "Wydarzenia",
+      "subtitle": "Koncerty i wydarzenia artystyczne. Każde zdarzenie budowane od kontekstu, miejsca i formy.",
+      "upcomingEventsSection": "Nadchodzące wydarzenia",
+      "upcomingEventsIntro": "Zapraszamy na nasze nadchodzące koncerty i wydarzenia kulturalne. Każde wydarzenie jest starannie przygotowane, aby zapewnić wyjątkowe doświadczenie artystyczne.",
+      "pastEventsSection": "Minione wydarzenia",
+      "pastEventsIntro": "Przegląd naszych zrealizowanych projektów i wydarzeń. Każde z nich było ważnym elementem budowania kontekstu dla doświadczeń kulturalnych.",
+      "noUpcomingEvents": "Brak nadchodzących wydarzeń",
+      "noPastEvents": "Brak minionych wydarzeń",
+      "artists": "Artyści",
+      "description": "Opis",
+      "readMore": "Czytaj więcej →",
+      "notFound": "Wydarzenie nie znalezione",
+      "backToEvents": "← Powrót do wydarzeń"
+    },
+    "people": {
+      "title": "Zespół",
+      "subtitle": "Kuratorzy, artyści i współtwórcy. Ludzie, którzy budują warunki dla kultury.",
+      "loading": "Ładowanie...",
+      "error": "Nie udało się załadować listy osób.",
+      "noPeople": "Brak osób do wyświetlenia."
+    },
+    "support": {
+      "title": "Współpraca",
+      "subtitle": "Dialog z instytucjami, artystami i producentami kulturalnymi. Partnerstwa oparte na wzajemnym szacunku.",
+      "intro": {
+        "text": "Lux Artis rozwija dialog z instytucjami, producentami kulturalnymi i artystami. Poszukujemy partnerów, którzy rozumieją wartość procesu, jakości i długofalowej perspektywy."
+      },
+      "partners": {
+        "title": "Partnerzy instytucjonalni",
+        "subtitle": "Współpraca przy realizacji projektów",
+        "description": "Długofalowa współpraca z instytucjami kultury",
+        "points": [
+          "Wsparcie produkcji wydarzeń kulturalnych",
+          "Długofalowe partnerstwa programowe",
+          "Dialog na poziomie strategicznym",
+          "Transparentność i profesjonalizm"
+        ]
+      },
+      "internships": {
+        "title": "Praktyki i wolontariat",
+        "subtitle": "Doświadczenie w produkcji kulturalnej",
+        "description": "Rozwój kompetencji w pracy przy projektach kulturalnych",
+        "points": [
+          "Bezpośredni kontakt z procesem kuratorskim",
+          "Praca przy konkretnych projektach",
+          "Networking w środowisku kulturalnym",
+          "Mentoring i rozwój kompetencji"
+        ]
+      },
+      "artists": {
+        "title": "Artyści i kuratorzy",
+        "subtitle": "Dialog z twórcami",
+        "description": "Partnerstwa artystyczne oparte na zaufaniu",
+        "points": [
+          "Współpraca oparta na wzajemnym szacunku",
+          "Wsparcie w realizacji projektów artystycznych",
+          "Profesjonalne warunki produkcji",
+          "Kuratorska niezależność"
+        ]
+      },
+      "contact": {
+        "title": "Kontakt",
+        "text": "Zapraszamy do bezpośredniego kontaktu. Każdą propozycję współpracy rozpatrujemy indywidualnie."
+      },
+      "cta": {
+        "text": "Zapraszamy do bezpośredniego kontaktu."
+      },
+      "form": {
+        "title": "Formularz współpracy",
+        "name": "Imię i nazwisko",
+        "email": "Email",
+        "organization": "Organizacja (opcjonalnie)",
+        "type": "Typ współpracy",
+        "typeOptions": {
+          "select": "Wybierz typ współpracy",
+          "partner": "Partner instytucjonalny",
+          "internship": "Praktyki / wolontariat",
+          "artist": "Artysta / kurator",
+          "other": "Inne"
+        },
+        "message": "Wiadomość",
+        "submit": "Wyślij",
+        "successMessage": "Dziękujemy za zgłoszenie. Odpowiemy najszybciej jak to możliwe."
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Skontaktuj się z Fundacją Lux Artis",
+      "address": {
+        "title": "Adres",
+        "street": "Xawerego Dunikowskiego 30 / 8",
+        "postal": "70-123 Szczecin",
+        "country": "Polska"
+      },
+      "form": {
+        "title": "Napisz do nas",
+        "name": "Imię i nazwisko",
+        "email": "Email",
+        "subject": "Temat",
+        "message": "Wiadomość",
+        "submit": "Wyślij",
+        "successMessage": "Dziękujemy za wiadomość. Odpowiemy najszybciej jak to możliwe."
+      }
+    },
+    "legal": {
+      "title": "Informacje prawne",
+      "subtitle": "Dane rejestrowe i prawne Fundacji Lux Artis",
+      "registration": {
+        "title": "Dane rejestrowe",
+        "krs": "KRS: 0001189456",
+        "nip": "NIP: 9552590323",
+        "regon": "REGON: 542492621",
+        "registrationDate": "Data rejestracji: 20 sierpnia 2025"
+      },
+      "supervisingAuthorities": {
+        "title": "Organy nadzorujące",
+        "items": [
+          "Prezydent Miasta Szczecin",
+          "Minister Kultury i Dziedzictwa Narodowego"
+        ]
+      },
+      "statutoryDocuments": {
+        "title": "Dokumenty statutowe",
+        "text": "Statut fundacji dostępny na żądanie."
+      }
+    }
+  },
+  "quotes": [
+    {
+      "text": "Cisza jest tak dokładna.",
+      "author": "Mark Rothko"
+    },
+    {
+      "text": "Muzyka to najlepszy nauczyciel.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Kolor to klawiatura, oczy to harmonie, dusza to fortepian z wieloma strunami.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Nie ma 'musi' w sztuce, ponieważ sztuka jest wolna.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Każde dzieło sztuki jest dzieckiem swojej epoki.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Nie jestem abstrakcjonistą. Interesuje mnie tylko wyrażanie podstawowych ludzkich emocji.",
+      "author": "Mark Rothko"
+    },
+    {
+      "text": "Obraz wymaga trochę tajemnicy, pewnej niejasności, pewnej fantazji.",
+      "author": "Edgar Degas"
+    },
+    {
+      "text": "Większość muzyki to metafora, ale Wolff nią nie jest.",
+      "author": "Morton Feldman"
+    },
+    {
+      "text": "Muzyka nie jest w nutach, ale w ciszy między nimi.",
+      "author": "Wolfgang Amadeus Mozart"
+    },
+    {
+      "text": "Zawsze utrzymywałem, że cisza to doskonała muzyka.",
+      "author": "Miles Davis"
+    },
+    {
+      "text": "Najdroższe rozwiązanie to wysadzić opery w powietrze.",
+      "author": "Pierre Boulez"
+    },
+    {
+      "text": "Cała sztuka nieustannie dąży do stanu muzyki.",
+      "author": "Walter Pater"
+    },
+    {
+      "text": "Architektura to zamrożona muzyka.",
+      "author": "Johann Wolfgang von Goethe"
+    },
+    {
+      "text": "Im bardziej przerażający staje się świat, tym bardziej sztuka staje się abstrakcyjna.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Malarstwo to grzmiący zderzenie różnych światów, mający na celu stworzenie nowego świata.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Artysta musi trenować nie tylko swoje oko, ale także swoją duszę.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Każdy kolor żyje swoim tajemniczym życiem.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Kolor to siła, która bezpośrednio wpływa na duszę.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Puste płótno to żywy cud... znacznie piękniejszy niż niektóre obrazy.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Stworzyć dzieło sztuki to stworzyć świat.",
+      "author": "Wassily Kandinsky"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "2026-01-15-test-event-1",
+  "slug": "testowy-koncert-noworoczny",
+  "date": "2026-01-15",
+  "venue": "Testowa Sala Koncertowa",
+  "city": "Szczecin",
+  "title": "[TEST] Testowy Koncert Noworoczny",
+  "artists": [
+    "Jan Testowy (fortepian)",
+    "Anna Testowa (skrzypce)",
+    "Piotr Testowy (wiolonczela)"
+  ],
+  "description": "To jest TESTOWE wydarzenie służące do weryfikacji funkcjonalności wyświetlania nadchodzących koncertów. Wydarzenie nie jest prawdziwe i zostanie usunięte po testach."
+}

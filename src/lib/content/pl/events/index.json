@@ -1,0 +1,59 @@
+[
+  {
+    "id": "2025-06-06-xantone-blacq",
+    "slug": "xantone-blacq-jazz-funk-safari",
+    "date": "2025-06-06",
+    "venue": "Willa Lentza",
+    "city": "Szczecin",
+    "title": "Xantoné Blacq Trio – Jazz-Funk Safari",
+    "artists": [
+      "Xantoné Blacq",
+      "Nathan Allen (perkusja)",
+      "Matheus Nova (bas)",
+      "Sandra Jakubowiak (gość)"
+    ],
+    "description": "Energetyczna podróż przez jazz i funk w formacie trio z gościnnym występem wokalnym. Xantoné Blacq to muzyk z ponad 25-letnim doświadczeniem, znany ze współpracy z takimi artystami jak Amy Winehouse, Mark Ronson czy Earth, Wind & Fire."
+  },
+  {
+    "id": "2025-08-03-emma-rawicz",
+    "slug": "emma-rawicz-live-szczecin",
+    "date": "2025-08-03",
+    "venue": "Willa Lentza",
+    "city": "Szczecin",
+    "title": "Emma Rawicz – Live in Szczecin",
+    "artists": [
+      "Emma Rawicz (saksofon)",
+      "David Preston (gitara)",
+      "Marc Michel (perkusja)",
+      "Kevin Glasgow (bas elektryczny)"
+    ],
+    "description": "Koncert brytyjskiej saksofonistki i kompozytorki Emmy Rawicz z zespołem. Rawicz występowała na scenach takich jak Ronnie Scott's, Filharmonia Berlińska czy Love Supreme Festival."
+  },
+  {
+    "id": "2026-01-15-test-event-1",
+    "slug": "testowy-koncert-noworoczny",
+    "date": "2026-01-15",
+    "venue": "Testowa Sala Koncertowa",
+    "city": "Szczecin",
+    "title": "[TEST] Testowy Koncert Noworoczny",
+    "artists": [
+      "Jan Testowy (fortepian)",
+      "Anna Testowa (skrzypce)",
+      "Piotr Testowy (wiolonczela)"
+    ],
+    "description": "To jest TESTOWE wydarzenie służące do weryfikacji funkcjonalności wyświetlania nadchodzących koncertów. Wydarzenie nie jest prawdziwe i zostanie usunięte po testach."
+  },
+  {
+    "id": "2026-03-20-test-event-2",
+    "slug": "testowy-recital-wiosenny",
+    "date": "2026-03-20",
+    "venue": "Testowa Filharmonia",
+    "city": "Warszawa",
+    "title": "[TEST] Testowy Recital Wiosenny",
+    "artists": [
+      "Maria Testowa (sopran)",
+      "Krzysztof Testowy (dyrygent)"
+    ],
+    "description": "TESTOWE wydarzenie demonstracyjne. To fikcyjne wydarzenie zostało stworzone wyłącznie w celu testowania systemu zarządzania treścią i będzie usunięte."
+  }
+]

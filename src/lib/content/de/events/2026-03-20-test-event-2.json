@@ -1,0 +1,13 @@
+{
+  "id": "2026-03-20-test-event-2",
+  "slug": "test-fruhlingskonzert",
+  "date": "2026-03-20",
+  "venue": "Test-Philharmonie",
+  "city": "Warschau",
+  "title": "[TEST] Test-Frühlingskonzert",
+  "artists": [
+    "Maria Test (Sopran)",
+    "Christoph Test (Dirigent)"
+  ],
+  "description": "TEST-Demonstrationsveranstaltung. Diese fiktive Veranstaltung wurde ausschließlich zum Testen des Content-Management-Systems erstellt und wird gelöscht."
+}

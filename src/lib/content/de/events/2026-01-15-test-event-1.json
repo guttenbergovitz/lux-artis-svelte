@@ -1,0 +1,14 @@
+{
+  "id": "2026-01-15-test-event-1",
+  "slug": "test-neujahrskonzert",
+  "date": "2026-01-15",
+  "venue": "Test-Konzerthalle",
+  "city": "Szczecin",
+  "title": "[TEST] Test-Neujahrskonzert",
+  "artists": [
+    "Hans Test (Klavier)",
+    "Anna Test (Violine)",
+    "Peter Test (Cello)"
+  ],
+  "description": "Dies ist eine TEST-Veranstaltung zur Überprüfung der Anzeigefunktionalität kommender Konzerte. Diese Veranstaltung ist nicht real und wird nach den Tests gelöscht."
+}

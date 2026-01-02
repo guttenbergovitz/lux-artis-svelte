@@ -1,0 +1,37 @@
+[
+  {
+    "id": "anna-obsynska",
+    "name": "Anna Obszyńska",
+    "role": "Künstlerische Betreuerin",
+    "bio": "Absolventin der Staatlichen Hochschule für bildende Künste in Szczecin, Kuratorin des Internationalen Festivals für bildende Kunst Color Art, Animatorin und Organisatorin des landesweiten Plein-Airs Mosty Sztuki. Sie arbeitet täglich im Kulturzentrum Goleniów als Lehrerin für Kunstkurse. Sie war auch Organisatorin des pädagogischen und künstlerischen Programms für Kinder und Jugendliche \"Goleniów – Legendy 2.0\". Bei der Lux Artis Stiftung fungiert sie als künstlerische Betreuerin und unterstützt die Organisation in den Bereichen Ästhetik, Logistik, Planung und Umsetzung neuer Projekte. Ihre Erfahrung in der Arbeit mit kunstsensiblen Kindern und Jugendlichen ist von besonderem Wert für die Stiftung und die Gemeinschaft, mit der wir zusammenarbeiten.",
+    "position": "board"
+  },
+  {
+    "id": "iga-oliwiak",
+    "name": "Iga Oliwiak",
+    "role": "Künstlerin und Illustratorin",
+    "bio": "Iga Oliwiak (geb. 1986 in Szczecin) – Künstlerin, Malerin, Zeichnerin, Grafikerin, Illustratorin und Fotografin. Absolventin der Kunstakademie in Szczecin und Postgraduiertenstudium an der University of Arts London. Lebt und arbeitet nomadisch, dokumentiert die Welt durch Zeichnung, Malerei und Fotografie. Zusammenarbeit an Projekten wie \"Loving Vincent\" (Oscar-nominierter Animationsfilm), \"Magic: The Gathering\" (weltweit meistverkauftes Kartenspiel) sowie mit internationalen Marken (Uber, Samsung, Deutsche Telekom). Ihre Werke wurden u.a. auf dem London Design Festival und in Kunstsalons und Galerien (z.B. Tate Modern, V&A Museum) präsentiert.",
+    "position": "collaborator"
+  },
+  {
+    "id": "lukasz-przybysz",
+    "name": "Łukasz Przybysz",
+    "role": "Vorstandsvorsitzender",
+    "bio": "Łukasz Przybysz – Mitbegründer und Vorstandsvorsitzender der Lux Artis Stiftung – verbindet Managementerfahrung mit langjährigem Engagement in künstlerischen und sozialen Aktivitäten. Als Sänger, DJ und Kunstenthusiast bringt er in die Stiftung eine einzigartige Perspektive als Schöpfer, Organisator und Empfänger ein und gestaltet aktiv das kulturelle Leben der Region. Viele Jahre arbeitete er in den Bereichen Geschäftsentwicklung, Vertrieb und Strukturmanagement, schuf und leitete Teams, führte Marken auf den Markt und arbeitete mit Experten und Meinungsführern zusammen. Diese Erfahrungen setzt er in zuverlässige Planung, effektive Projektumsetzung und geschickte Zusammenarbeit mit institutionellen Partnern und Künstlern um. Bei der Lux Artis Stiftung ist er verantwortlich für Strategie, Entwicklung von Schlüsselinitiativen und Koordination der Programmaktivitäten. Er legt Wert auf hohe organisatorische Qualität, Transparenz der Entscheidungen und langfristiges Denken über die Rolle der Kultur im gesellschaftlichen Leben. Sein Ansatz basiert auf Achtsamkeit, Verantwortung und Respekt für Menschen, die künstlerische Projekte schaffen. Dadurch entwickelt die Stiftung Vorhaben, die Professionalität, künstlerischen Wert verbinden und einen echten Einfluss nicht nur auf die lokale Gemeinschaft haben.",
+    "position": "board"
+  },
+  {
+    "id": "magdalena-fidecka",
+    "name": "Magdalena Fidecka",
+    "role": "Sängerin und Musikkommunikationsspezialistin",
+    "bio": "Sängerin, die sich auf Stimme und Interpretation als Kern des Live-Erlebnisses konzentriert. Autorin von Original-Singles, die auf Radiosendern ausgestrahlt werden. Erfahren in Live- und Fernsehauftritten. Spezialistin für Musik- und Veranstaltungsbranche mit Erfahrung in Kommunikationsstrategie, sozialen Medien, Eventproduktion und Künstlerbetreuung. Zuvor bei Kayax Production & Publishing tätig.",
+    "position": "collaborator"
+  },
+  {
+    "id": "tomasz-grotkowski",
+    "name": "Tomasz Grotkowski",
+    "role": "Künstlerischer Berater und Kurator für Programmkonzepte",
+    "bio": "Tomasz Grotkowski ist seit 1995 auf dem Musikmarkt als DJ tätig und besitzt professionelle Qualifikationen, die vom Polnischen Verband der Musikpräsentatoren in Warschau ausgestellt wurden. Seit Jahren beteiligt er sich aktiv an der Schaffung sozialer und kultureller Veranstaltungen. Er war Gründer und Präsident des PACA-Vereins in Peterborough. Journalist, Verleger und Radiopräsentator, 6 Jahre lang verbunden mit Polish Radio London. In seiner Arbeit nutzt er pädagogische Kompetenzen – er ist Instruktor und Autor von DJ-Workshops für Senioren in Szczecin. Als Mitorganisator von Konzerten in der Willa Lentza trug er zur Realisierung von Veranstaltungen mit Künstlern wie Xantone Blacq und Emma Rawicz bei. Im Jahr 2024 leistete er einen Beitrag zur Sendung \"Niewidzialni\" in Zusammenarbeit mit Programm III des Polnischen Radios. Bei der Lux Artis Stiftung ist er verantwortlich für das Musikprogramm und die Veranstaltungskoordination. Er sorgt für die künstlerische Qualität der durchgeführten Projekte, unterstützt den Planungsprozess und entwickelt Programmkonzepte, die die Aktivitäten der Stiftung stärken und ihr eine kohärente Identität verleihen. Seine Erfahrung in der Musik- und Medienbranche bringt Professionalität, Stabilität und praktisches Wissen für die Durchführung künstlerischer und sozialer Projekte ins Team.",
+    "position": "collaborator"
+  }
+]

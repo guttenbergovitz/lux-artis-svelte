@@ -1,0 +1,32 @@
+{
+  "legalName": "Stiftung Lux Artis",
+  "krs": "0001189456",
+  "nip": "9552590323",
+  "regon": "542492621",
+  "registrationDate": "2025-08-20",
+  "address": {
+    "street": "Xawerego Dunikowskiego 30/8",
+    "postal": "70-123",
+    "city": "Szczecin",
+    "country": "Polen"
+  },
+  "supervisingAuthorities": [
+    "Bürgermeister der Stadt Szczecin",
+    "Minister für Kultur und Nationales Erbe"
+  ],
+  "board": [
+    {
+      "name": "Łukasz Przybysz",
+      "position": "Vorstandsvorsitzender",
+      "bio": "[no-data]"
+    },
+    {
+      "name": "Anna Obszyńska",
+      "position": "Vorstandsmitglied",
+      "bio": "[no-data]"
+    }
+  ],
+  "purpose": "1. Unterstützung der Entwicklung von Kultur und Kunst durch die Produktion künstlerischer und kultureller Veranstaltungen.\n2. Unterstützung der kulturellen Bildung.\n3. Unterstützung und Förderung der Körperkultur und des Sports.\n4. Pflege nationaler Traditionen, Pflege der polnischen Identität und Entwicklung des nationalen, staatsbürgerlichen und kulturellen Bewusstseins.\n5. Aktivitäten für die europäische Integration und die Entwicklung von Kontakten und Zusammenarbeit zwischen Gesellschaften.\n6. Förderung der Republik Polen im Ausland.\n7. Aktivitäten zur Unterstützung der Entwicklung von Gemeinschaften und lokalen Gesellschaften.\n8. Aktivitäten zur Unterstützung der wirtschaftlichen Entwicklung, einschließlich der Entwicklung des Unternehmertums.",
+  "representation": "Jedes Vorstandsmitglied ist berechtigt, im Namen der Stiftung selbständig Willenserklärungen abzugeben.",
+  "history": "[no-data]"
+}

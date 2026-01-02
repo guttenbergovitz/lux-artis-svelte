@@ -1,0 +1,32 @@
+{
+  "legalName": "FUNDACJA LUX ARTIS",
+  "krs": "0001189456",
+  "nip": "9552590323",
+  "regon": "542492621",
+  "registrationDate": "2025-08-20",
+  "address": {
+    "street": "Xawerego Dunikowskiego 30/8",
+    "postal": "70-123",
+    "city": "Szczecin",
+    "country": "Polska"
+  },
+  "supervisingAuthorities": [
+    "Prezydent Miasta Szczecin",
+    "Minister Kultury i Dziedzictwa Narodowego"
+  ],
+  "board": [
+    {
+      "name": "Łukasz Przybysz",
+      "position": "Prezes Zarządu",
+      "bio": "[no-data]"
+    },
+    {
+      "name": "Anna Obszyńska",
+      "position": "Członek Zarządu",
+      "bio": "[no-data]"
+    }
+  ],
+  "purpose": "1. wspieranie rozwoju kultury i sztuki poprzez produkcję wydarzeń artystycznych i kulturalnych.\n2. wspieranie edukacji kulturowej.\n3. wspieranie i promocję kultury fizycznej i sportu.\n4. podtrzymywanie tradycji narodowej, pielęgnowanie polskości oraz rozwoju świadomości narodowej, obywatelskiej i kulturowej.\n5. działalność na rzecz integracji europejskiej oraz rozwijanie kontaktów i współpracy między społeczeństwami.\n6. promocję Rzeczypospolitej Polskiej za granicą.\n7. działalność wspomagającą rozwój wspólnot i społeczności lokalnych.\n8. działalność wspomagającą rozwój gospodarczy, w tym rozwój przedsiębiorczości.",
+  "representation": "Do składania oświadczeń woli w imieniu Fundacji upoważniony jest każdy członek Zarządu działający samodzielnie.",
+  "history": "[no-data]"
+}

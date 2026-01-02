@@ -1,0 +1,14 @@
+{
+  "id": "2026-01-15-test-event-1",
+  "slug": "test-new-year-concert",
+  "date": "2026-01-15",
+  "venue": "Test Concert Hall",
+  "city": "Szczecin",
+  "title": "[TEST] Test New Year Concert",
+  "artists": [
+    "John Test (piano)",
+    "Jane Test (violin)",
+    "Peter Test (cello)"
+  ],
+  "description": "This is a TEST event used to verify upcoming concerts display functionality. This event is not real and will be deleted after testing."
+}

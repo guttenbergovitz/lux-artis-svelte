@@ -1,0 +1,13 @@
+{
+  "id": "2026-03-20-test-event-2",
+  "slug": "testowy-recital-wiosenny",
+  "date": "2026-03-20",
+  "venue": "Testowa Filharmonia",
+  "city": "Warszawa",
+  "title": "[TEST] Testowy Recital Wiosenny",
+  "artists": [
+    "Maria Testowa (sopran)",
+    "Krzysztof Testowy (dyrygent)"
+  ],
+  "description": "TESTOWE wydarzenie demonstracyjne. To fikcyjne wydarzenie zostało stworzone wyłącznie w celu testowania systemu zarządzania treścią i będzie usunięte."
+}

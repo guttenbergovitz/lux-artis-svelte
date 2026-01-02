@@ -1,0 +1,355 @@
+{
+  "site": {
+    "title": "Lux Artis Foundation",
+    "description": "A curatorial platform. Space for contemporary artistic expression."
+  },
+  "common": {
+    "loading": "Loading...",
+    "noUpcomingEvents": "No upcoming events",
+    "errorLoadingEvents": "Failed to load events"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "events": "Events",
+    "people": "People",
+    "support": "Support",
+    "contact": "Contact",
+    "legal": "Legal"
+  },
+  "pages": {
+    "home": {
+      "title": "Lux Artis",
+      "subtitle": "Lux Artis creates context for artistic events.",
+      "mission": {
+        "title": "Platform",
+        "text": "Lux Artis is a space for cultural production. We focus on quality of execution, context of presentation and long-term thinking about culture."
+      },
+      "approach": {
+        "title": "Method",
+        "text": "We work with artists, curators and institutions. Each project is built with attention to atmosphere, audience experience and artistic integrity."
+      },
+      "focus": {
+        "title": "Areas of activity",
+        "items": [
+          {
+            "title": "Event production",
+            "text": "Realization of concerts and cultural events. From concept to execution."
+          },
+          {
+            "title": "Curatorship",
+            "text": "Building programs and contexts. Dialogue between form and content."
+          },
+          {
+            "title": "Collaboration",
+            "text": "Partnerships with artists, institutions and cultural producers."
+          }
+        ]
+      },
+      "values": {
+        "title": "Working principles",
+        "items": [
+          "Quality over quantity",
+          "Process as important as result",
+          "Long-term perspective",
+          "Transparency and professionalism"
+        ]
+      },
+      "context": {
+        "title": "Context",
+        "text": "Each event is built from place, time and artistic situation. There are no universal solutions – there is specific music, specific artists, specific space."
+      },
+      "process": {
+        "title": "Process",
+        "text": "Culture needs time. Our projects mature in dialogue with artists. We do not organize seasons – each event has its own rhythm and logic."
+      },
+      "upcomingEvents": "Upcoming",
+      "viewAllEvents": "View program →",
+      "learnMore": "Learn more →",
+      "readMore": "Read more →"
+    },
+    "about": {
+      "title": "About Lux Artis",
+      "subtitle": "Context, process, long-term perspective",
+      "mission": {
+        "title": "Mission",
+        "text": "We create conditions for encounters with contemporary culture. We focus on quality of experience, artistic integrity and building space for dialogue between creators and audiences."
+      },
+      "vision": {
+        "title": "Vision",
+        "text": "A cultural platform operating beyond institutional schemas. A place where creative process, curatorial precision and attention to context form a coherent whole."
+      },
+      "values": {
+        "title": "Values",
+        "items": [
+          {
+            "title": "Quality",
+            "text": "Care in every aspect of realization. From concept through production to presentation."
+          },
+          {
+            "title": "Context",
+            "text": "Awareness of place, time and cultural background. Each project in dialogue with its environment."
+          },
+          {
+            "title": "Process",
+            "text": "Attention to the journey, not just the destination. Work with artists based on trust and long-term collaboration."
+          },
+          {
+            "title": "Dialogue",
+            "text": "Culture as a space for exchange. Between artists, audiences and contexts."
+          }
+        ]
+      },
+      "approach": {
+        "title": "Approach",
+        "text": "We operate with the conviction that culture needs time, space and appropriate conditions. We don't chase scale or publicity. We focus on what we do and how we do it."
+      },
+      "extended": {
+        "intro": {
+          "text": "Lux Artis creates context for artistic events.\n\nWe operate in the field of contemporary culture, focusing on music as a medium of encounter and experience. We organize concerts, residencies and curatorial projects that connect artists with audiences in spaces conducive to mindfulness.\n\nWe do not build institutions. We build conditions for art to emerge."
+        },
+        "culture": {
+          "title": "How we think about culture",
+          "text": "Artistic culture is neither education nor entertainment. It is a process of creating space where experience becomes possible that goes beyond ordinary content consumption.\n\nWe do not believe in culture as product. We believe in culture as relationship – between artist and work, work and recipient, recipient and context. Each of these elements requires attention, time and space to emerge.\n\nOur projects develop slowly. We do not organize seasons or cycles. We treat each event as an autonomous format – not a point in the calendar, but an occurrence built from context, place and form."
+        },
+        "activities": {
+          "title": "What we do",
+          "text": "We organize concerts and artistic events that do not fit within standard institutional or commercial frameworks. We work with contemporary music, jazz, improvisation, cross-genre projects – without genre limitations, with emphasis on artistic integrity.\n\nWe choose spaces that allow for a different kind of presence. These are not always concert halls. Sometimes they are places that require a different kind of attention from the audience – more intimate, focused, without the routine of institutional reception.\n\nWe create artistic residencies. We support the creative process, not just its presentation. We give artists time and conditions to work without pressure for quick results."
+        },
+        "location": {
+          "title": "Where we operate",
+          "text": "Lux Artis operates from Szczecin – a city that combines the potential of cultural infrastructure with a position outside the main media circuit. This allows us to work without representational pressure and without the need to confirm the status quo.\n\nSzczecin lies in direct proximity to Berlin, in the Baltic Sea area, at the crossroads of cultures. This geography favors exchange, not isolation. We work locally, but we are not closed locally.\n\nWe do not treat place as decoration. Place is part of curation."
+        },
+        "audience": {
+          "title": "Who we do this for",
+          "text": "We do not think in terms of target groups. We think about people who seek something more than superficial contact with form in culture.\n\nFor artists who need space for honest presentation of work – without reducing form to calendar or commercial requirements.\n\nFor audiences who come for experience, not entertainment. For those who understand that culture requires engagement, not just passive consumption.\n\nFor those who do not need reception instructions."
+        },
+        "philosophy": {
+          "title": "Philosophy of action",
+          "text": "Every project starts with a question about context. Not about what we want to show, but about the conditions in which art can exist authentically. This approach requires time, patience and willingness to abandon spectacular but empty solutions.\n\nWe do not organize events for the sake of events. Every decision – from the choice of venue to the way of communication – is part of a curatorial whole. We believe that form and content are inseparable, and the quality of experience depends on the attention given to each element."
+        },
+        "collaboration": {
+          "title": "Collaboration with artists",
+          "text": "We work with artists as partners, not as organizers of their performances. This means time for conversations, understanding intentions, joint search for the best conditions for presenting work.\n\nWe do not impose ready-made formats. Each project is built from the specificity of the artistic proposal. Sometimes this means abandoning established concert schemes in favor of solutions that better serve specific music or a specific artistic situation."
+        },
+        "community": {
+          "title": "Building community",
+          "text": "Culture needs community, but not every gathering of people creates a cultural community. We care about building spaces where real dialogue is possible – between artists and audiences, between different forms of expression, between tradition and novelty.\n\nWe do not organize parties. We create situations where culture can happen. This is the difference between consumption and participation, between entertainment and experience."
+        },
+        "future": {
+          "title": "Long-term perspective",
+          "text": "We think about culture in terms of process, not product. Each project is part of a larger whole – building conditions in which contemporary art can develop without commercial or institutional pressure.\n\nWe do not chase scale. We focus on quality and authenticity. We believe that culture needs time – time for projects to mature, for relationships to build, for deep understanding of what we do and why we do it."
+        }
+      }
+    },
+    "events": {
+      "title": "Events",
+      "subtitle": "Concerts and artistic events. Each occurrence built from context, place and form.",
+      "upcomingEventsSection": "Upcoming Events",
+      "upcomingEventsIntro": "Join us for our upcoming concerts and cultural events. Each event is carefully prepared to provide a unique artistic experience.",
+      "pastEventsSection": "Past Events",
+      "pastEventsIntro": "Overview of our completed projects and events. Each one was an important element in building context for cultural experiences.",
+      "noUpcomingEvents": "No upcoming events",
+      "noPastEvents": "No past events",
+      "artists": "Artists",
+      "description": "Description",
+      "readMore": "Read more →",
+      "notFound": "Event not found",
+      "backToEvents": "← Back to events"
+    },
+    "people": {
+      "title": "Team",
+      "subtitle": "Curators, artists and collaborators. People who build conditions for culture.",
+      "loading": "Loading...",
+      "error": "Failed to load the list of people.",
+      "noPeople": "No people to display."
+    },
+    "support": {
+      "title": "Collaboration",
+      "subtitle": "Dialogue with institutions, artists and cultural producers. Partnerships based on mutual respect.",
+      "intro": {
+        "text": "Lux Artis develops dialogue with institutions, cultural producers and artists. We seek partners who understand the value of process, quality and long-term perspective."
+      },
+      "partners": {
+        "title": "Institutional partners",
+        "subtitle": "Collaboration on project realization",
+        "description": "Long-term collaboration with cultural institutions",
+        "points": [
+          "Support for cultural event production",
+          "Long-term program partnerships",
+          "Strategic level dialogue",
+          "Transparency and professionalism"
+        ]
+      },
+      "internships": {
+        "title": "Internships and volunteering",
+        "subtitle": "Experience in cultural production",
+        "description": "Skill development working on cultural projects",
+        "points": [
+          "Direct contact with curatorial process",
+          "Work on specific projects",
+          "Networking in cultural environment",
+          "Mentoring and skills development"
+        ]
+      },
+      "artists": {
+        "title": "Artists and curators",
+        "subtitle": "Dialogue with creators",
+        "description": "Artistic partnerships based on trust",
+        "points": [
+          "Collaboration based on mutual respect",
+          "Support in artistic project realization",
+          "Professional production conditions",
+          "Curatorial independence"
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "text": "We welcome direct contact. Each collaboration proposal is considered individually."
+      },
+      "cta": {
+        "text": "We welcome direct contact."
+      },
+      "form": {
+        "title": "Collaboration Form",
+        "name": "Name",
+        "email": "Email",
+        "organization": "Organization (optional)",
+        "type": "Type of collaboration",
+        "typeOptions": {
+          "select": "Select collaboration type",
+          "partner": "Institutional partner",
+          "internship": "Internship / volunteering",
+          "artist": "Artist / curator",
+          "other": "Other"
+        },
+        "message": "Message",
+        "submit": "Send",
+        "successMessage": "Thank you for your submission. We will respond as soon as possible."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Get in touch with Lux Artis Foundation",
+      "address": {
+        "title": "Address",
+        "street": "Xawerego Dunikowskiego 30 / 8",
+        "postal": "70-123 Szczecin",
+        "country": "Poland"
+      },
+      "form": {
+        "title": "Contact Us",
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Send",
+        "successMessage": "Thank you for your message. We will respond as soon as possible."
+      }
+    },
+    "legal": {
+      "title": "Legal",
+      "subtitle": "Registration and legal information of Lux Artis Foundation",
+      "registration": {
+        "title": "Registration data",
+        "krs": "KRS: 0001189456",
+        "nip": "NIP: 9552590323",
+        "regon": "REGON: 542492621",
+        "registrationDate": "Registration date: August 20, 2025"
+      },
+      "supervisingAuthorities": {
+        "title": "Supervising authorities",
+        "items": [
+          "Mayor of the City of Szczecin",
+          "Minister of Culture and National Heritage"
+        ]
+      },
+      "statutoryDocuments": {
+        "title": "Statutory Documents",
+        "text": "Foundation statute available on request."
+      }
+    }
+  },
+  "quotes": [
+    {
+      "text": "Silence is so accurate.",
+      "author": "Mark Rothko"
+    },
+    {
+      "text": "Music is the ultimate teacher.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Color is the keyboard, the eyes are the harmonies, the soul is the piano with many strings.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "There is no must in art because art is free.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Every work of art is the child of its age.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "I'm not an abstractionist. I'm interested only in expressing basic human emotions.",
+      "author": "Mark Rothko"
+    },
+    {
+      "text": "A painting requires a little mystery, some vagueness, some fantasy.",
+      "author": "Edgar Degas"
+    },
+    {
+      "text": "Most music is metaphor, but Wolff is not.",
+      "author": "Morton Feldman"
+    },
+    {
+      "text": "The music is not in the notes, but in the silence between.",
+      "author": "Wolfgang Amadeus Mozart"
+    },
+    {
+      "text": "I've always maintained that silence is the perfect music.",
+      "author": "Miles Davis"
+    },
+    {
+      "text": "The most expensive solution would be to blow the opera houses up.",
+      "author": "Pierre Boulez"
+    },
+    {
+      "text": "All art constantly aspires towards the condition of music.",
+      "author": "Walter Pater"
+    },
+    {
+      "text": "Architecture is frozen music.",
+      "author": "Johann Wolfgang von Goethe"
+    },
+    {
+      "text": "The more frightening the world becomes, the more art becomes abstract.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Painting is a thundering collision of different worlds, intended to create a new world.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "The artist must train not only his eye but also his soul.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Each color lives by its mysterious life.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "Color is a power which directly influences the soul.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "An empty canvas is a living wonder... far lovelier than certain pictures.",
+      "author": "Wassily Kandinsky"
+    },
+    {
+      "text": "To create a work of art is to create the world.",
+      "author": "Wassily Kandinsky"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "2025-06-06-xantone-blacq",
+    "slug": "xantone-blacq-jazz-funk-safari",
+    "date": "2025-06-06",
+    "venue": "Willa Lentza",
+    "city": "Szczecin",
+    "title": "Xantoné Blacq Trio – Jazz-Funk Safari",
+    "artists": [
+      "Xantoné Blacq",
+      "Nathan Allen (Schlagzeug)",
+      "Matheus Nova (Bass)",
+      "Sandra Jakubowiak (Gast)"
+    ],
+    "description": "Energetische Reise durch Jazz und Funk im Trio-Format mit Gastauftritt. Xantoné Blacq ist ein Musiker mit über 25 Jahren Erfahrung, bekannt für Zusammenarbeit mit Künstlern wie Amy Winehouse, Mark Ronson und Earth, Wind & Fire."
+  },
+  {
+    "id": "2025-08-03-emma-rawicz",
+    "slug": "emma-rawicz-live-szczecin",
+    "date": "2025-08-03",
+    "venue": "Willa Lentza",
+    "city": "Szczecin",
+    "title": "Emma Rawicz – Live in Szczecin",
+    "artists": [
+      "Emma Rawicz (Saxophon)",
+      "David Preston (Gitarre)",
+      "Marc Michel (Schlagzeug)",
+      "Kevin Glasgow (E-Bass)"
+    ],
+    "description": "Konzert der britischen Saxophonistin und Komponistin Emma Rawicz mit ihrer Band. Rawicz ist an Orten wie Ronnie Scott's, Berliner Philharmonie und Love Supreme Festival aufgetreten."
+  },
+  {
+    "id": "2026-01-15-test-event-1",
+    "slug": "test-neujahrskonzert",
+    "date": "2026-01-15",
+    "venue": "Test-Konzerthalle",
+    "city": "Szczecin",
+    "title": "[TEST] Test-Neujahrskonzert",
+    "artists": [
+      "Hans Test (Klavier)",
+      "Anna Test (Violine)",
+      "Peter Test (Cello)"
+    ],
+    "description": "Dies ist eine TEST-Veranstaltung zur Überprüfung der Anzeigefunktionalität kommender Konzerte. Diese Veranstaltung ist nicht real und wird nach den Tests gelöscht."
+  },
+  {
+    "id": "2026-03-20-test-event-2",
+    "slug": "test-fruhlingskonzert",
+    "date": "2026-03-20",
+    "venue": "Test-Philharmonie",
+    "city": "Warschau",
+    "title": "[TEST] Test-Frühlingskonzert",
+    "artists": [
+      "Maria Test (Sopran)",
+      "Christoph Test (Dirigent)"
+    ],
+    "description": "TEST-Demonstrationsveranstaltung. Diese fiktive Veranstaltung wurde ausschließlich zum Testen des Content-Management-Systems erstellt und wird gelöscht."
+  }
+]
+

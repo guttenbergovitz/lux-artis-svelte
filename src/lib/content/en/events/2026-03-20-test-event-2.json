@@ -1,0 +1,13 @@
+{
+  "id": "2026-03-20-test-event-2",
+  "slug": "test-spring-recital",
+  "date": "2026-03-20",
+  "venue": "Test Philharmonic",
+  "city": "Warsaw",
+  "title": "[TEST] Test Spring Recital",
+  "artists": [
+    "Mary Test (soprano)",
+    "Christopher Test (conductor)"
+  ],
+  "description": "TEST demonstration event. This fictional event was created solely for content management system testing and will be deleted."
+}
