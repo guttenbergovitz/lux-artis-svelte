@@ -36,6 +36,62 @@ export default defineConfig({
 					]
 				},
 				{
+					pattern: '/contact',
+					localized: [
+						['pl', '/pl/kontakt'],
+						['en', '/en/contact'],
+						['de', '/de/kontakt']
+					]
+				},
+				{
+					pattern: '/events',
+					localized: [
+						['pl', '/pl/wydarzenia'],
+						['en', '/en/events'],
+						['de', '/de/veranstaltungen']
+					]
+				},
+				{
+					pattern: '/people',
+					localized: [
+						['pl', '/pl/ludzie'],
+						['en', '/en/people'],
+						['de', '/de/team']
+					]
+				},
+				{
+					pattern: '/support',
+					localized: [
+						['pl', '/pl/wspolpraca'],
+						['en', '/en/support'],
+						['de', '/de/partner']
+					]
+				},
+				{
+					pattern: '/legal',
+					localized: [
+						['pl', '/pl/prawne'],
+						['en', '/en/legal'],
+						['de', '/de/impressum']
+					]
+				},
+				{
+					pattern: '/random',
+					localized: [
+						['pl', '/pl/losowa'],
+						['en', '/en/random'],
+						['de', '/de/zufallig']
+					]
+				},
+				{
+					pattern: '/events/:slug',
+					localized: [
+						['pl', '/pl/wydarzenia/:slug'],
+						['en', '/en/events/:slug'],
+						['de', '/de/veranstaltungen/:slug']
+					]
+				},
+				{
 					pattern: '/:path(.*)?',
 					localized: [
 						['pl', '/pl/:path(.*)?'],
