@@ -4,11 +4,17 @@
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 	import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
+	import gsap from 'gsap';
 	import logo from '$lib/assets/logo.svg';
 	import concreteBaseColor from '$lib/assets/concrete1-bl/concrete1_Base_Color.png';
 	import concreteNormal from '$lib/assets/concrete1-bl/concrete1_Normal-ogl.png';
 	import concreteRoughness from '$lib/assets/concrete1-bl/concrete1_Roughness.png';
 	import concreteAO from '$lib/assets/concrete1-bl/concrete1-ao.png';
+	import goldBaseColor from '$lib/assets/metal-gold-paint/2K/Poliigon_MetalGoldPaint_7253_BaseColor.jpg';
+	import goldNormal from '$lib/assets/metal-gold-paint/2K/Poliigon_MetalGoldPaint_7253_Normal.png';
+	import goldRoughness from '$lib/assets/metal-gold-paint/2K/Poliigon_MetalGoldPaint_7253_Roughness.jpg';
+	import goldMetallic from '$lib/assets/metal-gold-paint/2K/Poliigon_MetalGoldPaint_7253_Metallic.jpg';
+	import goldAO from '$lib/assets/metal-gold-paint/2K/Poliigon_MetalGoldPaint_7253_AmbientOcclusion.jpg';
 
 	let { mouseX = 0, mouseY = 0 } = $props();
 
@@ -18,27 +24,57 @@
 	let concreteNormalMap = $state<THREE.Texture | undefined>(undefined);
 	let concreteRoughnessMap = $state<THREE.Texture | undefined>(undefined);
 	let concreteAOMap = $state<THREE.Texture | undefined>(undefined);
+	let goldTexture = $state<THREE.Texture | undefined>(undefined);
+	let goldNormalMap = $state<THREE.Texture | undefined>(undefined);
+	let goldRoughnessMap = $state<THREE.Texture | undefined>(undefined);
+	let goldMetallicMap = $state<THREE.Texture | undefined>(undefined);
+	let goldAOMap = $state<THREE.Texture | undefined>(undefined);
 	let texturesLoaded = $state(false);
+	let lightPosition = $state({ x: 0, y: 0, z: 12 });
+
+	$effect(() => {
+		gsap.to(lightPosition, {
+			x: mouseX * 8,
+			y: mouseY * 8,
+			duration: 1.2,
+			ease: 'power2.out'
+		});
+	});
 
 	onMount(async () => {
 		const textureLoader = new THREE.TextureLoader();
 
-		const [baseColor, normal, roughness, ao] = await Promise.all([
+		const [
+			concreteBase, concreteNorm, concreteRough, concreteAo,
+			goldBase, goldNorm, goldRough, goldMetal, goldAo
+		] = await Promise.all([
 			textureLoader.loadAsync(concreteBaseColor),
 			textureLoader.loadAsync(concreteNormal),
 			textureLoader.loadAsync(concreteRoughness),
-			textureLoader.loadAsync(concreteAO)
+			textureLoader.loadAsync(concreteAO),
+			textureLoader.loadAsync(goldBaseColor),
+			textureLoader.loadAsync(goldNormal),
+			textureLoader.loadAsync(goldRoughness),
+			textureLoader.loadAsync(goldMetallic),
+			textureLoader.loadAsync(goldAO)
 		]);
 
-		[baseColor, normal, roughness, ao].forEach(tex => {
+		[concreteBase, concreteNorm, concreteRough, concreteAo].forEach(tex => {
 			tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
 			tex.repeat.set(2, 2);
 		});
 
-		concreteTexture = baseColor;
-		concreteNormalMap = normal;
-		concreteRoughnessMap = roughness;
-		concreteAOMap = ao;
+		concreteTexture = concreteBase;
+		concreteNormalMap = concreteNorm;
+		concreteRoughnessMap = concreteRough;
+		concreteAOMap = concreteAo;
+
+		goldTexture = goldBase;
+		goldNormalMap = goldNorm;
+		goldRoughnessMap = goldRough;
+		goldMetallicMap = goldMetal;
+		goldAOMap = goldAo;
+
 		texturesLoaded = true;
 
 		const loader = new SVGLoader();
@@ -78,12 +114,13 @@
 	<OrbitControls />
 </T.PerspectiveCamera>
 
-<T.AmbientLight intensity={0.025} />
-<T.DirectionalLight position={[10, 10, 5]} intensity={0.125} castShadow />
-<T.DirectionalLight position={[-5, -5, 3]} intensity={0.05} color={0x2222aa} />
+<T.AmbientLight intensity={0.15} />
+<T.PointLight position={[lightPosition.x, lightPosition.y, lightPosition.z]} intensity={8} distance={50} decay={0.8} />
+<T.DirectionalLight position={[8, 8, 8]} intensity={1.0} />
+<T.DirectionalLight position={[-5, -3, 5]} intensity={0.5} />
 
 {#if texturesLoaded && concreteTexture}
-	<T.Mesh position={[0, 0, -5]} receiveShadow>
+	<T.Mesh position={[0, 0, -2]} receiveShadow>
 		<T.PlaneGeometry args={[50, 50]} />
 		<T.MeshStandardMaterial
 			map={concreteTexture}
@@ -92,15 +129,22 @@
 			roughnessMap={concreteRoughnessMap}
 			roughness={0.9}
 			aoMap={concreteAOMap}
-			aoMapIntensity={1.5}
+			aoMapIntensity={3.0}
+			color={0x202020}
 		/>
 	</T.Mesh>
 {/if}
 
 <T.Group scale={[0.02, -0.02, 1]} position={[-logoCenter.x * 0.02, logoCenter.y * 0.02, 0]}>
 	{#each logoShapes as geometry}
-		<T.Mesh {geometry}>
-			<T.MeshBasicMaterial color={0xd4af37} side={THREE.DoubleSide} />
+		<T.Mesh {geometry} castShadow>
+			<T.MeshStandardMaterial
+				color={0xd4af37}
+				metalness={0.9}
+				roughness={0.2}
+				envMapIntensity={1.5}
+				side={THREE.DoubleSide}
+			/>
 		</T.Mesh>
 	{/each}
 </T.Group>
