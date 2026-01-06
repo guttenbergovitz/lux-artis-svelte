@@ -3,10 +3,86 @@
 	import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 	import Container from '$lib/components/Container.svelte';
 	import HeroBanner3D from '$lib/components/HeroBanner3D.svelte';
+	import WordTooltip from '$lib/components/WordTooltip.svelte';
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { onMount } from 'svelte';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+	gsap.registerPlugin(ScrollTrigger);
 
 	let { data }: { data: any } = $props();
+
+	const wordDefinitions: Record<string, string> = {
+		'Proces': 'Świadome podejście do tworzenia sztuki jako ciągłej drogi transformacji i rozwoju.',
+		'Obecność': 'Pełne zaangażowanie w teraźniejszość, autentyczność i uważność w artystycznej ekspresji.',
+		'Dialog': 'Otwarta wymiana między artystą, dziełem i odbiorcą, budująca głębsze połączenia.'
+	};
+
+	onMount(() => {
+		gsap.utils.toArray('.reveal-section').forEach((section: any) => {
+			gsap.from(section, {
+				opacity: 0,
+				y: 100,
+				duration: 1.2,
+				ease: 'power3.out',
+				scrollTrigger: {
+					trigger: section,
+					start: 'top 80%',
+					end: 'top 20%',
+					toggleActions: 'play none none reverse'
+				}
+			});
+		});
+
+		gsap.utils.toArray('.stagger-item').forEach((item: any) => {
+			gsap.from(item, {
+				opacity: 0,
+				y: 50,
+				duration: 0.8,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: item,
+					start: 'top 85%',
+					toggleActions: 'play none none reverse'
+				}
+			});
+		});
+
+		const leadWords = document.querySelectorAll('.lead-word');
+		leadWords.forEach((word, index) => {
+			gsap.from(word, {
+				opacity: 0,
+				rotateX: -90,
+				y: 50,
+				duration: 1,
+				delay: index * 0.2,
+				ease: 'back.out(1.7)',
+				scrollTrigger: {
+					trigger: '.lead-words',
+					start: 'top 70%',
+					toggleActions: 'play none none reverse'
+				}
+			});
+		});
+
+		ScrollTrigger.create({
+			trigger: '.hero-words-section',
+			start: 'top top',
+			end: 'bottom top',
+			pin: true,
+			pinSpacing: false
+		});
+
+		ScrollTrigger.create({
+			trigger: '.mission-section',
+			start: 'top top',
+			end: 'bottom top',
+			pin: true,
+			pinSpacing: false
+		});
+	});
 
 	function t(path: string): string {
 		return getTranslation(data.translations, path);
@@ -51,49 +127,83 @@
 	}
 </script>
 
+<style>
+	.hero-words-section {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: white;
+		z-index: 1;
+	}
+
+	.mission-section {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-gold);
+		z-index: 2;
+		padding-top: calc(var(--baseline) * 8);
+		padding-bottom: calc(var(--baseline) * 8);
+	}
+</style>
+
 <HeroBanner3D />
 
 <div style="height: 100vh;"></div>
 
-<section class="bg-white" style="position: relative; z-index: 1; padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
+<section class="hero-words-section">
 	<Container>
-		<!-- Hero Section -->
-		<div style="text-align: center; margin-bottom: calc(var(--baseline) * 12);">
+		<div style="text-align: center;">
 			<h1>{t('pages.home.title')}</h1>
 			{#each [parseSubtitle(t('pages.home.subtitle'))] as { intro, words }}
 				<div class="lead-heading">
 					<p class="lead-intro">{intro}</p>
 					<div class="lead-words">
-						{#each words as word}
-							<h2 class="lead-word">{word}</h2>
+						{#each words as word, index}
+							{#if wordDefinitions[word]}
+								<WordTooltip {word} definition={wordDefinitions[word]} {index} />
+							{:else}
+								<h2 class="lead-word">{word}</h2>
+							{/if}
 						{/each}
 					</div>
 				</div>
 			{/each}
 		</div>
+	</Container>
+</section>
 
-		<!-- Mission & Approach -->
-		<div class="section-divider"></div>
-		<div class="grid md:grid-cols-2" style="gap: calc(var(--baseline) * 8); margin-bottom: calc(var(--baseline) * 12);">
-			<article>
+<section class="mission-section">
+	<Container>
+		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8);">
+			<article class="stagger-item">
 				<h2>{t('pages.home.mission.title')}</h2>
 				<p>{t('pages.home.mission.text')}</p>
 			</article>
 
-			<article>
+			<article class="stagger-item">
 				<h2>{t('pages.home.approach.title')}</h2>
 				<p>{t('pages.home.approach.text')}</p>
 			</article>
 		</div>
+	</Container>
+</section>
+
+<section class="bg-white" style="position: relative; z-index: 3; padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
+	<Container>
 
 		<!-- Focus Areas -->
 		<div class="section-divider"></div>
-		<div style="margin-bottom: calc(var(--baseline) * 12);">
+		<div class="reveal-section" style="margin-bottom: calc(var(--baseline) * 12);">
 			<h2 style="text-align: center;">{t('pages.home.focus.title')}</h2>
 			<div class="grid md:grid-cols-3" style="gap: calc(var(--baseline) * 6);">
 				{#if data.translations.pages?.home?.focus?.items}
 					{#each data.translations.pages.home.focus.items as item}
-						<article>
+						<article class="stagger-item">
 							<h3>{item.title}</h3>
 							<p>{item.text}</p>
 						</article>
@@ -104,13 +214,13 @@
 
 		<!-- Values -->
 		<div class="section-divider"></div>
-		<div style="margin-bottom: calc(var(--baseline) * 12);">
+		<div class="reveal-section" style="margin-bottom: calc(var(--baseline) * 12);">
 			<div class="bg-gold" style="padding: calc(var(--baseline) * 8); max-width: 65ch; margin-left: auto; margin-right: auto;">
 				<h2 style="text-align: center;">{t('pages.home.values.title')}</h2>
 				<ul>
 					{#if data.translations.pages?.home?.values?.items}
 						{#each data.translations.pages.home.values.items as item}
-							<li style="font-family: var(--font-sans); font-weight: 300; font-size: 1.9em; line-height: 1.15; color: var(--color-graphite-dark);">
+							<li class="stagger-item" style="font-family: var(--font-sans); font-weight: 300; font-size: 1.9em; line-height: 1.15; color: var(--color-graphite-dark);">
 								{item}
 							</li>
 						{/each}
@@ -121,13 +231,13 @@
 
 		<!-- Context & Process -->
 		<div class="section-divider"></div>
-		<div class="grid md:grid-cols-2" style="gap: calc(var(--baseline) * 8); margin-bottom: calc(var(--baseline) * 12);">
-			<article>
+		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8); margin-bottom: calc(var(--baseline) * 12);">
+			<article class="stagger-item">
 				<h2>{t('pages.home.context.title')}</h2>
 				<p>{t('pages.home.context.text')}</p>
 			</article>
 
-			<article>
+			<article class="stagger-item">
 				<h2>{t('pages.home.process.title')}</h2>
 				<p>{t('pages.home.process.text')}</p>
 			</article>
