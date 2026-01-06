@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { T } from '@threlte/core';
-	import { OrbitControls } from '@threlte/extras';
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 	import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
@@ -31,6 +30,9 @@
 	let goldAOMap = $state<THREE.Texture | undefined>(undefined);
 	let texturesLoaded = $state(false);
 	let lightPosition = $state({ x: 0, y: 0, z: 12 });
+	let sceneRotation = $state({ x: 0, y: 0 });
+	let cameraZ = $state(20);
+	let scrollY = $state(0);
 
 	$effect(() => {
 		gsap.to(lightPosition, {
@@ -39,6 +41,31 @@
 			duration: 1.2,
 			ease: 'power2.out'
 		});
+
+		gsap.to(sceneRotation, {
+			x: mouseY * 0.08,
+			y: mouseX * 0.08,
+			duration: 2.5,
+			ease: 'power1.out'
+		});
+	});
+
+	onMount(() => {
+		const handleScroll = () => {
+			scrollY = window.scrollY;
+			const zoomAmount = Math.min(scrollY / 150, 3);
+			gsap.to({ value: cameraZ }, {
+				value: 20 - zoomAmount,
+				duration: 0.5,
+				ease: 'power2.out',
+				onUpdate: function() {
+					cameraZ = this.targets()[0].value;
+				}
+			});
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
 	});
 
 	onMount(async () => {
@@ -110,41 +137,41 @@
 
 <T.Color attach="background" args={[0x000000]} />
 
-<T.PerspectiveCamera makeDefault position={[0, 0, 20]}>
-	<OrbitControls />
-</T.PerspectiveCamera>
+<T.PerspectiveCamera makeDefault position={[0, 0, cameraZ]} />
 
 <T.AmbientLight intensity={0.15} />
 <T.PointLight position={[lightPosition.x, lightPosition.y, lightPosition.z]} intensity={8} distance={50} decay={0.8} />
 <T.DirectionalLight position={[8, 8, 8]} intensity={1.0} />
 <T.DirectionalLight position={[-5, -3, 5]} intensity={0.5} />
 
-{#if texturesLoaded && concreteTexture}
-	<T.Mesh position={[0, 0, -2]} receiveShadow>
-		<T.PlaneGeometry args={[50, 50]} />
-		<T.MeshStandardMaterial
-			map={concreteTexture}
-			normalMap={concreteNormalMap}
-			normalScale={[2, 2]}
-			roughnessMap={concreteRoughnessMap}
-			roughness={0.9}
-			aoMap={concreteAOMap}
-			aoMapIntensity={3.0}
-			color={0x202020}
-		/>
-	</T.Mesh>
-{/if}
-
-<T.Group scale={[0.02, -0.02, 1]} position={[-logoCenter.x * 0.02, logoCenter.y * 0.02, 0]}>
-	{#each logoShapes as geometry}
-		<T.Mesh {geometry} castShadow>
+<T.Group rotation={[sceneRotation.x, sceneRotation.y, 0]}>
+	{#if texturesLoaded && concreteTexture}
+		<T.Mesh position={[0, 0, -2]} receiveShadow>
+			<T.PlaneGeometry args={[50, 50]} />
 			<T.MeshStandardMaterial
-				color={0xd4af37}
-				metalness={0.9}
-				roughness={0.2}
-				envMapIntensity={1.5}
-				side={THREE.DoubleSide}
+				map={concreteTexture}
+				normalMap={concreteNormalMap}
+				normalScale={[2, 2]}
+				roughnessMap={concreteRoughnessMap}
+				roughness={0.9}
+				aoMap={concreteAOMap}
+				aoMapIntensity={3.0}
+				color={0x202020}
 			/>
 		</T.Mesh>
-	{/each}
+	{/if}
+
+	<T.Group scale={[0.025, -0.025, 1]} position={[-logoCenter.x * 0.025, logoCenter.y * 0.025 + 0.8, 0]}>
+		{#each logoShapes as geometry}
+			<T.Mesh {geometry} castShadow>
+				<T.MeshStandardMaterial
+					color={0xd4af37}
+					metalness={0.9}
+					roughness={0.2}
+					envMapIntensity={1.5}
+					side={THREE.DoubleSide}
+				/>
+			</T.Mesh>
+		{/each}
+	</T.Group>
 </T.Group>

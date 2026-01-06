@@ -53,7 +53,9 @@
 
 <HeroBanner3D />
 
-<section class="bg-white" style="padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
+<div style="height: 100vh;"></div>
+
+<section class="bg-white" style="position: relative; z-index: 1; padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
 	<Container>
 		<!-- Hero Section -->
 		<div style="text-align: center; margin-bottom: calc(var(--baseline) * 12);">

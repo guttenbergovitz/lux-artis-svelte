@@ -31,7 +31,9 @@
 
 <style>
 	.hero-banner {
-		position: relative;
+		position: fixed;
+		top: 0;
+		left: 0;
 		width: 100vw;
 		height: 100vh;
 		background-image: url('$lib/assets/plain-backdrop-decorative-gray-textured.jpg');
@@ -39,6 +41,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		overflow: hidden;
+		z-index: 0;
 	}
 
 	.hero-banner::before {
