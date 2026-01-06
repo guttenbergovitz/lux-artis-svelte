@@ -169,7 +169,7 @@
 		</T.Mesh>
 	{/if}
 
-	<T.Group scale={[0.025, -0.025, 1]} position={[-logoCenter.x * 0.025, logoCenter.y * 0.025 + 0.8, 0]}>
+	<T.Group scale={[0.0167, -0.0167, 1]} position={[-logoCenter.x * 0.0167, logoCenter.y * 0.0167 + 0.8, 0]}>
 		{#each logoShapes as geometry}
 			<T.Mesh {geometry} castShadow>
 				<T.MeshStandardMaterial

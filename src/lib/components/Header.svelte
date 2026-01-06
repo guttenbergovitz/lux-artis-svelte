@@ -45,16 +45,16 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl } from 'svelte-flag-icons';
 	const currentLocale = $derived(getLocaleFromPath(page.url.pathname));
 </script>
 
-<header class="border-b border-graphite bg-white sticky top-0 z-50">
+<header class="border-b border-graphite sticky top-0 z-50" style="background-color: rgba(250, 250, 250, 0.95); backdrop-filter: blur(8px);">
 	<Container>
 		<nav class="flex items-center justify-between py-3 relative">
 			<a href={getLocalizedPath('/')} class="flex items-center" aria-label="Lux Artis - Strona główna">
 				<img
 					src={logoMini}
 					alt="Lux Artis"
-					class="h-12 w-auto"
-					width="48"
-					height="48"
+					class="h-8 w-auto"
+					width="32"
+					height="32"
 				/>
 			</a>
 

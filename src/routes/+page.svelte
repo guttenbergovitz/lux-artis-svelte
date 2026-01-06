@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Timeline, TimelineItem } from 'flowbite-svelte';
-	import { CalendarWeekSolid } from 'flowbite-svelte-icons';
+	import { CalendarWeekSolid, CalendarMonthOutline, UsersGroupOutline, LinkOutline, CheckCircleOutline, LightbulbSolid, ClipboardListSolid } from 'flowbite-svelte-icons';
 	import Container from '$lib/components/Container.svelte';
 	import HeroBanner3D from '$lib/components/HeroBanner3D.svelte';
 	import WordTooltip from '$lib/components/WordTooltip.svelte';
@@ -148,10 +148,56 @@
 
 		ScrollTrigger.create({
 			trigger: '.mission-section',
-			start: 'top top+=200vh',
+			start: 'top top',
 			end: 'bottom top',
 			pin: true,
 			pinSpacing: false
+		});
+
+		const focusItems = document.querySelectorAll('.focus-item');
+		focusItems.forEach((item, index) => {
+			gsap.from(item, {
+				y: 30,
+				opacity: 0,
+				duration: 0.8,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: item,
+					start: 'top 85%',
+					toggleActions: 'play none none reverse'
+				}
+			});
+		});
+
+		const valuesBox = document.querySelector('.values-box');
+		if (valuesBox) {
+			gsap.from(valuesBox, {
+				y: 20,
+				opacity: 0,
+				duration: 0.8,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: valuesBox,
+					start: 'top 80%',
+					toggleActions: 'play none none reverse'
+				}
+			});
+		}
+
+
+		const eventItems = document.querySelectorAll('.event-item');
+		eventItems.forEach((item, index) => {
+			gsap.from(item, {
+				opacity: 0,
+				y: 20,
+				duration: 0.6,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: item,
+					start: 'top 85%',
+					toggleActions: 'play none none reverse'
+				}
+			});
 		});
 
 		if (browser) {
@@ -383,6 +429,33 @@
 		position: relative;
 		z-index: 1;
 	}
+
+	.focus-heading {
+		font-size: 1.8em;
+		word-break: break-word;
+		hyphens: auto;
+	}
+
+	.mission-article,
+	.approach-article {
+		position: relative;
+	}
+
+	.background-icon {
+		position: absolute;
+		top: 50%;
+		right: calc(var(--baseline) * 2);
+		transform: translateY(-50%) scale(7);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	@media (max-width: 768px) {
+		.background-icon {
+			right: calc(var(--baseline) * 1);
+			opacity: 0.8;
+		}
+	}
 </style>
 
 <HeroBanner3D />
@@ -415,13 +488,19 @@
 <section class="mission-section">
 	<div class="gold-light-effect"></div>
 	<Container>
-		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8); position: relative; z-index: 1;">
-			<article class="stagger-item">
+		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8); position: relative; z-index: 1; align-items: start;">
+			<article class="stagger-item mission-article" style="padding: calc(var(--baseline) * 4) 0; position: relative;">
+				<div class="background-icon">
+					<LightbulbSolid size="lg" style="color: #fff; opacity: 0.15;" />
+				</div>
 				<h2>{t('pages.home.mission.title')}</h2>
 				<p>{t('pages.home.mission.text')}</p>
 			</article>
 
-			<article class="stagger-item">
+			<article class="stagger-item approach-article" style="padding: calc(var(--baseline) * 4) 0; position: relative;">
+				<div class="background-icon">
+					<ClipboardListSolid size="lg" style="color: #fff; opacity: 0.15;" />
+				</div>
 				<h2>{t('pages.home.approach.title')}</h2>
 				<p>{t('pages.home.approach.text')}</p>
 			</article>
@@ -435,13 +514,24 @@
 		<!-- Focus Areas -->
 		<div class="section-divider"></div>
 		<div class="reveal-section" style="margin-bottom: calc(var(--baseline) * 12);">
-			<h2 style="text-align: center;">{t('pages.home.focus.title')}</h2>
+			<h2 class="focus-title" style="text-align: center; padding-bottom: calc(var(--baseline) * 1.5);">{t('pages.home.focus.title')}</h2>
 			<div class="grid md:grid-cols-3" style="gap: calc(var(--baseline) * 6);">
 				{#if data.translations.pages?.home?.focus?.items}
-					{#each data.translations.pages.home.focus.items as item}
-						<article class="stagger-item">
-							<h3>{item.title}</h3>
-							<p>{item.text}</p>
+					{#each data.translations.pages.home.focus.items as item, index}
+						<article class="focus-item focus-item-{index}" style="display: flex; gap: calc(var(--baseline) * 3);">
+							<div style="flex-shrink: 0; padding-right: calc(var(--baseline) * 1.5); border-right: 1px solid rgba(51, 51, 51, 0.25);">
+								{#if index === 0}
+									<CalendarMonthOutline size="xl" style="color: #333; stroke-width: 0.8;" />
+								{:else if index === 1}
+									<UsersGroupOutline size="xl" style="color: #333; stroke-width: 0.8;" />
+								{:else}
+									<LinkOutline size="xl" style="color: #333; stroke-width: 0.8;" />
+								{/if}
+							</div>
+							<div>
+								<h3 class="focus-heading">{item.title}</h3>
+								<p>{item.text}</p>
+							</div>
 						</article>
 					{/each}
 				{/if}
@@ -450,14 +540,15 @@
 
 		<!-- Values -->
 		<div class="section-divider"></div>
-		<div class="reveal-section" style="margin-bottom: calc(var(--baseline) * 12);">
+		<div class="reveal-section values-box" style="margin-bottom: calc(var(--baseline) * 12);">
 			<div class="bg-gold" style="padding: calc(var(--baseline) * 8); max-width: 65ch; margin-left: auto; margin-right: auto;">
 				<h2 style="text-align: center;">{t('pages.home.values.title')}</h2>
-				<ul>
+				<ul style="list-style: none; padding: 0; margin: 0;">
 					{#if data.translations.pages?.home?.values?.items}
-						{#each data.translations.pages.home.values.items as item}
-							<li class="stagger-item" style="font-family: var(--font-sans); font-weight: 300; font-size: 1.9em; line-height: 1.15; color: var(--color-graphite-dark);">
-								{item}
+						{#each data.translations.pages.home.values.items as item, index}
+							<li style="font-family: var(--font-sans); font-weight: 300; font-size: 1.9em; line-height: 1.15; color: var(--color-graphite-dark); margin-bottom: calc(var(--baseline) * 2); display: flex; align-items: center; gap: calc(var(--baseline) * 2);">
+								<CheckCircleOutline size="sm" style="color: #000; opacity: 0.2; flex-shrink: 0; stroke-width: 1;" />
+								<span>{item}</span>
 							</li>
 						{/each}
 					{/if}
@@ -506,7 +597,7 @@
 					{#each data.upcomingEvents as event, index}
 						{@const isLast = index === data.upcomingEvents.length - 1}
 						{@const formattedDate = formatDate(event.date, data.locale)}
-						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
+						<TimelineItem title={event.title} date={formattedDate} isLast={isLast} class="event-item">
 							{#snippet orientationSlot()}
 								<span class="absolute -left-4 flex h-6 w-6 items-center justify-center ring-8 ring-white" style="border-radius: 0; background-color: var(--color-gold);">
 									<CalendarWeekSolid class="h-4 w-4" style="color: var(--color-graphite-dark);" />
