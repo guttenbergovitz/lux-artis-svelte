@@ -4,8 +4,8 @@
 import type { Locale } from './content';
 
 export function getLocaleFromPath(pathname: string): Locale {
-	// Extract locale from path like /pl/..., /en/..., /de/...
-	const match = pathname.match(/^\/(pl|en|de)(\/|$)/);
+	// Extract locale from path like /pl/..., /en/..., /de/..., /uk/...
+	const match = pathname.match(/^\/(pl|uk|en|de)(\/|$)/);
 	if (match) {
 		return match[1] as Locale;
 	}

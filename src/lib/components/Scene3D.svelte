@@ -34,6 +34,8 @@
 	let cameraZ = $state(20);
 	let scrollY = $state(0);
 	let gsapInstance = $state<any>(undefined);
+	let isMobile = $state(false);
+	let logoScale = $state(0.0167);
 
 	$effect(() => {
 		if (!browser || !gsapInstance) return;
@@ -59,11 +61,40 @@
 		const gsap = (await import('gsap')).default;
 		gsapInstance = gsap;
 
+		// Check if mobile
+		const checkMobile = () => {
+			isMobile = window.innerWidth <= 768;
+			const isPortrait = window.innerHeight > window.innerWidth;
+
+			if (isPortrait && isMobile) {
+				logoScale = 0.02;
+				cameraZ = 23;
+			} else if (isMobile) {
+				logoScale = 0.022;
+				cameraZ = 22;
+			} else {
+				logoScale = 0.0167;
+				cameraZ = 20;
+			}
+		};
+
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+
 		const handleScroll = () => {
 			scrollY = window.scrollY;
+			const isPortrait = window.innerHeight > window.innerWidth;
+			let baseZ = 20;
+
+			if (isPortrait && isMobile) {
+				baseZ = 23;
+			} else if (isMobile) {
+				baseZ = 22;
+			}
+
 			const zoomAmount = Math.min(scrollY / 150, 3);
 			gsap.to({ value: cameraZ }, {
-				value: 20 - zoomAmount,
+				value: baseZ - zoomAmount,
 				duration: 0.5,
 				ease: 'power2.out',
 				onUpdate: function() {
@@ -73,7 +104,10 @@
 		};
 
 		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('resize', checkMobile);
+		};
 	});
 
 	onMount(async () => {
@@ -169,7 +203,7 @@
 		</T.Mesh>
 	{/if}
 
-	<T.Group scale={[0.0167, -0.0167, 1]} position={[-logoCenter.x * 0.0167, logoCenter.y * 0.0167 + 0.8, 0]}>
+	<T.Group scale={[logoScale, -logoScale, 1]} position={[-logoCenter.x * logoScale, logoCenter.y * logoScale + 0.8, 0]}>
 		{#each logoShapes as geometry}
 			<T.Mesh {geometry} castShadow>
 				<T.MeshStandardMaterial

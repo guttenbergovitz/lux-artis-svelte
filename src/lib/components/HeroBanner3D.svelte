@@ -36,10 +36,7 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		background-image: url('$lib/assets/plain-backdrop-decorative-gray-textured.jpg');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+		background-color: #1a1a1a;
 		overflow: hidden;
 		z-index: 0;
 	}
@@ -51,13 +48,44 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(26, 26, 26, 0.5);
+		background-image: url('$lib/assets/plain-backdrop-decorative-gray-textured.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.8;
 		pointer-events: none;
 		z-index: 0;
 	}
 
+	.hero-banner::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(26, 26, 26, 0.3);
+		pointer-events: none;
+		z-index: 1;
+	}
+
 	.hero-banner :global(canvas) {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
+	}
+
+	@media (max-width: 768px) {
+		.hero-banner {
+			width: 100vw;
+			height: calc(100vw * 2.5 / 3);
+			max-height: 70vh;
+		}
+	}
+
+	@media (max-width: 768px) and (orientation: landscape) {
+		.hero-banner {
+			height: 70vh;
+			max-height: none;
+		}
 	}
 </style>

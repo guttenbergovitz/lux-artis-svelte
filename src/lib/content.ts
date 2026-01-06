@@ -2,7 +2,7 @@
  * Content loading utilities for events, people, and organization data
  */
 
-export type Locale = 'pl' | 'en' | 'de';
+export type Locale = 'pl' | 'uk' | 'en' | 'de';
 
 export interface Event {
 	id: string;

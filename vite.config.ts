@@ -25,6 +25,7 @@ export default defineConfig({
 					pattern: '/',
 					localized: [
 						['pl', '/pl'],
+						['uk', '/uk'],
 						['en', '/en'],
 						['de', '/de']
 					]
@@ -33,6 +34,7 @@ export default defineConfig({
 					pattern: '/about',
 					localized: [
 						['pl', '/pl/o-nas'],
+						['uk', '/uk/pro-nas'],
 						['en', '/en/about'],
 						['de', '/de/uber-uns']
 					]
@@ -41,6 +43,7 @@ export default defineConfig({
 					pattern: '/contact',
 					localized: [
 						['pl', '/pl/kontakt'],
+						['uk', '/uk/kontakt'],
 						['en', '/en/contact'],
 						['de', '/de/kontakt']
 					]
@@ -49,6 +52,7 @@ export default defineConfig({
 					pattern: '/events',
 					localized: [
 						['pl', '/pl/wydarzenia'],
+						['uk', '/uk/podiyi'],
 						['en', '/en/events'],
 						['de', '/de/veranstaltungen']
 					]
@@ -57,6 +61,7 @@ export default defineConfig({
 					pattern: '/people',
 					localized: [
 						['pl', '/pl/ludzie'],
+						['uk', '/uk/lyudy'],
 						['en', '/en/people'],
 						['de', '/de/team']
 					]
@@ -65,6 +70,7 @@ export default defineConfig({
 					pattern: '/support',
 					localized: [
 						['pl', '/pl/wspolpraca'],
+						['uk', '/uk/spivpratsya'],
 						['en', '/en/support'],
 						['de', '/de/partner']
 					]
@@ -73,6 +79,7 @@ export default defineConfig({
 					pattern: '/legal',
 					localized: [
 						['pl', '/pl/prawne'],
+						['uk', '/uk/pravova-informatsiya'],
 						['en', '/en/legal'],
 						['de', '/de/impressum']
 					]
@@ -81,6 +88,7 @@ export default defineConfig({
 					pattern: '/random',
 					localized: [
 						['pl', '/pl/losowa'],
+						['uk', '/uk/vypadkova'],
 						['en', '/en/random'],
 						['de', '/de/zufallig']
 					]
@@ -89,6 +97,7 @@ export default defineConfig({
 					pattern: '/events/:slug',
 					localized: [
 						['pl', '/pl/wydarzenia/:slug'],
+						['uk', '/uk/podiyi/:slug'],
 						['en', '/en/events/:slug'],
 						['de', '/de/veranstaltungen/:slug']
 					]
@@ -97,6 +106,7 @@ export default defineConfig({
 					pattern: '/:path(.*)?',
 					localized: [
 						['pl', '/pl/:path(.*)?'],
+						['uk', '/uk/:path(.*)?'],
 						['en', '/en/:path(.*)?'],
 						['de', '/de/:path(.*)?']
 					]

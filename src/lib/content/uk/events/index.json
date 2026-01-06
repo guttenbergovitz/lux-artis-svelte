@@ -1,0 +1,59 @@
+[
+  {
+    "id": "2025-06-06-xantone-blacq",
+    "slug": "xantone-blacq-jazz-funk-safari",
+    "date": "2025-06-06",
+    "venue": "Willa Lentza",
+    "city": "Щецин",
+    "title": "Xantoné Blacq Trio – Jazz-Funk Safari",
+    "artists": [
+      "Xantoné Blacq",
+      "Nathan Allen (ударні)",
+      "Matheus Nova (бас)",
+      "Sandra Jakubowiak (гість)"
+    ],
+    "description": "Енергійна подорож через джаз і фанк у форматі тріо з гостьовим вокальним виступом. Xantoné Blacq — музикант з понад 25-річним досвідом, відомий співпрацею з такими артистами, як Amy Winehouse, Mark Ronson чи Earth, Wind & Fire."
+  },
+  {
+    "id": "2025-08-03-emma-rawicz",
+    "slug": "emma-rawicz-live-szczecin",
+    "date": "2025-08-03",
+    "venue": "Willa Lentza",
+    "city": "Щецин",
+    "title": "Emma Rawicz – Live in Szczecin",
+    "artists": [
+      "Emma Rawicz (саксофон)",
+      "David Preston (гітара)",
+      "Marc Michel (ударні)",
+      "Kevin Glasgow (електричний бас)"
+    ],
+    "description": "Концерт британської саксофоністки та композиторки Emmy Rawicz з гуртом. Rawicz виступала на таких сценах, як Ronnie Scott's, Берлінська філармонія чи Love Supreme Festival."
+  },
+  {
+    "id": "2026-01-15-test-event-1",
+    "slug": "testowy-koncert-noworoczny",
+    "date": "2026-01-15",
+    "venue": "Testowa Sala Koncertowa",
+    "city": "Щецин",
+    "title": "[ТЕСТ] Тестовий Новорічний Концерт",
+    "artists": [
+      "Ян Тестовий (фортепіано)",
+      "Анна Тестова (скрипка)",
+      "Петро Тестовий (віолончель)"
+    ],
+    "description": "Це ТЕСТОВА подія для перевірки функціональності відображення майбутніх концертів. Подія не є справжньою і буде видалена після тестування."
+  },
+  {
+    "id": "2026-03-20-test-event-2",
+    "slug": "testowy-recital-wiosenny",
+    "date": "2026-03-20",
+    "venue": "Testowa Filharmonia",
+    "city": "Варшава",
+    "title": "[ТЕСТ] Тестовий Весняний Рецитал",
+    "artists": [
+      "Марія Тестова (сопрано)",
+      "Кшиштоф Тестовий (диригент)"
+    ],
+    "description": "ТЕСТОВА демонстраційна подія. Ця фіктивна подія була створена виключно для тестування системи управління контентом і буде видалена."
+  }
+]

@@ -1,7 +1,7 @@
 <script lang="ts">
 	
 	import { BarsOutline, CloseOutline } from 'flowbite-svelte-icons';
-import { De as FlagDe, Gb as FlagGb, Pl as FlagPl } from 'svelte-flag-icons';
+import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-flag-icons';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import logoMini from '$lib/assets/logo_mini.svg';
@@ -27,17 +27,30 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl } from 'svelte-flag-icons';
 
 	function getLocalizedPath(route: string): string {
 		const currentLocale = getLocaleFromPath(page.url.pathname);
-		return localizeHref(route, { locale: currentLocale as 'pl' | 'en' | 'de' });
+		return localizeHref(route, { locale: currentLocale as 'pl' | 'uk' | 'en' | 'de' });
 	}
 
 	function isActive(path: string): boolean {
 		return page.url.pathname === getLocalizedPath(path);
 	}
 
-	async function switchLanguage(newLocale: 'pl' | 'en' | 'de') {
+	async function switchLanguage(newLocale: 'pl' | 'uk' | 'en' | 'de') {
 		const currentPath = page.url.pathname;
-		const basePath = deLocalizeHref(currentPath) || '/';
-		const newPath = localizeHref(basePath, { locale: newLocale });
+		const currentLocale = getLocaleFromPath(currentPath);
+
+		// Replace current locale with new locale in path
+		let newPath: string;
+		if (currentPath.startsWith(`/${currentLocale}/`)) {
+			// Path like /pl/about -> /uk/about
+			newPath = currentPath.replace(`/${currentLocale}/`, `/${newLocale}/`);
+		} else if (currentPath === `/${currentLocale}` || currentPath === `/${currentLocale}/`) {
+			// Path like /pl or /pl/ -> /uk
+			newPath = `/${newLocale}`;
+		} else {
+			// Fallback to home page with new locale
+			newPath = `/${newLocale}`;
+		}
+
 		setLocale(newLocale);
 		await goto(newPath);
 	}
@@ -52,9 +65,9 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl } from 'svelte-flag-icons';
 				<img
 					src={logoMini}
 					alt="Lux Artis"
-					class="h-8 w-auto"
-					width="32"
-					height="32"
+					class="h-10 w-auto"
+					width="40"
+					height="40"
 				/>
 			</a>
 
@@ -157,6 +170,15 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl } from 'svelte-flag-icons';
 					>
 						<FlagDe class="w-full h-full" />
 					</button>
+					<button
+						onclick={() => switchLanguage('uk')}
+						class="lang-flag"
+						class:active={currentLocale === 'uk'}
+						class:inactive={currentLocale !== 'uk'}
+						aria-label="Українська"
+					>
+						<FlagUa class="w-full h-full" />
+					</button>
 				</li>
 			</ul>
 
@@ -253,6 +275,15 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl } from 'svelte-flag-icons';
 										aria-label="Deutsch"
 									>
 										<FlagDe class="w-full h-full" />
+									</button>
+									<button
+										onclick={() => switchLanguage('uk')}
+										class="lang-flag"
+										class:active={currentLocale === 'uk'}
+										class:inactive={currentLocale !== 'uk'}
+										aria-label="Українська"
+									>
+										<FlagUa class="w-full h-full" />
 									</button>
 								</div>
 							</li>

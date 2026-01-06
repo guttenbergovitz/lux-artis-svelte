@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Timeline, TimelineItem } from 'flowbite-svelte';
-	import { CalendarWeekSolid, CalendarMonthOutline, UsersGroupOutline, LinkOutline, CheckCircleOutline, LightbulbSolid, ClipboardListSolid } from 'flowbite-svelte-icons';
+	import { CalendarWeekSolid, CalendarMonthOutline, UsersGroupOutline, LinkOutline, AwardSolid, ClockSolid, EyeSolid, ShieldCheckSolid } from 'flowbite-svelte-icons';
 	import Container from '$lib/components/Container.svelte';
 	import HeroBanner3D from '$lib/components/HeroBanner3D.svelte';
 	import WordTooltip from '$lib/components/WordTooltip.svelte';
@@ -125,7 +125,7 @@
 			gsap.fromTo(lucasImage,
 				{ opacity: 0, y: 0 },
 				{
-					opacity: 0.6,
+					opacity: 0.27,
 					y: -200,
 					scrollTrigger: {
 						trigger: '.hero-words-section',
@@ -200,11 +200,73 @@
 			});
 		});
 
+		const valuesHorizontalList = document.querySelector('.values-horizontal-list');
+		const valuesTitle = document.querySelector('.values-horizontal-section h2');
+		const valuesContent = document.querySelector('.values-content');
+
+		ScrollTrigger.create({
+			trigger: '.values-horizontal-section',
+			start: 'top top',
+			end: 'bottom bottom',
+			pin: '.values-scroll-container',
+			anticipatePin: 1
+		});
+
+		if (valuesContent) {
+			gsap.fromTo(valuesContent,
+				{ opacity: 0 },
+				{
+					opacity: 1,
+					ease: 'none',
+					scrollTrigger: {
+						trigger: '.values-horizontal-section',
+						start: 'top top',
+						end: 'top top-=15%',
+						scrub: 1
+					}
+				}
+			);
+		}
+
+		if (valuesHorizontalList) {
+			const listWidth = valuesHorizontalList.scrollWidth;
+			const windowWidth = window.innerWidth;
+
+			gsap.to(valuesHorizontalList, {
+				x: -(listWidth - windowWidth),
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '.values-horizontal-section',
+					start: 'top top-=15%',
+					end: 'bottom bottom',
+					scrub: 1
+				}
+			});
+		}
+
+		if (valuesTitle) {
+			gsap.fromTo(valuesTitle,
+				{ x: '-100vw', opacity: 0 },
+				{
+					x: 0,
+					opacity: 1,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: '.values-horizontal-section',
+						start: 'top bottom',
+						end: 'top center',
+						scrub: 1
+					}
+				}
+			);
+		}
+
 		if (browser) {
 			const missionSection = document.querySelector('.mission-section');
-			const goldLight = document.querySelector('.gold-light-effect');
+			const goldLight = missionSection?.querySelector('.gold-light-effect');
 
 			if (missionSection && goldLight) {
+
 				let currentX = 50;
 				let currentY = 50;
 
@@ -318,6 +380,17 @@
 		overflow: hidden;
 	}
 
+	.hero-title {
+		font-size: 5em;
+	}
+
+	.intro-divider {
+		width: 60px;
+		height: 1px;
+		background: rgba(44, 44, 44, 0.2);
+		margin: calc(var(--baseline) * 2) auto;
+	}
+
 	.lucas-parallax-image {
 		position: absolute;
 		top: 0;
@@ -328,6 +401,131 @@
 		opacity: 0;
 		z-index: -1;
 		pointer-events: none;
+	}
+
+	.banner-spacer {
+		height: 100vh;
+	}
+
+	@media (max-width: 768px) {
+		.banner-spacer {
+			height: calc(100vw * 2.5 / 3);
+			max-height: 70vh;
+		}
+
+		.hero-words-section {
+			padding: calc(var(--baseline) * 6) 0;
+			min-height: auto;
+		}
+
+		.hero-title {
+			font-size: 2.2em;
+			margin-bottom: calc(var(--baseline) * 2);
+		}
+
+		.intro-divider {
+			width: 35px;
+			margin: calc(var(--baseline) * 2) auto;
+		}
+
+		.lucas-parallax-image {
+			max-width: 100%;
+			opacity: 0.15 !important;
+		}
+	}
+
+	@media (max-width: 768px) and (orientation: landscape) {
+		.banner-spacer {
+			height: 70vh;
+			max-height: none;
+		}
+
+		.hero-words-section {
+			padding: calc(var(--baseline) * 4) 0;
+		}
+
+		.hero-title {
+			font-size: 2.5em;
+			margin-bottom: calc(var(--baseline) * 3);
+		}
+
+		.intro-divider {
+			width: 40px;
+			margin: calc(var(--baseline) * 3) auto;
+		}
+
+		.lucas-parallax-image {
+			opacity: 0.2 !important;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.mission-section {
+			background-attachment: scroll;
+			min-height: auto;
+			padding-top: calc(var(--baseline) * 10);
+			padding-bottom: calc(var(--baseline) * 10);
+		}
+
+		.mission-section .grid {
+			grid-template-columns: 1fr !important;
+			gap: calc(var(--baseline) * 6) !important;
+		}
+
+		.mission-article,
+		.approach-article {
+			padding: calc(var(--baseline) * 3) 0 !important;
+		}
+
+		.values-horizontal-section {
+			background-attachment: scroll;
+			min-height: auto;
+			height: 250vh;
+			padding-top: calc(var(--baseline) * 6);
+			padding-bottom: calc(var(--baseline) * 6);
+		}
+
+		.values-horizontal-section h2 {
+			font-size: 2em !important;
+			margin-bottom: calc(var(--baseline) * 2) !important;
+		}
+
+		.values-content {
+			padding: 0 calc(var(--baseline) * 2);
+		}
+
+		.values-horizontal-list {
+			gap: calc(var(--baseline) * 6);
+			padding-left: calc(var(--baseline) * 2);
+			padding-right: 100vw;
+		}
+
+		.value-horizontal-item {
+			font-size: 1.4em;
+			min-width: 88vw;
+			flex-direction: column;
+			gap: calc(var(--baseline) * 1.5);
+		}
+
+		.value-icon-container {
+			padding-top: 0;
+		}
+
+		.focus-heading {
+			font-size: 1.2em;
+		}
+
+		.focus-item {
+			flex-direction: column !important;
+			gap: calc(var(--baseline) * 2) !important;
+		}
+
+		.focus-item > div:first-child {
+			border-right: none !important;
+			border-bottom: 1px solid rgba(51, 51, 51, 0.25);
+			padding-right: 0 !important;
+			padding-bottom: calc(var(--baseline) * 1.5);
+		}
 	}
 
 	.mission-section {
@@ -441,35 +639,92 @@
 		position: relative;
 	}
 
-	.background-icon {
-		position: absolute;
-		top: 50%;
-		right: calc(var(--baseline) * 2);
-		transform: translateY(-50%) scale(7);
-		z-index: 0;
-		pointer-events: none;
+	.values-horizontal-section {
+		height: 500vh;
+		position: relative;
+		background-color: var(--color-graphite-dark);
+		background-image: url('$lib/assets/plain-backdrop-decorative-gray-textured.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
 	}
 
-	@media (max-width: 768px) {
-		.background-icon {
-			right: calc(var(--baseline) * 1);
-			opacity: 0.8;
-		}
+	.values-horizontal-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(26, 26, 26, 0.85);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.values-scroll-container {
+		position: sticky;
+		top: 0;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.values-content {
+		width: 100%;
+		padding: 0 calc(var(--baseline) * 8);
+		position: relative;
+	}
+
+	.values-horizontal-list {
+		display: flex;
+		gap: calc(var(--baseline) * 12);
+		list-style: none;
+		padding: 0;
+		padding-left: 10vw;
+		padding-right: 80vw;
+		margin: 0;
+		will-change: transform;
+	}
+
+	.value-horizontal-item {
+		flex-shrink: 0;
+		display: flex;
+		align-items: flex-start;
+		gap: calc(var(--baseline) * 3);
+		font-family: var(--font-sans);
+		font-weight: 300;
+		font-size: 2.5em;
+		line-height: 1.15;
+		color: var(--color-graphite-dark);
+		min-width: 50vw;
+	}
+
+	.value-icon-container {
+		flex-shrink: 0;
+		padding-top: calc(var(--baseline) * 0.5);
+	}
+
+	.value-text-content {
+		display: flex;
+		flex-direction: column;
+		gap: calc(var(--baseline) * 1.5);
 	}
 </style>
 
 <HeroBanner3D />
 
-<div style="height: 100vh;"></div>
+<div class="banner-spacer"></div>
 
 <section class="hero-words-section">
 	<img src={lucasExposure} alt="" class="lucas-parallax-image" />
 	<Container>
 		<div style="text-align: center;">
-			<h1>{t('pages.home.title')}</h1>
+			<h1 class="hero-title">{t('pages.home.title')}</h1>
 			{#each [parseSubtitle(t('pages.home.subtitle'))] as { intro, words }}
 				<div class="lead-heading">
 					<p class="lead-intro">{intro}</p>
+					<div class="intro-divider"></div>
 					<div class="lead-words">
 						{#each words as word, index}
 							{#if wordDefinitions[word]}
@@ -490,17 +745,11 @@
 	<Container>
 		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8); position: relative; z-index: 1; align-items: start;">
 			<article class="stagger-item mission-article" style="padding: calc(var(--baseline) * 4) 0; position: relative;">
-				<div class="background-icon">
-					<LightbulbSolid size="lg" style="color: #fff; opacity: 0.15;" />
-				</div>
 				<h2>{t('pages.home.mission.title')}</h2>
 				<p>{t('pages.home.mission.text')}</p>
 			</article>
 
 			<article class="stagger-item approach-article" style="padding: calc(var(--baseline) * 4) 0; position: relative;">
-				<div class="background-icon">
-					<ClipboardListSolid size="lg" style="color: #fff; opacity: 0.15;" />
-				</div>
 				<h2>{t('pages.home.approach.title')}</h2>
 				<p>{t('pages.home.approach.text')}</p>
 			</article>
@@ -508,7 +757,49 @@
 	</Container>
 </section>
 
-<section class="bg-white" style="position: relative; z-index: 3; padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
+<!-- Values - Horizontal Scroll Section -->
+<section class="values-horizontal-section">
+	<div class="values-scroll-container">
+		<div class="values-content">
+			<h2 style="color: var(--color-gold); margin-bottom: calc(var(--baseline) * 3); position: relative; z-index: 1; font-size: 3em;">{t('pages.home.values.title')}</h2>
+			<ul class="values-horizontal-list">
+				{#if data.translations.pages?.home?.values?.items}
+					{#each data.translations.pages.home.values.items as item, index}
+						<li class="value-horizontal-item">
+							<div class="value-icon-container">
+								{#if index === 0}
+									<AwardSolid size="xxl" style="color: var(--color-gold);" />
+								{:else if index === 1}
+									<ClockSolid size="xxl" style="color: var(--color-gold);" />
+								{:else if index === 2}
+									<EyeSolid size="xxl" style="color: var(--color-gold);" />
+								{:else}
+									<ShieldCheckSolid size="xxl" style="color: var(--color-gold);" />
+								{/if}
+							</div>
+							<div class="value-text-content">
+								<h3 style="font-size: 1.8em; margin: 0; font-weight: 400; color: rgba(255, 255, 255, 0.9);">{item}</h3>
+								<p style="font-size: 0.5em; color: rgba(255, 255, 255, 0.7); margin: 0; max-width: 50ch;">
+									{#if index === 0}
+										Stawiamy na głębię i wartość artystyczną. Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę.
+									{:else if index === 1}
+										Droga do rezultatu jest równie istotna. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.
+									{:else if index === 2}
+										Budujemy trwałe relacje i konteksty. Myślimy o kulturze jako o ciągłym procesie, nie jednorazowych wydarzeniach.
+									{:else}
+										Działamy uczciwie i profesjonalnie. Otwarta komunikacja i jasne zasady współpracy z artystami i partnerami.
+									{/if}
+								</p>
+							</div>
+						</li>
+					{/each}
+				{/if}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="bg-white" style="position: relative; padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
 	<Container>
 
 		<!-- Focus Areas -->
@@ -538,24 +829,6 @@
 			</div>
 		</div>
 
-		<!-- Values -->
-		<div class="section-divider"></div>
-		<div class="reveal-section values-box" style="margin-bottom: calc(var(--baseline) * 12);">
-			<div class="bg-gold" style="padding: calc(var(--baseline) * 8); max-width: 65ch; margin-left: auto; margin-right: auto;">
-				<h2 style="text-align: center;">{t('pages.home.values.title')}</h2>
-				<ul style="list-style: none; padding: 0; margin: 0;">
-					{#if data.translations.pages?.home?.values?.items}
-						{#each data.translations.pages.home.values.items as item, index}
-							<li style="font-family: var(--font-sans); font-weight: 300; font-size: 1.9em; line-height: 1.15; color: var(--color-graphite-dark); margin-bottom: calc(var(--baseline) * 2); display: flex; align-items: center; gap: calc(var(--baseline) * 2);">
-								<CheckCircleOutline size="sm" style="color: #000; opacity: 0.2; flex-shrink: 0; stroke-width: 1;" />
-								<span>{item}</span>
-							</li>
-						{/each}
-					{/if}
-				</ul>
-			</div>
-		</div>
-
 		<!-- Context & Process -->
 		<div class="section-divider"></div>
 		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8); margin-bottom: calc(var(--baseline) * 12);">
@@ -570,20 +843,27 @@
 			</article>
 		</div>
 
-		<!-- Learn More -->
-		<div class="section-divider"></div>
-		<div style="margin-bottom: calc(var(--baseline) * 12); max-width: 65ch; margin-left: auto; margin-right: auto;">
-			<p style="margin-bottom: calc(var(--baseline) * 4); opacity: 0.8;">
+	</Container>
+</section>
+
+<!-- Learn More CTA -->
+<section class="bg-gold" style="padding: calc(var(--baseline) * 12) 0; position: relative; z-index: 2;">
+	<Container>
+		<div style="max-width: 80ch; margin-left: auto; margin-right: auto; text-align: center;">
+			<p style="margin-bottom: calc(var(--baseline) * 6); font-size: 1.6em; line-height: 1.5; color: var(--color-graphite-dark); font-weight: 300; font-family: var(--font-sans);">
 				{t('pages.home.learnMoreIntro')}
 			</p>
-			<div style="text-align: center;">
-				<a href={getAboutUrl(data.locale)}>
-					<Button color="yellow" size="xl" style="font-family: var(--font-sans); font-weight: 300; color: var(--color-graphite-dark);">
-						{t('pages.home.learnMore')}
-					</Button>
-				</a>
-			</div>
+			<a href={getAboutUrl(data.locale)}>
+				<Button color="dark" size="xl" style="font-family: var(--font-sans); font-weight: 400; padding: calc(var(--baseline) * 2) calc(var(--baseline) * 5); font-size: 1em;">
+					{t('pages.home.learnMore')}
+				</Button>
+			</a>
 		</div>
+	</Container>
+</section>
+
+<section class="bg-white" style="position: relative; padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
+	<Container>
 
 		<!-- Upcoming Events -->
 		<div class="section-divider"></div>

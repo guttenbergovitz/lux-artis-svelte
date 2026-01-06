@@ -39,9 +39,9 @@ const handleParaglide: Handle = async ({ event, resolve }) => {
 		const pathname = event.url.pathname;
 		
 		// Cache static content pages (not API routes or dynamic routes that change frequently)
-		if (pathname.startsWith('/pl/') || pathname.startsWith('/en/') || pathname.startsWith('/de/')) {
+		if (pathname.startsWith('/pl/') || pathname.startsWith('/uk/') || pathname.startsWith('/en/') || pathname.startsWith('/de/')) {
 			// Different cache times for different types of content
-			if (pathname.includes('/wydarzenia/') || pathname.includes('/events/') || pathname.includes('/veranstaltungen/')) {
+			if (pathname.includes('/wydarzenia/') || pathname.includes('/events/') || pathname.includes('/veranstaltungen/') || pathname.includes('/podiyi/')) {
 				// Event detail pages - cache for 1 hour, revalidate in background
 				response.headers.set(
 					'Cache-Control',
