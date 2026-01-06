@@ -70,6 +70,56 @@
 			});
 		});
 
+		const heroTitle = document.querySelector('.hero-words-section h1');
+		const heroIntro = document.querySelector('.lead-intro');
+		const leadWordsContainer = document.querySelector('.lead-words');
+
+		if (heroTitle && heroIntro && leadWordsContainer) {
+			gsap.to([heroTitle, heroIntro], {
+				opacity: 0,
+				y: -400,
+				scrollTrigger: {
+					trigger: '.hero-words-section',
+					start: 'top top',
+					end: 'top -80%',
+					scrub: 1
+				}
+			});
+
+			gsap.to(leadWordsContainer, {
+				y: -400,
+				scrollTrigger: {
+					trigger: '.hero-words-section',
+					start: 'top top',
+					end: 'top -80%',
+					scrub: 1,
+					onComplete: () => {
+						if (leadWordsContainer instanceof HTMLElement) {
+							leadWordsContainer.style.position = 'sticky';
+							leadWordsContainer.style.top = '50%';
+							leadWordsContainer.style.transform = 'translateY(-50%)';
+						}
+					}
+				}
+			});
+
+			gsap.fromTo(leadWordsContainer,
+				{ filter: 'brightness(1) drop-shadow(0 0 0px rgba(255,248,220,0))' },
+				{
+					filter: 'brightness(5) drop-shadow(0 0 40px rgba(255,248,220,0.8))',
+					yoyo: true,
+					repeat: 1,
+					duration: 0.8,
+					scrollTrigger: {
+						trigger: '.hero-words-section',
+						start: 'top -80%',
+						end: 'top -150%',
+						scrub: 1
+					}
+				}
+			);
+		}
+
 		const lucasImage = document.querySelector('.lucas-parallax-image');
 		if (lucasImage) {
 			gsap.fromTo(lucasImage,
@@ -98,11 +148,73 @@
 
 		ScrollTrigger.create({
 			trigger: '.mission-section',
-			start: 'top top',
+			start: 'top top+=200vh',
 			end: 'bottom top',
 			pin: true,
 			pinSpacing: false
 		});
+
+		if (browser) {
+			const missionSection = document.querySelector('.mission-section');
+			const goldLight = document.querySelector('.gold-light-effect');
+
+			if (missionSection && goldLight) {
+				let currentX = 50;
+				let currentY = 50;
+
+				missionSection.addEventListener('mousemove', (e: Event) => {
+					const mouseEvent = e as MouseEvent;
+					const rect = missionSection.getBoundingClientRect();
+					const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+					const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+
+					currentX = x;
+					currentY = y;
+
+					gsap.to(goldLight, {
+						'--light-x': `${x}%`,
+						'--light-y': `${y}%`,
+						duration: 1.2,
+						ease: 'power1.out'
+					});
+				});
+
+				const sparkles = [
+					{ offset: { x: 120, y: 60 }, duration: 2.5, delay: 0 },
+					{ offset: { x: -100, y: 90 }, duration: 3.2, delay: 0.5 },
+					{ offset: { x: 80, y: -80 }, duration: 2.8, delay: 1.0 },
+					{ offset: { x: -70, y: -100 }, duration: 3.5, delay: 1.5 },
+					{ offset: { x: 130, y: -50 }, duration: 2.2, delay: 0.8 }
+				];
+
+				sparkles.forEach((sparkle, index) => {
+					const sparkleVars = {
+						[`--sparkle-${index + 1}-x`]: currentX,
+						[`--sparkle-${index + 1}-y`]: currentY
+					};
+
+					gsap.to(goldLight, {
+						...sparkleVars,
+						duration: sparkle.duration,
+						ease: 'sine.inOut',
+						delay: sparkle.delay,
+						repeat: -1,
+						yoyo: true,
+						onUpdate: function() {
+							const progress = this.progress();
+							const angle = progress * Math.PI * 2;
+							const offsetX = Math.cos(angle + sparkle.delay) * sparkle.offset.x;
+							const offsetY = Math.sin(angle + sparkle.delay) * sparkle.offset.y;
+
+							gsap.set(goldLight, {
+								[`--sparkle-${index + 1}-x`]: `calc(${currentX}% + ${offsetX}px)`,
+								[`--sparkle-${index + 1}-y`]: `calc(${currentY}% + ${offsetY}px)`
+							});
+						}
+					});
+				});
+			}
+		}
 	});
 
 	function t(path: string): string {
@@ -182,6 +294,94 @@
 		z-index: 2;
 		padding-top: calc(var(--baseline) * 8);
 		padding-bottom: calc(var(--baseline) * 8);
+		overflow: hidden;
+	}
+
+	.gold-light-effect {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		--light-x: 50%;
+		--light-y: 50%;
+		--sparkle-1-x: 50%;
+		--sparkle-1-y: 50%;
+		--sparkle-2-x: 50%;
+		--sparkle-2-y: 50%;
+		--sparkle-3-x: 50%;
+		--sparkle-3-y: 50%;
+		--sparkle-4-x: 50%;
+		--sparkle-4-y: 50%;
+		--sparkle-5-x: 50%;
+		--sparkle-5-y: 50%;
+	}
+
+	.gold-light-effect::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:
+			radial-gradient(
+				circle 220px at var(--sparkle-1-x, 50%) var(--sparkle-1-y, 50%),
+				rgba(255, 255, 255, 0.7) 0%,
+				rgba(255, 248, 220, 0.45) 22%,
+				transparent 60%
+			),
+			radial-gradient(
+				circle 200px at var(--sparkle-2-x, 50%) var(--sparkle-2-y, 50%),
+				rgba(255, 255, 255, 0.65) 0%,
+				rgba(255, 248, 220, 0.42) 24%,
+				transparent 62%
+			),
+			radial-gradient(
+				circle 210px at var(--sparkle-3-x, 50%) var(--sparkle-3-y, 50%),
+				rgba(255, 255, 255, 0.68) 0%,
+				rgba(255, 248, 220, 0.44) 23%,
+				transparent 61%
+			),
+			radial-gradient(
+				circle 205px at var(--sparkle-4-x, 50%) var(--sparkle-4-y, 50%),
+				rgba(255, 255, 255, 0.66) 0%,
+				rgba(255, 248, 220, 0.43) 25%,
+				transparent 63%
+			),
+			radial-gradient(
+				circle 215px at var(--sparkle-5-x, 50%) var(--sparkle-5-y, 50%),
+				rgba(255, 255, 255, 0.67) 0%,
+				rgba(255, 248, 220, 0.435) 21%,
+				transparent 59%
+			);
+		mix-blend-mode: soft-light;
+		pointer-events: none;
+	}
+
+	.gold-light-effect::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:
+			radial-gradient(
+				circle 550px at var(--light-x, 50%) var(--light-y, 50%),
+				rgba(255, 255, 255, 0.5) 0%,
+				rgba(255, 248, 220, 0.3) 32%,
+				transparent 62%
+			);
+		mix-blend-mode: overlay;
+		pointer-events: none;
+	}
+
+	.mission-section :global(h2),
+	.mission-section :global(p) {
+		position: relative;
+		z-index: 1;
 	}
 </style>
 
@@ -213,8 +413,9 @@
 </section>
 
 <section class="mission-section">
+	<div class="gold-light-effect"></div>
 	<Container>
-		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8);">
+		<div class="grid md:grid-cols-2 reveal-section" style="gap: calc(var(--baseline) * 8); position: relative; z-index: 1;">
 			<article class="stagger-item">
 				<h2>{t('pages.home.mission.title')}</h2>
 				<p>{t('pages.home.mission.text')}</p>
