@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { T } from '@threlte/core';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import * as THREE from 'three';
 	import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
-	import gsap from 'gsap';
 	import logo from '$lib/assets/logo.svg';
 	import concreteBaseColor from '$lib/assets/concrete1-bl/concrete1_Base_Color.png';
 	import concreteNormal from '$lib/assets/concrete1-bl/concrete1_Normal-ogl.png';
@@ -33,16 +33,19 @@
 	let sceneRotation = $state({ x: 0, y: 0 });
 	let cameraZ = $state(20);
 	let scrollY = $state(0);
+	let gsapInstance = $state<any>(undefined);
 
 	$effect(() => {
-		gsap.to(lightPosition, {
+		if (!browser || !gsapInstance) return;
+
+		gsapInstance.to(lightPosition, {
 			x: mouseX * 8,
 			y: mouseY * 8,
 			duration: 1.2,
 			ease: 'power2.out'
 		});
 
-		gsap.to(sceneRotation, {
+		gsapInstance.to(sceneRotation, {
 			x: mouseY * 0.08,
 			y: mouseX * 0.08,
 			duration: 2.5,
@@ -50,7 +53,12 @@
 		});
 	});
 
-	onMount(() => {
+	onMount(async () => {
+		if (!browser) return;
+
+		const gsap = (await import('gsap')).default;
+		gsapInstance = gsap;
+
 		const handleScroll = () => {
 			scrollY = window.scrollY;
 			const zoomAmount = Math.min(scrollY / 150, 3);

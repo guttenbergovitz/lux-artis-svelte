@@ -7,10 +7,7 @@
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { onMount } from 'svelte';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-	gsap.registerPlugin(ScrollTrigger);
+	import { browser } from '$app/environment';
 
 	let { data }: { data: any } = $props();
 
@@ -20,7 +17,12 @@
 		'Dialog': 'Otwarta wymiana między artystą, dziełem i odbiorcą, budująca głębsze połączenia.'
 	};
 
-	onMount(() => {
+	onMount(async () => {
+		if (!browser) return;
+
+		const gsap = (await import('gsap')).default;
+		const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+		gsap.registerPlugin(ScrollTrigger);
 		gsap.utils.toArray('.reveal-section').forEach((section: any) => {
 			gsap.from(section, {
 				opacity: 0,

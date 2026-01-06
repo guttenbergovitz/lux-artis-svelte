@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import gsap from 'gsap';
+	import { browser } from '$app/environment';
 
 	let { word, definition, index }: { word: string; definition: string; index: number } = $props();
 
@@ -12,12 +11,14 @@
 
 	const isRight = index % 2 === 0;
 
-	function handleMouseEnter() {
+	async function handleMouseEnter() {
+		if (!browser) return;
 		isHovered = true;
 		showTooltip = false;
 
-		setTimeout(() => {
+		setTimeout(async () => {
 			if (lineRef && circleRef) {
+				const gsap = (await import('gsap')).default;
 				const lineLength = lineRef.getTotalLength();
 
 				const tl = gsap.timeline();
