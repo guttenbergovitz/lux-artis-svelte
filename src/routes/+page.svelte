@@ -8,6 +8,7 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import lucasExposure from '$lib/assets/deco/lucas-exposure.png';
 
 	let { data }: { data: any } = $props();
 
@@ -68,6 +69,24 @@
 				}
 			});
 		});
+
+		const lucasImage = document.querySelector('.lucas-parallax-image');
+		if (lucasImage) {
+			gsap.fromTo(lucasImage,
+				{ opacity: 0, y: 0 },
+				{
+					opacity: 0.6,
+					y: -200,
+					scrollTrigger: {
+						trigger: '.hero-words-section',
+						start: 'top 80%',
+						end: 'bottom top',
+						scrub: 1,
+						toggleActions: 'play none none reverse'
+					}
+				}
+			);
+		}
 
 		ScrollTrigger.create({
 			trigger: '.hero-words-section',
@@ -138,6 +157,19 @@
 		justify-content: center;
 		background: white;
 		z-index: 1;
+		overflow: hidden;
+	}
+
+	.lucas-parallax-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: auto;
+		height: auto;
+		max-width: 60%;
+		opacity: 0;
+		z-index: -1;
+		pointer-events: none;
 	}
 
 	.mission-section {
@@ -158,6 +190,7 @@
 <div style="height: 100vh;"></div>
 
 <section class="hero-words-section">
+	<img src={lucasExposure} alt="" class="lucas-parallax-image" />
 	<Container>
 		<div style="text-align: center;">
 			<h1>{t('pages.home.title')}</h1>
