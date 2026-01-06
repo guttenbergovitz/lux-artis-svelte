@@ -2,6 +2,7 @@
 	import { Button, Timeline, TimelineItem } from 'flowbite-svelte';
 	import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 	import Container from '$lib/components/Container.svelte';
+	import HeroBanner3D from '$lib/components/HeroBanner3D.svelte';
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
 
@@ -49,6 +50,8 @@
 		});
 	}
 </script>
+
+<HeroBanner3D />
 
 <section class="bg-white" style="padding-top: calc(var(--baseline) * 8); padding-bottom: calc(var(--baseline) * 12);">
 	<Container>
