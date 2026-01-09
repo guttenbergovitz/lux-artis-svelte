@@ -2,6 +2,7 @@
 	
 	import { BarsOutline, CloseOutline } from 'flowbite-svelte-icons';
 import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-flag-icons';
+	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import logoMini from '$lib/assets/logo_mini.svg';
@@ -56,6 +57,15 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-f
 	}
 
 	const currentLocale = $derived(getLocaleFromPath(page.url.pathname));
+	const isMobile = $derived(() => {
+		if (!browser) return false;
+		return window.matchMedia('(max-width: 768px)').matches;
+	});
+
+	$effect(() => {
+		if (!browser) return;
+		document.body.classList.toggle('menu-open', mobileMenuOpen);
+	});
 </script>
 
 <header class="border-b border-graphite sticky top-0 z-50" style="background-color: rgba(250, 250, 250, 0.95); backdrop-filter: blur(8px);">
@@ -77,7 +87,9 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-f
 				class="md:hidden p-2"
 				onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 				aria-label="Toggle menu"
+				aria-haspopup="true"
 				aria-expanded={mobileMenuOpen}
+				aria-controls="mobile-menu-overlay"
 			>
 				{#if mobileMenuOpen}
 					<CloseOutline class="w-6 h-6" style="color: var(--color-graphite);" />
@@ -182,72 +194,84 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-f
 				</li>
 			</ul>
 
-			<!-- Mobile menu -->
+			<!-- Mobile full-screen overlay menu -->
 			{#if mobileMenuOpen}
-				<div class="md:hidden absolute top-full left-0 right-0 bg-white border-b border-graphite" style="z-index: 40;">
-					<Container>
-						<ul class="flex flex-col py-4" style="gap: calc(var(--baseline) * 1); list-style: none; margin: 0; padding: 0;">
-							<li>
-								<a
-									href={getLocalizedPath('/')}
-									class="nav-link"
-									class:active={isActive('/')}
-									onclick={() => (mobileMenuOpen = false)}
-								>
-									Home
-								</a>
-							</li>
-							<li>
-								<a
-									href={getLocalizedPath('/about')}
-									class="nav-link"
-									class:active={isActive('/about')}
-									onclick={() => (mobileMenuOpen = false)}
-								>
-									{t('nav.about')}
-								</a>
-							</li>
-							<li>
-								<a
-									href={getLocalizedPath('/events')}
-									class="nav-link"
-									class:active={isActive('/events')}
-									onclick={() => (mobileMenuOpen = false)}
-								>
-									{t('nav.events')}
-								</a>
-							</li>
-							<li>
-								<a
-									href={getLocalizedPath('/people')}
-									class="nav-link"
-									class:active={isActive('/people')}
-									onclick={() => (mobileMenuOpen = false)}
-								>
-									{t('nav.people')}
-								</a>
-							</li>
-							<li>
-								<a
-									href={getLocalizedPath('/support')}
-									class="nav-link"
-									class:active={isActive('/support')}
-									onclick={() => (mobileMenuOpen = false)}
-								>
-									{t('nav.support')}
-								</a>
-							</li>
-							<li>
-								<a
-									href={getLocalizedPath('/contact')}
-									class="nav-link"
-									class:active={isActive('/contact')}
-									onclick={() => (mobileMenuOpen = false)}
-								>
-									{t('nav.contact')}
-								</a>
-							</li>
-							<li style="margin-top: calc(var(--baseline) * 2);">
+				<div
+					id="mobile-menu-overlay"
+					class="md:hidden mobile-menu-overlay"
+					role="dialog"
+					aria-modal="true"
+					onclick={() => (mobileMenuOpen = false)}
+				>
+					<div
+						class="mobile-menu-panel"
+						onclick={(event) => event.stopPropagation()}
+					>
+						<Container>
+							<ul class="mobile-menu-list">
+								<li>
+									<a
+										href={getLocalizedPath('/')}
+										class="mobile-menu-link"
+										class:active={isActive('/')}
+										onclick={() => (mobileMenuOpen = false)}
+									>
+										Home
+									</a>
+								</li>
+								<li>
+									<a
+										href={getLocalizedPath('/about')}
+										class="mobile-menu-link"
+										class:active={isActive('/about')}
+										onclick={() => (mobileMenuOpen = false)}
+									>
+										{t('nav.about')}
+									</a>
+								</li>
+								<li>
+									<a
+										href={getLocalizedPath('/events')}
+										class="mobile-menu-link"
+										class:active={isActive('/events')}
+										onclick={() => (mobileMenuOpen = false)}
+									>
+										{t('nav.events')}
+									</a>
+								</li>
+								<li>
+									<a
+										href={getLocalizedPath('/people')}
+										class="mobile-menu-link"
+										class:active={isActive('/people')}
+										onclick={() => (mobileMenuOpen = false)}
+									>
+										{t('nav.people')}
+									</a>
+								</li>
+								<li>
+									<a
+										href={getLocalizedPath('/support')}
+										class="mobile-menu-link"
+										class:active={isActive('/support')}
+										onclick={() => (mobileMenuOpen = false)}
+									>
+										{t('nav.support')}
+									</a>
+								</li>
+								<li>
+									<a
+										href={getLocalizedPath('/contact')}
+										class="mobile-menu-link"
+										class:active={isActive('/contact')}
+										onclick={() => (mobileMenuOpen = false)}
+									>
+										{t('nav.contact')}
+									</a>
+								</li>
+							</ul>
+
+							<div class="mobile-menu-languages">
 								<div class="language-switcher mobile-language-switcher">
 									<button
 										onclick={() => switchLanguage('pl')}
@@ -286,9 +310,9 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-f
 										<FlagUa class="w-full h-full" />
 									</button>
 								</div>
-							</li>
-						</ul>
-					</Container>
+							</div>
+						</Container>
+					</div>
 				</div>
 			{/if}
 		</nav>

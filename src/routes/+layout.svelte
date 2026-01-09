@@ -16,7 +16,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;900&family=Literata:ital,wght@0,400;1,400&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;700&family=Didact+Gothic&display=swap"
 		rel="stylesheet"
 	/>
 </svelte:head>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { Canvas } from '@threlte/core';
 	import Scene3D from './Scene3D.svelte';
 	import * as THREE from 'three';
@@ -9,6 +10,15 @@
 	let bannerRef: HTMLElement;
 
 	onMount(() => {
+		if (!browser) return;
+
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+		// Na mobile nie śledzimy kursora – spokojniejsze tło i mniej \"hałasu\".
+		if (isMobile) {
+			return;
+		}
+
 		const handleMouseMove = (e: MouseEvent) => {
 			const rect = bannerRef.getBoundingClientRect();
 			mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
@@ -31,7 +41,7 @@
 
 <style>
 	.hero-banner {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100vw;
@@ -39,6 +49,7 @@
 		background-color: #1a1a1a;
 		overflow: hidden;
 		z-index: 0;
+		pointer-events: none;
 	}
 
 	.hero-banner::before {
@@ -64,7 +75,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(26, 26, 26, 0.3);
+		background: rgba(26, 26, 26, 0.35);
 		pointer-events: none;
 		z-index: 1;
 	}
@@ -72,13 +83,23 @@
 	.hero-banner :global(canvas) {
 		position: relative;
 		z-index: 2;
+		pointer-events: auto;
 	}
 
 	@media (max-width: 768px) {
 		.hero-banner {
+			position: relative;
 			width: 100vw;
-			height: calc(100vw * 2.5 / 3);
+			height: min(70vh, calc(100vw * 2.2 / 3));
 			max-height: 70vh;
+		}
+
+		.hero-banner::before {
+			opacity: 0.6;
+		}
+
+		.hero-banner::after {
+			background: rgba(26, 26, 26, 0.4);
 		}
 	}
 

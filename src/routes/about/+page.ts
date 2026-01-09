@@ -9,5 +9,4 @@ export async function load({ url }: LoadEvent) {
 		translations,
 		locale
 	};
-};
-
+}
