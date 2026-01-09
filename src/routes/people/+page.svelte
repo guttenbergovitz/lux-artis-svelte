@@ -74,6 +74,10 @@
 		opacity: 0.4;
 	}
 
+	.poster-section.dark .separator-line {
+		background: rgba(255, 255, 255, 0.4);
+	}
+
 	.latin-quote {
 		font-family: var(--font-sans);
 		font-size: 0.65rem;
@@ -84,6 +88,10 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		margin: 0;
+	}
+
+	.poster-section.dark .latin-quote {
+		color: rgba(255, 255, 255, 0.6);
 	}
 
 	/* Poster Sections */
@@ -114,7 +122,7 @@
 		font-size: clamp(3rem, 8vw, 6rem);
 		line-height: 0.9;
 		letter-spacing: -0.02em;
-		color: var(--color-graphite-dark);
+		color: white;
 		margin: 0 0 var(--space-xl) 0;
 		text-transform: uppercase;
 	}
@@ -123,7 +131,7 @@
 		font-family: var(--font-serif);
 		font-size: clamp(1.125rem, 2.5vw, 1.5rem);
 		line-height: 1.4;
-		color: var(--color-graphite);
+		color: rgba(255, 255, 255, 0.9);
 		max-width: 65ch;
 		margin: 0;
 		font-weight: 400;
@@ -270,7 +278,7 @@
 </style>
 
 <!-- Hero Section -->
-<section class="poster-section">
+<section class="poster-section dark">
 	<Container>
 		<div class="people-hero">
 			<h1 class="hero-title">{t('pages.people.title')}</h1>

@@ -81,6 +81,10 @@
 		opacity: 0.4;
 	}
 
+	.poster-section.dark .separator-line {
+		background: rgba(255, 255, 255, 0.4);
+	}
+
 	.latin-quote {
 		font-family: var(--font-sans);
 		font-size: 0.65rem;
@@ -93,10 +97,19 @@
 		margin: 0;
 	}
 
+	.poster-section.dark .latin-quote {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
 	/* Poster Sections */
 	.poster-section {
 		padding: calc(var(--space-2xl) * 2) 0;
 		background: white;
+	}
+
+	.poster-section.dark {
+		background: var(--color-graphite-dark);
+		color: white;
 	}
 
 	/* Hero Typography */
@@ -111,7 +124,7 @@
 		font-size: clamp(3rem, 8vw, 6rem);
 		line-height: 0.9;
 		letter-spacing: -0.02em;
-		color: var(--color-graphite-dark);
+		color: white;
 		margin: 0 0 var(--space-xl) 0;
 		text-transform: uppercase;
 	}
@@ -120,7 +133,7 @@
 		font-family: var(--font-serif);
 		font-size: clamp(1.125rem, 2.5vw, 1.5rem);
 		line-height: 1.4;
-		color: var(--color-graphite);
+		color: rgba(255, 255, 255, 0.9);
 		max-width: 65ch;
 		margin: 0 0 var(--space-lg) 0;
 		font-weight: 400;
@@ -130,7 +143,7 @@
 		font-family: var(--font-serif);
 		font-size: clamp(1rem, 2.5vw, 1.25rem);
 		line-height: 1.5;
-		color: var(--color-graphite);
+		color: rgba(255, 255, 255, 0.85);
 		max-width: 65ch;
 		margin: 0;
 		font-weight: 400;
@@ -269,7 +282,7 @@
 </style>
 
 <!-- Hero Section -->
-<section class="poster-section">
+<section class="poster-section dark">
 	<Container>
 		<div class="contact-hero">
 			<h1 class="hero-title">{t('pages.contact.title')}</h1>
