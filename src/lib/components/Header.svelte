@@ -1,21 +1,91 @@
 <script lang="ts">
-	
-	import { BarsOutline, CloseOutline } from 'flowbite-svelte-icons';
-import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-flag-icons';
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
+	import { slide } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 	import logoMini from '$lib/assets/logo_mini.svg';
+	import logoMiniBlack from '$lib/assets/logo_mini_black.svg';
 	import Container from '$lib/components/Container.svelte';
 	import { getLocaleFromPath, getTranslation, getTranslations } from '$lib/i18n';
-	import { deLocalizeHref, locales, localizeHref, setLocale } from '$lib/paraglide/runtime';
+	import { localizeHref, setLocale } from '$lib/paraglide/runtime';
+
+	let { sidebarOpen = $bindable(), toggleSidebar }: { 
+		sidebarOpen: boolean; 
+		toggleSidebar: () => void; 
+	} = $props();
 
 	let translations = $state<Record<string, any>>({});
-	let mobileMenuOpen = $state(false);
+	let logoElement = $state<HTMLElement>();
+	let currentLogoSrc = $state(logoMini); // Start with white logo (for banner)
+	let menuTextColor = $state('white'); // Start with white text (for banner)
 
 	$effect(() => {
 		const locale = getLocaleFromPath(page.url.pathname);
 		loadData(locale);
+	});
+
+	// Smart logo color adaptation based on section position
+	$effect(() => {
+		if (!browser) return;
+
+		let currentSection = 'banner';
+		
+		const updateLogoColor = (sectionName: string) => {
+			// Prevent unnecessary updates
+			if (sectionName === currentSection) return;
+			
+			// Define which sections need white logo vs black logo
+			const whiteLogoSections = ['banner', 'cta']; // Three.js banner and CTA section
+			
+			const useWhiteLogo = whiteLogoSections.includes(sectionName);
+			currentLogoSrc = useWhiteLogo ? logoMini : logoMiniBlack;
+			menuTextColor = useWhiteLogo ? 'white' : 'black';
+			currentSection = sectionName;
+			
+			console.log('Section changed:', {
+				section: sectionName,
+				useWhiteLogo,
+				logoSrc: currentLogoSrc === logoMini ? 'white' : 'black'
+			});
+		};
+
+		const checkSections = () => {
+			const sections = [
+				{ element: document.querySelector('.banner-container'), name: 'banner' },
+				{ element: document.querySelector('.hero-section'), name: 'hero' },
+				{ element: document.querySelector('.mission-section'), name: 'mission' },
+				{ element: document.querySelector('.values-section'), name: 'values' },
+				{ element: document.querySelector('.focus-section'), name: 'focus' },
+				{ element: document.querySelector('.context-process-section'), name: 'context' },
+				{ element: document.querySelector('.cta-section'), name: 'cta' },
+				{ element: document.querySelector('.events-section'), name: 'events' }
+			];
+
+			// Find which section is 50px from top of viewport
+			for (const section of sections) {
+				if (section.element) {
+					const rect = section.element.getBoundingClientRect();
+					// Check if section top is within 50px of viewport top
+					if (rect.top <= 50 && rect.bottom > 50) {
+						updateLogoColor(section.name);
+						break;
+					}
+				}
+			}
+		};
+
+		// Check on scroll
+		const handleScroll = () => checkSections();
+		
+		// Initial check
+		setTimeout(checkSections, 100);
+		
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
 	});
 
 	async function loadData(locale: 'pl' | 'en' | 'de') {
@@ -39,282 +109,191 @@ import { De as FlagDe, Gb as FlagGb, Pl as FlagPl, Ua as FlagUa } from 'svelte-f
 		const currentPath = page.url.pathname;
 		const currentLocale = getLocaleFromPath(currentPath);
 
-		// Replace current locale with new locale in path
 		let newPath: string;
 		if (currentPath.startsWith(`/${currentLocale}/`)) {
-			// Path like /pl/about -> /uk/about
 			newPath = currentPath.replace(`/${currentLocale}/`, `/${newLocale}/`);
 		} else if (currentPath === `/${currentLocale}` || currentPath === `/${currentLocale}/`) {
-			// Path like /pl or /pl/ -> /uk
 			newPath = `/${newLocale}`;
 		} else {
-			// Fallback to home page with new locale
 			newPath = `/${newLocale}`;
 		}
 
 		setLocale(newLocale);
 		await goto(newPath);
+		sidebarOpen = false; // Close sidebar after navigation
 	}
 
 	const currentLocale = $derived(getLocaleFromPath(page.url.pathname));
-	const isMobile = $derived(() => {
-		if (!browser) return false;
-		return window.matchMedia('(max-width: 768px)').matches;
-	});
 
-	$effect(() => {
-		if (!browser) return;
-		document.body.classList.toggle('menu-open', mobileMenuOpen);
-	});
+	function handleNavClick() {
+		sidebarOpen = false;
+	}
 </script>
 
-<header class="border-b border-graphite sticky top-0 z-50" style="background-color: rgba(250, 250, 250, 0.95); backdrop-filter: blur(8px);">
-	<Container>
-		<nav class="flex items-center justify-between py-3 relative">
-			<a href={getLocalizedPath('/')} class="flex items-center" aria-label="Lux Artis - Strona główna">
-				<img
-					src={logoMini}
-					alt="Lux Artis"
-					class="h-10 w-auto"
-					width="40"
-					height="40"
-				/>
-			</a>
+<!-- Floating Navigation Elements -->
+<div class="floating-nav">
+	<!-- Smart Adaptive Logo - Top Left Corner -->
+	<div class="floating-logo">
+		<a href={getLocalizedPath('/')} class="logo-link" aria-label="Lux Artis">
+			<img 
+				bind:this={logoElement}
+				src={currentLogoSrc} 
+				alt="Lux Artis" 
+				class="logo-image" 
+				width="64" 
+				height="64" 
+			/>
+		</a>
+	</div>
 
-			<!-- Mobile menu button -->
-			<button
-				type="button"
-				class="md:hidden p-2"
-				onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
-				aria-label="Toggle menu"
-				aria-haspopup="true"
-				aria-expanded={mobileMenuOpen}
-				aria-controls="mobile-menu-overlay"
+	<!-- Menu Toggle - Top Right Corner -->
+	<button 
+		class="floating-menu-toggle" 
+		onclick={toggleSidebar}
+		aria-label="Toggle navigation"
+		aria-expanded={sidebarOpen}
+	>
+		<span class="menu-text" style="color: {menuTextColor};">Menu</span>
+		<div class="toggle-icon">
+			<span class="toggle-dot" class:open={sidebarOpen}></span>
+			<span class="toggle-dot" class:open={sidebarOpen}></span>
+			<span class="toggle-dot" class:open={sidebarOpen}></span>
+		</div>
+	</button>
+
+	<!-- Vertical Text - Left Edge -->
+	<div class="vertical-text">
+		<span class="site-tagline">Fundacja Lux Artis</span>
+	</div>
+
+	<!-- Page Indicator - Right Edge -->
+	<div class="page-indicator">
+		<div class="indicator-line"></div>
+		<div class="indicator-dot" class:active={page.url.pathname === getLocalizedPath('/')}></div>
+		<div class="indicator-dot" class:active={isActive('/about')}></div>
+		<div class="indicator-dot" class:active={isActive('/events')}></div>
+		<div class="indicator-dot" class:active={isActive('/contact')}></div>
+	</div>
+</div>
+
+<!-- Animated Full-Screen Sidebar -->
+{#if sidebarOpen}
+	<aside 
+		class="fullscreen-sidebar" 
+		transition:slide={{ duration: 600, easing: quintOut, axis: 'x' }}
+		role="navigation"
+		aria-label="Main navigation"
+	>
+		<div class="sidebar-content">
+			<!-- Close Button -->
+			<button 
+				class="sidebar-close" 
+				onclick={toggleSidebar}
+				aria-label="Close navigation"
 			>
-				{#if mobileMenuOpen}
-					<CloseOutline class="w-6 h-6" style="color: var(--color-graphite);" />
-				{:else}
-					<BarsOutline class="w-6 h-6" style="color: var(--color-graphite);" />
-				{/if}
+				<span class="close-line"></span>
+				<span class="close-line"></span>
 			</button>
 
-			<!-- Desktop menu -->
-			<ul class="hidden md:flex items-center" style="gap: calc(var(--baseline) * 0.5); list-style: none; margin: 0; padding: 0;">
-				<li>
-					<a
-						href={getLocalizedPath('/')}
-						class="nav-link"
-						class:active={isActive('/')}
-					>
-						Home
-					</a>
-				</li>
-				<li>
-					<a
-						href={getLocalizedPath('/about')}
-						class="nav-link"
-						class:active={isActive('/about')}
-					>
-						{t('nav.about')}
-					</a>
-				</li>
-				<li>
-					<a
-						href={getLocalizedPath('/events')}
-						class="nav-link"
-						class:active={isActive('/events')}
-					>
-						{t('nav.events')}
-					</a>
-				</li>
-				<li>
-					<a
-						href={getLocalizedPath('/people')}
-						class="nav-link"
-						class:active={isActive('/people')}
-					>
-						{t('nav.people')}
-					</a>
-				</li>
-				<li>
-					<a
-						href={getLocalizedPath('/support')}
-						class="nav-link"
-						class:active={isActive('/support')}
-					>
-						{t('nav.support')}
-					</a>
-				</li>
-				<li>
-					<a
-						href={getLocalizedPath('/contact')}
-						class="nav-link"
-						class:active={isActive('/contact')}
-					>
-						{t('nav.contact')}
-					</a>
-				</li>
-				<li class="language-switcher">
-					<button
-						onclick={() => switchLanguage('pl')}
-						class="lang-flag"
-						class:active={currentLocale === 'pl'}
-						class:inactive={currentLocale !== 'pl'}
-						aria-label="Polski"
-					>
-						<FlagPl class="w-full h-full" />
-					</button>
-					<button
-						onclick={() => switchLanguage('en')}
-						class="lang-flag"
-						class:active={currentLocale === 'en'}
-						class:inactive={currentLocale !== 'en'}
-						aria-label="English"
-					>
-						<FlagGb class="w-full h-full" />
-					</button>
-					<button
-						onclick={() => switchLanguage('de')}
-						class="lang-flag"
-						class:active={currentLocale === 'de'}
-						class:inactive={currentLocale !== 'de'}
-						aria-label="Deutsch"
-					>
-						<FlagDe class="w-full h-full" />
-					</button>
-					<button
-						onclick={() => switchLanguage('uk')}
-						class="lang-flag"
-						class:active={currentLocale === 'uk'}
-						class:inactive={currentLocale !== 'uk'}
-						aria-label="Українська"
-					>
-						<FlagUa class="w-full h-full" />
-					</button>
-				</li>
-			</ul>
+			<!-- Navigation Content -->
+			<div class="sidebar-main">
+				<nav class="sidebar-nav">
+					<div class="nav-section">
+						<h2 class="nav-section-title">Foundation</h2>
+						<div class="nav-links">
+							<a 
+								href={getLocalizedPath('/about')} 
+								class="sidebar-link" 
+								class:active={isActive('/about')}
+								onclick={handleNavClick}
+							>
+								{t('nav.about')}
+							</a>
+							<a 
+								href={getLocalizedPath('/people')} 
+								class="sidebar-link" 
+								class:active={isActive('/people')}
+								onclick={handleNavClick}
+							>
+								{t('nav.people')}
+							</a>
+						</div>
+					</div>
 
-			<!-- Mobile full-screen overlay menu -->
-			{#if mobileMenuOpen}
-				<div
-					id="mobile-menu-overlay"
-					class="md:hidden mobile-menu-overlay"
-					role="dialog"
-					aria-modal="true"
-					onclick={() => (mobileMenuOpen = false)}
-				>
-					<div
-						class="mobile-menu-panel"
-						onclick={(event) => event.stopPropagation()}
-					>
-						<Container>
-							<ul class="mobile-menu-list">
-								<li>
-									<a
-										href={getLocalizedPath('/')}
-										class="mobile-menu-link"
-										class:active={isActive('/')}
-										onclick={() => (mobileMenuOpen = false)}
-									>
-										Home
-									</a>
-								</li>
-								<li>
-									<a
-										href={getLocalizedPath('/about')}
-										class="mobile-menu-link"
-										class:active={isActive('/about')}
-										onclick={() => (mobileMenuOpen = false)}
-									>
-										{t('nav.about')}
-									</a>
-								</li>
-								<li>
-									<a
-										href={getLocalizedPath('/events')}
-										class="mobile-menu-link"
-										class:active={isActive('/events')}
-										onclick={() => (mobileMenuOpen = false)}
-									>
-										{t('nav.events')}
-									</a>
-								</li>
-								<li>
-									<a
-										href={getLocalizedPath('/people')}
-										class="mobile-menu-link"
-										class:active={isActive('/people')}
-										onclick={() => (mobileMenuOpen = false)}
-									>
-										{t('nav.people')}
-									</a>
-								</li>
-								<li>
-									<a
-										href={getLocalizedPath('/support')}
-										class="mobile-menu-link"
-										class:active={isActive('/support')}
-										onclick={() => (mobileMenuOpen = false)}
-									>
-										{t('nav.support')}
-									</a>
-								</li>
-								<li>
-									<a
-										href={getLocalizedPath('/contact')}
-										class="mobile-menu-link"
-										class:active={isActive('/contact')}
-										onclick={() => (mobileMenuOpen = false)}
-									>
-										{t('nav.contact')}
-									</a>
-								</li>
-							</ul>
+					<div class="nav-section">
+						<h2 class="nav-section-title">Program</h2>
+						<div class="nav-links">
+							<a 
+								href={getLocalizedPath('/events')} 
+								class="sidebar-link" 
+								class:active={isActive('/events')}
+								onclick={handleNavClick}
+							>
+								{t('nav.events')}
+							</a>
+							<a 
+								href={getLocalizedPath('/support')} 
+								class="sidebar-link" 
+								class:active={isActive('/support')}
+								onclick={handleNavClick}
+							>
+								{t('nav.support')}
+							</a>
+						</div>
+					</div>
 
-							<div class="mobile-menu-languages">
-								<div class="language-switcher mobile-language-switcher">
-									<button
-										onclick={() => switchLanguage('pl')}
-										class="lang-flag"
-										class:active={currentLocale === 'pl'}
-										class:inactive={currentLocale !== 'pl'}
-										aria-label="Polski"
-									>
-										<FlagPl class="w-full h-full" />
-									</button>
-									<button
-										onclick={() => switchLanguage('en')}
-										class="lang-flag"
-										class:active={currentLocale === 'en'}
-										class:inactive={currentLocale !== 'en'}
-										aria-label="English"
-									>
-										<FlagGb class="w-full h-full" />
-									</button>
-									<button
-										onclick={() => switchLanguage('de')}
-										class="lang-flag"
-										class:active={currentLocale === 'de'}
-										class:inactive={currentLocale !== 'de'}
-										aria-label="Deutsch"
-									>
-										<FlagDe class="w-full h-full" />
-									</button>
-									<button
-										onclick={() => switchLanguage('uk')}
-										class="lang-flag"
-										class:active={currentLocale === 'uk'}
-										class:inactive={currentLocale !== 'uk'}
-										aria-label="Українська"
-									>
-										<FlagUa class="w-full h-full" />
-									</button>
-								</div>
-							</div>
-						</Container>
+					<div class="nav-section">
+						<h2 class="nav-section-title">Contact</h2>
+						<div class="nav-links">
+							<a 
+								href={getLocalizedPath('/contact')} 
+								class="sidebar-link" 
+								class:active={isActive('/contact')}
+								onclick={handleNavClick}
+							>
+								{t('nav.contact')}
+							</a>
+						</div>
+					</div>
+				</nav>
+
+				<!-- Language Selector -->
+				<div class="sidebar-footer">
+					<div class="language-section">
+						<h3 class="language-title">Language</h3>
+						<div class="language-grid">
+							<button 
+								onclick={() => switchLanguage('pl')} 
+								class="language-btn" 
+								class:active={currentLocale === 'pl'}
+							>
+								Polski
+							</button>
+							<button 
+								onclick={() => switchLanguage('en')} 
+								class="language-btn" 
+								class:active={currentLocale === 'en'}
+							>
+								English
+							</button>
+							<button 
+								onclick={() => switchLanguage('de')} 
+								class="language-btn" 
+								class:active={currentLocale === 'de'}
+							>
+								Deutsch
+							</button>
+							<button 
+								onclick={() => switchLanguage('uk')} 
+								class="language-btn" 
+								class:active={currentLocale === 'uk'}
+							>
+								Українська
+							</button>
+						</div>
 					</div>
 				</div>
-			{/if}
-		</nav>
-	</Container>
-</header>
+			</div>
+		</div>
+	</aside>
+{/if}

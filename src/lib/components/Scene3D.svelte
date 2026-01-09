@@ -36,6 +36,224 @@
 	let gsapInstance = $state<any>(undefined);
 	let isMobile = $state(false);
 	let logoScale = $state(0.0167);
+	let particles: THREE.Points | undefined = $state(undefined);
+	let particleSystem: THREE.BufferGeometry | undefined = $state(undefined);
+	let particleMaterial: THREE.PointsMaterial | undefined = $state(undefined);
+	let sparkles: THREE.Points | undefined = $state(undefined);
+	let sparkleSystem: THREE.BufferGeometry | undefined = $state(undefined);
+	let sparkleMaterial: THREE.PointsMaterial | undefined = $state(undefined);
+	let additionalLight = $state({ x: 0, y: 0, z: 8, intensity: 0 });
+
+	// Create floating particles
+	function createParticleSystem() {
+		const particleCount = 80;
+		const positions = new Float32Array(particleCount * 3);
+		const velocities = new Float32Array(particleCount * 3);
+		const sizes = new Float32Array(particleCount);
+
+		for (let i = 0; i < particleCount; i++) {
+			const i3 = i * 3;
+			positions[i3] = (Math.random() - 0.5) * 40; // x
+			positions[i3 + 1] = (Math.random() - 0.5) * 30; // y
+			positions[i3 + 2] = (Math.random() - 0.5) * 20; // z
+			
+			velocities[i3] = (Math.random() - 0.5) * 0.01;
+			velocities[i3 + 1] = (Math.random() - 0.5) * 0.01;
+			velocities[i3 + 2] = (Math.random() - 0.5) * 0.005;
+			
+			sizes[i] = Math.random() * 0.5 + 0.2;
+		}
+
+		particleSystem = new THREE.BufferGeometry();
+		particleSystem.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+		particleSystem.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
+		particleSystem.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+		// Create custom shader material for soft glowing particles
+		const vertexShader = `
+			attribute float size;
+			varying float vSize;
+			
+			void main() {
+				vSize = size;
+				vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+				gl_PointSize = size * (300.0 / -mvPosition.z);
+				gl_Position = projectionMatrix * mvPosition;
+			}
+		`;
+
+		const fragmentShader = `
+			uniform float opacity;
+			varying float vSize;
+			
+			void main() {
+				vec2 center = gl_PointCoord - vec2(0.5);
+				float dist = length(center);
+				
+				// Create soft circular glow
+				float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
+				alpha *= alpha; // Make it softer
+				
+				// Add subtle sparkle effect
+				float sparkle = sin(dist * 20.0) * 0.1 + 0.9;
+				
+				gl_FragColor = vec4(1.0, 1.0, 1.0, alpha * sparkle * opacity);
+			}
+		`;
+
+		particleMaterial = new THREE.ShaderMaterial({
+			vertexShader,
+			fragmentShader,
+			uniforms: {
+				opacity: { value: 0.0 }
+			},
+			transparent: true,
+			blending: THREE.AdditiveBlending,
+			depthWrite: false
+		});
+
+		particles = new THREE.Points(particleSystem, particleMaterial);
+	}
+
+	// Create sparkle effects
+	function createSparkleSystem() {
+		const sparkleCount = 50;
+		const positions = new Float32Array(sparkleCount * 3);
+		const scales = new Float32Array(sparkleCount);
+		const phases = new Float32Array(sparkleCount);
+
+		for (let i = 0; i < sparkleCount; i++) {
+			const i3 = i * 3;
+			positions[i3] = (Math.random() - 0.5) * 35;
+			positions[i3 + 1] = (Math.random() - 0.5) * 25;
+			positions[i3 + 2] = (Math.random() - 0.5) * 15;
+			
+			scales[i] = Math.random() * 0.8 + 0.3;
+			phases[i] = Math.random() * Math.PI * 2;
+		}
+
+		sparkleSystem = new THREE.BufferGeometry();
+		sparkleSystem.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+		sparkleSystem.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
+		sparkleSystem.setAttribute('phase', new THREE.BufferAttribute(phases, 1));
+
+		// Custom shader for golden sparkles
+		const vertexShader = `
+			attribute float scale;
+			attribute float phase;
+			varying float vScale;
+			varying float vPhase;
+			
+			void main() {
+				vScale = scale;
+				vPhase = phase;
+				vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+				gl_PointSize = scale * (200.0 / -mvPosition.z);
+				gl_Position = projectionMatrix * mvPosition;
+			}
+		`;
+
+		const fragmentShader = `
+			uniform float time;
+			uniform float opacity;
+			varying float vScale;
+			varying float vPhase;
+			
+			void main() {
+				vec2 center = gl_PointCoord - vec2(0.5);
+				float dist = length(center);
+				
+				// Create star-like sparkle
+				float angle = atan(center.y, center.x);
+				float sparkle = abs(sin(angle * 4.0)) * 0.3 + 0.7;
+				
+				// Soft circular falloff
+				float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
+				alpha *= alpha * sparkle;
+				
+				// Twinkling effect
+				float twinkle = sin(time * 2.0 + vPhase) * 0.3 + 0.7;
+				
+				// Golden color
+				vec3 color = vec3(0.83, 0.69, 0.22); // Gold color
+				
+				gl_FragColor = vec4(color, alpha * twinkle * opacity);
+			}
+		`;
+
+		sparkleMaterial = new THREE.ShaderMaterial({
+			vertexShader,
+			fragmentShader,
+			uniforms: {
+				time: { value: 0.0 },
+				opacity: { value: 0.0 }
+			},
+			transparent: true,
+			blending: THREE.AdditiveBlending,
+			depthWrite: false
+		});
+
+		sparkles = new THREE.Points(sparkleSystem, sparkleMaterial);
+	}
+
+	// Animate particles
+	function animateParticles() {
+		if (!particles || !particleSystem) return;
+
+		const positions = particleSystem.attributes.position.array as Float32Array;
+		const velocities = particleSystem.attributes.velocity.array as Float32Array;
+
+		for (let i = 0; i < positions.length; i += 3) {
+			positions[i] += velocities[i];
+			positions[i + 1] += velocities[i + 1];
+			positions[i + 2] += velocities[i + 2];
+
+			// Wrap around boundaries
+			if (positions[i] > 20) positions[i] = -20;
+			if (positions[i] < -20) positions[i] = 20;
+			if (positions[i + 1] > 15) positions[i + 1] = -15;
+			if (positions[i + 1] < -15) positions[i + 1] = 15;
+		}
+
+		particleSystem.attributes.position.needsUpdate = true;
+	}
+
+	// Animate sparkles
+	function animateSparkles() {
+		if (!sparkles || !sparkleSystem || !sparkleMaterial) return;
+
+		const positions = sparkleSystem.attributes.position.array as Float32Array;
+		const time = Date.now() * 0.001;
+
+		// Update time uniform for twinkling effect
+		if (sparkleMaterial.uniforms && sparkleMaterial.uniforms.time) {
+			sparkleMaterial.uniforms.time.value = time;
+		}
+
+		for (let i = 0; i < positions.length; i += 3) {
+			const originalY = positions[i + 1];
+			positions[i + 1] = originalY + Math.sin(time + i * 0.1) * 0.3;
+		}
+
+		sparkleSystem.attributes.position.needsUpdate = true;
+	}
+
+	// Animation loop
+	let animationId: number;
+	function animate() {
+		animateParticles();
+		animateSparkles();
+		animationId = requestAnimationFrame(animate);
+	}
+
+	onMount(() => {
+		animate();
+		return () => {
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+			}
+		};
+	});
 
 	$effect(() => {
 		if (!browser || !gsapInstance) return;
@@ -52,6 +270,16 @@
 			y: mouseX * 0.08,
 			duration: 2.5,
 			ease: 'power1.out'
+		});
+
+		// Animate additional light based on scroll
+		const scrollProgress = Math.min(scrollY / 500, 1);
+		gsapInstance.to(additionalLight, {
+			x: mouseX * 6 + Math.sin(Date.now() * 0.001) * 3,
+			y: mouseY * 6 + Math.cos(Date.now() * 0.001) * 2,
+			intensity: scrollProgress * 4,
+			duration: 1.5,
+			ease: 'power2.out'
 		});
 	});
 
@@ -101,6 +329,28 @@
 					cameraZ = this.targets()[0].value;
 				}
 			});
+
+			// Animate particles based on scroll
+			if (particleMaterial && particleMaterial.uniforms && particleMaterial.uniforms.opacity) {
+				const scrollProgress = Math.min(scrollY / 300, 1);
+				console.log('Animating particles opacity to:', scrollProgress * 0.8);
+				gsap.to(particleMaterial.uniforms.opacity, {
+					value: scrollProgress * 0.8,
+					duration: 0.8,
+					ease: 'power2.out'
+				});
+			}
+
+			// Animate sparkles based on scroll
+			if (sparkleMaterial && sparkleMaterial.uniforms && sparkleMaterial.uniforms.opacity) {
+				const scrollProgress = Math.min(scrollY / 200, 1);
+				console.log('Animating sparkles opacity to:', scrollProgress * 0.6);
+				gsap.to(sparkleMaterial.uniforms.opacity, {
+					value: scrollProgress * 0.6,
+					duration: 1.0,
+					ease: 'power2.out'
+				});
+			}
 		};
 
 		window.addEventListener('scroll', handleScroll);
@@ -146,6 +396,10 @@
 
 		texturesLoaded = true;
 
+		// Create particle systems
+		createParticleSystem();
+		createSparkleSystem();
+
 		const loader = new SVGLoader();
 
 		try {
@@ -183,6 +437,7 @@
 
 <T.AmbientLight intensity={0.15} />
 <T.PointLight position={[lightPosition.x, lightPosition.y, lightPosition.z]} intensity={8} distance={50} decay={0.8} />
+<T.PointLight position={[additionalLight.x, additionalLight.y, additionalLight.z]} intensity={additionalLight.intensity} distance={30} decay={1.2} color={0xd4af37} />
 <T.DirectionalLight position={[8, 8, 8]} intensity={1.0} />
 <T.DirectionalLight position={[-5, -3, 5]} intensity={0.5} />
 
@@ -197,10 +452,19 @@
 				roughnessMap={concreteRoughnessMap}
 				roughness={0.9}
 				aoMap={concreteAOMap}
-				aoMapIntensity={3.0}
-				color={0x202020}
+				aoMapIntensity={4.0}
+				color={0x151515}
 			/>
 		</T.Mesh>
+	{/if}
+
+	<!-- Particle Systems -->
+	{#if particles}
+		<T is={particles} />
+	{/if}
+	
+	{#if sparkles}
+		<T is={sparkles} />
 	{/if}
 
 	<T.Group scale={[logoScale, -logoScale, 1]} position={[-logoCenter.x * logoScale, logoCenter.y * logoScale + 0.8, 0]}>

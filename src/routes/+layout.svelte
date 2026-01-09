@@ -8,6 +8,12 @@
 	import Header from '$lib/components/Header.svelte';
 
 	let { children } = $props();
+	let sidebarOpen = $state(false);
+
+	// Share sidebar state with Header
+	function toggleSidebar() {
+		sidebarOpen = !sidebarOpen;
+	}
 </script>
 
 <svelte:head>
@@ -21,12 +27,15 @@
 	/>
 </svelte:head>
 
-<div class="min-h-screen flex flex-col">
-	<Header />
-	<main class="flex-1">
-		{@render children()}
-	</main>
-	<Footer />
+<div class="app-container" class:sidebar-open={sidebarOpen}>
+	<Header {sidebarOpen} {toggleSidebar} />
+	
+	<div class="content-wrapper">
+		<main class="main-content">
+			{@render children()}
+		</main>
+		<Footer />
+	</div>
 </div>
 
 <div style="display:none">

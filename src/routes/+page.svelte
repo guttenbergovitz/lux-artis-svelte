@@ -6,6 +6,45 @@
 
 	let { data }: { data: any } = $props();
 
+	// Pool of Latin art quotes - longer phrases related to art
+	const latinQuotes = [
+		"Ars est celere artem et naturam imitari in omnibus operibus",
+		"Pulchritudo splendor veritatis est et forma perfecta artis",
+		"Natura artis magistra est sed ars naturam vincere potest",
+		"Ars sine scientia nihil est omnino et scientia sine arte vana",
+		"Forma dat esse rei et pulchritudo formam perficit in arte",
+		"Nihil sine magno labore vita dedit mortalibus in arte praesertim",
+		"Audentes fortuna iuvat timidosque repellit in omnibus artibus",
+		"Veritas vos liberabit ab ignorantia et ars veritatem manifestat",
+		"Per aspera ad astra ducit virtus et ars stellas tangit",
+		"Memento mori et carpe diem sed ars immortalis manet semper",
+		"Vanitas vanitatum et omnia vanitas sed ars aeterna permanet",
+		"Sic transit gloria mundi sed ars gloriam transcendit temporalem",
+		"Ars poetica est ars vivendi et vivere est creare perpetuo",
+		"In vino veritas in arte libertas in silentio sapientia",
+		"Cogito ergo sum et creo ergo vivo in arte semper",
+		"Tabula rasa mentis creativae est initium omnis artis novae",
+		"Terra incognita artis novae semper exploratores quaerit audaces",
+		"Status quo non est ars sed mors artis et creativitatis",
+		"Magnum opus vitae meae est ars quam mundo relinquo",
+		"Deus ex machina artis est inspiratio divina in homine",
+		"Sine qua non artis verae est passio et dedicatio totalis",
+		"Tempus fugit sed ars manet et memoriam humanam conservat",
+		"Vox populi vox artis est quando populus artem intelligit",
+		"Astra inclinant non necessitant sed ars fatum vincere potest",
+		"Fortuna caeca est sed ars oculos aperit et veritatem ostendit",
+		"Mens sana in corpore sano in arte perfecta se manifestat",
+		"Carpe diem et crea semper quia vita brevis ars longa est",
+		"Omnia vincit amor et nos cedamus amori artis et pulchritudinis",
+		"Docendo discimus et creando nos ipsos in arte perficimus",
+		"Errare humanum est sed in arte errores novam viam aperiunt"
+	];
+
+	// Function to get random quote
+	function getRandomQuote(): string {
+		return latinQuotes[Math.floor(Math.random() * latinQuotes.length)];
+	}
+
 	function t(path: string): string {
 		return getTranslation(data.translations, path);
 	}
@@ -39,6 +78,8 @@
 </script>
 
 <style>
+	/* Interwar Poster Typography System */
+	
 	/* Banner Container */
 	.banner-container {
 		position: relative;
@@ -46,7 +87,6 @@
 		overflow: hidden;
 	}
 
-	/* Hero Banner Spacer */
 	.hero-banner-spacer {
 		height: 100vh;
 	}
@@ -61,226 +101,390 @@
 		}
 	}
 
-	/* Hero Section */
-	.hero-section {
-		padding: var(--space-2xl) 0;
-		background: white;
-		text-align: center;
+	/* Elegant Latin Separators */
+	.latin-separator {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: var(--space-2xl) 0;
+		gap: 4px;
 	}
 
-	.hero-header h1 {
-		margin-bottom: var(--space-md);
+	.latin-separator.center {
+		align-items: center;
 	}
 
-	.hero-subtitle {
-		font-size: 1.25rem;
-		max-width: 65ch;
-		margin: 0 auto;
-		color: var(--color-graphite-light);
-	}
-
-	/* Mission Section */
-	.mission-section {
-		padding: var(--space-2xl) 0;
-	}
-
-	.mission-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--space-2xl);
-	}
-
-	/* Values Section */
-	.values-section {
-		padding: var(--space-2xl) 0;
-		background: white;
-	}
-
-	.values-content {
-		max-width: 80ch;
-	}
-
-	/* Focus Section */
-	.focus-section {
-		padding: var(--space-2xl) 0;
-		background: white;
-	}
-
-	.focus-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: var(--space-xl);
-		margin-top: var(--space-lg);
-	}
-
-	.focus-item h3 {
-		margin-bottom: var(--space-md);
-	}
-
-	/* Context & Process Section */
-	.context-process-section {
-		padding: var(--space-2xl) 0;
-		background: white;
-	}
-
-	.context-process-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--space-2xl);
-	}
-
-	/* CTA Section */
-	.cta-section {
-		padding: var(--space-2xl) 0;
-	}
-
-	.cta-content {
-		max-width: 80ch;
-		margin: 0 auto;
-		text-align: center;
-	}
-
-	.cta-intro {
-		font-size: 1.25rem;
-		line-height: 1.5;
-		color: var(--color-graphite-dark);
-		font-weight: 400;
-		font-family: var(--font-sans);
-		margin-bottom: var(--space-xl);
-	}
-
-	.cta-button {
-		display: inline-block;
-		padding: var(--space-md) var(--space-xl);
-		background: var(--color-graphite-dark);
-		color: white;
-		text-decoration: none;
-		font-family: var(--font-sans);
-		font-weight: 400;
-		font-size: 1rem;
-		transition: background-color 0.2s;
-	}
-
-	.cta-button:hover {
+	.separator-line {
+		width: 200px;
+		height: 1px;
 		background: var(--color-graphite);
+		opacity: 0.4;
 	}
 
-	/* Events Section */
-	.events-section {
-		padding: var(--space-2xl) 0;
-		background: white;
-	}
-
-	.events-header {
-		margin-bottom: var(--space-xl);
-	}
-
-	.events-header h2 {
-		margin-bottom: var(--space-md);
-	}
-
-	.events-header p {
-		max-width: 65ch;
-	}
-
-	.events-list {
-		margin-bottom: var(--space-2xl);
-	}
-
-	.event-item {
-		padding: var(--space-xl) 0;
-		border-bottom: 1px solid rgba(44, 44, 44, 0.1);
-	}
-
-	.event-item:last-child {
-		border-bottom: none;
-	}
-
-	.event-header {
-		margin-bottom: var(--space-md);
-	}
-
-	.event-header h3 {
-		margin-bottom: var(--space-sm);
-	}
-
-	.event-header time {
-		display: block;
+	.latin-quote {
 		font-family: var(--font-sans);
+		font-size: 0.65rem;
+		font-style: normal !important;
 		font-weight: 400;
-		font-size: 1.125rem;
 		color: var(--color-graphite-light);
-		margin-bottom: var(--space-sm);
-	}
-
-	.event-location {
-		font-family: var(--font-sans);
-		font-weight: 400;
-		font-size: 0.875rem;
-		letter-spacing: 0.05em;
+		opacity: 0.6;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: var(--color-graphite-light);
 		margin: 0;
 	}
 
-	.event-description {
+	/* Poster-style Typography Hierarchy */
+	.poster-section {
+		padding: calc(var(--space-2xl) * 2) 0;
+		background: white;
+	}
+
+	.poster-section.dark {
+		background: var(--color-gold);
+		color: var(--color-graphite-dark);
+	}
+
+	/* Hero: Large Display Typography */
+	.hero-poster {
+		text-align: left;
+		max-width: none;
+	}
+
+	.hero-title {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(4rem, 12vw, 8rem);
+		line-height: 0.9;
+		letter-spacing: -0.02em;
+		color: var(--color-graphite-dark);
+		margin: 0 0 calc(var(--space-2xl) * 1.5) 0;
+		text-transform: uppercase;
+	}
+
+	.hero-statement {
+		font-family: var(--font-serif);
+		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		line-height: 1.3;
+		color: var(--color-graphite);
+		max-width: 45ch;
+		margin: 0;
+		font-weight: 400;
+	}
+
+	/* Mission: Asymmetric Two-Column Block */
+	.mission-poster {
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		gap: calc(var(--space-2xl) * 2);
+		align-items: start;
+	}
+
+	.mission-block h2 {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		line-height: 0.95;
+		letter-spacing: -0.01em;
+		margin: 0 0 var(--space-xl) 0;
+		text-transform: uppercase;
+	}
+
+	.mission-block p {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		line-height: 1.4;
+		margin: 0;
+		font-weight: 400;
+	}
+
+	/* Values: Single Column Statement */
+	.values-poster {
 		max-width: 65ch;
-		margin-bottom: var(--space-md);
+	}
+
+	.values-title {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(2rem, 5vw, 3rem);
+		line-height: 1;
+		letter-spacing: -0.01em;
+		color: var(--color-graphite-dark);
+		margin: 0 0 calc(var(--space-2xl) * 1.5) 0;
+		text-transform: uppercase;
+	}
+
+	.values-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xl);
+	}
+
+	.values-item {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		line-height: 1.4;
+		color: var(--color-graphite);
+		margin: 0;
+		font-weight: 400;
+		border-left: 3px solid var(--color-graphite-dark);
+		padding-left: var(--space-lg);
+	}
+
+	/* Focus: Grid of Isolated Blocks */
+	.focus-poster {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: var(--space-2xl);
+		margin-top: var(--space-xl);
+	}
+
+	.focus-title {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		line-height: 0.95;
+		letter-spacing: -0.01em;
+		color: var(--color-graphite-dark);
+		margin: 0 0 var(--space-xl) 0;
+		text-transform: uppercase;
+		grid-column: 1 / -1;
+	}
+
+	.focus-block {
+		position: relative;
+		padding: var(--space-md) 0;
+	}
+
+	.focus-block::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60px;
+		height: 3px;
+		background: var(--color-graphite-dark);
+	}
+
+	.focus-block h3 {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(1.5rem, 4vw, 2.25rem);
+		line-height: 1.1;
+		color: var(--color-graphite-dark);
+		margin: 0 0 var(--space-sm) 0;
+		text-transform: uppercase;
+	}
+
+	.focus-block p {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		line-height: 1.4;
+		color: var(--color-graphite);
+		margin: 0;
+		font-weight: 400;
+	}
+
+	/* Context: Asymmetric Split */
+	.context-poster {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: calc(var(--space-2xl) * 2);
+		align-items: start;
+	}
+
+	.context-block h2 {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(2rem, 5vw, 3rem);
+		line-height: 0.95;
+		letter-spacing: -0.01em;
+		margin: 0 0 var(--space-xl) 0;
+		text-transform: uppercase;
+	}
+
+	.context-block p {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		line-height: 1.4;
+		margin: 0;
+		font-weight: 400;
+	}
+
+	/* CTA: Bold Statement Block */
+	.cta-poster {
+		text-align: left;
+		max-width: 55ch;
+	}
+
+	.cta-statement {
+		font-family: var(--font-serif);
+		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		line-height: 1.3;
+		margin: 0 0 calc(var(--space-2xl) * 1.5) 0;
+		font-weight: 400;
+	}
+
+	.cta-action {
+		display: inline-block;
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-graphite-dark);
+		text-decoration: none;
+		border: 2px solid var(--color-graphite-dark);
+		padding: var(--space-md) var(--space-xl);
+		transition: all 0.2s ease;
+	}
+
+	.cta-action:hover {
+		background: var(--color-graphite-dark);
+		color: var(--color-gold);
+	}
+
+	/* Events: Structured List */
+	.events-poster {
+		max-width: none;
+	}
+
+	.events-title {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(2rem, 5vw, 3rem);
+		line-height: 1;
+		letter-spacing: -0.01em;
+		color: var(--color-graphite-dark);
+		margin: 0 0 var(--space-lg) 0;
+		text-transform: uppercase;
+	}
+
+	.events-intro {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		line-height: 1.4;
+		color: var(--color-graphite);
+		margin: 0 0 calc(var(--space-2xl) * 1.5) 0;
+		max-width: 65ch;
+		font-weight: 400;
+	}
+
+	.event-block {
+		border-top: 1px solid var(--color-graphite);
+		padding: var(--space-xl) 0;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: var(--space-xl);
+		align-items: start;
+	}
+
+	.event-block:last-child {
+		border-bottom: 1px solid var(--color-graphite);
+	}
+
+	.event-meta h3 {
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		line-height: 1.1;
+		color: var(--color-graphite-dark);
+		margin: 0 0 var(--space-sm) 0;
+		text-transform: uppercase;
+	}
+
+	.event-meta time {
+		font-family: var(--font-sans);
+		font-weight: 400;
+		font-size: 1rem;
+		color: var(--color-graphite-light);
+		display: block;
+		margin-bottom: var(--space-xs);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.event-meta .event-location {
+		font-family: var(--font-sans);
+		font-weight: 400;
+		font-size: 0.875rem;
+		color: var(--color-graphite-light);
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.event-content p {
+		font-family: var(--font-serif);
+		font-size: 1rem;
+		line-height: 1.4;
+		color: var(--color-graphite);
+		margin: 0 0 var(--space-md) 0;
+		font-weight: 400;
 	}
 
 	.event-link {
-		display: inline-block;
-		padding: var(--space-sm) var(--space-lg);
-		border: 1px solid var(--color-graphite);
-		color: var(--color-graphite);
-		text-decoration: none;
 		font-family: var(--font-sans);
-		font-weight: 400;
-		transition: background-color 0.2s, color 0.2s;
+		font-weight: 700;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-graphite-dark);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-graphite-dark);
+		transition: opacity 0.2s ease;
 	}
 
 	.event-link:hover {
-		background: var(--color-graphite);
-		color: white;
+		opacity: 0.7;
 	}
 
 	.events-cta {
-		text-align: center;
+		margin-top: calc(var(--space-2xl) * 1.5);
+		text-align: left;
 	}
 
-	.events-all-link {
+	.events-all-action {
 		display: inline-block;
-		padding: var(--space-md) var(--space-xl);
-		background: var(--color-gold);
-		color: var(--color-graphite-dark);
-		text-decoration: none;
 		font-family: var(--font-sans);
-		font-weight: 400;
-		font-size: 1.125rem;
-		transition: background-color 0.2s;
+		font-weight: 700;
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-graphite-dark);
+		background: var(--color-gold);
+		text-decoration: none;
+		padding: var(--space-lg) var(--space-xl);
+		transition: opacity 0.2s ease;
 	}
 
-	.events-all-link:hover {
-		background: var(--color-gold-dark);
+	.events-all-action:hover {
+		opacity: 0.8;
 	}
 
 	.no-events {
-		text-align: center;
-		padding: var(--space-2xl) 0;
+		font-family: var(--font-serif);
+		font-size: 1.25rem;
 		color: var(--color-graphite-light);
+		text-align: center;
+		padding: calc(var(--space-2xl) * 2) 0;
 	}
 
-	/* Mobile responsive */
+	/* Mobile: Maintain Poster Logic */
 	@media (max-width: 768px) {
-		.mission-grid,
-		.context-process-grid {
+		.mission-poster,
+		.context-poster {
+			grid-template-columns: 1fr;
+			gap: var(--space-2xl);
+		}
+
+		.focus-poster {
 			grid-template-columns: 1fr;
 			gap: var(--space-xl);
 		}
 
-		.focus-grid {
+		.event-block {
 			grid-template-columns: 1fr;
-			gap: var(--space-lg);
+			gap: var(--space-md);
 		}
 	}
 </style>
@@ -292,26 +496,30 @@
 	<div class="hero-banner-spacer" aria-hidden="true"></div>
 </div>
 
-<!-- Hero Section -->
-<section class="hero-section">
+<!-- Hero: Large Display Statement -->
+<section class="poster-section">
 	<Container>
-		<header class="hero-header">
-			<h1>{t('pages.home.title')}</h1>
-			<p class="hero-subtitle">{t('pages.home.subtitle')}</p>
-		</header>
+		<div class="hero-poster">
+			<h1 class="hero-title">{t('pages.home.title')}</h1>
+			<p class="hero-statement">{t('pages.home.subtitle')}</p>
+		</div>
+		<div class="latin-separator">
+			<div class="separator-line"></div>
+			<p class="latin-quote">{getRandomQuote()}</p>
+		</div>
 	</Container>
 </section>
 
-<!-- Mission & Approach -->
-<section class="mission-section bg-gold">
+<!-- Mission: Asymmetric Two-Column Block -->
+<section class="poster-section dark">
 	<Container>
-		<div class="mission-grid">
-			<article class="mission-article">
+		<div class="mission-poster">
+			<article class="mission-block">
 				<h2>{t('pages.home.mission.title')}</h2>
 				<p>{t('pages.home.mission.text')}</p>
 			</article>
 
-			<article class="approach-article">
+			<article class="mission-block">
 				<h2>{t('pages.home.approach.title')}</h2>
 				<p>{t('pages.home.approach.text')}</p>
 			</article>
@@ -319,100 +527,120 @@
 	</Container>
 </section>
 
-<!-- Values -->
-<section class="values-section">
+<!-- Values: Single Column Statement -->
+<section class="poster-section">
 	<Container>
-		<h2>{t('pages.home.values.title')}</h2>
-		<div class="values-content">
-			<p>Stawiamy na głębię i wartość artystyczną. Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę.</p>
-			<p>Droga do rezultatu jest równie istotna. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
-			<p>Budujemy trwałe relacje i konteksty. Myślimy o kulturze jako o ciągłym procesie, nie jednorazowych wydarzeniach.</p>
-			<p>Działamy uczciwie i profesjonalnie. Otwarta komunikacja i jasne zasady współpracy z artystami i partnerami.</p>
+		<div class="latin-separator center">
+			<div class="separator-line"></div>
+			<p class="latin-quote">{getRandomQuote()}</p>
+		</div>
+		<div class="values-poster">
+			<h2 class="values-title">{t('pages.home.values.title')}</h2>
+			<div class="values-list">
+				<p class="values-item">Stawiamy na głębię i wartość artystyczną. Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę.</p>
+				<p class="values-item">Droga do rezultatu jest równie istotna. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
+				<p class="values-item">Budujemy trwałe relacje i konteksty. Myślimy o kulturze jako o ciągłym procesie, nie jednorazowych wydarzeniach.</p>
+				<p class="values-item">Działamy uczciwie i profesjonalnie. Otwarta komunikacja i jasne zasady współpracy z artystami i partnerami.</p>
+			</div>
 		</div>
 	</Container>
 </section>
 
-<!-- Focus Areas -->
-<section class="focus-section">
+<!-- Focus: Grid of Isolated Blocks -->
+<section class="poster-section">
 	<Container>
-		<h2>{t('pages.home.focus.title')}</h2>
-		{#if data.translations.pages?.home?.focus?.items}
-			<div class="focus-grid">
+		<div class="focus-poster">
+			<h2 class="focus-title">{t('pages.home.focus.title')}</h2>
+			{#if data.translations.pages?.home?.focus?.items}
 				{#each data.translations.pages.home.focus.items as item}
-					<article class="focus-item">
+					<article class="focus-block">
 						<h3>{item.title}</h3>
 						<p>{item.text}</p>
 					</article>
 				{/each}
-			</div>
-		{/if}
-	</Container>
-</section>
-
-<!-- Context & Process -->
-<section class="context-process-section">
-	<Container>
-		<div class="context-process-grid">
-			<article class="context-article">
-				<h2>{t('pages.home.context.title')}</h2>
-				<p>{t('pages.home.context.text')}</p>
-			</article>
-
-			<article class="process-article">
-				<h2>{t('pages.home.process.title')}</h2>
-				<p>{t('pages.home.process.text')}</p>
-			</article>
+			{/if}
+		</div>
+		<div class="latin-separator center">
+			<div class="separator-line"></div>
+			<p class="latin-quote">{getRandomQuote()}</p>
 		</div>
 	</Container>
 </section>
 
-<!-- Learn More CTA -->
-<section class="cta-section bg-gold">
+<!-- Context: Asymmetric Split -->
+<section class="poster-section">
 	<Container>
-		<div class="cta-content">
-			<p class="cta-intro">{t('pages.home.learnMoreIntro')}</p>
-			<a href={getAboutUrl(data.locale)} class="cta-button">
+		<div class="context-poster">
+			<article class="context-block">
+				<h2>{t('pages.home.context.title')}</h2>
+				<p>{t('pages.home.context.text')}</p>
+			</article>
+
+			<article class="context-block">
+				<h2>{t('pages.home.process.title')}</h2>
+				<p>{t('pages.home.process.text')}</p>
+			</article>
+		</div>
+		<div class="latin-separator">
+			<div class="separator-line"></div>
+			<p class="latin-quote">{getRandomQuote()}</p>
+		</div>
+	</Container>
+</section>
+
+<!-- CTA: Bold Statement Block -->
+<section class="poster-section dark">
+	<Container>
+		<div class="cta-poster">
+			<p class="cta-statement">{t('pages.home.learnMoreIntro')}</p>
+			<a href={getAboutUrl(data.locale)} class="cta-action">
 				{t('pages.home.learnMore')}
 			</a>
 		</div>
 	</Container>
 </section>
 
-<!-- Upcoming Events -->
-<section class="events-section">
+<!-- Events: Structured List -->
+<section class="poster-section">
 	<Container>
-		<header class="events-header">
-			<h2>{t('pages.home.upcomingEvents')}</h2>
-			<p>{t('pages.home.upcomingEventsIntro')}</p>
-		</header>
+		<div class="latin-separator center">
+			<div class="separator-line"></div>
+			<p class="latin-quote">{getRandomQuote()}</p>
+		</div>
+		<div class="events-poster">
+			<h2 class="events-title">{t('pages.home.upcomingEvents')}</h2>
+			<p class="events-intro">{t('pages.home.upcomingEventsIntro')}</p>
 
-		{#if data.upcomingEvents.length > 0}
-			<div class="events-list">
-				{#each data.upcomingEvents as event}
-					<article class="event-item">
-						<header class="event-header">
-							<h3>{event.title}</h3>
-							<time datetime={event.date}>{formatDate(event.date, data.locale)}</time>
-							{#if event.venue && event.city}
-								<p class="event-location">{event.venue}, {event.city}</p>
-							{/if}
-						</header>
-						{#if event.description}
-							<p class="event-description">{event.description}</p>
-						{/if}
-						<a href={getEventUrl(data.locale, event.slug)} class="event-link">
-							{t('pages.home.readMore')}
-						</a>
-					</article>
-				{/each}
-			</div>
-			<div class="events-cta">
-				<a href={getEventsUrl(data.locale)} class="events-all-link">
-					{t('pages.home.viewAllEvents')}
-				</a>
-			</div>
-		{:else}
-			<p class="no-events">{t('common.noUpcomingEvents')}</p>
-		{/if}
+			{#if data.upcomingEvents.length > 0}
+				<div class="events-list">
+					{#each data.upcomingEvents as event}
+						<article class="event-block">
+							<div class="event-meta">
+								<h3>{event.title}</h3>
+								<time datetime={event.date}>{formatDate(event.date, data.locale)}</time>
+								{#if event.venue && event.city}
+									<p class="event-location">{event.venue}, {event.city}</p>
+								{/if}
+							</div>
+							<div class="event-content">
+								{#if event.description}
+									<p>{event.description}</p>
+								{/if}
+								<a href={getEventUrl(data.locale, event.slug)} class="event-link">
+									{t('pages.home.readMore')}
+								</a>
+							</div>
+						</article>
+					{/each}
+				</div>
+				<div class="events-cta">
+					<a href={getEventsUrl(data.locale)} class="events-all-action">
+						{t('pages.home.viewAllEvents')}
+					</a>
+				</div>
+			{:else}
+				<p class="no-events">{t('common.noUpcomingEvents')}</p>
+			{/if}
+		</div>
 	</Container>
 </section>
