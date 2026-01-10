@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Container from '$lib/components/Container.svelte';
+	import MotionReveal from '$lib/components/MotionReveal.svelte';
 	import { getTranslation } from '$lib/i18n';
 	import type { PageData } from './$types';
 
@@ -96,9 +97,9 @@
 		color: rgba(255, 255, 255, 0.6);
 	}
 
-	/* Poster Sections */
+	/* Poster Sections - Responsive */
 	.poster-section {
-		padding: calc(var(--space-2xl) * 2) 0;
+		padding: var(--space-xl) 0;
 		background: white;
 	}
 
@@ -107,26 +108,32 @@
 		color: white;
 	}
 
-	/* Hero Typography */
+	.poster-section.gold {
+		background: var(--color-gold);
+		color: var(--color-graphite-dark);
+	}
+
+	/* Hero Typography - Responsive */
 	.about-hero {
 		text-align: left;
 		max-width: none;
+		padding: var(--space-md) 0;
 	}
 
 	.hero-title {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(3rem, 8vw, 6rem);
+		font-size: clamp(2.5rem, 8vw, 6rem);
 		line-height: 0.9;
 		letter-spacing: -0.02em;
 		color: white;
-		margin: 0 0 var(--space-xl) 0;
+		margin: 0 0 var(--space-lg) 0;
 		text-transform: uppercase;
 	}
 
 	.hero-subtitle {
 		font-family: var(--font-serif);
-		font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+		font-size: clamp(1rem, 3vw, 1.5rem);
 		line-height: 1.4;
 		color: rgba(255, 255, 255, 0.9);
 		max-width: 65ch;
@@ -134,14 +141,14 @@
 		font-weight: 400;
 	}
 
-	/* Section Typography */
+	/* Section Typography - Responsive */
 	.section-title {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(2rem, 5vw, 3.5rem);
+		font-size: clamp(1.75rem, 5vw, 2.5rem);
 		line-height: 0.95;
 		letter-spacing: -0.01em;
-		margin: 0 0 var(--space-xl) 0;
+		margin: 0 0 var(--space-lg) 0;
 		text-transform: uppercase;
 	}
 
@@ -157,7 +164,7 @@
 		font-family: var(--font-serif);
 		font-size: clamp(1rem, 2.5vw, 1.25rem);
 		line-height: 1.5;
-		margin: 0 0 var(--space-lg) 0;
+		margin: 0 0 var(--space-md) 0;
 		font-weight: 400;
 		max-width: 70ch;
 	}
@@ -170,28 +177,28 @@
 		color: var(--color-graphite);
 	}
 
-	/* Two Column Layout */
+	/* Two Column Layout - Responsive */
 	.two-column {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--space-2xl) * 1.5);
+		gap: var(--space-xl);
 		align-items: start;
 	}
 
-	/* Values Grid */
+	/* Values Grid - Responsive */
 	.values-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: var(--space-2xl);
-		margin-top: var(--space-xl);
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--space-lg);
+		margin-top: var(--space-lg);
 	}
 
 	.value-block h3 {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		font-size: clamp(1.125rem, 3vw, 1.5rem);
 		line-height: 1.1;
-		margin: 0 0 var(--space-md) 0;
+		margin: 0 0 var(--space-sm) 0;
 		text-transform: uppercase;
 	}
 
@@ -205,7 +212,7 @@
 
 	.value-block p {
 		font-family: var(--font-serif);
-		font-size: 1rem;
+		font-size: clamp(0.875rem, 2vw, 1rem);
 		line-height: 1.4;
 		margin: 0;
 		font-weight: 400;
@@ -219,16 +226,74 @@
 		color: var(--color-graphite);
 	}
 
+	/* Latin Separators - Responsive */
+	.latin-separator {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: var(--space-lg) 0;
+		gap: 4px;
+	}
+
+	.latin-separator.center {
+		align-items: center;
+	}
+
+	.separator-line {
+		width: clamp(120px, 30vw, 200px);
+		height: 1px;
+		background: var(--color-graphite);
+		opacity: 0.4;
+	}
+
+	.poster-section.dark .separator-line,
+	.poster-section.gold .separator-line {
+		background: rgba(255, 255, 255, 0.4);
+	}
+
+	.latin-quote {
+		font-family: var(--font-sans);
+		font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+		font-style: normal !important;
+		font-weight: 400;
+		color: var(--color-graphite-light);
+		opacity: 0.6;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	.poster-section.dark .latin-quote,
+	.poster-section.gold .latin-quote {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
 	/* Mobile Responsive */
 	@media (max-width: 768px) {
+		.poster-section {
+			padding: var(--space-lg) 0;
+		}
+		
+		.about-hero {
+			padding: var(--space-sm) 0;
+		}
+		
 		.two-column {
 			grid-template-columns: 1fr;
-			gap: var(--space-xl);
+			gap: var(--space-lg);
 		}
 
 		.values-grid {
 			grid-template-columns: 1fr;
-			gap: var(--space-lg);
+			gap: var(--space-md);
+		}
+		
+		.latin-separator {
+			margin: var(--space-md) 0;
+		}
+		
+		.section-text {
+			margin-bottom: var(--space-sm);
 		}
 	}
 </style>
@@ -236,59 +301,76 @@
 <!-- Hero Section -->
 <section class="poster-section dark">
 	<Container>
-		<div class="about-hero">
-			<h1 class="hero-title">{t('pages.about.title')}</h1>
-			<p class="hero-subtitle">{t('pages.about.subtitle')}</p>
-		</div>
-		<div class="latin-separator">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		<MotionReveal type="section" intensity="strong">
+			<div class="about-hero">
+				<h1 class="hero-title">{t('pages.about.title')}</h1>
+				<p class="hero-subtitle">{t('pages.about.subtitle')}</p>
+			</div>
+		</MotionReveal>
+		
+		<MotionReveal type="wipe" direction="left" delay={600}>
+			<div class="latin-separator">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Mission & Vision -->
 <section class="poster-section gold">
 	<Container>
-		<div class="two-column">
-			<article>
-				<h2 class="section-title dark">{t('pages.about.mission.title')}</h2>
-				<p class="section-text dark">{t('pages.about.mission.text')}</p>
-			</article>
-			<article>
-				<h2 class="section-title dark">{t('pages.about.vision.title')}</h2>
-				<p class="section-text dark">{t('pages.about.vision.text')}</p>
-			</article>
-		</div>
+		<MotionReveal type="stagger" staggerDelay={150} maxStaggerItems={2}>
+			<div class="two-column">
+				<article>
+					<h2 class="section-title dark">{t('pages.about.mission.title')}</h2>
+					<p class="section-text dark">{t('pages.about.mission.text')}</p>
+				</article>
+				<article>
+					<h2 class="section-title dark">{t('pages.about.vision.title')}</h2>
+					<p class="section-text dark">{t('pages.about.vision.text')}</p>
+				</article>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Approach -->
 <section class="poster-section">
 	<Container>
-		<div class="latin-separator center">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
-		<h2 class="section-title">{t('pages.about.approach.title')}</h2>
-		<p class="section-text">{t('pages.about.approach.text')}</p>
+		<MotionReveal type="wipe" direction="bottom" delay={100}>
+			<div class="latin-separator center">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
+		
+		<MotionReveal type="section" delay={300}>
+			<h2 class="section-title">{t('pages.about.approach.title')}</h2>
+			<p class="section-text">{t('pages.about.approach.text')}</p>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Values -->
 <section class="poster-section dark">
 	<Container>
-		<h2 class="section-title white">{t('pages.about.values.title')}</h2>
-		<div class="values-grid">
-			{#if data.translations.pages?.about?.values?.items}
-				{#each data.translations.pages.about.values.items as item}
-					<article class="value-block">
-						<h3 class="white">{item.title}</h3>
-						<p class="white">{item.text}</p>
-					</article>
-				{/each}
-			{/if}
-		</div>
+		<MotionReveal type="section">
+			<h2 class="section-title white">{t('pages.about.values.title')}</h2>
+		</MotionReveal>
+		
+		{#if data.translations.pages?.about?.values?.items}
+			<MotionReveal type="stagger" staggerDelay={100} maxStaggerItems={6}>
+				<div class="values-grid">
+					{#each data.translations.pages.about.values.items as item}
+						<article class="value-block">
+							<h3 class="white">{item.title}</h3>
+							<p class="white">{item.text}</p>
+						</article>
+					{/each}
+				</div>
+			</MotionReveal>
+		{/if}
 	</Container>
 </section>
 
@@ -297,96 +379,140 @@
 	<!-- Culture -->
 	<section class="poster-section">
 		<Container>
-			<div class="latin-separator center">
-				<div class="separator-line"></div>
-				<p class="latin-quote">{getRandomQuote()}</p>
-			</div>
-			<h2 class="section-title">{t('pages.about.extended.culture.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.culture.text')) as paragraph}
-				<p class="section-text">{paragraph}</p>
-			{/each}
+			<MotionReveal type="wipe" direction="left" delay={100}>
+				<div class="latin-separator center">
+					<div class="separator-line"></div>
+					<p class="latin-quote">{getRandomQuote()}</p>
+				</div>
+			</MotionReveal>
+			
+			<MotionReveal type="section" delay={300}>
+				<h2 class="section-title">{t('pages.about.extended.culture.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.culture.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 500}>
+						<p class="section-text">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Activities -->
 	<section class="poster-section gold">
 		<Container>
-			<h2 class="section-title dark">{t('pages.about.extended.activities.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.activities.text')) as paragraph}
-				<p class="section-text dark">{paragraph}</p>
-			{/each}
+			<MotionReveal type="section">
+				<h2 class="section-title dark">{t('pages.about.extended.activities.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.activities.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 200}>
+						<p class="section-text dark">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Location -->
 	<section class="poster-section">
 		<Container>
-			<div class="latin-separator">
-				<div class="separator-line"></div>
-				<p class="latin-quote">{getRandomQuote()}</p>
-			</div>
-			<h2 class="section-title">{t('pages.about.extended.location.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.location.text')) as paragraph}
-				<p class="section-text">{paragraph}</p>
-			{/each}
+			<MotionReveal type="wipe" direction="bottom" delay={100}>
+				<div class="latin-separator">
+					<div class="separator-line"></div>
+					<p class="latin-quote">{getRandomQuote()}</p>
+				</div>
+			</MotionReveal>
+			
+			<MotionReveal type="section" delay={300}>
+				<h2 class="section-title">{t('pages.about.extended.location.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.location.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 500}>
+						<p class="section-text">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Audience -->
 	<section class="poster-section dark">
 		<Container>
-			<h2 class="section-title white">{t('pages.about.extended.audience.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.audience.text')) as paragraph}
-				<p class="section-text white">{paragraph}</p>
-			{/each}
+			<MotionReveal type="section">
+				<h2 class="section-title white">{t('pages.about.extended.audience.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.audience.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 200}>
+						<p class="section-text white">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Philosophy -->
 	<section class="poster-section">
 		<Container>
-			<div class="latin-separator center">
-				<div class="separator-line"></div>
-				<p class="latin-quote">{getRandomQuote()}</p>
-			</div>
-			<h2 class="section-title">{t('pages.about.extended.philosophy.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.philosophy.text')) as paragraph}
-				<p class="section-text">{paragraph}</p>
-			{/each}
+			<MotionReveal type="wipe" direction="left" delay={100}>
+				<div class="latin-separator center">
+					<div class="separator-line"></div>
+					<p class="latin-quote">{getRandomQuote()}</p>
+				</div>
+			</MotionReveal>
+			
+			<MotionReveal type="section" delay={300}>
+				<h2 class="section-title">{t('pages.about.extended.philosophy.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.philosophy.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 500}>
+						<p class="section-text">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Collaboration -->
 	<section class="poster-section gold">
 		<Container>
-			<h2 class="section-title dark">{t('pages.about.extended.collaboration.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.collaboration.text')) as paragraph}
-				<p class="section-text dark">{paragraph}</p>
-			{/each}
+			<MotionReveal type="section">
+				<h2 class="section-title dark">{t('pages.about.extended.collaboration.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.collaboration.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 200}>
+						<p class="section-text dark">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Community -->
 	<section class="poster-section">
 		<Container>
-			<div class="latin-separator">
-				<div class="separator-line"></div>
-				<p class="latin-quote">{getRandomQuote()}</p>
-			</div>
-			<h2 class="section-title">{t('pages.about.extended.community.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.community.text')) as paragraph}
-				<p class="section-text">{paragraph}</p>
-			{/each}
+			<MotionReveal type="wipe" direction="bottom" delay={100}>
+				<div class="latin-separator">
+					<div class="separator-line"></div>
+					<p class="latin-quote">{getRandomQuote()}</p>
+				</div>
+			</MotionReveal>
+			
+			<MotionReveal type="section" delay={300}>
+				<h2 class="section-title">{t('pages.about.extended.community.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.community.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 500}>
+						<p class="section-text">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 
 	<!-- Future -->
 	<section class="poster-section dark">
 		<Container>
-			<h2 class="section-title white">{t('pages.about.extended.future.title')}</h2>
-			{#each splitParagraphs(t('pages.about.extended.future.text')) as paragraph}
-				<p class="section-text white">{paragraph}</p>
-			{/each}
+			<MotionReveal type="section">
+				<h2 class="section-title white">{t('pages.about.extended.future.title')}</h2>
+				{#each splitParagraphs(t('pages.about.extended.future.text')) as paragraph, index}
+					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 200}>
+						<p class="section-text white">{paragraph}</p>
+					</MotionReveal>
+				{/each}
+			</MotionReveal>
 		</Container>
 	</section>
 {/if}

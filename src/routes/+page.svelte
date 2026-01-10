@@ -1,8 +1,11 @@
 <script lang="ts">
 	import Container from '$lib/components/Container.svelte';
 	import HeroBanner3D from '$lib/components/HeroBanner3D.svelte';
+	import MotionReveal from '$lib/components/MotionReveal.svelte';
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { onMount } from 'svelte';
+	import { motionController } from '$lib/utils/motionController';
 
 	let { data }: { data: any } = $props();
 
@@ -48,6 +51,15 @@
 	function t(path: string): string {
 		return getTranslation(data.translations, path);
 	}
+
+	onMount(() => {
+		// Tylko subtelny parallax dla głównych tytułów - bez chaosu
+		const heroTitle = document.querySelector('.hero-title');
+		
+		if (heroTitle) {
+			motionController.parallaxText(heroTitle, 0.05); // Bardzo subtelny
+		}
+	});
 
 	function getEventUrl(locale: string, slug: string): string {
 		return localizeHref(`/events/${slug}`, { locale: locale as 'pl' | 'en' | 'de' });
@@ -133,10 +145,9 @@
 		margin: 0;
 	}
 
-	/* Poster-style Typography Hierarchy */
+	/* Poster Section Base */
 	.poster-section {
-		padding: calc(var(--space-2xl) * 2) 0;
-		background: white;
+		padding: var(--space-xl) 0;
 	}
 
 	.poster-section.dark {
@@ -148,22 +159,23 @@
 	.hero-poster {
 		text-align: left;
 		max-width: none;
+		padding: var(--space-lg) 0;
 	}
 
 	.hero-title {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(4rem, 12vw, 8rem);
+		font-size: clamp(3rem, 10vw, 8rem);
 		line-height: 0.9;
 		letter-spacing: -0.02em;
 		color: var(--color-graphite-dark);
-		margin: 0 0 calc(var(--space-2xl) * 1.5) 0;
+		margin: 0 0 var(--space-lg) 0;
 		text-transform: uppercase;
 	}
 
 	.hero-statement {
 		font-family: var(--font-serif);
-		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		font-size: clamp(1.125rem, 3.5vw, 1.75rem);
 		line-height: 1.3;
 		color: var(--color-graphite);
 		max-width: 45ch;
@@ -174,18 +186,18 @@
 	/* Mission: Asymmetric Two-Column Block */
 	.mission-poster {
 		display: grid;
-		grid-template-columns: 2fr 3fr;
-		gap: calc(var(--space-2xl) * 2);
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-xl);
 		align-items: start;
 	}
 
 	.mission-block h2 {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(2.5rem, 6vw, 4rem);
+		font-size: clamp(1.75rem, 5vw, 3rem);
 		line-height: 0.95;
 		letter-spacing: -0.01em;
-		margin: 0 0 var(--space-xl) 0;
+		margin: 0 0 var(--space-md) 0;
 		text-transform: uppercase;
 	}
 
@@ -205,18 +217,18 @@
 	.values-title {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(2rem, 5vw, 3rem);
+		font-size: clamp(1.75rem, 5vw, 2.5rem);
 		line-height: 1;
 		letter-spacing: -0.01em;
 		color: var(--color-graphite-dark);
-		margin: 0 0 calc(var(--space-2xl) * 1.5) 0;
+		margin: 0 0 var(--space-lg) 0;
 		text-transform: uppercase;
 	}
 
 	.values-list {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-xl);
+		gap: var(--space-md);
 	}
 
 	.values-item {
@@ -227,32 +239,35 @@
 		margin: 0;
 		font-weight: 400;
 		border-left: 3px solid var(--color-graphite-dark);
-		padding-left: var(--space-lg);
+		padding-left: var(--space-md);
 	}
 
 	/* Focus: Grid of Isolated Blocks */
 	.focus-poster {
+		margin-top: var(--space-md);
+	}
+
+	.focus-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-		gap: var(--space-2xl);
-		margin-top: var(--space-xl);
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--space-lg);
+		margin-top: var(--space-lg);
 	}
 
 	.focus-title {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(2.5rem, 6vw, 4rem);
+		font-size: clamp(1.75rem, 5vw, 2.5rem);
 		line-height: 0.95;
 		letter-spacing: -0.01em;
 		color: var(--color-graphite-dark);
-		margin: 0 0 var(--space-xl) 0;
+		margin: 0 0 var(--space-lg) 0;
 		text-transform: uppercase;
-		grid-column: 1 / -1;
 	}
 
 	.focus-block {
 		position: relative;
-		padding: var(--space-md) 0;
+		padding: var(--space-sm) 0;
 	}
 
 	.focus-block::before {
@@ -268,7 +283,7 @@
 	.focus-block h3 {
 		font-family: var(--font-sans);
 		font-weight: 700;
-		font-size: clamp(1.5rem, 4vw, 2.25rem);
+		font-size: clamp(1.25rem, 3vw, 1.75rem);
 		line-height: 1.1;
 		color: var(--color-graphite-dark);
 		margin: 0 0 var(--space-sm) 0;
@@ -469,7 +484,48 @@
 		padding: calc(var(--space-2xl) * 2) 0;
 	}
 
-	/* Mobile: Maintain Poster Logic */
+	/* Enhanced parallax containers */
+	.hero-title,
+	.mission-block h2,
+	.values-title {
+		transform-style: preserve-3d;
+		backface-visibility: hidden;
+	}
+
+	/* Mobile: Optimized for readability */
+	@media (max-width: 768px) {
+		.poster-section {
+			padding: var(--space-lg) 0;
+		}
+		
+		.hero-poster {
+			padding: var(--space-md) 0;
+		}
+		
+		.mission-poster,
+		.context-poster {
+			grid-template-columns: 1fr;
+			gap: var(--space-lg);
+		}
+
+		.focus-grid {
+			grid-template-columns: 1fr;
+			gap: var(--space-md);
+		}
+
+		.event-block {
+			grid-template-columns: 1fr;
+			gap: var(--space-sm);
+		}
+		
+		.values-item {
+			padding-left: var(--space-sm);
+		}
+		
+		.latin-separator {
+			margin: var(--space-lg) 0;
+		}
+	}
 	@media (max-width: 768px) {
 		.mission-poster,
 		.context-poster {
@@ -477,7 +533,7 @@
 			gap: var(--space-2xl);
 		}
 
-		.focus-poster {
+		.focus-grid {
 			grid-template-columns: 1fr;
 			gap: var(--space-xl);
 		}
@@ -499,71 +555,92 @@
 <!-- Hero: Large Display Statement -->
 <section class="poster-section">
 	<Container>
-		<div class="hero-poster">
-			<h1 class="hero-title">{t('pages.home.title')}</h1>
-			<p class="hero-statement">{t('pages.home.subtitle')}</p>
-		</div>
-		<div class="latin-separator">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		<MotionReveal type="section" intensity="strong">
+			<div class="hero-poster">
+				<h1 class="hero-title">{t('pages.home.title')}</h1>
+				<p class="hero-statement">{t('pages.home.subtitle')}</p>
+			</div>
+		</MotionReveal>
+		
+		<MotionReveal type="wipe" direction="left" delay={600}>
+			<div class="latin-separator">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Mission: Asymmetric Two-Column Block -->
 <section class="poster-section dark">
 	<Container>
-		<div class="mission-poster">
-			<article class="mission-block">
-				<h2>{t('pages.home.mission.title')}</h2>
-				<p>{t('pages.home.mission.text')}</p>
-			</article>
+		<MotionReveal type="section" delay={200}>
+			<div class="mission-poster">
+				<article class="mission-block">
+					<h2>{t('pages.home.mission.title')}</h2>
+					<p>{t('pages.home.mission.text')}</p>
+				</article>
 
-			<article class="mission-block">
-				<h2>{t('pages.home.approach.title')}</h2>
-				<p>{t('pages.home.approach.text')}</p>
-			</article>
-		</div>
+				<article class="mission-block">
+					<h2>{t('pages.home.approach.title')}</h2>
+					<p>{t('pages.home.approach.text')}</p>
+				</article>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Values: Single Column Statement -->
 <section class="poster-section">
 	<Container>
-		<div class="latin-separator center">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
-		<div class="values-poster">
-			<h2 class="values-title">{t('pages.home.values.title')}</h2>
-			<div class="values-list">
-				<p class="values-item">Stawiamy na głębię i wartość artystyczną. Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę.</p>
-				<p class="values-item">Droga do rezultatu jest równie istotna. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
-				<p class="values-item">Budujemy trwałe relacje i konteksty. Myślimy o kulturze jako o ciągłym procesie, nie jednorazowych wydarzeniach.</p>
-				<p class="values-item">Działamy uczciwie i profesjonalnie. Otwarta komunikacja i jasne zasady współpracy z artystami i partnerami.</p>
+		<MotionReveal type="wipe" direction="left" delay={200}>
+			<div class="latin-separator center">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
 			</div>
-		</div>
+		</MotionReveal>
+		
+		<MotionReveal type="section" delay={300}>
+			<div class="values-poster">
+				<h2 class="values-title">{t('pages.home.values.title')}</h2>
+				<div class="values-list">
+					<p class="values-item">Stawiamy na głębię i wartość artystyczną. Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę.</p>
+					<p class="values-item">Droga do rezultatu jest równie istotna. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
+					<p class="values-item">Budujemy trwałe relacje i konteksty. Myślimy o kulturze jako o ciągłym procesie, nie jednorazowych wydarzeniach.</p>
+					<p class="values-item">Działamy uczciwie i profesjonalnie. Otwarta komunikacja i jasne zasady współpracy z artystami i partnerami.</p>
+				</div>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Focus: Grid of Isolated Blocks -->
 <section class="poster-section">
 	<Container>
-		<div class="focus-poster">
-			<h2 class="focus-title">{t('pages.home.focus.title')}</h2>
-			{#if data.translations.pages?.home?.focus?.items}
-				{#each data.translations.pages.home.focus.items as item}
-					<article class="focus-block">
-						<h3>{item.title}</h3>
-						<p>{item.text}</p>
-					</article>
-				{/each}
-			{/if}
-		</div>
-		<div class="latin-separator center">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		<MotionReveal type="reveal">
+			<div class="focus-poster">
+				<h2 class="focus-title">{t('pages.home.focus.title')}</h2>
+				{#if data.translations.pages?.home?.focus?.items}
+					<div class="focus-grid">
+						{#each data.translations.pages.home.focus.items as item, index}
+							<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 200}>
+								<article class="focus-block">
+									<h3>{item.title}</h3>
+									<p>{item.text}</p>
+								</article>
+							</MotionReveal>
+						{/each}
+					</div>
+				{/if}
+			</div>
+		</MotionReveal>
+		
+		<MotionReveal type="wipe" direction="left" delay={600}>
+			<div class="latin-separator center">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
@@ -571,76 +648,97 @@
 <section class="poster-section">
 	<Container>
 		<div class="context-poster">
-			<article class="context-block">
-				<h2>{t('pages.home.context.title')}</h2>
-				<p>{t('pages.home.context.text')}</p>
-			</article>
+			<MotionReveal type="reveal" delay={100}>
+				<article class="context-block">
+					<h2>{t('pages.home.context.title')}</h2>
+					<p>{t('pages.home.context.text')}</p>
+				</article>
+			</MotionReveal>
 
-			<article class="context-block">
-				<h2>{t('pages.home.process.title')}</h2>
-				<p>{t('pages.home.process.text')}</p>
-			</article>
+			<MotionReveal type="reveal" delay={200}>
+				<article class="context-block">
+					<h2>{t('pages.home.process.title')}</h2>
+					<p>{t('pages.home.process.text')}</p>
+				</article>
+			</MotionReveal>
 		</div>
-		<div class="latin-separator">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		
+		<MotionReveal type="wipe" direction="left" delay={400}>
+			<div class="latin-separator">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- CTA: Bold Statement Block -->
 <section class="poster-section dark">
 	<Container>
-		<div class="cta-poster">
-			<p class="cta-statement">{t('pages.home.learnMoreIntro')}</p>
-			<a href={getAboutUrl(data.locale)} class="cta-action">
-				{t('pages.home.learnMore')}
-			</a>
-		</div>
+		<MotionReveal type="reveal" intensity="standard">
+			<div class="cta-poster">
+				<p class="cta-statement">{t('pages.home.learnMoreIntro')}</p>
+				<a href={getAboutUrl(data.locale)} class="cta-action motion-hover motion-focus">
+					{t('pages.home.learnMore')}
+				</a>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Events: Structured List -->
 <section class="poster-section">
 	<Container>
-		<div class="latin-separator center">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
-		<div class="events-poster">
-			<h2 class="events-title">{t('pages.home.upcomingEvents')}</h2>
-			<p class="events-intro">{t('pages.home.upcomingEventsIntro')}</p>
+		<MotionReveal type="wipe" direction="left" delay={100}>
+			<div class="latin-separator center">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
+		
+		<MotionReveal type="reveal" delay={200}>
+			<div class="events-poster">
+				<h2 class="events-title">{t('pages.home.upcomingEvents')}</h2>
+				<p class="events-intro">{t('pages.home.upcomingEventsIntro')}</p>
 
-			{#if data.upcomingEvents.length > 0}
-				<div class="events-list">
-					{#each data.upcomingEvents as event}
-						<article class="event-block">
-							<div class="event-meta">
-								<h3>{event.title}</h3>
-								<time datetime={event.date}>{formatDate(event.date, data.locale)}</time>
-								{#if event.venue && event.city}
-									<p class="event-location">{event.venue}, {event.city}</p>
-								{/if}
-							</div>
-							<div class="event-content">
-								{#if event.description}
-									<p>{event.description}</p>
-								{/if}
-								<a href={getEventUrl(data.locale, event.slug)} class="event-link">
-									{t('pages.home.readMore')}
-								</a>
-							</div>
-						</article>
-					{/each}
-				</div>
-				<div class="events-cta">
-					<a href={getEventsUrl(data.locale)} class="events-all-action">
-						{t('pages.home.viewAllEvents')}
-					</a>
-				</div>
-			{:else}
-				<p class="no-events">{t('common.noUpcomingEvents')}</p>
-			{/if}
-		</div>
+				{#if data.upcomingEvents.length > 0}
+					<div class="events-list">
+						{#each data.upcomingEvents as event, index}
+							<MotionReveal type="reveal" intensity="subtle" delay={index * 150 + 400}>
+								<article class="event-block">
+									<div class="event-meta">
+										<h3>{event.title}</h3>
+										<time datetime={event.date}>{formatDate(event.date, data.locale)}</time>
+										{#if event.venue && event.city}
+											<p class="event-location">{event.venue}, {event.city}</p>
+										{/if}
+									</div>
+									<div class="event-content">
+										{#if event.description}
+											<p>{event.description}</p>
+										{/if}
+										<a href={getEventUrl(data.locale, event.slug)} class="event-link motion-hover">
+											{t('pages.home.readMore')}
+										</a>
+									</div>
+								</article>
+							</MotionReveal>
+						{/each}
+					</div>
+					
+					<MotionReveal type="reveal" delay={800}>
+						<div class="events-cta">
+							<a href={getEventsUrl(data.locale)} class="events-all-action motion-hover motion-focus">
+								{t('pages.home.viewAllEvents')}
+							</a>
+						</div>
+					</MotionReveal>
+				{:else}
+					<MotionReveal type="reveal" delay={400}>
+						<p class="no-events">{t('common.noUpcomingEvents')}</p>
+					</MotionReveal>
+				{/if}
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
