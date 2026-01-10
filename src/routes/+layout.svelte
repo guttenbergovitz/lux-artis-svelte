@@ -6,6 +6,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
+	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 
 	let { children } = $props();
 	let sidebarOpen = $state(false);
@@ -36,6 +37,9 @@
 		</main>
 		<Footer />
 	</div>
+	
+	<!-- Sticky Language Switcher -->
+	<LanguageSwitcher />
 </div>
 
 <div style="display:none">
