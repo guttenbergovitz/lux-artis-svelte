@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from 'flowbite-svelte';
 	import Container from '$lib/components/Container.svelte';
+	import MotionReveal from '$lib/components/MotionReveal.svelte';
 	import { getTranslation } from '$lib/i18n';
 	import type { PageData } from './$types';
 
@@ -343,158 +344,168 @@
 <!-- Hero Section -->
 <section class="poster-section dark">
 	<Container>
-		<div class="support-hero">
-			<h1 class="hero-title">{t('pages.support.title')}</h1>
-			<p class="hero-subtitle">{t('pages.support.subtitle')}</p>
-			<p class="hero-intro">{t('pages.support.intro.text')}</p>
-		</div>
-		<div class="latin-separator">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		<MotionReveal type="section">
+			<div class="support-hero">
+				<h1 class="hero-title">{t('pages.support.title')}</h1>
+				<p class="hero-subtitle">{t('pages.support.subtitle')}</p>
+				<p class="hero-intro">{t('pages.support.intro.text')}</p>
+			</div>
+		</MotionReveal>
+		<MotionReveal type="reveal" delay={200}>
+			<div class="latin-separator">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Support Options Section -->
 <section class="poster-section">
 	<Container>
-		<div class="support-grid">
-			<!-- Institutional Partners -->
-			<article class="support-card">
-				<h3 class="support-card-title">{t('pages.support.partners.title')}</h3>
-				<p class="support-card-subtitle">{t('pages.support.partners.subtitle')}</p>
-				<p class="support-card-description">
-					{t('pages.support.partners.description')}
-				</p>
-				<ul class="support-points">
-					{#if data.translations.pages?.support?.partners?.points}
-						{#each data.translations.pages.support.partners.points as point}
-							<li class="support-point">{point}</li>
-						{/each}
-					{/if}
-				</ul>
-			</article>
+		<MotionReveal type="stagger" staggerDelay={120}>
+			<div class="support-grid">
+				<!-- Institutional Partners -->
+				<article class="support-card">
+					<h3 class="support-card-title">{t('pages.support.partners.title')}</h3>
+					<p class="support-card-subtitle">{t('pages.support.partners.subtitle')}</p>
+					<p class="support-card-description">
+						{t('pages.support.partners.description')}
+					</p>
+					<ul class="support-points">
+						{#if data.translations.pages?.support?.partners?.points}
+							{#each data.translations.pages.support.partners.points as point}
+								<li class="support-point">{point}</li>
+							{/each}
+						{/if}
+					</ul>
+				</article>
 
-			<!-- Internships -->
-			<article class="support-card">
-				<h3 class="support-card-title">{t('pages.support.internships.title')}</h3>
-				<p class="support-card-subtitle">{t('pages.support.internships.subtitle')}</p>
-				<p class="support-card-description">
-					{t('pages.support.internships.description')}
-				</p>
-				<ul class="support-points">
-					{#if data.translations.pages?.support?.internships?.points}
-						{#each data.translations.pages.support.internships.points as point}
-							<li class="support-point">{point}</li>
-						{/each}
-					{/if}
-				</ul>
-			</article>
+				<!-- Internships -->
+				<article class="support-card">
+					<h3 class="support-card-title">{t('pages.support.internships.title')}</h3>
+					<p class="support-card-subtitle">{t('pages.support.internships.subtitle')}</p>
+					<p class="support-card-description">
+						{t('pages.support.internships.description')}
+					</p>
+					<ul class="support-points">
+						{#if data.translations.pages?.support?.internships?.points}
+							{#each data.translations.pages.support.internships.points as point}
+								<li class="support-point">{point}</li>
+							{/each}
+						{/if}
+					</ul>
+				</article>
 
-			<!-- Artists Support -->
-			<article class="support-card">
-				<h3 class="support-card-title">{t('pages.support.artists.title')}</h3>
-				<p class="support-card-subtitle">{t('pages.support.artists.subtitle')}</p>
-				<p class="support-card-description">
-					{t('pages.support.artists.description')}
-				</p>
-				<ul class="support-points">
-					{#if data.translations.pages?.support?.artists?.points}
-						{#each data.translations.pages.support.artists.points as point}
-							<li class="support-point">{point}</li>
-						{/each}
-					{/if}
-				</ul>
-			</article>
-		</div>
+				<!-- Artists Support -->
+				<article class="support-card">
+					<h3 class="support-card-title">{t('pages.support.artists.title')}</h3>
+					<p class="support-card-subtitle">{t('pages.support.artists.subtitle')}</p>
+					<p class="support-card-description">
+						{t('pages.support.artists.description')}
+					</p>
+					<ul class="support-points">
+						{#if data.translations.pages?.support?.artists?.points}
+							{#each data.translations.pages.support.artists.points as point}
+								<li class="support-point">{point}</li>
+							{/each}
+						{/if}
+					</ul>
+				</article>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Contact Form Section -->
 <section class="poster-section">
 	<Container>
-		<div class="latin-separator center">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
-		<div class="form-section">
-			<h2>{t('pages.support.form.title')}</h2>
-			<p class="form-intro">{t('pages.support.cta.text')}</p>
+		<MotionReveal type="reveal" delay={100}>
+			<div class="latin-separator center">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
+		<MotionReveal type="section" delay={200}>
+			<div class="form-section">
+				<h2>{t('pages.support.form.title')}</h2>
+				<p class="form-intro">{t('pages.support.cta.text')}</p>
 
-			<form onsubmit={handleSubmit} class="contact-form">
-				<div class="form-group">
-					<label for="collab-name" class="form-label">
-						{t('pages.support.form.name')}
-					</label>
-					<input
-						type="text"
-						id="collab-name"
-						name="name"
-						required
-						class="form-input"
-					/>
-				</div>
+				<form onsubmit={handleSubmit} class="contact-form">
+					<div class="form-group">
+						<label for="collab-name" class="form-label">
+							{t('pages.support.form.name')}
+						</label>
+						<input
+							type="text"
+							id="collab-name"
+							name="name"
+							required
+							class="form-input"
+						/>
+					</div>
 
-				<div class="form-group">
-					<label for="collab-email" class="form-label">
-						{t('pages.support.form.email')}
-					</label>
-					<input
-						type="email"
-						id="collab-email"
-						name="email"
-						required
-						class="form-input"
-					/>
-				</div>
+					<div class="form-group">
+						<label for="collab-email" class="form-label">
+							{t('pages.support.form.email')}
+						</label>
+						<input
+							type="email"
+							id="collab-email"
+							name="email"
+							required
+							class="form-input"
+						/>
+					</div>
 
-				<div class="form-group">
-					<label for="organization" class="form-label">
-						{t('pages.support.form.organization')}
-					</label>
-					<input
-						type="text"
-						id="organization"
-						name="organization"
-						class="form-input"
-					/>
-				</div>
+					<div class="form-group">
+						<label for="organization" class="form-label">
+							{t('pages.support.form.organization')}
+						</label>
+						<input
+							type="text"
+							id="organization"
+							name="organization"
+							class="form-input"
+						/>
+					</div>
 
-				<div class="form-group">
-					<label for="type" class="form-label">
-						{t('pages.support.form.type')}
-					</label>
-					<select
-						id="type"
-						name="type"
-						required
-						class="form-input"
-					>
-						<option value="">{t('pages.support.form.typeOptions.select')}</option>
-						<option value="partner">{t('pages.support.form.typeOptions.partner')}</option>
-						<option value="internship">{t('pages.support.form.typeOptions.internship')}</option>
-						<option value="artist">{t('pages.support.form.typeOptions.artist')}</option>
-						<option value="other">{t('pages.support.form.typeOptions.other')}</option>
-					</select>
-				</div>
+					<div class="form-group">
+						<label for="type" class="form-label">
+							{t('pages.support.form.type')}
+						</label>
+						<select
+							id="type"
+							name="type"
+							required
+							class="form-input"
+						>
+							<option value="">{t('pages.support.form.typeOptions.select')}</option>
+							<option value="partner">{t('pages.support.form.typeOptions.partner')}</option>
+							<option value="internship">{t('pages.support.form.typeOptions.internship')}</option>
+							<option value="artist">{t('pages.support.form.typeOptions.artist')}</option>
+							<option value="other">{t('pages.support.form.typeOptions.other')}</option>
+						</select>
+					</div>
 
-				<div class="form-group">
-					<label for="collab-message" class="form-label">
-						{t('pages.support.form.message')}
-					</label>
-					<textarea
-						id="collab-message"
-						name="message"
-						required
-						rows={6}
-						class="form-textarea"
-					></textarea>
-				</div>
+					<div class="form-group">
+						<label for="collab-message" class="form-label">
+							{t('pages.support.form.message')}
+						</label>
+						<textarea
+							id="collab-message"
+							name="message"
+							required
+							rows={6}
+							class="form-textarea"
+						></textarea>
+					</div>
 
-				<button type="submit" class="form-submit">
-					{t('pages.support.form.submit')}
-				</button>
-			</form>
-		</div>
+					<button type="submit" class="form-submit">
+						{t('pages.support.form.submit')}
+					</button>
+				</form>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>

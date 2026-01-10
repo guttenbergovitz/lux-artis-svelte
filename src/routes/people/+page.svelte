@@ -280,14 +280,18 @@
 <!-- Hero Section -->
 <section class="poster-section dark">
 	<Container>
-		<div class="people-hero">
-			<h1 class="hero-title">{t('pages.people.title')}</h1>
-			<p class="hero-subtitle">{t('pages.people.subtitle')}</p>
-		</div>
-		<div class="latin-separator">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		<MotionReveal type="section">
+			<div class="people-hero">
+				<h1 class="hero-title">{t('pages.people.title')}</h1>
+				<p class="hero-subtitle">{t('pages.people.subtitle')}</p>
+			</div>
+		</MotionReveal>
+		<MotionReveal type="reveal" delay={200}>
+			<div class="latin-separator">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 

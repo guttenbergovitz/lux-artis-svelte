@@ -310,52 +310,62 @@
 <!-- Hero Section -->
 <section class="poster-section dark">
 	<Container>
-		<div class="events-hero">
-			<h1 class="hero-title">{t('pages.events.title')}</h1>
-			<p class="hero-subtitle">{t('pages.events.subtitle')}</p>
-		</div>
-		<div class="latin-separator">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
+		<MotionReveal type="section">
+			<div class="events-hero">
+				<h1 class="hero-title">{t('pages.events.title')}</h1>
+				<p class="hero-subtitle">{t('pages.events.subtitle')}</p>
+			</div>
+		</MotionReveal>
+		<MotionReveal type="reveal" delay={200}>
+			<div class="latin-separator">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
 	</Container>
 </section>
 
 <!-- Upcoming Events Section -->
 <section class="poster-section">
 	<Container>
-		<h2 class="section-title">{t('pages.events.upcomingEventsSection')}</h2>
-		<p class="section-intro">{t('pages.events.upcomingEventsIntro')}</p>
+		<MotionReveal type="wipe" direction="left">
+			<h2 class="section-title">{t('pages.events.upcomingEventsSection')}</h2>
+			<p class="section-intro">{t('pages.events.upcomingEventsIntro')}</p>
+		</MotionReveal>
 
 		{#if data.upcomingEvents.length > 0}
-			<Timeline order="vertical" class="events-timeline">
-				{#each data.upcomingEvents as event, index}
-					{@const isLast = index === data.upcomingEvents.length - 1}
-					{@const formattedDate = formatDate(event.date, data.locale)}
-					<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
-						{#snippet orientationSlot()}
-							<span class="timeline-icon">
-								<CalendarWeekSolid class="h-3 w-3" style="color: var(--color-graphite-dark);" />
-							</span>
-						{/snippet}
-						<div class="event-content">
-							{#if event.venue && event.city}
-								<p class="event-meta">{event.venue}, {event.city}</p>
-							{/if}
-							{#if event.description}
-								<p class="event-description">{event.description}</p>
-							{/if}
-							<a href={getEventUrl(data.locale, event.slug)} class="event-link">
-								{t('pages.home.readMore')}
-							</a>
-						</div>
-					</TimelineItem>
-				{/each}
-			</Timeline>
+			<MotionReveal type="reveal" delay={300}>
+				<Timeline order="vertical" class="events-timeline">
+					{#each data.upcomingEvents as event, index}
+						{@const isLast = index === data.upcomingEvents.length - 1}
+						{@const formattedDate = formatDate(event.date, data.locale)}
+						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
+							{#snippet orientationSlot()}
+								<span class="timeline-icon">
+									<CalendarWeekSolid class="h-3 w-3" style="color: var(--color-graphite-dark);" />
+								</span>
+							{/snippet}
+							<div class="event-content">
+								{#if event.venue && event.city}
+									<p class="event-meta">{event.venue}, {event.city}</p>
+								{/if}
+								{#if event.description}
+									<p class="event-description">{event.description}</p>
+								{/if}
+								<a href={getEventUrl(data.locale, event.slug)} class="event-link">
+									{t('pages.home.readMore')}
+								</a>
+							</div>
+						</TimelineItem>
+					{/each}
+				</Timeline>
+			</MotionReveal>
 		{:else}
-			<div class="no-events">
-				<p>{t('pages.events.noUpcomingEvents')}</p>
-			</div>
+			<MotionReveal type="reveal" delay={300}>
+				<div class="no-events">
+					<p>{t('pages.events.noUpcomingEvents')}</p>
+				</div>
+			</MotionReveal>
 		{/if}
 	</Container>
 </section>
@@ -363,42 +373,50 @@
 <!-- Past Events Section -->
 <section class="poster-section">
 	<Container>
-		<div class="latin-separator center">
-			<div class="separator-line"></div>
-			<p class="latin-quote">{getRandomQuote()}</p>
-		</div>
-		<h2 class="section-title">{t('pages.events.pastEventsSection')}</h2>
-		<p class="section-intro">{t('pages.events.pastEventsIntro')}</p>
+		<MotionReveal type="reveal" delay={100}>
+			<div class="latin-separator center">
+				<div class="separator-line"></div>
+				<p class="latin-quote">{getRandomQuote()}</p>
+			</div>
+		</MotionReveal>
+		<MotionReveal type="wipe" direction="left" delay={200}>
+			<h2 class="section-title">{t('pages.events.pastEventsSection')}</h2>
+			<p class="section-intro">{t('pages.events.pastEventsIntro')}</p>
+		</MotionReveal>
 
 		{#if data.pastEvents.length > 0}
-			<Timeline order="vertical" class="events-timeline">
-				{#each data.pastEvents as event, index}
-					{@const isLast = index === data.pastEvents.length - 1}
-					{@const formattedDate = formatDate(event.date, data.locale)}
-					<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
-						{#snippet orientationSlot()}
-							<span class="timeline-icon">
-								<CalendarWeekSolid class="h-3 w-3" style="color: var(--color-graphite-dark);" />
-							</span>
-						{/snippet}
-						<div class="event-content">
-							{#if event.venue && event.city}
-								<p class="event-meta">{event.venue}, {event.city}</p>
-							{/if}
-							{#if event.description}
-								<p class="event-description">{event.description}</p>
-							{/if}
-							<a href={getEventUrl(data.locale, event.slug)} class="event-link">
-								{t('pages.home.readMore')}
-							</a>
-						</div>
-					</TimelineItem>
-				{/each}
-			</Timeline>
+			<MotionReveal type="reveal" delay={400}>
+				<Timeline order="vertical" class="events-timeline">
+					{#each data.pastEvents as event, index}
+						{@const isLast = index === data.pastEvents.length - 1}
+						{@const formattedDate = formatDate(event.date, data.locale)}
+						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
+							{#snippet orientationSlot()}
+								<span class="timeline-icon">
+									<CalendarWeekSolid class="h-3 w-3" style="color: var(--color-graphite-dark);" />
+								</span>
+							{/snippet}
+							<div class="event-content">
+								{#if event.venue && event.city}
+									<p class="event-meta">{event.venue}, {event.city}</p>
+								{/if}
+								{#if event.description}
+									<p class="event-description">{event.description}</p>
+								{/if}
+								<a href={getEventUrl(data.locale, event.slug)} class="event-link">
+									{t('pages.home.readMore')}
+								</a>
+							</div>
+						</TimelineItem>
+					{/each}
+				</Timeline>
+			</MotionReveal>
 		{:else}
-			<div class="no-events">
-				<p>{t('pages.events.noPastEvents')}</p>
-			</div>
+			<MotionReveal type="reveal" delay={400}>
+				<div class="no-events">
+					<p>{t('pages.events.noPastEvents')}</p>
+				</div>
+			</MotionReveal>
 		{/if}
 	</Container>
 </section>
