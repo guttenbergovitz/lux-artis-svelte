@@ -260,7 +260,9 @@
         "subject": "Betreff",
         "message": "Nachricht",
         "submit": "Senden",
-        "successMessage": "Vielen Dank für Ihre Nachricht. Wir werden so schnell wie möglich antworten."
+        "sending": "Wird gesendet...",
+        "successMessage": "Vielen Dank für Ihre Nachricht. Wir werden so schnell wie möglich antworten.",
+        "errorMessage": "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
       }
     },
     "legal": {

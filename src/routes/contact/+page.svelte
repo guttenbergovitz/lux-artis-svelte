@@ -2,9 +2,10 @@
 	import { Button } from 'flowbite-svelte';
 	import Container from '$lib/components/Container.svelte';
 	import { getTranslation } from '$lib/i18n';
-	import type { PageData } from './$types';
+	import { enhance } from '$app/forms';
+	import type { PageData, ActionData } from './$types';
 
-	let { data }: { data: any } = $props();
+	let { data, form }: { data: PageData; form: ActionData } = $props();
 
 	// Pool of Latin art quotes - longer phrases related to art
 	const latinQuotes = [
@@ -49,13 +50,14 @@
 		return getTranslation(data.translations, path);
 	}
 
-	function handleSubmit(event: SubmitEvent) {
-		event.preventDefault();
-		const formData = new FormData(event.target as HTMLFormElement);
-		console.log('Form submitted:', Object.fromEntries(formData));
-		// TODO: Implement actual form submission
-		alert(t('pages.contact.form.successMessage'));
-	}
+	let submitting = $state(false);
+	let formElement: HTMLFormElement;
+
+	$effect(() => {
+		if (form?.success) {
+			formElement?.reset();
+		}
+	});
 </script>
 
 <style>
@@ -268,6 +270,33 @@
 		border-color: var(--color-gold-dark);
 	}
 
+	.form-submit:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	/* Alert Messages */
+	.alert {
+		padding: var(--space-md);
+		border-radius: 4px;
+		font-family: var(--font-serif);
+		font-size: 1rem;
+		line-height: 1.4;
+		margin-top: var(--space-md);
+	}
+
+	.alert-success {
+		background: rgba(34, 197, 94, 0.1);
+		color: #15803d;
+		border: 1px solid rgba(34, 197, 94, 0.3);
+	}
+
+	.alert-error {
+		background: rgba(239, 68, 68, 0.1);
+		color: #b91c1c;
+		border: 1px solid rgba(239, 68, 68, 0.3);
+	}
+
 	/* Mobile Responsive */
 	@media (max-width: 768px) {
 		.poster-section {
@@ -333,7 +362,18 @@
 			<!-- Contact Form -->
 			<div class="form-section">
 				<h2>{t('pages.contact.form.title')}</h2>
-				<form onsubmit={handleSubmit} class="contact-form">
+				<form
+					method="POST"
+					class="contact-form"
+					bind:this={formElement}
+					use:enhance={() => {
+						submitting = true;
+						return async ({ result, update }) => {
+							await update();
+							submitting = false;
+						};
+					}}
+				>
 					<div class="form-group">
 						<label for="name" class="form-label">
 							{t('pages.contact.form.name')}
@@ -385,9 +425,21 @@
 						></textarea>
 					</div>
 
-					<button type="submit" class="form-submit">
-						{t('pages.contact.form.submit')}
+					<button type="submit" class="form-submit" disabled={submitting}>
+						{submitting ? t('pages.contact.form.sending') : t('pages.contact.form.submit')}
 					</button>
+
+					{#if form?.success}
+						<div class="alert alert-success">
+							{t('pages.contact.form.successMessage')}
+						</div>
+					{/if}
+
+					{#if form?.error}
+						<div class="alert alert-error">
+							{t('pages.contact.form.errorMessage')}
+						</div>
+					{/if}
 				</form>
 			</div>
 		</div>

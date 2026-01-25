@@ -260,7 +260,9 @@
         "subject": "Temat",
         "message": "Wiadomość",
         "submit": "Wyślij",
-        "successMessage": "Dziękujemy za wiadomość. Odpowiemy najszybciej jak to możliwe."
+        "sending": "Wysyłanie...",
+        "successMessage": "Dziękujemy za wiadomość. Odpowiemy najszybciej jak to możliwe.",
+        "errorMessage": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później."
       }
     },
     "legal": {

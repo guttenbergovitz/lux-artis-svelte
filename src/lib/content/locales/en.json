@@ -260,7 +260,9 @@
         "subject": "Subject",
         "message": "Message",
         "submit": "Send",
-        "successMessage": "Thank you for your message. We will respond as soon as possible."
+        "sending": "Sending...",
+        "successMessage": "Thank you for your message. We will respond as soon as possible.",
+        "errorMessage": "An error occurred while sending the message. Please try again later."
       }
     },
     "legal": {
