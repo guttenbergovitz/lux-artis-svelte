@@ -54,6 +54,7 @@
 	let formElement: HTMLFormElement;
 
 	$effect(() => {
+		console.log('Form data changed:', form);
 		if (form?.success) {
 			formElement?.reset();
 		}
@@ -369,6 +370,7 @@
 					use:enhance={() => {
 						submitting = true;
 						return async ({ result, update }) => {
+							console.log('Form submission result:', result);
 							await update();
 							submitting = false;
 						};

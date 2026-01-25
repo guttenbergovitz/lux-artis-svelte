@@ -5,8 +5,10 @@
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import type { PageData } from './$types';
+	import MotionReveal from '$lib/components/MotionReveal.svelte';
 
 	let { data }: { data: any } = $props();
+	console.log('Events Page Data:', data);
 
 	// Pool of Latin art quotes - longer phrases related to art
 	const latinQuotes = [
@@ -183,14 +185,6 @@
 		margin: 0 0 var(--space-2xl) 0;
 		font-weight: 400;
 		max-width: 65ch;
-	}
-
-	.section-intro.white {
-		color: rgba(255, 255, 255, 0.9);
-	}
-
-	.section-intro.dark {
-		color: var(--color-graphite);
 	}
 
 	/* Modernist Timeline */

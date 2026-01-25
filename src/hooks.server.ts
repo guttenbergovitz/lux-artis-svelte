@@ -1,6 +1,4 @@
 import type { Handle } from '@sveltejs/kit';
-import { error } from '@sveltejs/kit';
-import { localizeHref } from '$lib/paraglide/runtime';
 import { paraglideMiddleware } from '$lib/paraglide/server';
 
 const handleParaglide: Handle = async ({ event, resolve }) => {
@@ -17,19 +15,6 @@ const handleParaglide: Handle = async ({ event, resolve }) => {
 
 	return paraglideMiddleware(event.request, async ({ request, locale }) => {
 		event.request = request;
-
-		// Get base path from delocalized URL (this is what Paraglide thinks the path should be)
-		const baseUrl = new URL(request.url);
-		const basePath = baseUrl.pathname;
-	
-		// Check what the correct localized path should be for the current locale
-		const expectedLocalizedPath = localizeHref(basePath, { locale });
-
-		// If original path doesn't match expected localized path, return 404
-		// This ensures that only the correct localized paths work
-		if (originalPath !== expectedLocalizedPath) {
-			throw error(404, 'Not found');
-		}
 
 		const response = await resolve(event, {
 			transformPageChunk: ({ html }) => html.replace('%paraglide.lang%', locale)
