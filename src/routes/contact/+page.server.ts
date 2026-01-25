@@ -1,9 +1,20 @@
 import { fail } from '@sveltejs/kit';
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import nodemailer from 'nodemailer';
 import { env } from '$env/dynamic/private';
+import { getLocaleFromPath, getTranslations } from '$lib/i18n';
 
 type Locale = 'pl' | 'uk' | 'en' | 'de';
+
+export const load: PageServerLoad = async ({ url }) => {
+	const locale = getLocaleFromPath(url.pathname);
+	const translations = await getTranslations(locale);
+
+	return {
+		translations,
+		locale
+	};
+};
 
 const confirmationMessages: Record<Locale, { subject: string; body: string }> = {
 	pl: {
