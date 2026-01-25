@@ -105,9 +105,9 @@
 
 	@media (max-width: 768px) {
 		.banner-container {
-			height: 70vh;
+			height: 35vh;
 		}
-		
+
 		.hero-banner-spacer {
 			height: 0;
 		}
@@ -495,17 +495,21 @@
 	/* Mobile: Optimized for readability */
 	@media (max-width: 768px) {
 		.poster-section {
-			padding: var(--space-lg) 0;
-		}
-		
-		.hero-poster {
 			padding: var(--space-md) 0;
 		}
-		
+
+		.hero-poster {
+			padding: var(--space-xs) 0;
+		}
+
+		.hero-title {
+			margin: 0 0 var(--space-md) 0;
+		}
+
 		.mission-poster,
 		.context-poster {
 			grid-template-columns: 1fr;
-			gap: var(--space-lg);
+			gap: var(--space-md);
 		}
 
 		.focus-grid {
@@ -517,30 +521,13 @@
 			grid-template-columns: 1fr;
 			gap: var(--space-sm);
 		}
-		
+
 		.values-item {
 			padding-left: var(--space-sm);
 		}
-		
+
 		.latin-separator {
-			margin: var(--space-lg) 0;
-		}
-	}
-	@media (max-width: 768px) {
-		.mission-poster,
-		.context-poster {
-			grid-template-columns: 1fr;
-			gap: var(--space-2xl);
-		}
-
-		.focus-grid {
-			grid-template-columns: 1fr;
-			gap: var(--space-xl);
-		}
-
-		.event-block {
-			grid-template-columns: 1fr;
-			gap: var(--space-md);
+			margin: var(--space-md) 0;
 		}
 	}
 </style>

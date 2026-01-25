@@ -270,13 +270,25 @@
 
 	/* Mobile Responsive */
 	@media (max-width: 768px) {
+		.poster-section {
+			padding: var(--space-xl) 0;
+		}
+
 		.contact-grid {
 			grid-template-columns: 1fr;
-			gap: var(--space-2xl);
+			gap: var(--space-md);
 		}
 
 		.contact-hero {
 			text-align: left;
+		}
+
+		.hero-title {
+			margin: 0 0 var(--space-md) 0;
+		}
+
+		.latin-separator {
+			margin: var(--space-lg) 0;
 		}
 	}
 </style>

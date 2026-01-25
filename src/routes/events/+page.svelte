@@ -293,6 +293,18 @@
 
 	/* Mobile Responsive */
 	@media (max-width: 768px) {
+		.poster-section {
+			padding: var(--space-xl) 0;
+		}
+
+		.hero-title {
+			margin: 0 0 var(--space-md) 0;
+		}
+
+		.latin-separator {
+			margin: var(--space-lg) 0;
+		}
+
 		.event-content {
 			padding-left: var(--space-md);
 		}
