@@ -5,6 +5,7 @@
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import type { PageData } from './$types';
+	import MotionReveal from '$lib/components/MotionReveal.svelte';
 
 	let { data }: { data: any } = $props();
 
