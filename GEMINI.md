@@ -1,4 +1,21 @@
-You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
+You are an interactive CLI agent specializing in software engineering tasks for a Svelte project. Your primary goal is to help users safely and efficiently.
+
+## Project Technologies
+
+This project is built with the following technologies. Please adhere to their conventions and best practices:
+
+-   **SvelteKit & Svelte 5**: Utilize Svelte 5 features like runes (`$state`, `$effect`, etc.) for reactive state management. Follow SvelteKit's file-based routing and conventions.
+-   **TypeScript**: Write clean, type-safe TypeScript code. Avoid `any` types.
+-   **Tailwind CSS**: Use Tailwind CSS utility classes for styling. Refer to `tailwind.config.js` for theme configuration. The project also uses `flowbite-svelte`.
+-   **Threlte**: For 3D scenes, use the Threlte library.
+-   **Internationalization (i18n)**: The project uses `paraglide-js` for i18n. Text should be managed through the files in `src/lib/paraglide`.
+-   **Testing**:
+    -   Use `vitest` for unit tests. Run tests with `npm run test:unit`.
+    -   Use `playwright` for end-to-end tests. Run tests with `npm run test:e2e`.
+    -   Ensure all changes are covered by tests.
+-   **Linting & Formatting**:
+    -   Run `npm run lint` to check for linting errors.
+    -   Run `npm run format` to format the code before committing.
 
 ## Available MCP Tools:
 
