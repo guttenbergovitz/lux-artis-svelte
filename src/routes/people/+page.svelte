@@ -2,6 +2,7 @@
 	import { Accordion, AccordionItem } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import Container from '$lib/components/Container.svelte';
+	import MotionReveal from '$lib/components/MotionReveal.svelte';
 	import { getTranslation } from '$lib/i18n';
 	import type { PageData } from './$types';
 
@@ -266,13 +267,34 @@
 
 	/* Mobile Responsive */
 	@media (max-width: 768px) {
+		.poster-section {
+			padding: var(--space-xl) 0;
+		}
+
+		.hero-title {
+			margin: 0 0 var(--space-md) 0;
+		}
+
+		.latin-separator {
+			margin: var(--space-lg) 0;
+		}
+
 		.intro-grid {
 			grid-template-columns: 1fr;
-			gap: var(--space-lg);
+			gap: var(--space-md);
+			margin-top: var(--space-md);
 		}
 
 		.people-accordion {
 			max-width: none;
+		}
+
+		:global(.people-accordion .accordion-header) {
+			padding: var(--space-md) 0 !important;
+		}
+
+		:global(.people-accordion .accordion-body) {
+			padding: 0 0 var(--space-md) calc(16px + var(--space-sm)) !important;
 		}
 	}
 </style>
