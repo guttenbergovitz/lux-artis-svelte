@@ -376,6 +376,18 @@ figcaption {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+	.floating-nav::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 80px;
+		background: rgba(0, 0, 0, 0.9);
+		backdrop-filter: blur(10px);
+		z-index: -1;
+	}
+
 	.floating-logo {
 		top: var(--space-md);
 		left: var(--space-md);
@@ -402,6 +414,10 @@ figcaption {
 
 	.menu-text {
 		font-size: 0.75rem;
+	}
+
+	.main-content {
+		padding-top: 80px;
 	}
 }
 

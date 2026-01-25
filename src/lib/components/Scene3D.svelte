@@ -442,7 +442,7 @@
 <T.DirectionalLight position={[-5, -3, 5]} intensity={0.5} />
 
 <T.Group rotation={[sceneRotation.x, sceneRotation.y, 0]}>
-	{#if texturesLoaded && concreteTexture}
+	{#if texturesLoaded && concreteTexture && !isMobile}
 		<T.Mesh position={[0, 0, -2]} receiveShadow>
 			<T.PlaneGeometry args={[50, 50]} />
 			<T.MeshStandardMaterial
