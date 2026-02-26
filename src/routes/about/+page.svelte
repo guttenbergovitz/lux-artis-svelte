@@ -113,6 +113,10 @@
 		color: var(--color-graphite-dark);
 	}
 
+	.values-section {
+		padding-bottom: calc(var(--space-xl) * 3) !important;
+	}
+
 	/* Hero Typography - Responsive */
 	.about-hero {
 		text-align: left;
@@ -373,7 +377,7 @@
 </section>
 
 <!-- Values -->
-<section class="poster-section dark">
+<section class="poster-section dark values-section">
 	<Container>
 		<MotionReveal type="section">
 			<h2 class="section-title white">{t('pages.about.values.title')}</h2>
