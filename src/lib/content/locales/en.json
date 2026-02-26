@@ -190,9 +190,9 @@
     },
     "support": {
       "title": "Collaboration",
-      "subtitle": "Dialogue with institutions, artists and cultural producers. Partnerships based on mutual respect.",
+      "subtitle": "We conduct dialogue with institutions, artists and cultural producers. Mutual respect is the foundation of partnership for us. We emphasize quality and long-term actions.",
       "intro": {
-        "text": "Lux Artis develops dialogue with institutions, cultural producers and artists. We seek partners who understand the value of process, quality and long-term perspective."
+        "text": "We conduct dialogue with institutions, artists and cultural producers. Mutual respect is the foundation of partnership for us. We emphasize quality and long-term actions."
       },
       "partners": {
         "title": "Institutional partners",
@@ -205,6 +205,28 @@
           "Transparency and professionalism"
         ]
       },
+      "artists": {
+        "title": "Artists and curators",
+        "subtitle": "Dialogue with creators",
+        "description": "Artistic partnerships based on trust",
+        "points": [
+          "Collaboration in an atmosphere of mutual respect",
+          "Support in artistic project realization",
+          "Professional production conditions",
+          "Curatorial independence"
+        ]
+      },
+      "community": {
+        "title": "Local community",
+        "subtitle": "Education and integration",
+        "description": "Supporting regional initiatives",
+        "points": [
+          "Education in culture, art and regional heritage",
+          "Promoting environmental protection and sustainable development",
+          "Making space available for social purposes",
+          "Initiating actions for local development"
+        ]
+      },
       "internships": {
         "title": "Internships and volunteering",
         "subtitle": "Experience in cultural production",
@@ -214,17 +236,6 @@
           "Work on specific projects",
           "Networking in cultural environment",
           "Mentoring and skills development"
-        ]
-      },
-      "artists": {
-        "title": "Artists and curators",
-        "subtitle": "Dialogue with creators",
-        "description": "Artistic partnerships based on trust",
-        "points": [
-          "Collaboration based on mutual respect",
-          "Support in artistic project realization",
-          "Professional production conditions",
-          "Curatorial independence"
         ]
       },
       "contact": {

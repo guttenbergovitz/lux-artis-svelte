@@ -190,9 +190,9 @@
     },
     "support": {
       "title": "Zusammenarbeit",
-      "subtitle": "Dialog mit Institutionen, Künstlern und Kulturproduzenten. Partnerschaften basierend auf gegenseitigem Respekt.",
+      "subtitle": "Wir führen Dialog mit Institutionen, Künstlern und Kulturproduzenten. Gegenseitiger Respekt ist für uns die Grundlage der Partnerschaft. Wir legen Wert auf Qualität und Langfristigkeit des Handelns.",
       "intro": {
-        "text": "Lux Artis entwickelt Dialog mit Institutionen, Kulturproduzenten und Künstlern. Wir suchen Partner, die den Wert von Prozess, Qualität und langfristiger Perspektive verstehen."
+        "text": "Wir führen Dialog mit Institutionen, Künstlern und Kulturproduzenten. Gegenseitiger Respekt ist für uns die Grundlage der Partnerschaft. Wir legen Wert auf Qualität und Langfristigkeit des Handelns."
       },
       "partners": {
         "title": "Institutionelle Partner",
@@ -205,6 +205,28 @@
           "Transparenz und Professionalität"
         ]
       },
+      "artists": {
+        "title": "Künstler und Kuratoren",
+        "subtitle": "Dialog mit Schöpfern",
+        "description": "Künstlerische Partnerschaften auf Vertrauensbasis",
+        "points": [
+          "Zusammenarbeit in einer Atmosphäre gegenseitigen Respekts",
+          "Unterstützung bei der Realisierung künstlerischer Projekte",
+          "Professionelle Produktionsbedingungen",
+          "Kuratorische Unabhängigkeit"
+        ]
+      },
+      "community": {
+        "title": "Lokale Gemeinschaft",
+        "subtitle": "Bildung und Integration",
+        "description": "Unterstützung regionaler Initiativen",
+        "points": [
+          "Bildung im Bereich Kultur, Kunst und regionales Erbe",
+          "Förderung von Umweltschutz und nachhaltiger Entwicklung",
+          "Bereitstellung von Räumen für soziale Zwecke",
+          "Initiierung von Maßnahmen zur lokalen Entwicklung"
+        ]
+      },
       "internships": {
         "title": "Praktika und Freiwilligenarbeit",
         "subtitle": "Erfahrung in Kulturproduktion",
@@ -214,17 +236,6 @@
           "Arbeit an konkreten Projekten",
           "Networking im kulturellen Umfeld",
           "Mentoring und Kompetenzentwicklung"
-        ]
-      },
-      "artists": {
-        "title": "Künstler und Kuratoren",
-        "subtitle": "Dialog mit Schöpfern",
-        "description": "Künstlerische Partnerschaften auf Vertrauensbasis",
-        "points": [
-          "Zusammenarbeit basierend auf gegenseitigem Respekt",
-          "Unterstützung bei der Realisierung künstlerischer Projekte",
-          "Professionelle Produktionsbedingungen",
-          "Kuratorische Unabhängigkeit"
         ]
       },
       "contact": {
