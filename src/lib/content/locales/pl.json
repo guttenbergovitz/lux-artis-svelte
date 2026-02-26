@@ -15,6 +15,7 @@
     "people": "Ludzie",
     "support": "Współpraca",
     "contact": "Kontakt",
+    "info": "Info",
     "legal": "Informacje prawne",
     "faq": "FAQ"
   },
@@ -349,6 +350,51 @@
             }
           ]
         }
+      }
+    },
+    "info": {
+      "title": "Info",
+      "subtitle": "Fundacja Lux Artis – informacje dla podmiotów publicznych",
+      "tagline": "Kuratorstwo | Produkcja wydarzeń | Dialog międzysektorowy",
+      "intro": "Zajmujemy się produkcją wydarzeń kulturalnych i realizacją projektów artystycznych. Współpracujemy z instytucjami publicznymi, samorządami i partnerami prywatnymi.\n\nNaszymi domenami są kuratorstwo artystyczne, współpraca międzyinstytucjonalna i zarządzanie projektami kulturalnymi. Pracujemy w oparciu o partnerstwo z twórcami i podmiotami sektora kultury.",
+      "sections": {
+        "how": {
+          "title": "Jak działamy?",
+          "points": [
+            "Realizujemy projekty z obszaru sztuki - z poszanowaniem wartości artystycznej, transparentności działań i długofalowego rozwoju sektora kultury.",
+            "Odpowiedzialnie zarządzamy powierzonymi nam projektami.",
+            "Budujemy trwałe relacje partnerskie i konteksty kulturowe w wymiarze lokalnym, regionalnym, ogólnopolskim i międzynarodowym.",
+            "Zapewniamy profesjonalną produkcję wydarzeń artystycznych i transparentną kooperację z instytucjami oraz artystami."
+          ]
+        },
+        "what": {
+          "title": "Czym się zajmujemy?",
+          "points": [
+            "Organizacja i koordynacja różnorodnych działań o charakterze artystycznym, w tym koncertów.",
+            "Kuratorstwo, przemyślana selekcja i efektowna prezentacja dzieł.",
+            "Pośrednictwo między artystami a odbiorcami.",
+            "Budowanie programów i strategii komunikacyjnych.",
+            "Partnerstwa międzysektorowe z artystami, instytucjami kultury, producentami i podmiotami publicznymi.",
+            "Projektowanie działań artystycznych w oparciu o analizę miejsca, czasu i sytuacji kulturowej.",
+            "Opracowywanie długofalowych polityk kulturalnych."
+          ]
+        },
+        "focus": {
+          "title": "Na co kładziemy nacisk?",
+          "points": [
+            "Swoboda artysty i szacunek do jego pracy.",
+            "Krzewienie szeroko rozumianej kultury w społeczeństwie.",
+            "Wspieranie dostępności i różnorodności.",
+            "Niwelowanie barier i wyrównywanie szans w dostępie do kultury - zarówno dla twórców, jak i dla odbiorców.",
+            "Budowanie społeczeństwa obywatelskiego i zaangażowanego uczestnictwa w kulturze.",
+            "Szacunek do lokalnych tradycji oraz do środowiska naturalnego.",
+            "Kreowanie wysokiej jakości doświadczeń płynących z kontaktu z kulturą i sztuką."
+          ]
+        }
+      },
+      "cta": {
+        "text": "Zobacz, nad czym aktualnie pracujemy",
+        "button": "Zobacz wydarzenia"
       }
     },
     "contact": {

@@ -266,6 +266,14 @@
 						<h2 class="nav-section-title">Contact</h2>
 						<div class="nav-links">
 							<a 
+								href={getLocalizedPath('/info')} 
+								class="sidebar-link" 
+								class:active={isActive('/info')}
+								onclick={handleNavClick}
+							>
+								{t('nav.info')}
+							</a>
+							<a 
 								href={getLocalizedPath('/contact')} 
 								class="sidebar-link" 
 								class:active={isActive('/contact')}
