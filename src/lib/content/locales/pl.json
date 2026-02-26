@@ -15,7 +15,8 @@
     "people": "Ludzie",
     "support": "Współpraca",
     "contact": "Kontakt",
-    "legal": "Informacje prawne"
+    "legal": "Informacje prawne",
+    "faq": "FAQ"
   },
   "pages": {
     "home": {
@@ -258,6 +259,96 @@
         "message": "Wiadomość",
         "submit": "Wyślij",
         "successMessage": "Dziękujemy za zgłoszenie. Odpowiemy najszybciej jak to możliwe."
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Najczęściej zadawane pytania o Fundację Lux Artis",
+      "categories": {
+        "institutions": {
+          "title": "Dla instytucji",
+          "questions": [
+            {
+              "question": "Czy Lux Artis realizuje projekty we współpracy z instytucjami publicznymi?",
+              "answer": "Tak. Współpracujemy z instytucjami kultury, samorządami i podmiotami publicznymi przy realizacji koncertów, rezydencji artystycznych i projektów kuratorskich."
+            },
+            {
+              "question": "Jak wygląda współpraca Lux Artis z partnerami instytucjonalnymi?",
+              "answer": "Z partnerami instytucjonalnymi współpracujemy w modelu projektowym i partnerskim. Odpowiadamy za koncepcję kuratorską, produkcję wydarzenia, koordynację artystów oraz spójność komunikacyjną."
+            },
+            {
+              "question": "Czy możecie wejść w istniejący program jako kurator lub producent wydarzenia?",
+              "answer": "Tak. Oferujemy zarówno autorskie formaty, jak i współtworzenie programu w ramach istniejących struktur instytucjonalnych."
+            },
+            {
+              "question": "Czy realizujecie projekty finansowane ze środków publicznych?",
+              "answer": "Tak. Mamy doświadczenie w pracy w modelu grantowym oraz w projektach wymagających raportowania i zgodności z wymogami formalnymi."
+            }
+          ]
+        },
+        "sponsors": {
+          "title": "Dla mecenasów i partnerów prywatnych",
+          "questions": [
+            {
+              "question": "Jak wygląda współpraca sponsorska z Lux Artis?",
+              "answer": "Budujemy partnerstwa długofalowe, oparte na wspólnych wartościach. Integrujemy obecność partnera z kontekstem wydarzenia – bez nachalnej komercjalizacji."
+            },
+            {
+              "question": "Czy oferujecie projekty dedykowane dla mecenasów?",
+              "answer": "Tak. Możemy zaprojektować wydarzenie, cykl lub rezydencję artystyczną odpowiadającą strategicznym celom partnera."
+            },
+            {
+              "question": "Jakie korzyści daje wsparcie projektów kultury współczesnej?",
+              "answer": "To realne wsparcie rozwoju środowiska artystycznego, budowanie wizerunku odpowiedzialnej marki oraz obecność w kontekście jakościowym i opiniotwórczym."
+            },
+            {
+              "question": "Czy działacie lokalnie czy międzynarodowo?",
+              "answer": "Pracujemy ze Szczecina, realizując projekty o zasięgu lokalnym, krajowym i międzynarodowym."
+            }
+          ]
+        },
+        "artists": {
+          "title": "Dla artystów",
+          "questions": [
+            {
+              "question": "Jak wygląda współpraca z Lux Artis?",
+              "answer": "Partnersko. Rozpoczynamy od rozmowy o koncepcji i kontekście. Nie narzucamy gotowych formatów – projekt budujemy wokół specyfiki pracy artysty."
+            },
+            {
+              "question": "Czy organizujecie rezydencje artystyczne?",
+              "answer": "Tak. Tworzymy warunki do pracy twórczej bez presji natychmiastowej premiery czy komercyjnego rezultatu."
+            },
+            {
+              "question": "Czy pracujecie tylko z określonymi gatunkami muzyki?",
+              "answer": "Nie. Realizujemy projekty z zakresu muzyki współczesnej, jazzu, improwizacji i formatów cross-genre. Kluczowa jest integralność artystyczna, nie gatunek."
+            },
+            {
+              "question": "Czy można zgłosić propozycję projektu?",
+              "answer": "Tak. Jesteśmy otwarci na propozycje, które wpisują się w nasze podejście kuratorskie i kontekstowe myślenie o kulturze."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Dla odbiorców",
+          "questions": [
+            {
+              "question": "Jakie wydarzenia organizuje Lux Artis?",
+              "answer": "Koncerty, projekty kuratorskie, rezydencje artystyczne, eventy oraz innego typu wydarzenia w obszarze kultury współczesnej."
+            },
+            {
+              "question": "Czym różnią się wasze wydarzenia od standardowych koncertów?",
+              "answer": "Każde wydarzenie budujemy od kontekstu, miejsca i formy. Koncentrujemy się na głębi przekazu, nie na efekcie komercyjnym. Część wydarzeń jest darmowa i dostępna dla wszystkich."
+            },
+            {
+              "question": "Gdzie odbywają się wydarzenia?",
+              "answer": "W Szczecinie i w przestrzeniach, które pozwalają na skupioną, uważną obecność – nie zawsze w klasycznych salach koncertowych."
+            },
+            {
+              "question": "Dla kogo są wasze projekty?",
+              "answer": "Dla osób, które szukają w kulturze doświadczenia, nie tylko rozrywki. Dla publiczności gotowej na zaangażowanie i dialog."
+            }
+          ]
+        }
       }
     },
     "contact": {
