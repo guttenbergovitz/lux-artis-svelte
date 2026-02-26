@@ -72,7 +72,7 @@
 
 	/* Info Sections */
 	.info-section {
-		margin-bottom: calc(var(--space-2xl) * 1.5);
+		margin-bottom: var(--space-2xl);
 	}
 
 	.info-section:last-child {
@@ -95,7 +95,7 @@
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-md);
+		gap: var(--space-sm);
 	}
 
 	.info-item {
@@ -271,39 +271,6 @@
 <!-- Info Sections -->
 <section class="poster-section">
 	<Container>
-		<!-- Registration Data -->
-		{#if data.translations.pages?.info?.registration}
-			<MotionReveal type="reveal" delay={100}>
-				<div class="info-section">
-					<h2 class="section-title">{data.translations.pages.info.registration.title}</h2>
-					<div class="registration-grid">
-						{#each data.translations.pages.info.registration.items as item}
-							<div class="registration-item">
-								<span class="registration-label">{item.label}</span>
-								<span class="registration-value">{item.value}</span>
-							</div>
-						{/each}
-					</div>
-
-					{#if data.translations.pages.info.registration.board}
-						<div class="board-section">
-							<h3 class="board-title">{data.translations.pages.info.registration.board.title}</h3>
-							<p class="board-representation">{data.translations.pages.info.registration.board.representation}</p>
-							<div class="board-members">
-								{#each data.translations.pages.info.registration.board.members as member}
-									<div class="board-member">
-										<span class="member-name">{member.name}</span>
-										<span class="member-position">{member.position}</span>
-										<span class="member-since">Od {member.since}</span>
-									</div>
-								{/each}
-							</div>
-						</div>
-					{/if}
-				</div>
-			</MotionReveal>
-		{/if}
-
 		{#if data.translations.pages?.info?.sections}
 			<!-- How We Work -->
 			{#if data.translations.pages.info.sections.how}
@@ -346,6 +313,39 @@
 					</div>
 				</MotionReveal>
 			{/if}
+		{/if}
+
+		<!-- Registration Data -->
+		{#if data.translations.pages?.info?.registration}
+			<MotionReveal type="reveal" delay={400}>
+				<div class="info-section">
+					<h2 class="section-title">{data.translations.pages.info.registration.title}</h2>
+					<div class="registration-grid">
+						{#each data.translations.pages.info.registration.items as item}
+							<div class="registration-item">
+								<span class="registration-label">{item.label}</span>
+								<span class="registration-value">{item.value}</span>
+							</div>
+						{/each}
+					</div>
+
+					{#if data.translations.pages.info.registration.board}
+						<div class="board-section">
+							<h3 class="board-title">{data.translations.pages.info.registration.board.title}</h3>
+							<p class="board-representation">{data.translations.pages.info.registration.board.representation}</p>
+							<div class="board-members">
+								{#each data.translations.pages.info.registration.board.members as member}
+									<div class="board-member">
+										<span class="member-name">{member.name}</span>
+										<span class="member-position">{member.position}</span>
+										<span class="member-since">Od {member.since}</span>
+									</div>
+								{/each}
+							</div>
+						</div>
+					{/if}
+				</div>
+			</MotionReveal>
 		{/if}
 	</Container>
 </section>
