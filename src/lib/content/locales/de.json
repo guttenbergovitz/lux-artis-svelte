@@ -372,6 +372,100 @@
         "errorMessage": "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
       }
     },
+    "info": {
+      "title": "Info",
+      "subtitle": "Stiftung Lux Artis – Informationen für öffentliche Einrichtungen",
+      "tagline": "Kuratorium | Veranstaltungsproduktion | Sektorübergreifender Dialog",
+      "intro": "Wir beschäftigen uns mit der Produktion kultureller Veranstaltungen und der Realisierung künstlerischer Projekte. Wir arbeiten mit öffentlichen Institutionen, Kommunalverwaltungen und privaten Partnern zusammen.\n\nUnsere Bereiche sind künstlerisches Kuratorium, interinstitutionelle Zusammenarbeit und Kulturprojektmanagement. Wir arbeiten auf der Grundlage von Partnerschaften mit Künstlern und Akteuren des Kultursektors.",
+      "registration": {
+        "title": "Registrierungsdaten",
+        "items": [
+          {
+            "label": "Vollständiger Name",
+            "value": "Fundacja Lux Artis"
+          },
+          {
+            "label": "KRS",
+            "value": "0001189456"
+          },
+          {
+            "label": "NIP",
+            "value": "9552590323"
+          },
+          {
+            "label": "REGON",
+            "value": "542492621"
+          },
+          {
+            "label": "Eingetragene Adresse",
+            "value": "Xawerego Dunikowskiego 30 / 8, 70-123 Szczecin, Polen"
+          },
+          {
+            "label": "Rechtsform",
+            "value": "Stiftung"
+          },
+          {
+            "label": "Registrierungsdatum",
+            "value": "20. August 2025"
+          }
+        ],
+        "board": {
+          "title": "Vorstand",
+          "representation": "Willenserklärungen im Namen der Stiftung werden von jedem Vorstandsmitglied selbständig abgegeben",
+          "members": [
+            {
+              "name": "Łukasz Przybysz",
+              "position": "Vorstandsvorsitzender",
+              "since": "20. August 2025"
+            },
+            {
+              "name": "Anna Obszyńska",
+              "position": "Vorstandsmitglied",
+              "since": "20. August 2025"
+            }
+          ]
+        }
+      },
+      "sections": {
+        "how": {
+          "title": "Wie arbeiten wir?",
+          "points": [
+            "Wir realisieren Projekte im Bereich der Kunst - mit Respekt für künstlerischen Wert, Transparenz der Handlungen und langfristige Entwicklung des Kultursektors.",
+            "Wir verwalten die uns anvertrauten Projekte verantwortungsvoll.",
+            "Wir bauen dauerhafte Partnerschaften und kulturelle Kontexte auf lokaler, regionaler, nationaler und internationaler Ebene auf.",
+            "Wir gewährleisten professionelle Produktion künstlerischer Veranstaltungen und transparente Zusammenarbeit mit Institutionen und Künstlern."
+          ]
+        },
+        "what": {
+          "title": "Was machen wir?",
+          "points": [
+            "Organisation und Koordination verschiedener künstlerischer Aktivitäten, einschließlich Konzerte.",
+            "Kuratorium, durchdachte Auswahl und effektive Präsentation von Werken.",
+            "Vermittlung zwischen Künstlern und Publikum.",
+            "Aufbau von Programmen und Kommunikationsstrategien.",
+            "Sektorübergreifende Partnerschaften mit Künstlern, Kulturinstitutionen, Produzenten und öffentlichen Einrichtungen.",
+            "Gestaltung künstlerischer Aktivitäten basierend auf der Analyse von Ort, Zeit und kultureller Situation.",
+            "Entwicklung langfristiger Kulturpolitiken."
+          ]
+        },
+        "focus": {
+          "title": "Worauf legen wir Wert?",
+          "points": [
+            "Freiheit des Künstlers und Respekt für seine Arbeit.",
+            "Förderung breit verstandener Kultur in der Gesellschaft.",
+            "Unterstützung von Zugänglichkeit und Vielfalt.",
+            "Beseitigung von Barrieren und Chancengleichheit beim Zugang zur Kultur - sowohl für Künstler als auch für das Publikum.",
+            "Aufbau einer Zivilgesellschaft und engagierte Teilnahme an der Kultur.",
+            "Respekt für lokale Traditionen und die natürliche Umwelt.",
+            "Schaffung hochwertiger Erfahrungen aus dem Kontakt mit Kultur und Kunst."
+          ]
+        }
+      },
+      "cta": {
+        "text": "Sehen Sie, woran wir derzeit arbeiten",
+        "button": "Veranstaltungen ansehen"
+      }
+    },
     "legal": {
       "title": "Impressum",
       "subtitle": "Registrierungs- und Rechtsinformationen der Stiftung Lux Artis",

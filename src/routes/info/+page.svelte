@@ -70,9 +70,19 @@
 		white-space: pre-line;
 	}
 
+	.hero-subtitle {
+		font-family: var(--font-serif);
+		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		line-height: 1.4;
+		color: white;
+		max-width: 65ch;
+		margin: 0 0 var(--space-xl) 0;
+		font-weight: 500;
+	}
+
 	/* Info Sections */
 	.info-section {
-		margin-bottom: var(--space-2xl);
+		margin-bottom: 6rem;
 	}
 
 	.info-section:last-child {
@@ -86,6 +96,7 @@
 		line-height: 1.1;
 		color: var(--color-graphite-dark);
 		margin: 0 0 var(--space-lg) 0;
+		padding-top: var(--space-xl);
 		text-transform: uppercase;
 	}
 
@@ -261,6 +272,7 @@
 		<MotionReveal type="section">
 			<div class="info-hero">
 				<h1 class="hero-title">{t('pages.info.title')}</h1>
+				<p class="hero-subtitle">{t('pages.info.subtitle')}</p>
 				<p class="hero-tagline">{t('pages.info.tagline')}</p>
 				<p class="hero-intro">{t('pages.info.intro')}</p>
 			</div>
@@ -314,10 +326,26 @@
 				</MotionReveal>
 			{/if}
 		{/if}
+	</Container>
+</section>
 
-		<!-- Registration Data -->
+<!-- CTA Section -->
+<section class="cta-section">
+	<Container>
+		<MotionReveal type="section">
+			<p class="cta-text">{t('pages.info.cta.text')}</p>
+			<a href={getEventsUrl(data.locale)} class="cta-button">
+				{t('pages.info.cta.button')}
+			</a>
+		</MotionReveal>
+	</Container>
+</section>
+
+<!-- Registration Data Section -->
+<section class="poster-section">
+	<Container>
 		{#if data.translations.pages?.info?.registration}
-			<MotionReveal type="reveal" delay={400}>
+			<MotionReveal type="reveal" delay={100}>
 				<div class="info-section">
 					<h2 class="section-title">{data.translations.pages.info.registration.title}</h2>
 					<div class="registration-grid">
@@ -347,17 +375,5 @@
 				</div>
 			</MotionReveal>
 		{/if}
-	</Container>
-</section>
-
-<!-- CTA Section -->
-<section class="cta-section">
-	<Container>
-		<MotionReveal type="section">
-			<p class="cta-text">{t('pages.info.cta.text')}</p>
-			<a href={getEventsUrl(data.locale)} class="cta-button">
-				{t('pages.info.cta.button')}
-			</a>
-		</MotionReveal>
 	</Container>
 </section>

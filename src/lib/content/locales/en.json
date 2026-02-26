@@ -372,6 +372,100 @@
         "errorMessage": "An error occurred while sending the message. Please try again later."
       }
     },
+    "info": {
+      "title": "Info",
+      "subtitle": "Lux Artis Foundation – information for public entities",
+      "tagline": "Curatorship | Event production | Cross-sector dialogue",
+      "intro": "We engage in the production of cultural events and the realization of artistic projects. We collaborate with public institutions, local governments, and private partners.\n\nOur domains are artistic curatorship, inter-institutional cooperation, and cultural project management. We work based on partnerships with creators and entities in the cultural sector.",
+      "registration": {
+        "title": "Registration data",
+        "items": [
+          {
+            "label": "Full name",
+            "value": "Fundacja Lux Artis"
+          },
+          {
+            "label": "KRS",
+            "value": "0001189456"
+          },
+          {
+            "label": "NIP",
+            "value": "9552590323"
+          },
+          {
+            "label": "REGON",
+            "value": "542492621"
+          },
+          {
+            "label": "Registered address",
+            "value": "Xawerego Dunikowskiego 30 / 8, 70-123 Szczecin, Poland"
+          },
+          {
+            "label": "Legal form",
+            "value": "Foundation"
+          },
+          {
+            "label": "Registration date",
+            "value": "August 20, 2025"
+          }
+        ],
+        "board": {
+          "title": "Board",
+          "representation": "Declarations of will on behalf of the foundation are made by each member of the foundation's board independently",
+          "members": [
+            {
+              "name": "Łukasz Przybysz",
+              "position": "President of the Board",
+              "since": "August 20, 2025"
+            },
+            {
+              "name": "Anna Obszyńska",
+              "position": "Board Member",
+              "since": "August 20, 2025"
+            }
+          ]
+        }
+      },
+      "sections": {
+        "how": {
+          "title": "How do we work?",
+          "points": [
+            "We realize projects in the field of art - with respect for artistic value, transparency of actions, and long-term development of the cultural sector.",
+            "We responsibly manage the projects entrusted to us.",
+            "We build lasting partnerships and cultural contexts at local, regional, national, and international levels.",
+            "We ensure professional production of artistic events and transparent cooperation with institutions and artists."
+          ]
+        },
+        "what": {
+          "title": "What do we do?",
+          "points": [
+            "Organization and coordination of various artistic activities, including concerts.",
+            "Curatorship, thoughtful selection, and effective presentation of works.",
+            "Mediation between artists and audiences.",
+            "Building programs and communication strategies.",
+            "Cross-sector partnerships with artists, cultural institutions, producers, and public entities.",
+            "Designing artistic activities based on analysis of place, time, and cultural situation.",
+            "Developing long-term cultural policies."
+          ]
+        },
+        "focus": {
+          "title": "What do we emphasize?",
+          "points": [
+            "Artist's freedom and respect for their work.",
+            "Promoting broadly understood culture in society.",
+            "Supporting accessibility and diversity.",
+            "Eliminating barriers and equalizing opportunities in access to culture - both for creators and audiences.",
+            "Building civil society and engaged participation in culture.",
+            "Respect for local traditions and the natural environment.",
+            "Creating high-quality experiences from contact with culture and art."
+          ]
+        }
+      },
+      "cta": {
+        "text": "See what we are currently working on",
+        "button": "View events"
+      }
+    },
     "legal": {
       "title": "Legal",
       "subtitle": "Registration and legal information of Lux Artis Foundation",
