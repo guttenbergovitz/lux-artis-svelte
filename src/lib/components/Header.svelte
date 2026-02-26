@@ -197,6 +197,20 @@
 			<div class="sidebar-main">
 				<nav class="sidebar-nav">
 					<div class="nav-section">
+						<h2 class="nav-section-title">Home</h2>
+						<div class="nav-links">
+							<a 
+								href={getLocalizedPath('/')} 
+								class="sidebar-link" 
+								class:active={page.url.pathname === getLocalizedPath('/')}
+								onclick={handleNavClick}
+							>
+								{t('nav.home')}
+							</a>
+						</div>
+					</div>
+
+					<div class="nav-section">
 						<h2 class="nav-section-title">Foundation</h2>
 						<div class="nav-links">
 							<a 

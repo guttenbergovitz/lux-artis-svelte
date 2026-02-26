@@ -511,10 +511,10 @@ figcaption {
 @media (min-width: 768px) {
 	.sidebar-nav {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, auto);
 		gap: var(--space-xl);
 		margin-bottom: var(--space-xl);
-		max-width: 900px;
+		justify-content: start;
 	}
 }
 
