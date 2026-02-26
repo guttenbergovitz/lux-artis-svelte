@@ -261,6 +261,96 @@
         "successMessage": "Thank you for your submission. We will respond as soon as possible."
       }
     },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Frequently asked questions about Lux Artis Foundation",
+      "categories": {
+        "institutions": {
+          "title": "For institutions",
+          "questions": [
+            {
+              "question": "Does Lux Artis implement projects in cooperation with public institutions?",
+              "answer": "Yes. We cooperate with cultural institutions, local governments and public entities in the implementation of concerts, artistic residencies and curatorial projects."
+            },
+            {
+              "question": "What does Lux Artis cooperation with institutional partners look like?",
+              "answer": "We cooperate with institutional partners in a project-based and partnership model. We are responsible for the curatorial concept, event production, artist coordination and communication coherence."
+            },
+            {
+              "question": "Can you enter an existing program as a curator or event producer?",
+              "answer": "Yes. We offer both original formats and co-creation of programs within existing institutional structures."
+            },
+            {
+              "question": "Do you implement projects financed from public funds?",
+              "answer": "Yes. We have experience working in a grant model and in projects requiring reporting and compliance with formal requirements."
+            }
+          ]
+        },
+        "sponsors": {
+          "title": "For patrons and private partners",
+          "questions": [
+            {
+              "question": "What does sponsorship cooperation with Lux Artis look like?",
+              "answer": "We build long-term partnerships based on shared values. We integrate the partner's presence with the context of the event – without intrusive commercialization."
+            },
+            {
+              "question": "Do you offer projects dedicated to patrons?",
+              "answer": "Yes. We can design an event, series or artistic residency that meets the strategic goals of the partner."
+            },
+            {
+              "question": "What are the benefits of supporting contemporary culture projects?",
+              "answer": "It is real support for the development of the artistic environment, building the image of a responsible brand and presence in a quality and opinion-forming context."
+            },
+            {
+              "question": "Do you operate locally or internationally?",
+              "answer": "We work from Szczecin, implementing projects with local, national and international reach."
+            }
+          ]
+        },
+        "artists": {
+          "title": "For artists",
+          "questions": [
+            {
+              "question": "What does cooperation with Lux Artis look like?",
+              "answer": "Partnership-based. We start with a conversation about the concept and context. We do not impose ready-made formats – we build the project around the specifics of the artist's work."
+            },
+            {
+              "question": "Do you organize artistic residencies?",
+              "answer": "Yes. We create conditions for creative work without the pressure of an immediate premiere or commercial result."
+            },
+            {
+              "question": "Do you only work with specific music genres?",
+              "answer": "No. We implement projects in the field of contemporary music, jazz, improvisation and cross-genre formats. Artistic integrity is key, not genre."
+            },
+            {
+              "question": "Can I submit a project proposal?",
+              "answer": "Yes. We are open to proposals that fit our curatorial approach and contextual thinking about culture."
+            }
+          ]
+        },
+        "audience": {
+          "title": "For audiences",
+          "questions": [
+            {
+              "question": "What events does Lux Artis organize?",
+              "answer": "Concerts, curatorial projects, artistic residencies, events and other types of events in the field of contemporary culture."
+            },
+            {
+              "question": "How do your events differ from standard concerts?",
+              "answer": "We build each event from context, place and form. We focus on depth of message, not commercial effect. Some events are free and accessible to everyone."
+            },
+            {
+              "question": "Where do the events take place?",
+              "answer": "In Szczecin and in spaces that allow for focused, attentive presence – not always in classic concert halls."
+            },
+            {
+              "question": "Who are your projects for?",
+              "answer": "For people who seek experience in culture, not just entertainment. For audiences ready for engagement and dialogue."
+            }
+          ]
+        }
+      }
+    },
     "contact": {
       "title": "Contact",
       "subtitle": "Get in touch with Lux Artis Foundation",
