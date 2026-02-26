@@ -123,8 +123,6 @@
 		sidebarOpen = false; // Close sidebar after navigation
 	}
 
-	const currentLocale = $derived(getLocaleFromPath(page.url.pathname));
-
 	function handleNavClick() {
 		sidebarOpen = false;
 	}
@@ -264,43 +262,6 @@
 						</div>
 					</div>
 				</nav>
-
-				<!-- Language Selector -->
-				<div class="sidebar-footer">
-					<div class="language-section">
-						<h3 class="language-title">Language</h3>
-						<div class="language-grid">
-							<button 
-								onclick={() => switchLanguage('pl')} 
-								class="language-btn" 
-								class:active={currentLocale === 'pl'}
-							>
-								Polski
-							</button>
-							<button 
-								onclick={() => switchLanguage('en')} 
-								class="language-btn" 
-								class:active={currentLocale === 'en'}
-							>
-								English
-							</button>
-							<button 
-								onclick={() => switchLanguage('de')} 
-								class="language-btn" 
-								class:active={currentLocale === 'de'}
-							>
-								Deutsch
-							</button>
-							<button 
-								onclick={() => switchLanguage('uk')} 
-								class="language-btn" 
-								class:active={currentLocale === 'uk'}
-							>
-								Українська
-							</button>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</aside>
