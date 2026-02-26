@@ -62,9 +62,10 @@
 		const localeMap: Record<string, string> = {
 			pl: 'pl-PL',
 			en: 'en-US',
-			de: 'de-DE'
+			de: 'de-DE',
+			uk: 'uk-UA'
 		};
-		const dateLocale = localeMap[locale] || 'en-US';
+		const dateLocale = localeMap[locale] || 'pl-PL';
 		
 		return date.toLocaleDateString(dateLocale, {
 			year: 'numeric',
