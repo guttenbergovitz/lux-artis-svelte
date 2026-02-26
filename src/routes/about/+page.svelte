@@ -49,6 +49,21 @@
 		return getTranslation(data.translations, path);
 	}
 
+	function getArray(path: string): any[] {
+		const keys = path.split('.');
+		let value = data.translations;
+		
+		for (const key of keys) {
+			if (value && typeof value === 'object' && key in value) {
+				value = value[key];
+			} else {
+				return [];
+			}
+		}
+		
+		return Array.isArray(value) ? value : [];
+	}
+
 	function splitParagraphs(text: string): string[] {
 		return text.split('\n\n').filter((p) => p.trim());
 	}
@@ -383,13 +398,12 @@
 			<h2 class="section-title white">{t('pages.about.values.title')}</h2>
 		</MotionReveal>
 		
-		{#if data.translations.pages?.about?.values?.items}
+		{#if getArray('pages.about.values.items').length > 0}
 			<MotionReveal type="stagger" staggerDelay={100} maxStaggerItems={6}>
 				<div class="values-grid">
-					{#each data.translations.pages.about.values.items as item}
+					{#each getArray('pages.about.values.items') as item}
 						<article class="value-block">
-							<h3 class="white">{item.title}</h3>
-							<p class="white">{item.text}</p>
+							<p class="white">{item}</p>
 						</article>
 					{/each}
 				</div>
