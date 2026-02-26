@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { getLocaleFromPath } from '$lib/i18n';
-	import { localizeHref, setLocale } from '$lib/paraglide/runtime';
+	import { localizeHref, deLocalizeHref, setLocale } from '$lib/paraglide/runtime';
 	import Pl from 'svelte-flag-icons/Pl.svelte';
 	import Gb from 'svelte-flag-icons/Gb.svelte';
 	import De from 'svelte-flag-icons/De.svelte';
@@ -42,12 +42,11 @@
 		if (!browser) return;
 		
 		const currentPath = $page.url.pathname;
-		const currentLocale = getLocaleFromPath(currentPath);
 		
-		// Remove locale prefix to get canonical path
-		const canonicalPath = currentPath.replace(new RegExp(`^/${currentLocale}`), '') || '/';
+		// First delocalize to get canonical path (e.g., /pl/o-nas -> /about)
+		const canonicalPath = deLocalizeHref(currentPath);
 		
-		// Use paraglide's localizeHref to get the correct localized path
+		// Then localize to target language (e.g., /about -> /en/about or /de/uber-uns)
 		const newPath = localizeHref(canonicalPath, { locale: newLang as any });
 
 		setLocale(newLang as any);
