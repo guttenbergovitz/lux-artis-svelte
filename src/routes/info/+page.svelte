@@ -147,51 +147,51 @@
 	}
 
 	.board-section {
-		margin-top: var(--space-xl);
-		padding-top: var(--space-xl);
+		margin-top: var(--space-lg);
+		padding-top: var(--space-lg);
 		border-top: 1px solid var(--color-graphite);
 	}
 
 	.board-title {
 		font-family: var(--font-sans);
 		font-weight: 600;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		text-transform: uppercase;
 		color: var(--color-graphite-dark);
-		margin: 0 0 var(--space-sm) 0;
+		margin: 0 0 var(--space-xs) 0;
 	}
 
 	.board-representation {
 		font-family: var(--font-serif);
-		font-size: 0.875rem;
-		line-height: 1.4;
+		font-size: 0.8rem;
+		line-height: 1.3;
 		color: var(--color-graphite);
-		margin: 0 0 var(--space-lg) 0;
+		margin: 0 0 var(--space-md) 0;
 		font-style: italic;
 	}
 
 	.board-members {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-md);
+		gap: var(--space-sm);
 	}
 
 	.board-member {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-xs);
+		gap: 2px;
 	}
 
 	.member-name {
 		font-family: var(--font-sans);
 		font-weight: 600;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		color: var(--color-graphite-dark);
 	}
 
 	.member-position {
 		font-family: var(--font-sans);
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		color: var(--color-graphite-light);
@@ -199,7 +199,7 @@
 
 	.member-since {
 		font-family: var(--font-serif);
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		color: var(--color-graphite);
 	}
 
