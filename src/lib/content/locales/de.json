@@ -72,75 +72,83 @@
     },
     "about": {
       "title": "Lux Artis entdecken",
-      "subtitle": "Wir bauen keine Institutionen. Wir schaffen Bedingungen, unter denen Kunst existieren kann. Wir arbeiten im Bereich der zeitgenössischen Kultur, organisieren Konzerte, Residenzen und kuratorische Projekte. Jede Veranstaltung wird aus Kontext, Ort und Form gebaut – nicht aus einem Kalender oder Erwartungen.",
+      "subtitle": "Wir beschäftigen uns mit der Produktion künstlerischer Veranstaltungen, der Organisation von Projekten und Residenzen, Kuratierung und sozialem Dialog zum Thema zeitgenössische Kultur.\nWir schaffen Bedingungen, unter denen Kunst wirklich existieren kann. Wir achten auf Kontext, Ort und Form. Wir stellen Menschen an erste Stelle: Schöpfer und Publikum, mit ihren Bedürfnissen, Emotionen und Sensibilität.",
       "mission": {
         "title": "Mission",
-        "text": "Wir schaffen Bedingungen für Begegnungen mit zeitgenössischer Kultur. Wir konzentrieren uns auf Erfahrungsqualität, künstlerische Integrität und den Aufbau eines Raums für Dialog zwischen Schöpfern und Publikum."
+        "text": "Wir möchten, dass zeitgenössische Kultur allgemein zugänglich wird. Wir konzentrieren uns auf die Unterstützung kreativer Integrität und die Initiierung des Dialogs zwischen Künstlern und ihrer Umgebung.\nWir behandeln Kunst als Beziehung, nicht als einseitige Botschaft. Wir geben Werken die Chance zu erklingen, was ein Auftakt zu Überlegungen, Debatten und Veränderungen ist."
       },
       "vision": {
         "title": "Vision",
-        "text": "Eine kulturelle Plattform, die jenseits institutioneller Schemata operiert. Ein Ort, an dem kreativer Prozess, kuratorische Präzision und Aufmerksamkeit für Kontext ein kohärentes Ganzes bilden."
+        "text": "Wir bieten eine unabhängige kulturelle Plattform, die die Realisierung origineller kuratorischer Programme ermöglicht.\nWir replizieren keine Formate, wir huldigen nicht dem Kommerz. Wir geben Künstlern eine Stimme."
+      },
+      "goal": {
+        "title": "Ziel",
+        "text": "Wir unterstützen die Entwicklung von Kultur, Kunst und Bildung im weitesten Sinne. Wir engagieren uns in sozialen und Integrationsinitiativen. Wir konzentrieren uns auf die Region Westpommern und angrenzende Gebiete, sind aber nicht darauf beschränkt.\n\nWir verwirklichen unsere Ziele auf vielen Ebenen: Wir organisieren künstlerische Veranstaltungen, führen Bildungsaktivitäten durch, unterstützen junge Schöpfer. Wir setzen auf Dialog und Zusammenarbeit, denn Kultur ist ein gemeinsames Werk."
       },
       "values": {
         "title": "Werte",
         "items": [
           {
             "title": "Qualität",
-            "text": "Sorgfalt in jedem Aspekt der Realisierung. Von der Konzeption über die Produktion bis zur Präsentation."
+            "text": "Sorgfalt, Professionalität und Engagement in jeder Phase. Von der Konzeption über die Produktion bis zur Präsentation."
           },
           {
             "title": "Kontext",
-            "text": "Bewusstsein für Ort, Zeit und kulturellen Hintergrund. Jedes Projekt im Dialog mit seiner Umgebung."
+            "text": "Bewusstsein für Ort, Zeit und kulturellen Hintergrund. Werk im Dialog mit der Umgebung."
           },
           {
             "title": "Prozess",
-            "text": "Aufmerksamkeit für den Weg, nicht nur das Ziel. Arbeit mit Künstlern basierend auf Vertrauen und langfristiger Zusammenarbeit."
+            "text": "Der Weg zum Ziel ist genauso wichtig wie das Ziel selbst. Langfristige Zusammenarbeit basierend auf Vertrauen."
           },
           {
             "title": "Dialog",
-            "text": "Kultur als Raum für Austausch. Zwischen Künstlern, Publikum und Kontexten."
+            "text": "Kultur ist ein Raum für Austausch. Von Gedanken, Erfahrungen und Emotionen. Zwischen Künstler, Werk und Umgebung."
+          },
+          {
+            "title": "Offenheit",
+            "text": "Mauern einreißen, Brücken bauen, Grenzen überschreiten. Toleranz, Respekt und Verständnis."
+          },
+          {
+            "title": "Fluss",
+            "text": "Achtsamkeit und die Fähigkeit, hier und jetzt zu sein. Freude an der Begegnung mit künstlerischer Kreation."
           }
         ]
       },
       "approach": {
         "title": "Ansatz",
-        "text": "Wir arbeiten mit der Überzeugung, dass Kultur Zeit, Raum und angemessene Bedingungen braucht. Wir jagen nicht nach Größe oder Publizität. Wir konzentrieren uns auf das, was wir tun und wie wir es tun."
+        "text": "Wir verwalten kulturelle Projekte in einem langfristigen Kontext, in enger Zusammenarbeit mit Künstlern, lokalen Regierungseinheiten und der lokalen Gemeinschaft.\nWir jagen nicht nach Größe oder Publizität. Wir führen unsere Arbeit gewissenhaft und mit Engagement aus, weil wir Profis und gleichzeitig Enthusiasten sind."
       },
       "extended": {
         "intro": {
           "text": "Lux Artis schafft Kontext für künstlerische Veranstaltungen.\n\nWir arbeiten im Bereich der zeitgenössischen Kultur und konzentrieren uns auf Musik als Medium der Begegnung und Erfahrung. Wir organisieren Konzerte, Residenzen und kuratorische Projekte, die Künstler mit Publikum in Räumen verbinden, die Achtsamkeit fördern.\n\nWir bauen keine Institutionen. Wir schaffen Bedingungen, damit Kunst entstehen kann."
         },
-        "culture": {
-          "title": "Wie wir über Kultur denken",
-          "text": "Künstlerische Kultur ist weder Bildung noch Unterhaltung. Es ist ein Prozess der Schaffung von Raum, in dem Erfahrungen möglich werden, die über den gewöhnlichen Konsum von Inhalten hinausgehen.\n\nWir glauben nicht an Kultur als Produkt. Wir glauben an Kultur als Beziehung – zwischen Künstler und Werk, Werk und Empfänger, Empfänger und Kontext. Jedes dieser Elemente braucht Aufmerksamkeit, Zeit und Raum, um zu entstehen.\n\nUnsere Projekte entwickeln sich langsam. Wir organisieren keine Saisons oder Zyklen. Wir behandeln jedes Ereignis als autonomes Format – nicht als Punkt im Kalender, sondern als Ereignis, das aus Kontext, Ort und Form entsteht."
-        },
         "activities": {
-          "title": "Was wir tun",
-          "text": "Wir organisieren Konzerte und künstlerische Veranstaltungen, die nicht in standardisierte institutionelle oder kommerzielle Rahmen passen. Wir arbeiten mit zeitgenössischer Musik, Jazz, Improvisation, genreübergreifenden Projekten – ohne Genre-Beschränkungen, mit Betonung auf künstlerischer Integrität.\n\nWir wählen Räume, die eine andere Art von Präsenz ermöglichen. Das sind nicht immer Konzertsäle. Manchmal sind es Orte, die vom Publikum eine andere Art von Aufmerksamkeit erfordern – intimer, fokussierter, ohne die Routine des institutionellen Empfangs.\n\nWir schaffen künstlerische Residenzen. Wir unterstützen den kreativen Prozess, nicht nur seine Präsentation. Wir geben Künstlern Zeit und Bedingungen, um ohne Druck auf schnelle Ergebnisse zu arbeiten."
+          "title": "Was wir tun?",
+          "text": "Wir organisieren kulturelle Veranstaltungen, die über Standards hinausgehen. Wir unterstützen Schöpfer durch künstlerische Residenzprogramme.\n\nWir diskriminieren kein Genre. Wir arbeiten mit zeitgenössischer Musik, Jazz, Improvisation, genreübergreifenden Projekten. Wir ermöglichen Künstlern, außerhalb des institutionellen und kommerziellen Kanals zu existieren.\n\nWir wählen Räume, die Achtsamkeit fördern. Manchmal sind es Konzertsäle, manchmal unkonventionelle, intime Orte, ohne aufgezwungene Bedeutungen, die reinen Kontakt mit dem Werk ermöglichen.\n\nDurch künstlerische Residenzen unterstützen wir den gesamten kreativen Prozess. Wir geben Künstlern Zeit und Bedingungen zum Arbeiten, ohne Druck auf schnelle Ergebnisse. Wir unterstützen individuelle Sensibilität und Neurodiversität."
         },
         "location": {
-          "title": "Wo wir arbeiten",
-          "text": "Lux Artis arbeitet von Szczecin aus – einer Stadt, die das Potenzial der kulturellen Infrastruktur mit einer Position außerhalb des Hauptmedienkreislaufs verbindet. Dies ermöglicht es uns, ohne Repräsentationsdruck und ohne die Notwendigkeit zu arbeiten, den Status quo zu bestätigen.\n\nSzczecin liegt in unmittelbarer Nähe zu Berlin, im Ostseeraum, am Schnittpunkt der Kulturen. Diese Geografie begünstigt Austausch, nicht Isolation. Wir arbeiten lokal, aber wir sind nicht lokal geschlossen.\n\nWir behandeln den Ort nicht als Dekoration. Der Ort ist Teil der Kuratierung."
+          "title": "Wo wir arbeiten?",
+          "text": "Der Sitz von Lux Artis befindet sich in Szczecin. Wir unterstützen regionale Initiativen und engagieren die lokale Gemeinschaft. Wir arbeiten auch in einem überregionalen Kontext mit internationaler Perspektive.\n\nSzczecin ist nicht nur die Stadt, aus der wir kommen und zu der wir natürliche Sentimente haben. Wir achten auf das hohe Potenzial der kulturellen Infrastruktur und die Position außerhalb des Hauptmedienkreislaufs, die es uns ermöglicht, ohne Druck und Lärm zu arbeiten.\n\nDie Nähe zur Ostsee und zu Deutschland stellt eine inspirierende Kreuzung der Kulturen dar. Wir sehen darin das Potenzial für Kommunikation und Ideenaustausch.\n\nWir arbeiten lokal, bleiben aber offen für die Welt. Der Ort der Aktivität ist für uns keine Adresse, sondern ein integrales Element der Kreation."
         },
         "audience": {
-          "title": "Für wen wir das tun",
-          "text": "Wir denken nicht in Kategorien von Zielgruppen. Wir denken an Menschen, die in der Kultur etwas mehr suchen als oberflächlichen Kontakt mit Form.\n\nFür Künstler, die Raum für ehrliche Präsentation ihrer Arbeit brauchen – ohne Reduzierung der Form auf kalendarische oder kommerzielle Anforderungen.\n\nFür Publikum, das für Erfahrung kommt, nicht für Unterhaltung. Für diejenigen, die verstehen, dass Kultur Engagement erfordert, nicht nur passiven Konsum.\n\nFür diejenigen, die keine Empfangsanweisungen benötigen."
+          "title": "Für wen wir das tun?",
+          "text": "Wir richten unsere Aktivitäten an Künstler und Publikum, die an einer vertieften Erfahrung zeitgenössischer Kultur interessiert sind.\n\nWir arbeiten nicht mit Marketing-Zielgruppenkategorien. Wir denken an Menschen, die in der Kultur Inhalt, Sinn und Ausdrucksform suchen.\n\nWir sind für Künstler, die Bedingungen für ehrliche Präsentation ihrer Arbeit brauchen.\nFür Publikum, das für Erfahrung kommt, nicht für leere Unterhaltung.\nFür aufmerksame Augen, wachsame Ohren und sensible Herzen, die keine Empfangsanweisungen benötigen."
         },
         "philosophy": {
           "title": "Handlungsphilosophie",
-          "text": "Jedes Projekt beginnt mit einer Frage nach dem Kontext. Nicht darüber, was wir zeigen wollen, sondern über die Bedingungen, unter denen Kunst authentisch existieren kann. Dieser Ansatz erfordert Zeit, Geduld und Bereitschaft, spektakuläre, aber leere Lösungen aufzugeben.\n\nWir organisieren keine Veranstaltungen um der Veranstaltungen willen. Jede Entscheidung – von der Wahl des Ortes bis zur Art der Kommunikation – ist Teil eines kuratorischen Ganzen. Wir glauben, dass Form und Inhalt untrennbar sind und die Qualität der Erfahrung von der Aufmerksamkeit abhängt, die jedem Element gewidmet wird."
+          "text": "Wir beginnen die Projektumsetzung mit sorgfältiger Erkennung der Umstände. Wir stellen authentischen künstlerischen Wert über spektakulären Kommerz.\n\nWir gehen vom Kontext aus, um die Integrität von Form und Inhalt zu bewahren. Wir glauben, dass nur dann Kunst authentisch existieren kann. Dieser Ansatz erfordert Zeit und Geduld. Wir legen keinen Wert auf schnelles, unnatürliches Tempo und künstliches Marketing. Wir organisieren keine Veranstaltungen um ihrer selbst willen. Wir wollen, dass Kunst lebt und spricht - kohärent, frei, in vollem Potenzial."
         },
         "collaboration": {
           "title": "Zusammenarbeit mit Künstlern",
-          "text": "Wir arbeiten mit Künstlern als Partner, nicht als Organisatoren ihrer Auftritte. Das bedeutet Zeit für Gespräche, Verständnis der Absichten, gemeinsame Suche nach den besten Bedingungen für die Präsentation von Arbeit.\n\nWir diktieren keine fertigen Formate. Jedes Projekt wird aus der Spezifität des künstlerischen Vorschlags aufgebaut. Manchmal bedeutet dies, etablierte Konzertschemata zugunsten von Lösungen aufzugeben, die besser der spezifischen Musik oder einer spezifischen künstlerischen Situation dienen."
+          "text": "Wir realisieren ein partnerschaftliches Kooperationsmodell mit Schöpfern basierend auf Dialog.\n\nKünstler sind für uns gleichberechtigte Partner. Wir sind keine Organisatoren von Auftritten, sondern Kuratoren und Betreuer des gesamten kreativen Prozesses. Wir hören zu, sprechen, suchen gemeinsam nach den besten Lösungen. Wir diktieren keine fertigen Schemata. Wir gehen jedes Projekt mit Begeisterung und ohne von oben auferlegte Annahmen an."
         },
         "community": {
           "title": "Gemeinschaft aufbauen",
-          "text": "Kultur braucht Gemeinschaft, aber nicht jede Versammlung von Menschen schafft eine kulturelle Gemeinschaft. Es liegt uns am Herzen, Räume zu schaffen, in denen echter Dialog möglich ist – zwischen Künstlern und Publikum, zwischen verschiedenen Ausdrucksformen, zwischen Tradition und Neuheit.\n\nWir organisieren keine Partys. Wir schaffen Situationen, in denen Kultur geschehen kann. Das ist der Unterschied zwischen Konsum und Teilnahme, zwischen Unterhaltung und Erfahrung."
+          "text": "Wir legen großen Wert auf Integrationsaktivitäten. Wir bauen einen freundlichen, sicheren Raum für Dialog zwischen Künstlern, Institutionen, Mäzenen und Publikum auf.\n\nKultur braucht Gemeinschaft, aber nicht jede Versammlung von Menschen schafft eine kulturelle Gemeinschaft. Wir unterstützen partizipative Kultur. Wir sehen den Unterschied zwischen engagierter Teilnahme und oberflächlichem Konsum.\n\nWir organisieren keine Partys - wir schaffen ein Mikroklima, das Künstlern und Kunst freundlich gesinnt ist."
         },
         "future": {
           "title": "Langfristige Perspektive",
-          "text": "Wir denken über Kultur in Begriffen des Prozesses, nicht des Produkts. Jedes Projekt ist Teil eines größeren Ganzen – des Aufbaus von Bedingungen, unter denen zeitgenössische Kunst ohne kommerziellen oder institutionellen Druck entwickeln kann.\n\nWir jagen nicht nach Größe. Wir konzentrieren uns auf Qualität und Authentizität. Wir glauben, dass Kultur Zeit braucht – Zeit für Projekte, um zu reifen, für Beziehungen, um aufzubauen, für tiefes Verständnis dessen, was wir tun und warum wir es tun."
+          "text": "Wir schlagen strategischen, langfristigen Aufbau von Bedingungen für die Entwicklung zeitgenössischer Kunst in einem unabhängigen und projektbasierten Modell vor.\n\nWir denken über Kultur in Begriffen des Prozesses, nicht des Produkts. Jedes Projekt ist Teil eines größeren Ganzen. Wir jagen nicht nach Größe. Wir wählen Qualität und Authentizität."
         }
       }
     },
