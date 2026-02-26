@@ -1,13 +1,9 @@
 {
-  "id": "2026-03-20-test-event-2",
-  "slug": "testowy-recital-wiosenny",
-  "date": "2026-03-20",
-  "venue": "Testowa Filharmonia",
-  "city": "Warszawa",
-  "title": "[TEST] Testowy Recital Wiosenny",
-  "artists": [
-    "Maria Testowa (sopran)",
-    "Krzysztof Testowy (dyrygent)"
-  ],
-  "description": "TESTOWE wydarzenie demonstracyjne. To fikcyjne wydarzenie zostało stworzone wyłącznie w celu testowania systemu zarządzania treścią i będzie usunięte."
+  "id": "2026-05-01-venus-rising-festival",
+  "slug": "venus-rising-festival",
+  "date": "2026-05-01",
+  "venue": "Stadion Miejski",
+  "city": "Dolice (woj. zachodniopomorskie)",
+  "title": "Venus Rising Festival",
+  "description": "Moc jest kobietą! Przekonaj się o tym podczas dwudniowego święta muzyki elektronicznej. Wystąpi dla Ciebie 8 DJ-ek o międzynarodowej renomie. Spędź z nami niezapomnianą majówkę!"
 }

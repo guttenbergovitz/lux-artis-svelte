@@ -30,31 +30,13 @@
     "description": "Concert of British saxophonist and composer Emma Rawicz with her band. Rawicz has performed at venues such as Ronnie Scott's, Berlin Philharmonic and Love Supreme Festival."
   },
   {
-    "id": "2026-01-15-test-event-1",
-    "slug": "test-new-year-concert",
-    "date": "2026-01-15",
-    "venue": "Test Concert Hall",
-    "city": "Szczecin",
-    "title": "[TEST] Test New Year Concert",
-    "artists": [
-      "John Test (piano)",
-      "Jane Test (violin)",
-      "Peter Test (cello)"
-    ],
-    "description": "This is a TEST event used to verify upcoming concerts display functionality. This event is not real and will be deleted after testing."
-  },
-  {
-    "id": "2026-03-20-test-event-2",
-    "slug": "test-spring-recital",
-    "date": "2026-03-20",
-    "venue": "Test Philharmonic",
-    "city": "Warsaw",
-    "title": "[TEST] Test Spring Recital",
-    "artists": [
-      "Mary Test (soprano)",
-      "Christopher Test (conductor)"
-    ],
-    "description": "TEST demonstration event. This fictional event was created solely for content management system testing and will be deleted."
+    "id": "2026-05-01-venus-rising-festival",
+    "slug": "venus-rising-festival",
+    "date": "2026-05-01",
+    "venue": "City Stadium",
+    "city": "Dolice (West Pomeranian Voivodeship)",
+    "title": "Venus Rising Festival",
+    "description": "Power is a woman! Experience it during a two-day celebration of electronic music. 8 internationally renowned female DJs will perform for you. Spend an unforgettable May Day with us!"
   }
 ]
 

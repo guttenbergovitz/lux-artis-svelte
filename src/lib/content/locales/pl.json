@@ -20,29 +20,29 @@
   "pages": {
     "home": {
       "title": "Lux Artis",
-      "subtitle": "Tworzymy kontekst dla doświadczeń kulturalnych\nProces. Obecność. Dialog.",
+      "subtitle": "Tworzymy kontekst dla doświadczeń kulturalnych\nDziałamy w obszarze kultury, sztuki i edukacji\nProces. Obecność. Dialog.",
       "mission": {
         "title": "Platforma",
-        "text": "Lux Artis to przestrzeń produkcji kulturalnej. Koncentrujemy się na jakości wykonania, kontekście prezentacji i długofalowym myśleniu o kulturze."
+        "text": "Budujemy przestrzeń dla świadomej obecności w kulturze i jej dogłębnego przeżywania. Działamy z zawodowym profesjonalizmem i artystyczną wrażliwością. Kontekstowo, jakościowo, długofalowo. Zajmujemy się produkcją i realizacją wydarzeń kulturalnych oraz projektów artystycznych. Angażujemy się we współprace z instytucjami publicznymi, firmami oraz przede wszystkim - twórcami."
       },
       "approach": {
         "title": "Metoda",
-        "text": "Pracujemy z artystami, kuratorami i instytucjami. Każdy projekt budujemy z uwagą na atmosferę, doświadczenie odbiorców i integralność artystyczną."
+        "text": "Stawiamy na dialog i wzajemne zaufanie. Do każdego projektu podchodzimy uważnie i świadomie, troszcząc się o jego integralność artystyczną. Interesuje nas sztuka osadzona w relacji – bliska ludziom oraz miejscu, w którym powstaje."
       },
       "focus": {
         "title": "Obszary działania",
         "items": [
           {
             "title": "Produkcja wydarzeń",
-            "text": "Realizacja koncertów i wydarzeń kulturalnych. Od koncepcji po wykonanie."
+            "text": "Kompleksowe podejście - od idei, przez konceptualizację i produkcję, aż po ekscytujący moment spotkania z publicznością."
           },
           {
             "title": "Kuratorstwo",
-            "text": "Budowanie programów i kontekstów. Dialog między formą a treścią."
+            "text": "Dialog między dziełem a przestrzenią, twórcą a publicznością, tradycją a współczesnością."
           },
           {
             "title": "Współpraca",
-            "text": "Partnerstwa z artystami, instytucjami i producentami kulturalnymi."
+            "text": "Wymiana kompetencji i wrażliwości w poczuciu współodpowiedzialności za doświadczenie obcowania ze sztuką. Dialog z artystami, instytucjami kultury, producentami i podmiotami publicznymi."
           }
         ]
       },
@@ -57,17 +57,17 @@
       },
       "context": {
         "title": "Kontekst",
-        "text": "Każde wydarzenie budujemy od miejsca, czasu i sytuacji artystycznej. Nie ma uniwersalnych rozwiązań – jest konkretna muzyka, konkretni artyści, konkretna przestrzeń."
+        "text": "Konkretne działania dla konkretnego artysty, przestrzeni, dzieła, okoliczności. Bez uniwersalnych rozwiązań."
       },
       "process": {
         "title": "Proces",
-        "text": "Kultura potrzebuje czasu. Nasze projekty dojrzewają w dialogu z artystami. Nie organizujemy sezonów – każde wydarzenie ma swój rytm i swoją logikę."
+        "text": "Projekty dojrzewające w swoim rytmie, we współpracy z artystami i partnerami."
       },
       "upcomingEvents": "Nadchodzące wydarzenia",
-      "upcomingEventsIntro": "Koncerty, rezydencje, projekty kuratorskie. Każde wydarzenie budujemy od kontekstu, miejsca i formy. Nie organizujemy sezonów – każde zdarzenie ma swój rytm i swoją logikę.",
+      "upcomingEventsIntro": "Zapraszamy Cię do świata kultury i sztuki. Sprawdź, co wydarzy się niebawem.",
       "viewAllEvents": "Zobacz program",
-      "learnMoreIntro": "Jeśli chcesz dowiedzieć się więcej o naszej filozofii działania i sposobie, w jaki budujemy warunki dla kultury, zapraszamy do zapoznania się z naszym podejściem.",
-      "learnMore": "Dowiedz się więcej",
+      "learnMoreIntro": "Dowiedz się więcej o zespole za Lux Artis.\nKultura nie tworzy się sama - tworzą ją ludzie. Przeczytaj o nas więcej.",
+      "learnMore": "O nas",
       "readMore": "Czytaj więcej"
     },
     "about": {

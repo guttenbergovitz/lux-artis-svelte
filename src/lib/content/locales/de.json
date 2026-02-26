@@ -20,29 +20,29 @@
   "pages": {
     "home": {
       "title": "Lux Artis",
-      "subtitle": "Wir schaffen Kontext für kulturelle Erfahrungen\nProzess. Offenheit. Dialog.",
+      "subtitle": "Wir schaffen Kontext für kulturelle Erfahrungen\nWir arbeiten im Bereich Kultur, Kunst und Bildung\nProzess. Präsenz. Dialog.",
       "mission": {
         "title": "Plattform",
-        "text": "Lux Artis ist ein Raum für Kulturproduktion. Wir konzentrieren uns auf Qualität der Ausführung, Kontext der Präsentation und langfristiges Denken über Kultur."
+        "text": "Wir schaffen einen Raum für bewusste Präsenz in der Kultur und ihr tiefes Erleben. Wir arbeiten mit professioneller Expertise und künstlerischer Sensibilität. Kontextuell, qualitativ, langfristig. Wir beschäftigen uns mit Produktion und Realisierung kultureller Veranstaltungen und künstlerischer Projekte. Wir engagieren uns in Kooperationen mit öffentlichen Institutionen, Unternehmen und vor allem - Schöpfern."
       },
       "approach": {
         "title": "Methode",
-        "text": "Wir arbeiten mit Künstlern, Kuratoren und Institutionen. Jedes Projekt wird mit Aufmerksamkeit für Atmosphäre, Publikumserfahrung und künstlerische Integrität aufgebaut."
+        "text": "Wir setzen auf Dialog und gegenseitiges Vertrauen. Wir gehen jedes Projekt aufmerksam und bewusst an und kümmern uns um seine künstlerische Integrität. Uns interessiert Kunst, die in Beziehungen eingebettet ist – nah an Menschen und dem Ort, an dem sie entsteht."
       },
       "focus": {
         "title": "Tätigkeitsbereiche",
         "items": [
           {
             "title": "Veranstaltungsproduktion",
-            "text": "Realisierung von Konzerten und kulturellen Veranstaltungen. Von der Konzeption bis zur Ausführung."
+            "text": "Umfassender Ansatz - von der Idee über Konzeptualisierung und Produktion bis zum aufregenden Moment der Begegnung mit dem Publikum."
           },
           {
             "title": "Kuratierung",
-            "text": "Aufbau von Programmen und Kontexten. Dialog zwischen Form und Inhalt."
+            "text": "Dialog zwischen Werk und Raum, Schöpfer und Publikum, Tradition und Zeitgenossenschaft."
           },
           {
             "title": "Zusammenarbeit",
-            "text": "Partnerschaften mit Künstlern, Institutionen und Kulturproduzenten."
+            "text": "Austausch von Kompetenzen und Sensibilitäten im Bewusstsein gemeinsamer Verantwortung für die Erfahrung der Begegnung mit Kunst. Dialog mit Künstlern, Kulturinstitutionen, Produzenten und öffentlichen Einrichtungen."
           }
         ]
       },
@@ -57,17 +57,17 @@
       },
       "context": {
         "title": "Kontext",
-        "text": "Jede Veranstaltung wird aus Ort, Zeit und künstlerischer Situation aufgebaut. Es gibt keine universellen Lösungen – es gibt spezifische Musik, spezifische Künstler, spezifischen Raum."
+        "text": "Konkrete Aktionen für konkreten Künstler, Raum, Werk, Umstände. Ohne universelle Lösungen."
       },
       "process": {
         "title": "Prozess",
-        "text": "Kultur braucht Zeit. Unsere Projekte reifen im Dialog mit Künstlern. Wir organisieren keine Saisons – jede Veranstaltung hat ihren eigenen Rhythmus und ihre eigene Logik."
+        "text": "Projekte, die in ihrem eigenen Rhythmus reifen, in Zusammenarbeit mit Künstlern und Partnern."
       },
       "upcomingEvents": "Kommende Veranstaltungen",
-      "upcomingEventsIntro": "Konzerte, Residenzen, kuratorische Projekte. Jede Veranstaltung wird aus Kontext, Ort und Form gebaut. Wir organisieren keine Saisons – jede Veranstaltung hat ihren eigenen Rhythmus und ihre eigene Logik.",
+      "upcomingEventsIntro": "Wir laden Sie in die Welt der Kultur und Kunst ein. Sehen Sie, was bald passieren wird.",
       "viewAllEvents": "Programm ansehen",
-      "learnMoreIntro": "Wenn Sie mehr über unsere Philosophie und unsere Art, Bedingungen für Kultur zu schaffen, erfahren möchten, laden wir Sie ein, unseren Ansatz kennenzulernen.",
-      "learnMore": "Mehr erfahren",
+      "learnMoreIntro": "Erfahren Sie mehr über das Team hinter Lux Artis.\nKultur entsteht nicht von selbst - Menschen schaffen sie. Lesen Sie mehr über uns.",
+      "learnMore": "Über uns",
       "readMore": "Mehr lesen"
     },
     "about": {

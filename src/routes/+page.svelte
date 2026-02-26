@@ -591,10 +591,10 @@
 			<div class="values-poster">
 				<h2 class="values-title">{t('pages.home.values.title')}</h2>
 				<div class="values-list">
-					<p class="values-item">Stawiamy na głębię i wartość artystyczną. Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę.</p>
-					<p class="values-item">Droga do rezultatu jest równie istotna. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
-					<p class="values-item">Budujemy trwałe relacje i konteksty. Myślimy o kulturze jako o ciągłym procesie, nie jednorazowych wydarzeniach.</p>
-					<p class="values-item">Działamy uczciwie i profesjonalnie. Otwarta komunikacja i jasne zasady współpracy z artystami i partnerami.</p>
+					<p class="values-item">Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę, które budują głębokie doświadczenie obcowania ze sztuką. Szanujemy wartość artystyczną, pracę twórczą i integralność dzieła.</p>
+					<p class="values-item">Droga do rezultatu jest dla nas równie istotna, jak sam efekt. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
+					<p class="values-item">Myślimy o kulturze jako o procesie ciągłym, nie jako o serii jednorazowych epizodów. Budujemy długofalowe relacje oparte na zrozumieniu i szacunku.</p>
+					<p class="values-item">Otwarta komunikacja i precyzyjne zasady współpracy pozwalają nam budować zaufanie i przyjazną atmosferę.</p>
 				</div>
 			</div>
 		</MotionReveal>
