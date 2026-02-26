@@ -508,8 +508,23 @@ figcaption {
 	margin-bottom: var(--space-2xl);
 }
 
+@media (min-width: 768px) {
+	.sidebar-nav {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-2xl);
+		margin-bottom: var(--space-xl);
+	}
+}
+
 .nav-section {
 	margin-bottom: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+	.nav-section {
+		margin-bottom: 0;
+	}
 }
 
 .nav-section-title {
