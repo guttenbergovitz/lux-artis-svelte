@@ -181,6 +181,7 @@
 		max-width: 45ch;
 		margin: 0;
 		font-weight: 400;
+		white-space: pre-line;
 	}
 
 	/* Mission: Asymmetric Two-Column Block */
