@@ -193,6 +193,12 @@
 		margin-top: var(--space-lg);
 	}
 
+	@media (min-width: 1024px) {
+		.values-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
 	.value-block h3 {
 		font-family: var(--font-sans);
 		font-weight: 700;
