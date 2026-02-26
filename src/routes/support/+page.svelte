@@ -104,7 +104,7 @@
 
 	/* Poster Sections */
 	.poster-section {
-		padding: calc(var(--space-2xl) * 2) 0;
+		padding: var(--space-2xl) 0;
 		background: white;
 	}
 
@@ -114,7 +114,7 @@
 	}
 
 	.poster-section.compact {
-		padding: var(--space-2xl) 0;
+		padding: var(--space-xl) 0;
 	}
 
 	/* Hero Typography */
