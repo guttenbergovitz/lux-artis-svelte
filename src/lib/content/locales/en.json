@@ -153,8 +153,8 @@
       }
     },
     "events": {
-      "title": "Events",
-      "subtitle": "Concerts and artistic events. Each occurrence built from context, place and form.",
+      "title": "Upcoming Events",
+      "subtitle": "We invite you to the world of culture and art. Check what will happen soon.",
       "upcomingEventsSection": "Upcoming Events",
       "upcomingEventsIntro": "Join us for our upcoming concerts and cultural events. Each event is carefully prepared to provide a unique artistic experience.",
       "pastEventsSection": "Past Events",

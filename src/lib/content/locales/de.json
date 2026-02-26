@@ -153,8 +153,8 @@
       }
     },
     "events": {
-      "title": "Veranstaltungen",
-      "subtitle": "Konzerte und künstlerische Veranstaltungen. Jedes Ereignis aus Kontext, Ort und Form entstanden.",
+      "title": "Kommende Veranstaltungen",
+      "subtitle": "Wir laden Sie in die Welt der Kultur und Kunst ein. Sehen Sie, was bald passieren wird.",
       "upcomingEventsSection": "Kommende Veranstaltungen",
       "upcomingEventsIntro": "Besuchen Sie unsere kommenden Konzerte und kulturellen Veranstaltungen. Jede Veranstaltung wird sorgfältig vorbereitet, um ein einzigartiges künstlerisches Erlebnis zu bieten.",
       "pastEventsSection": "Vergangene Veranstaltungen",
