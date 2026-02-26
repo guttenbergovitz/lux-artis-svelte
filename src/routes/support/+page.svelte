@@ -113,6 +113,10 @@
 		color: white;
 	}
 
+	.poster-section.compact {
+		padding: var(--space-2xl) 0;
+	}
+
 	/* Hero Typography */
 	.support-hero {
 		text-align: left;
@@ -446,7 +450,7 @@
 </section>
 
 <!-- Contact Form Section -->
-<section class="poster-section">
+<section class="poster-section compact">
 	<Container>
 		<MotionReveal type="reveal" delay={100}>
 			<div class="latin-separator center">
