@@ -58,7 +58,10 @@
 	}
 
 	function formatDate(dateString: string, locale: string): string {
-		const date = new Date(dateString);
+		// Parse date as local date to avoid timezone issues
+		const [year, month, day] = dateString.split('-').map(Number);
+		const date = new Date(year, month - 1, day);
+		
 		const localeMap: Record<string, string> = {
 			pl: 'pl-PL',
 			en: 'en-US',
