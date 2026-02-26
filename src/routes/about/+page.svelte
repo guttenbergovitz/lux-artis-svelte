@@ -335,6 +335,20 @@
 	</Container>
 </section>
 
+<!-- Goal -->
+<section class="poster-section">
+	<Container>
+		<MotionReveal type="section" delay={200}>
+			<h2 class="section-title">{t('pages.about.goal.title')}</h2>
+			{#each splitParagraphs(t('pages.about.goal.text')) as paragraph, index}
+				<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 400}>
+					<p class="section-text">{paragraph}</p>
+				</MotionReveal>
+			{/each}
+		</MotionReveal>
+	</Container>
+</section>
+
 <!-- Approach -->
 <section class="poster-section">
 	<Container>
@@ -376,27 +390,6 @@
 
 <!-- Extended Sections -->
 {#if data.translations.pages?.about?.extended}
-	<!-- Culture -->
-	<section class="poster-section">
-		<Container>
-			<MotionReveal type="wipe" direction="left" delay={100}>
-				<div class="latin-separator center">
-					<div class="separator-line"></div>
-					<p class="latin-quote">{getRandomQuote()}</p>
-				</div>
-			</MotionReveal>
-			
-			<MotionReveal type="section" delay={300}>
-				<h2 class="section-title">{t('pages.about.extended.culture.title')}</h2>
-				{#each splitParagraphs(t('pages.about.extended.culture.text')) as paragraph, index}
-					<MotionReveal type="reveal" intensity="subtle" delay={index * 100 + 500}>
-						<p class="section-text">{paragraph}</p>
-					</MotionReveal>
-				{/each}
-			</MotionReveal>
-		</Container>
-	</section>
-
 	<!-- Activities -->
 	<section class="poster-section gold">
 		<Container>

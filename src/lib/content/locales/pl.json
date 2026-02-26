@@ -72,75 +72,83 @@
     },
     "about": {
       "title": "Poznaj Lux Artis",
-      "subtitle": "Nie budujemy instytucji. Tworzymy warunki, w których sztuka może zaistnieć. Działamy w obszarze współczesnej kultury, organizując koncerty, rezydencje i projekty kuratorskie. Każde wydarzenie budujemy od kontekstu, miejsca i formy – nie od kalendarza czy oczekiwań.",
+      "subtitle": "Zajmujemy się produkcją wydarzeń artystycznych, organizacją projektów i rezydencji, kuratorstwem, dialogiem społecznym wokół tematu kultury współczesnej.\nTworzymy warunki, w których sztuka może realnie zaistnieć. Zwracamy uwagę na kontekst, miejsce i formę. Na pierwszym miejscu stawiamy ludzi: twórców i odbiorców, wraz z ich potrzebami, emocjami i wrażliwością.",
       "mission": {
         "title": "Misja",
-        "text": "Tworzymy warunki dla spotkań z kulturą współczesną. Koncentrujemy się na jakości doświadczenia, integralności artystycznej i budowaniu przestrzeni dla dialogu między twórcami a odbiorcami."
+        "text": "Pragniemy, aby kultura współczesna stała się powszechnie dostępna. Koncentrujemy się na wspieraniu integralności twórczej oraz inicjowaniu dialogu między artystami a ich otoczeniem.\nSztukę traktujemy jak relację, nie jak jednostronny komunikat. Dajemy dziełom szansę na wybrzmienie, które jest wstępem do rozważań, debaty, zmiany."
       },
       "vision": {
         "title": "Wizja",
-        "text": "Platforma kulturalna działająca poza schematami instytucjonalnymi. Miejsce, gdzie proces twórczy, kuratorska precyzja i uwaga na kontekst tworzą spójną całość."
+        "text": "Udostępniamy niezależną platformę kulturalną, umożliwiającą realizację autorskich programów kuratorskich.\nNie powielamy formatów, nie hołdujemy komercji. Oddajemy głos artystom."
+      },
+      "goal": {
+        "title": "Cel",
+        "text": "Wspieramy rozwój szeroko pojętej kultury, sztuki i edukacji. Angażujemy się w inicjatywy społeczne i integracyjne. Koncentrujemy się na regionie Pomorza Zachodniego i obszarów przyległych, ale się do niego nie ograniczamy.\n\nNasze cele realizujemy na wielu poziomach: organizujemy wydarzenia artystyczne, prowadzimy działalność edukacyjną, wspieramy młodych twórców. Nastawiamy się na dialog i współpracę, bo kultura to wspólne dzieło."
       },
       "values": {
         "title": "Wartości",
         "items": [
           {
             "title": "Jakość",
-            "text": "Staranność w każdym aspekcie realizacji. Od koncepcji przez produkcję po prezentację."
+            "text": "Staranność, profesjonalizm i zaangażowanie na każdym etapie. Od koncepcji, przez produkcję, po prezentację."
           },
           {
             "title": "Kontekst",
-            "text": "Świadomość miejsca, czasu i kulturowego tła. Każdy projekt w dialogu z otoczeniem."
+            "text": "Świadomość miejsca, czasu i kulturowego tła. Dzieło w dialogu otoczeniem."
           },
           {
             "title": "Proces",
-            "text": "Uwaga na drogę, nie tylko cel. Praca z artystami oparta na zaufaniu i długofalowej współpracy."
+            "text": "Droga do celu równie ważna, jak sam cel. Długofalowa współpraca oparta na zaufaniu."
           },
           {
             "title": "Dialog",
-            "text": "Kultura jako przestrzeń wymiany. Między artystami, odbiorcami i kontekstami."
+            "text": "Kultura to przestrzeń wymiany. Myśli, doznań i emocji. Między artystą, dziełem i otoczeniem."
+          },
+          {
+            "title": "Otwartość",
+            "text": "Burzenie murów, budowanie mostów, przekraczanie granic. Tolerancja, szacunek i zrozumienie."
+          },
+          {
+            "title": "Przepływ",
+            "text": "Uważność i umiejętność bycia tu i teraz. Radość z obcowania z kreacją artystyczną."
           }
         ]
       },
       "approach": {
         "title": "Podejście",
-        "text": "Działamy z przekonaniem, że kultura potrzebuje czasu, przestrzeni i odpowiednich warunków. Nie gonim za skalą ani rozgłosem. Koncentrujemy się na tym, co robimy i jak to robimy."
+        "text": "Zarządzamy projektami kulturalnymi w kontekście długofalowym, w ścisłej współpracy z artystami, jednostkami samorządowymi i społecznością lokalną.\nNie gonimy za skalą ani rozgłosem. Skrupulatnie i z zaangażowaniem wykonujemy naszą pracę, ponieważ jesteśmy profesjonalistami a jednocześnie pasjonatami."
       },
       "extended": {
         "intro": {
           "text": "Lux Artis tworzy kontekst dla wydarzeń artystycznych.\n\nDziałamy w obszarze współczesnej kultury, skupiając się na muzyce jako medium spotkania i doświadczenia. Organizujemy koncerty, rezydencje i projekty kuratorskie, które łączą artystów z publicznością w przestrzeniach sprzyjających uważności.\n\nNie budujemy instytucji. Budujemy warunki do tego, by sztuka mogła zaistnieć."
         },
-        "culture": {
-          "title": "Jak myślimy o kulturze",
-          "text": "Kultura artystyczna nie jest ani edukacją, ani rozrywką. Jest procesem tworzenia przestrzeni, w której możliwe staje się doświadczenie wykraczające poza zwykłą konsumpcję treści.\n\nNie wierzymy w kulturę jako produkt. Wierzymy w kulturę jako relację – między artystą a dziełem, dziełem a odbiorcą, odbiorcą a kontekstem. Każdy z tych elementów wymaga uwagi, czasu i przestrzeni do zaistnienia.\n\nNasze projekty powstają powoli. Nie organizujemy sezonów ani cykli. Każde wydarzenie traktujemy jako autonomiczny format – nie punkt w kalendarzu, ale zdarzenie zbudowane od kontekstu, miejsca i formy."
-        },
         "activities": {
-          "title": "Co robimy",
-          "text": "Organizujemy koncerty i wydarzenia artystyczne, które nie mieszczą się w standardowych ramach instytucjonalnych ani komercyjnych. Pracujemy z muzyką współczesną, jazzem, improwizacją, projektami cross-genre – bez ograniczeń gatunkowych, z naciskiem na rzetelność artystyczną.\n\nWybieramy przestrzenie, które pozwalają na inny rodzaj obecności. Nie zawsze są to sale koncertowe. Czasem są to miejsca, które wymagają od publiczności innego rodzaju uwagi – bardziej kameralnej, skupionej, bez rutyny instytucjonalnego odbioru.\n\nTworzymy rezydencje artystyczne. Wspieramy proces twórczy, nie tylko jego prezentację. Dajemy artystom czas i warunki do pracy bez presji szybkiego rezultatu."
+          "title": "Co robimy?",
+          "text": "Organizujemy wydarzenia kulturalne, które wykraczają poza standardy. Wspieramy twórców poprzez programy rezydencji artystycznych.\n\nNie dyskryminujemy żadnego gatunku. Pracujemy z muzyką współczesną, jazzem, improwizacją, projektami cross-genre. Pozwalamy artystom zaistnieć poza kanałem instytucjonalnym i komercyjnym.\n\nWybieramy przestrzenie sprzyjające uważności. Czasem są to sale koncertowe, czasem miejsca nieoczywiste, kameralne, bez nadpisanych znaczeń, pozwalające na czysty kontakt z dziełem.\n\nPoprzez rezydencje artystyczne wspieramy cały proces twórczy. Dajemy artystom czas i warunki do pracy, bez presji szybkiego rezultatu. Wspieramy indywidualną wrażliwość i neuroróżnorodność."
         },
         "location": {
-          "title": "Gdzie działamy",
-          "text": "Lux Artis działa ze Szczecina – miasta, które łączy potencjał infrastruktury kulturalnej z pozycją poza głównym obiegiem medialnym. To pozwala nam pracować bez presji reprezentacji i bez konieczności potwierdzania status quo.\n\nSzczecin leży w bezpośredniej bliskości Berlina, w obszarze Morza Bałtyckiego, na skrzyżowaniu kultur. Ta geografia sprzyja wymianie, nie izolacji. Pracujemy lokalnie, ale nie jesteśmy zamknięci lokalnie.\n\nNie traktujemy miejsca jako dekoracji. Miejsce jest częścią kuracji."
+          "title": "Gdzie działamy?",
+          "text": "Siedziba Lux Artis znajduje się w Szczecinie. Wspieramy inicjatywy regionalne i angażujemy lokalną społeczność. Działamy także w kontekście ponadlokalnym, z perspektywą międzynarodową.\n\nSzczecin to nie tylko miasto, z którego się wywodzimy i do którego czujemy naturalny sentyment. Zwracamy uwagę na wysoki potencjał infrastruktury kulturalnej oraz na pozycję poza głównym obiegiem medialnym, która pozwala nam pracować bez presji i zgiełku.\n\nBliskość Morza Bałtyckiego oraz Niemiec stanowi inspirujące skrzyżowanie kultur. Dostrzegamy w nim potencjał do komunikacji i wymiany idei.\n\nPracujemy lokalnie ale pozostajemy otwarci na świat. Miejsce działalności nie jest dla nas adresem, ale integralnym elementem kreacji."
         },
         "audience": {
-          "title": "Dla kogo to robimy",
-          "text": "Nie myślimy kategoriami grup docelowych. Myślimy o ludziach, którzy szukają w kulturze czegoś więcej niż powierzchownego kontaktu z formą.\n\nDla artystów, którzy potrzebują przestrzeni do rzetelnej prezentacji pracy – bez redukcji formy do wymogów kalendarzowych ani komercyjnych.\n\nDla publiczności, która przychodzi po doświadczenie, nie po rozrywkę. Dla tych, którzy rozumieją, że kultura wymaga zaangażowania, nie tylko pasywnej konsumpcji.\n\nDla tych, którzy nie potrzebują instrukcji odbioru."
+          "title": "Dla kogo to robimy?",
+          "text": "Działania kierujemy do artystów i odbiorców zainteresowanych pogłębionym doświadczeniem kultury współczesnej.\n\nNie operujemy kategoriami marketingowych grup docelowych. Myślimy o ludziach, którzy w kulturze szukają treści, sensu i formy wyrazu.\n\nJesteśmy dla artystów, którzy potrzebują warunków do rzetelnej prezentacji pracy.\nDla publiczności, która przychodzi po doświadczenie, nie po pustą rozrywkę.\nDla uważnych oczu, czujnych uszu i wrażliwych serc, które nie potrzebują instrukcji odbioru."
         },
         "philosophy": {
           "title": "Filozofia działania",
-          "text": "Każdy projekt rozpoczynamy od pytania o kontekst. Nie o to, co chcemy pokazać, ale o to, w jakich warunkach sztuka może zaistnieć w sposób autentyczny. To podejście wymaga czasu, cierpliwości i gotowości do rezygnacji z efektownych, ale pustych rozwiązań.\n\nNie organizujemy wydarzeń dla samych wydarzeń. Każda decyzja – od wyboru miejsca po sposób komunikacji – jest częścią kuratorskiej całości. Wierzymy, że forma i treść są nierozłączne, a jakość doświadczenia zależy od uwagi poświęconej każdemu elementowi."
+          "text": "Realizację projektów zaczynamy od starannego rozpoznania okoliczności. Przedkładamy autentyczną wartość artystyczną ponad efektowną komercję.\n\nWychodzimy od kontekstu, aby zachować integralność formy i treści. Wierzymy, że tylko wtedy sztuka może zaistnieć w sposób autentyczny. Takie podejście wymaga czasu i cierpliwości. Nie zależy nam na szybkim, nienaturalnym tempie i sztucznym marketingu. Nie organizujemy wydarzeń dla samego faktu. Chcemy, aby sztuka żyła i przemawiała - spójna, wolna, w pełni swojego potencjału."
         },
         "collaboration": {
           "title": "Współpraca z artystami",
-          "text": "Pracujemy z artystami jako partnerzy, nie jako organizatorzy ich występów. Oznacza to czas na rozmowy, zrozumienie intencji, wspólne poszukiwanie najlepszych warunków dla prezentacji pracy.\n\nNie narzucamy gotowych formatów. Każdy projekt budujemy od specyfiki artystycznej propozycji. Czasem oznacza to rezygnację z utartych schematów koncertowych na rzecz rozwiązań, które lepiej służą konkretnej muzyce czy konkretnej sytuacji artystycznej."
+          "text": "Realizujemy partnerski model współpracy z twórcami oparty na dialogu.\n\nArtyści są dla nas równorzędnymi partnerami. Nie jesteśmy organizatorami występów, ale kuratorami i opiekunami całego procesu twórczego. Słuchamy, rozmawiamy, wspólnie szukamy najlepszych rozwiązań. Nie narzucamy gotowych schematów. Do każdego projektu podchodzimy z ekscytacją i bez odgórnych założeń."
         },
         "community": {
           "title": "Budowanie wspólnoty",
-          "text": "Kultura potrzebuje wspólnoty, ale nie każde zgromadzenie ludzi tworzy wspólnotę kulturalną. Zależy nam na budowaniu przestrzeni, w której możliwy jest rzeczywisty dialog – między artystami a publicznością, między różnymi formami ekspresji, między tradycją a nowością.\n\nNie organizujemy imprez. Tworzymy sytuacje, w których kultura może się wydarzyć. To różnica między konsumpcją a uczestnictwem, między rozrywką a doświadczeniem."
+          "text": "Duży nacisk kładziemy na działalność o charakterze integracyjnym Budujemy przyjazną, bezpieczną przestrzeń do dialogu między artystami, instytucjami, mecenasami i publicznością.\n\nKultura potrzebuje wspólnoty, ale nie każde zgromadzenie ludzi tworzy wspólnotę kulturalną. Wspieramy kulturę uczestniczącą. Widzimy różnice między zaangażowanym uczestnictwem a powierzchowną konsumpcją.\n\nNie organizujemy imprez - tworzymy mikroklimat przyjazny artystom i sztuce."
         },
         "future": {
           "title": "Perspektywa długofalowa",
-          "text": "Myślimy o kulturze w kategoriach procesu, nie produktu. Każdy projekt jest częścią większej całości – budowania warunków, w których sztuka współczesna może się rozwijać bez presji komercyjnej czy instytucjonalnej.\n\nNie gonim za skalą. Koncentrujemy się na jakości i autentyczności. Wierzymy, że kultura potrzebuje czasu – czasu na dojrzewanie projektów, na budowanie relacji, na głębokie zrozumienie tego, co robimy i dlaczego to robimy."
+          "text": "Proponujemy strategiczne, długofalowe budowanie warunków dla rozwoju sztuki współczesnej w modelu niezależnym i projektowym.\n\nMyślimy o kulturze w kategoriach procesu, nie produktu. Każdy projekt jest częścią większej całości. Nie gonimy za skalą. Wybieramy jakość i autentyczność."
         }
       }
     },
