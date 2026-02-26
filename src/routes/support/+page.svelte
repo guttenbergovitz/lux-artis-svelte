@@ -393,22 +393,6 @@
 					</ul>
 				</article>
 
-				<!-- Internships -->
-				<article class="support-card">
-					<h3 class="support-card-title">{t('pages.support.internships.title')}</h3>
-					<p class="support-card-subtitle">{t('pages.support.internships.subtitle')}</p>
-					<p class="support-card-description">
-						{t('pages.support.internships.description')}
-					</p>
-					<ul class="support-points">
-						{#if data.translations.pages?.support?.internships?.points}
-							{#each data.translations.pages.support.internships.points as point}
-								<li class="support-point">{point}</li>
-							{/each}
-						{/if}
-					</ul>
-				</article>
-
 				<!-- Artists Support -->
 				<article class="support-card">
 					<h3 class="support-card-title">{t('pages.support.artists.title')}</h3>
@@ -419,6 +403,38 @@
 					<ul class="support-points">
 						{#if data.translations.pages?.support?.artists?.points}
 							{#each data.translations.pages.support.artists.points as point}
+								<li class="support-point">{point}</li>
+							{/each}
+						{/if}
+					</ul>
+				</article>
+
+				<!-- Local Community -->
+				<article class="support-card">
+					<h3 class="support-card-title">{t('pages.support.community.title')}</h3>
+					<p class="support-card-subtitle">{t('pages.support.community.subtitle')}</p>
+					<p class="support-card-description">
+						{t('pages.support.community.description')}
+					</p>
+					<ul class="support-points">
+						{#if data.translations.pages?.support?.community?.points}
+							{#each data.translations.pages.support.community.points as point}
+								<li class="support-point">{point}</li>
+							{/each}
+						{/if}
+					</ul>
+				</article>
+
+				<!-- Internships -->
+				<article class="support-card">
+					<h3 class="support-card-title">{t('pages.support.internships.title')}</h3>
+					<p class="support-card-subtitle">{t('pages.support.internships.subtitle')}</p>
+					<p class="support-card-description">
+						{t('pages.support.internships.description')}
+					</p>
+					<ul class="support-points">
+						{#if data.translations.pages?.support?.internships?.points}
+							{#each data.translations.pages.support.internships.points as point}
 								<li class="support-point">{point}</li>
 							{/each}
 						{/if}
