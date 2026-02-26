@@ -35,3 +35,9 @@ storybook-static
 
 # misc
 lux-artis-solid
+
+# IDE
+.vscode
+
+# Playwright MCP
+.playwright-mcp
