@@ -466,6 +466,25 @@
         "button": "Veranstaltungen ansehen"
       }
     },
+    "venusRising": {
+      "title": "Venus Rising Festival",
+      "tagline": "Planet of the Beat",
+      "metaDescription": "Zwei Tage unter freiem Himmel. Musik, Kunst, Technologie. Mai 2026 in Dolice.",
+      "scroll": "Scrollen",
+      "lead": "Zwei Tage unter freiem Himmel.",
+      "pillars": [
+        "Musik, die vibriert und befreit.",
+        "Kunst, die vor deinen Augen entsteht.",
+        "Technologie, die du hautnah erlebst.",
+        "Gespräche, die provozieren und inspirieren."
+      ],
+      "date": "MAI 2026",
+      "location": "in Dolice wird anders aussehen.",
+      "announcement": "Vollständiges Programm, Line-up und Details am <strong>8. März</strong>.",
+      "announcement2": "Datum merken. Dranbleiben.",
+      "ctaHeadline": "Erwarte den Aufgang der Venus.",
+      "ctaSubtext": "Wir laden Sie wieder ein. Bald erfahren Sie mehr."
+    },
     "legal": {
       "title": "Impressum",
       "subtitle": "Registrierungs- und Rechtsinformationen der Stiftung Lux Artis",

@@ -467,6 +467,25 @@
         "errorMessage": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później."
       }
     },
+    "venusRising": {
+      "title": "Venus Rising Festival",
+      "tagline": "Planet of the Beat",
+      "metaDescription": "Dwa dni pod otwartym niebem. Muzyka, sztuka, technologia. Majówka 2026 w Dolicach.",
+      "scroll": "Scroll",
+      "lead": "Dwa dni pod otwartym niebem.",
+      "pillars": [
+        "Muzyka, która wibruje i wyzwala.",
+        "Sztuka, która powstaje na Twoich oczach.",
+        "Technologia, której doświadczasz osobiście.",
+        "Rozmowy, które prowokują i inspirują."
+      ],
+      "date": "MAJÓWKA 2026",
+      "location": "w Dolicach będzie wyglądać inaczej.",
+      "announcement": "Pełny program, line-up i szczegóły ogłosimy <strong>8 marca</strong>.",
+      "announcement2": "Zapisz datę. Obserwuj.",
+      "ctaHeadline": "Oczekuj wschodu Venus.",
+      "ctaSubtext": "Zapraszamy ponownie. Już wkrótce dowiesz się więcej."
+    },
     "legal": {
       "title": "Informacje prawne",
       "subtitle": "Dane rejestrowe i prawne Fundacji Lux Artis",

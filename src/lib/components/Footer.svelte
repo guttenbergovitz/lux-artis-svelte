@@ -4,6 +4,7 @@
 	import Container from '$lib/components/Container.svelte';
 	import { getLocaleFromPath, getTranslation, getTranslations } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
 
 	let translations = $state<any>({});
 
@@ -55,6 +56,18 @@
 					<div class="access-links">
 						<a href={getLocalizedPath('/contact')} class="access-link">Kontakt</a>
 						<a href={getLocalizedPath('/legal')} class="access-link">Informacje prawne</a>
+					</div>
+
+					<div class="social-links">
+						<span class="social-label">Venus Rising</span>
+						<div class="social-icons">
+							<a href="https://www.facebook.com/VenusRisingFestival" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+								<FacebookSolid class="w-4 h-4" />
+							</a>
+							<a href="https://www.instagram.com/venus_rising_festival" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+								<InstagramSolid class="w-4 h-4" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -117,7 +130,7 @@
 
 	.meta-grid {
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-columns: auto auto auto;
 		justify-content: space-between;
 		align-items: baseline;
 		gap: var(--space-md);
@@ -163,6 +176,47 @@
 		color: rgba(255, 255, 255, 0.8);
 	}
 
+	.social-links {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		text-align: right;
+	}
+
+	.social-label {
+		font-family: var(--font-sans);
+		font-size: 0.7rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+	.social-icons {
+		display: flex;
+		gap: var(--space-sm);
+		justify-content: flex-end;
+	}
+
+	.social-link {
+		color: #fff;
+		opacity: 0.6;
+		transition: opacity 0.25s ease, transform 0.25s ease;
+		display: flex;
+		align-items: center;
+	}
+
+	.social-link:hover {
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	.social-link :global(svg) {
+		fill: currentColor;
+		width: 16px;
+		height: 16px;
+	}
+
 	/* Responsive: Mobile becomes vertical stack with maintained hierarchy */
 	@media (max-width: 768px) {
 		.footer-composition {
@@ -191,6 +245,15 @@
 			text-align: left;
 			flex-direction: row;
 			gap: var(--space-md);
+		}
+
+		.social-links {
+			text-align: left;
+			margin-top: var(--space-sm);
+		}
+
+		.social-icons {
+			justify-content: flex-start;
 		}
 	}
 

@@ -36,7 +36,7 @@
 			if (sectionName === currentSection) return;
 			
 			// Define which sections need white logo vs black logo
-			const whiteLogoSections = ['banner', 'cta']; // Three.js banner and CTA section
+			const whiteLogoSections = ['banner', 'hero', 'cta']; // Dark background sections
 			
 			const useWhiteLogo = whiteLogoSections.includes(sectionName);
 			currentLogoSrc = useWhiteLogo ? logoMini : logoMiniBlack;
