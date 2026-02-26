@@ -2,8 +2,8 @@
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { getLocaleFromPath } from '$lib/i18n';
-	import { localizeHref, setLocale } from '$lib/paraglide/runtime';
+	import { getLocaleFromPath, getLocalizedRoute } from '$lib/i18n';
+	import { setLocale } from '$lib/paraglide/runtime';
 	import Pl from 'svelte-flag-icons/Pl.svelte';
 	import Gb from 'svelte-flag-icons/Gb.svelte';
 	import De from 'svelte-flag-icons/De.svelte';
@@ -42,16 +42,7 @@
 		if (!browser) return;
 		
 		const currentPath = $page.url.pathname;
-		const currentLocale = getLocaleFromPath(currentPath);
-		
-		let newPath: string;
-		if (currentPath.startsWith(`/${currentLocale}/`)) {
-			newPath = currentPath.replace(`/${currentLocale}/`, `/${newLang}/`);
-		} else if (currentPath === `/${currentLocale}` || currentPath === `/${currentLocale}/`) {
-			newPath = `/${newLang}`;
-		} else {
-			newPath = `/${newLang}`;
-		}
+		const newPath = getLocalizedRoute(currentPath, newLang as any);
 
 		setLocale(newLang as any);
 		await goto(newPath);
