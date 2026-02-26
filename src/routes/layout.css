@@ -512,8 +512,9 @@ figcaption {
 	.sidebar-nav {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: var(--space-2xl);
+		gap: var(--space-xl);
 		margin-bottom: var(--space-xl);
+		max-width: 900px;
 	}
 }
 
