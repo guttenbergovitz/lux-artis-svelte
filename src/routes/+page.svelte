@@ -55,7 +55,7 @@
 	onMount(() => {
 		// Tylko subtelny parallax dla głównych tytułów - bez chaosu
 		const heroTitle = document.querySelector('.hero-title');
-		
+
 		if (heroTitle) {
 			motionController.parallaxText(heroTitle, 0.05); // Bardzo subtelny
 		}
@@ -81,7 +81,7 @@
 			de: 'de-DE'
 		};
 		const dateLocale = localeMap[locale] || 'en-US';
-		
+
 		return date.toLocaleDateString(dateLocale, {
 			year: 'numeric',
 			month: 'long'
@@ -91,7 +91,7 @@
 
 <style>
 	/* Interwar Poster Typography System */
-	
+
 	/* Banner Container */
 	.banner-container {
 		position: relative;
@@ -549,7 +549,7 @@
 				<p class="hero-statement">{t('pages.home.subtitle')}</p>
 			</div>
 		</MotionReveal>
-		
+
 		<MotionReveal type="wipe" direction="left" delay={600}>
 			<div class="latin-separator">
 				<div class="separator-line"></div>
@@ -587,15 +587,14 @@
 				<p class="latin-quote">{getRandomQuote()}</p>
 			</div>
 		</MotionReveal>
-		
+
 		<MotionReveal type="section" delay={300}>
 			<div class="values-poster">
 				<h2 class="values-title">{t('pages.home.values.title')}</h2>
 				<div class="values-list">
-					<p class="values-item">Każdy projekt traktujemy indywidualnie, dbając o detale i atmosferę, które budują głębokie doświadczenie obcowania ze sztuką. Szanujemy wartość artystyczną, pracę twórczą i integralność dzieła.</p>
-					<p class="values-item">Droga do rezultatu jest dla nas równie istotna, jak sam efekt. Świadome działanie, refleksja i dialog towarzyszą każdemu etapowi pracy.</p>
-					<p class="values-item">Myślimy o kulturze jako o procesie ciągłym, nie jako o serii jednorazowych epizodów. Budujemy długofalowe relacje oparte na zrozumieniu i szacunku.</p>
-					<p class="values-item">Otwarta komunikacja i precyzyjne zasady współpracy pozwalają nam budować zaufanie i przyjazną atmosferę.</p>
+					{#each data.translations.pages?.home?.values?.items ?? [] as item}
+						<p class="values-item">{item}</p>
+					{/each}
 				</div>
 			</div>
 		</MotionReveal>
@@ -622,7 +621,7 @@
 				{/if}
 			</div>
 		</MotionReveal>
-		
+
 		<MotionReveal type="wipe" direction="left" delay={600}>
 			<div class="latin-separator center">
 				<div class="separator-line"></div>
@@ -650,7 +649,7 @@
 				</article>
 			</MotionReveal>
 		</div>
-		
+
 		<MotionReveal type="wipe" direction="left" delay={400}>
 			<div class="latin-separator">
 				<div class="separator-line"></div>
@@ -683,7 +682,7 @@
 				<p class="latin-quote">{getRandomQuote()}</p>
 			</div>
 		</MotionReveal>
-		
+
 		<MotionReveal type="reveal" delay={200}>
 			<div class="events-poster">
 				<h2 class="events-title">{t('pages.home.upcomingEvents')}</h2>
@@ -713,7 +712,7 @@
 							</MotionReveal>
 						{/each}
 					</div>
-					
+
 					<MotionReveal type="reveal" delay={800}>
 						<div class="events-cta">
 							<a href={getEventsUrl(data.locale)} class="events-all-action motion-hover motion-focus">
