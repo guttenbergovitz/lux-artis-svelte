@@ -28,11 +28,11 @@
 			name: 'Deutsch',
 			flag: De
 		},
-		{ 
-			code: 'uk', 
-			name: 'Українська',
-			flag: Ua
-		}
+		// { 
+		// 	code: 'uk', 
+		// 	name: 'Українська',
+		// 	flag: Ua
+		// }
 	];
 
 	// Get current language from URL path
