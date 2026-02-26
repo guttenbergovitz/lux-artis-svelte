@@ -239,6 +239,14 @@
 							>
 								{t('nav.support')}
 							</a>
+							<a 
+								href={getLocalizedPath('/faq')} 
+								class="sidebar-link" 
+								class:active={isActive('/faq')}
+								onclick={handleNavClick}
+							>
+								{t('nav.faq')}
+							</a>
 						</div>
 					</div>
 
