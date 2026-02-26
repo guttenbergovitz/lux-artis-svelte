@@ -115,6 +115,94 @@
 		color: var(--color-graphite-light);
 	}
 
+	/* Registration Data */
+	.registration-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--space-lg);
+		margin-bottom: var(--space-2xl);
+	}
+
+	.registration-item {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+	}
+
+	.registration-label {
+		font-family: var(--font-sans);
+		font-weight: 400;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-graphite-light);
+	}
+
+	.registration-value {
+		font-family: var(--font-serif);
+		font-size: 1rem;
+		line-height: 1.4;
+		color: var(--color-graphite-dark);
+		font-weight: 400;
+	}
+
+	.board-section {
+		margin-top: var(--space-xl);
+		padding-top: var(--space-xl);
+		border-top: 1px solid var(--color-graphite);
+	}
+
+	.board-title {
+		font-family: var(--font-sans);
+		font-weight: 600;
+		font-size: 1.125rem;
+		text-transform: uppercase;
+		color: var(--color-graphite-dark);
+		margin: 0 0 var(--space-sm) 0;
+	}
+
+	.board-representation {
+		font-family: var(--font-serif);
+		font-size: 0.875rem;
+		line-height: 1.4;
+		color: var(--color-graphite);
+		margin: 0 0 var(--space-lg) 0;
+		font-style: italic;
+	}
+
+	.board-members {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+	}
+
+	.board-member {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+	}
+
+	.member-name {
+		font-family: var(--font-sans);
+		font-weight: 600;
+		font-size: 1rem;
+		color: var(--color-graphite-dark);
+	}
+
+	.member-position {
+		font-family: var(--font-sans);
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-graphite-light);
+	}
+
+	.member-since {
+		font-family: var(--font-serif);
+		font-size: 0.875rem;
+		color: var(--color-graphite);
+	}
+
 	/* CTA Section */
 	.cta-section {
 		text-align: center;
@@ -183,6 +271,39 @@
 <!-- Info Sections -->
 <section class="poster-section">
 	<Container>
+		<!-- Registration Data -->
+		{#if data.translations.pages?.info?.registration}
+			<MotionReveal type="reveal" delay={100}>
+				<div class="info-section">
+					<h2 class="section-title">{data.translations.pages.info.registration.title}</h2>
+					<div class="registration-grid">
+						{#each data.translations.pages.info.registration.items as item}
+							<div class="registration-item">
+								<span class="registration-label">{item.label}</span>
+								<span class="registration-value">{item.value}</span>
+							</div>
+						{/each}
+					</div>
+
+					{#if data.translations.pages.info.registration.board}
+						<div class="board-section">
+							<h3 class="board-title">{data.translations.pages.info.registration.board.title}</h3>
+							<p class="board-representation">{data.translations.pages.info.registration.board.representation}</p>
+							<div class="board-members">
+								{#each data.translations.pages.info.registration.board.members as member}
+									<div class="board-member">
+										<span class="member-name">{member.name}</span>
+										<span class="member-position">{member.position}</span>
+										<span class="member-since">Od {member.since}</span>
+									</div>
+								{/each}
+							</div>
+						</div>
+					{/if}
+				</div>
+			</MotionReveal>
+		{/if}
+
 		{#if data.translations.pages?.info?.sections}
 			<!-- How We Work -->
 			{#if data.translations.pages.info.sections.how}

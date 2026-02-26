@@ -357,6 +357,55 @@
       "subtitle": "Fundacja Lux Artis – informacje dla podmiotów publicznych",
       "tagline": "Kuratorstwo | Produkcja wydarzeń | Dialog międzysektorowy",
       "intro": "Zajmujemy się produkcją wydarzeń kulturalnych i realizacją projektów artystycznych. Współpracujemy z instytucjami publicznymi, samorządami i partnerami prywatnymi.\n\nNaszymi domenami są kuratorstwo artystyczne, współpraca międzyinstytucjonalna i zarządzanie projektami kulturalnymi. Pracujemy w oparciu o partnerstwo z twórcami i podmiotami sektora kultury.",
+      "registration": {
+        "title": "Dane rejestrowe",
+        "items": [
+          {
+            "label": "Nazwa pełna",
+            "value": "Fundacja Lux Artis"
+          },
+          {
+            "label": "KRS",
+            "value": "0001189456"
+          },
+          {
+            "label": "NIP",
+            "value": "9552590323"
+          },
+          {
+            "label": "REGON",
+            "value": "542492621"
+          },
+          {
+            "label": "Adres siedziby",
+            "value": "Xawerego Dunikowskiego 30 / 8, 70-123 Szczecin, Polska"
+          },
+          {
+            "label": "Forma prawna",
+            "value": "Fundacja"
+          },
+          {
+            "label": "Data rejestracji",
+            "value": "20 sierpnia 2025 r."
+          }
+        ],
+        "board": {
+          "title": "Zarząd",
+          "representation": "Oświadczenia woli w imieniu fundacji składa każdy członek zarządu fundacji samodzielnie",
+          "members": [
+            {
+              "name": "Łukasz Przybysz",
+              "position": "Prezes Zarządu",
+              "since": "20 sierpnia 2025 r."
+            },
+            {
+              "name": "Anna Obszyńska",
+              "position": "Członek Zarządu",
+              "since": "20 sierpnia 2025 r."
+            }
+          ]
+        }
+      },
       "sections": {
         "how": {
           "title": "Jak działamy?",
