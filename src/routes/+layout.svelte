@@ -30,14 +30,17 @@
 
 <div class="app-container" class:sidebar-open={sidebarOpen}>
 	<Header {sidebarOpen} {toggleSidebar} />
-	
+
 	<div class="content-wrapper">
 		<main class="main-content">
 			{@render children()}
 		</main>
-		<Footer />
+		<Footer
+			noMarginTop={page.url.pathname.includes('/venus-rising')}
+			smallLogo={page.url.pathname.includes('/venus-rising')}
+		/>
 	</div>
-	
+
 	<!-- Sticky Language Switcher -->
 	<LanguageSwitcher />
 </div>

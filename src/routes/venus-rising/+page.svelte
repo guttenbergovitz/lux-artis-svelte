@@ -910,4 +910,5 @@
 	.hero-section:not(.loaded) .hero-tagline {
 		opacity: 0;
 	}
+
 </style>

@@ -6,6 +6,8 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
 
+	let { noMarginTop = false, smallLogo = false }: { noMarginTop?: boolean; smallLogo?: boolean } = $props();
+
 	let translations = $state<any>({});
 
 	$effect(() => {
@@ -27,7 +29,7 @@
 	}
 </script>
 
-<footer class="modernist-footer">
+<footer class="modernist-footer" class:no-margin-top={noMarginTop} class:small-logo={smallLogo}>
 	<Container>
 		<div class="footer-composition">
 			<!-- Dominant logotype positioned as visual anchor -->
@@ -40,19 +42,19 @@
 					height="93"
 				/>
 			</div>
-			
+
 			<!-- Asymmetric information block -->
 			<div class="info-block">
 				<div class="institutional-line">
 					<span class="descriptor">{t('site.description')}</span>
 				</div>
-				
+
 				<div class="meta-grid">
 					<div class="legal-cluster">
 						<span class="copyright-mark">© {new Date().getFullYear()}</span>
 						<span class="entity-name">Fundacja Lux Artis</span>
 					</div>
-					
+
 					<div class="access-links">
 						<a href={getLocalizedPath('/contact')} class="access-link">Kontakt</a>
 						<a href={getLocalizedPath('/legal')} class="access-link">Informacje prawne</a>
@@ -81,6 +83,14 @@
 		padding: var(--space-2xl) 0;
 		margin-top: calc(var(--space-2xl) * 2);
 		position: relative;
+	}
+
+	.modernist-footer.no-margin-top {
+		margin-top: 0;
+	}
+
+	.modernist-footer.small-logo .institutional-logotype {
+		height: 36px;
 	}
 
 	.footer-composition {
