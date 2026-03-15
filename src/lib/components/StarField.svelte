@@ -62,9 +62,8 @@
 		mouseX += (targetMouseX - mouseX) * 0.05;
 		mouseY += (targetMouseY - mouseY) * 0.05;
 
-		// Clear with fade effect for trails
-		ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
-		ctx.fillRect(0, 0, width, height);
+		// Clear canvas (transparent)
+		ctx.clearRect(0, 0, width, height);
 
 		stars.forEach((star) => {
 			// Parallax based on z-depth and mouse

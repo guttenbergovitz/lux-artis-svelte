@@ -468,22 +468,36 @@
     },
     "venusRising": {
       "title": "Venus Rising Festival",
-      "tagline": "Planet of the Beat",
-      "metaDescription": "Two days under the open sky. Music, art, technology. May 2026 in Dolice.",
-      "scroll": "Scroll",
-      "lead": "Two days under the open sky.",
-      "pillars": [
-        "Music that vibrates and liberates.",
-        "Art created before your eyes.",
-        "Technology you experience firsthand.",
-        "Conversations that provoke and inspire."
+      "slogan": "Power is a Woman",
+      "tagline": "May 1-2, 2026",
+      "metaDescription": "Poland's first outdoor festival where the stage belongs exclusively to women. May Day 2026 in Dolice. Free entry.",
+      "ideaLabel": "Idea",
+      "idea": "Strengthening the presence and role of women in culture, art, and creative sectors.",
+      "goalLabel": "Goal",
+      "goal": "Creating a meeting space for everyone, without barriers, without borders.",
+      "queensTitle": "Queens of Sound",
+      "queensIntro": "The constellation of Venus Rising Festival stars reaches full brightness gradually. Stay alert and follow the signals from our orbit.",
+      "artists": [
+        {
+          "name": "La Fleur",
+          "bio": "La Fleur is an artist who combines elegance with the raw energy of the dancefloor. The Swedish artist has traveled an extraordinary path - from certified pharmacist, through a long-term residency at the legendary Berlin club Watergate, to a world-renowned producer and founder of the prestigious Power Plant Records label. Her style is a unique fusion of house and techno, often described as 'orbital' - full of space, hypnotic melodies, and impeccable technique. La Fleur has performed on the world's most important stages, collaborated with labels such as Kompakt, Cocoon, and Last Night on Earth, and her work and talent have been recognized with the prestigious P3 Guld award (Sweden's equivalent of the Grammy). Today, La Fleur is a globally recognized brand. She regularly shares her music at major international festivals such as Sónar By Night, Awakenings, Creamfields, and Life Festival. On Friday evening at Venus Rising Festival, La Fleur will take us on a unique journey into the depths of sound - a hypnotic and captivating culmination of the first day of our adventure."
+        },
+        {
+          "name": "Lika",
+          "bio": "Lika is one of the most distinctive representatives of the new wave of European house - an artist who combines stage energy with deep musical sensitivity. Based in Munich, she builds her sets creating a space where emotion and rhythm remain in perfect balance. Her foundation is classical musical education - piano and vocal experience translate into conscious narrative guidance and exceptional harmonic sensitivity. Thanks to this, each of her performances has a coherent dramaturgy and authentic identity, going beyond the standard club format. The dynamic development of her career is confirmed by the growing international community around her online channel, which in a short time has attracted over 110,000 subscribers from around the world. Lika systematically marks her presence on the European club scene from Germany and Austria to Greece, and upcoming performances in Poland and Croatia confirm her growing popularity. Currently, Lika is intensively developing her production work on original material that is a natural extension of her stage aesthetics. At Venus Rising Festival, Lika represents a new generation of artists who boldly redefine the contemporary club music scene."
+        },
+        {
+          "name": "Roma Leopard",
+          "bio": "Roma Leopard is an artist whose musical profile is defined by sunny, organic groove. In 2024, she joined the Soul Service collective, becoming the youngest person in its lineup. The group has been popularizing funk and soul for over two decades, including through the cult Polish Funk release series, bringing back recordings from Polish phonographic archives. Her sets are a smooth journey through disco, soul, funk, latin, and afrobeat. Roma builds energetic narratives based on the sounds of the 70s and 80s. Roma Leopard will open Venus Rising Festival with a vinyl set."
+        }
       ],
-      "date": "MAY 2026",
-      "location": "in Dolice will look different.",
-      "announcement": "Full program, line-up and details announced on <strong>March 8</strong>.",
-      "announcement2": "Save the date. Stay tuned.",
-      "ctaHeadline": "Await the rise of Venus.",
-      "ctaSubtext": "We invite you again. You'll find out more soon."
+      "about1": "Poland's first outdoor festival where the stage belongs exclusively to women, artists appearing on international festival stages and in legendary clubs.",
+      "about2": "VRF creates a space connecting the worlds of music, art, and new technologies.",
+      "about3": "Come with friends, family, or solo. Concerts, live art, chill-out zones, and gastro await you.",
+      "about4": "Spend May Day under the sign of Venus.",
+      "locationLabel": "Location",
+      "location": "Dolice, Stargard County, West Pomeranian Voivodeship.\nField at the Municipal Stadium.",
+      "freeEntry": "Free entry"
     },
     "legal": {
       "title": "Legal",

@@ -38,6 +38,7 @@
 		<Footer
 			noMarginTop={page.url.pathname.includes('/venus-rising')}
 			smallLogo={page.url.pathname.includes('/venus-rising')}
+			variant={page.url.pathname.includes('/venus-rising') ? 'dark' : 'default'}
 		/>
 	</div>
 

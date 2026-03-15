@@ -4,15 +4,13 @@
 	import Container from '$lib/components/Container.svelte';
 	import StarField from '$lib/components/StarField.svelte';
 	import { getTranslation } from '$lib/i18n';
-	import { localizeHref } from '$lib/paraglide/runtime';
-	import venusLogo from '$lib/assets/venus-rising-logo.png';
+	import venusLogo from '$lib/assets/venus-rising-violet-background.jpg';
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
 
 	let { data }: { data: { locale: string; translations: Record<string, unknown> } } = $props();
 
 	// State
 	let scrollY = $state(0);
-	let currentSection = $state(0);
 	let isLoaded = $state(false);
 	let prefersReducedMotion = $state(false);
 	let windowHeight = $state(0);
@@ -21,43 +19,25 @@
 
 	// Refs
 	let heroSection: HTMLElement;
-	let pillarsSection: HTMLElement;
-	let dateSection: HTMLElement;
-	let ctaSection: HTMLElement;
-	let closingSection: HTMLElement;
+	let ideaSection: HTMLElement;
+	let lineupSection: HTMLElement;
+	let aboutSection: HTMLElement;
 	let heroTitle: HTMLElement;
-	let heroTagline: HTMLElement;
-	let venusOrb: HTMLElement;
-	let pillars: HTMLElement[] = [];
-	let dateChars: HTMLElement[] = [];
 	let venusLogoEl: HTMLElement;
-
-	const pillarIcons = ['♪', '◈', '⬡', '◉'];
+	let artistCards: HTMLElement[] = [];
 
 	function t(path: string): string {
 		return getTranslation(data.translations, path);
 	}
 
-	function tArray(path: string): string[] {
-		const value = getTranslation(data.translations, path);
-		try {
-			return JSON.parse(value) || [];
-		} catch {
-			return [];
-		}
+	interface Artist {
+		name: string;
+		bio: string;
 	}
 
-	function getHomeUrl(locale: string): string {
-		return localizeHref('/', { locale: locale as 'pl' | 'en' | 'de' });
-	}
-
-	// Pillar data - get texts from translations
-	function getPillarData() {
-		const pillarsArray = data.translations?.pages?.venusRising?.pillars as string[] || [];
-		return pillarsArray.map((text: string, index: number) => ({
-			text,
-			icon: pillarIcons[index] || '◉'
-		}));
+	function getArtists(): Artist[] {
+		const artists = data.translations?.pages?.venusRising?.artists as Artist[] || [];
+		return artists;
 	}
 
 	onMount(async () => {
@@ -107,124 +87,59 @@
 	function initAnimations() {
 		if (!gsap || !ScrollTrigger) return;
 
-		// Hero title animation
+		// Hero badge animation
 		gsap.fromTo(
 			heroTitle,
-			{ opacity: 0, y: 60, filter: 'blur(10px)' },
+			{ opacity: 0, y: 30, scale: 0.9 },
 			{
 				opacity: 1,
 				y: 0,
-				filter: 'blur(0px)',
-				duration: 1.5,
-				ease: 'power3.out',
-				delay: 0.3
-			}
-		);
-
-		// Tagline
-		gsap.fromTo(
-			heroTagline,
-			{ opacity: 0, y: 30 },
-			{
-				opacity: 1,
-				y: 0,
-				duration: 1,
-				ease: 'power2.out',
-				delay: 0.8
-			}
-		);
-
-		// Venus orb parallax - strong rise effect
-		gsap.to(venusOrb, {
-			y: -350,
-			scale: 1.3,
-			ease: 'none',
-			scrollTrigger: {
-				trigger: heroSection,
-				start: 'top top',
-				end: 'bottom top',
-				scrub: 0.8
-			}
-		});
-
-		// Pillars stagger animation
-		pillars.forEach((pillar, index) => {
-			gsap.fromTo(
-				pillar,
-				{
-					opacity: 0,
-					x: -40,
-					scale: 0.95
-				},
-				{
-					opacity: 1,
-					x: 0,
-					scale: 1,
-					duration: 0.8,
-					ease: 'power2.out',
-					scrollTrigger: {
-						trigger: pillar,
-						start: 'top 85%',
-						toggleActions: 'play none none reverse'
-					},
-					delay: index * 0.15
-				}
-			);
-		});
-
-		// Date section reveal
-		gsap.fromTo(
-			dateSection,
-			{ '--reveal-progress': 0 },
-			{
-				'--reveal-progress': 1,
-				ease: 'power2.inOut',
-				scrollTrigger: {
-					trigger: dateSection,
-					start: 'top 70%',
-					end: 'top 30%',
-					scrub: 1
-				}
-			}
-		);
-
-		// Date text split animation - simple fade up
-		dateChars.forEach((char, index) => {
-			gsap.fromTo(
-				char,
-				{ opacity: 0, y: 30 },
-				{
-					opacity: 1,
-					y: 0,
-					duration: 0.5,
-					ease: 'power2.out',
-					scrollTrigger: {
-						trigger: dateSection,
-						start: 'top 60%',
-						toggleActions: 'play none none reverse'
-					},
-					delay: index * 0.04
-				}
-			);
-		});
-
-		// Venus logo zoom-in on scroll
-		gsap.fromTo(
-			venusLogoEl,
-			{ scale: 0.5, opacity: 0 },
-			{
 				scale: 1,
-				opacity: 1,
 				duration: 1,
-				ease: 'back.out(1.7)',
-				scrollTrigger: {
-					trigger: closingSection,
-					start: 'top 80%',
-					toggleActions: 'play none none reverse'
-				}
+				ease: 'back.out(1.2)',
+				delay: 0.5
 			}
 		);
 
+		// Venus logo animation
+		if (venusLogoEl) {
+			gsap.fromTo(
+				venusLogoEl,
+				{ opacity: 0, scale: 0.8 },
+				{
+					opacity: 1,
+					scale: 1,
+					duration: 1.2,
+					ease: 'back.out(1.4)',
+					delay: 0.2
+				}
+			);
+		}
+
+		// Artist cards stagger animation
+		artistCards.forEach((card, index) => {
+			if (card) {
+				gsap.fromTo(
+					card,
+					{
+						opacity: 0,
+						y: 40
+					},
+					{
+						opacity: 1,
+						y: 0,
+						duration: 0.8,
+						ease: 'power2.out',
+						scrollTrigger: {
+							trigger: card,
+							start: 'top 85%',
+							toggleActions: 'play none none reverse'
+						},
+						delay: index * 0.1
+					}
+				);
+			}
+		});
 	}
 
 	// Computed styles based on scroll
@@ -242,130 +157,122 @@
 		name="description"
 		content={t('pages.venusRising.metaDescription')}
 	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <!-- Hero Section -->
 <section bind:this={heroSection} class="hero-section" class:loaded={isLoaded}>
-	<div class="hero-background">
-		{#if !prefersReducedMotion}
-			<StarField starCount={180} speed={0.3} />
-		{/if}
-		<div class="hero-gradient"></div>
-	</div>
-
-	<!-- Venus Orb -->
-	<div bind:this={venusOrb} class="venus-orb" aria-hidden="true">
-		<div class="orb-glow"></div>
-		<div class="orb-core"></div>
-		<div class="orb-ring"></div>
-	</div>
+	{#if !prefersReducedMotion}
+		<div class="stars-background">
+			<StarField starCount={120} speed={0.15} />
+		</div>
+	{/if}
 
 	<Container>
 		<div class="hero-content">
-			<h1 bind:this={heroTitle} class="hero-title">
-				<span class="title-line">Venus</span>
-				<span class="title-line accent">Rising</span>
-				<span class="title-line small">Festival</span>
-			</h1>
-			<p bind:this={heroTagline} class="hero-tagline">{t('pages.venusRising.tagline')}</p>
+			<div class="logo-wrapper">
+				<img bind:this={venusLogoEl} src={venusLogo} alt="Venus Rising Festival" class="hero-logo" />
+			</div>
 
-			<div class="scroll-indicator" aria-hidden="true">
-				<span class="scroll-text">{t('pages.venusRising.scroll')}</span>
-				<div class="scroll-line"></div>
+			<div bind:this={heroTitle} class="hero-badge">
+				<span class="badge-date">{t('pages.venusRising.tagline')}</span>
+				<span class="badge-slogan">{t('pages.venusRising.slogan')}</span>
 			</div>
 		</div>
 	</Container>
 </section>
 
-<!-- Pillars Section -->
-<section bind:this={pillarsSection} class="pillars-section">
-	<div class="section-glow top"></div>
-
+<!-- Idea Section -->
+<section bind:this={ideaSection} class="idea-section">
 	<Container>
-		<h2 class="lead-statement">{t('pages.venusRising.lead')}</h2>
+		<div class="idea-content">
+			<div class="idea-block">
+				<span class="idea-number">01</span>
+				<h2 class="idea-label">{t('pages.venusRising.ideaLabel')}</h2>
+				<p class="idea-text">{t('pages.venusRising.idea')}</p>
+			</div>
+			<div class="idea-divider"></div>
+			<div class="idea-block">
+				<span class="idea-number">02</span>
+				<h2 class="idea-label">{t('pages.venusRising.goalLabel')}</h2>
+				<p class="idea-text">{t('pages.venusRising.goal')}</p>
+			</div>
+		</div>
+	</Container>
+</section>
 
-		<div class="pillars-grid">
-			{#each getPillarData() as pillar, index}
-				<div bind:this={pillars[index]} class="pillar-card">
-					<div class="pillar-beam" aria-hidden="true"></div>
-					<div class="pillar-icon">{pillar.icon}</div>
-					<p class="pillar-text">{pillar.text}</p>
-				</div>
+<!-- Queens of Sound / Lineup Section -->
+<section bind:this={lineupSection} class="lineup-section">
+	<Container>
+		<h2 class="section-title">{t('pages.venusRising.queensTitle')}</h2>
+		<p class="section-intro">{t('pages.venusRising.queensIntro')}</p>
+
+		<div class="artists-grid">
+			{#each getArtists() as artist, index (artist.name)}
+				{@const firstSentenceEnd = artist.bio.indexOf('. ') + 1}
+				{@const leadText = artist.bio.slice(0, firstSentenceEnd)}
+				{@const restText = artist.bio.slice(firstSentenceEnd + 1)}
+				<article bind:this={artistCards[index]} class="artist-card">
+					<h3 class="artist-name">{artist.name}</h3>
+					<p class="artist-lead">{leadText}</p>
+					<p class="artist-bio">{restText}</p>
+				</article>
 			{/each}
 		</div>
 	</Container>
-
-	<div class="section-glow bottom"></div>
 </section>
 
-<!-- Date Section -->
-<section bind:this={dateSection} class="date-section">
-	<div class="date-reveal-bg"></div>
-
+<!-- About Festival Section -->
+<section bind:this={aboutSection} class="about-section">
 	<Container>
-		<div class="date-content">
-			<div class="date-chars">
-				{#each t('pages.venusRising.date').split('') as char, index}
-					<span
-						bind:this={dateChars[index]}
-						class="date-char"
-						class:space={char === ' '}
-					>
-						{char === ' ' ? '\u00A0' : char}
-					</span>
-				{/each}
+		<div class="about-content">
+			<div class="about-hero">
+				<p class="about-lead">{t('pages.venusRising.about1')}</p>
 			</div>
+			<div class="about-details">
+				<p class="about-text">{t('pages.venusRising.about2')}</p>
+				<p class="about-text">{t('pages.venusRising.about3')}</p>
+			</div>
+			<p class="about-cta">{t('pages.venusRising.about4')}</p>
+		</div>
+	</Container>
+</section>
 
-			<p class="date-location">{t('pages.venusRising.location')}</p>
-
-			<div class="announcement-block">
-				<p class="announcement">
-					{@html t('pages.venusRising.announcement')}
-				</p>
-				<p class="announcement">{t('pages.venusRising.announcement2')}</p>
-				<div class="social-icons-row">
+<!-- Entry Section - Orange -->
+<section class="entry-section">
+	<Container>
+		<div class="entry-content">
+			<div class="entry-typography">
+				<span class="entry-word">{t('pages.venusRising.freeEntry')}</span>
+			</div>
+			<div class="entry-info">
+				<p class="location-text">{t('pages.venusRising.location')}</p>
+				<div class="social-block">
 					<a href="https://www.facebook.com/VenusRisingFestival" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook">
-						<FacebookSolid class="w-5 h-5" />
+						<FacebookSolid />
 					</a>
 					<a href="https://www.instagram.com/venus_rising_festival" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram">
-						<InstagramSolid class="w-5 h-5" />
+						<InstagramSolid />
 					</a>
 				</div>
 			</div>
 		</div>
-	</Container>
-</section>
-
-<!-- CTA Section -->
-<section bind:this={ctaSection} class="cta-section">
-	<div class="cta-particles" aria-hidden="true">
-		{#each Array(20) as _, i}
-			<div class="particle" style="--delay: {i * 0.2}s; --x: {Math.random() * 100}%; --duration: {3 + Math.random() * 2}s"></div>
-		{/each}
-	</div>
-
-	<Container>
-		<div class="cta-content">
-			<p class="cta-headline">{t('pages.venusRising.ctaHeadline')}</p>
-			<p class="cta-subtext">{t('pages.venusRising.ctaSubtext')}</p>
-		</div>
-	</Container>
-</section>
-
-<!-- Closing Section -->
-<section bind:this={closingSection} class="closing-section">
-	<div class="closing-bg-logo" style="background-image: url({venusLogo});" aria-hidden="true"></div>
-	<Container>
-		<img bind:this={venusLogoEl} src={venusLogo} alt="Venus Rising" class="venus-logo" />
 	</Container>
 </section>
 
 <style>
-	/* CSS Custom Properties */
+	/* CSS Custom Properties - Venus Gradient Palette */
 	:root {
 		--hero-progress: 0;
-		--reveal-progress: 0;
-		--glow-intensity: 0;
+		/* Venus Gradient - Dark to Light */
+		--vr-night: #0C0017;        /* Darkest - backgrounds */
+		--vr-plum: #48243D;         /* Dark purple/maroon */
+		--vr-mauve: #8E4454;        /* Dusty rose */
+		--vr-coral: #CD7259;        /* Terracotta/coral */
+		--vr-gold: #F3B05A;         /* Golden orange */
+		--vr-sun: #F9F871;          /* Bright yellow */
 	}
 
 	/* ===== HERO SECTION ===== */
@@ -377,90 +284,7 @@
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		background: var(--color-graphite-dark);
-	}
-
-	.hero-background {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			180deg,
-			#0a0a12 0%,
-			#12121f 40%,
-			#1a1a2e 70%,
-			#252540 100%
-		);
-	}
-
-	.hero-gradient {
-		position: absolute;
-		inset: 0;
-		background: radial-gradient(
-			ellipse 80% 50% at 50% 100%,
-			rgba(212, 175, 55, 0.15) 0%,
-			transparent 70%
-		);
-		opacity: calc(0.5 + var(--hero-progress) * 0.5);
-	}
-
-	/* Venus Orb */
-	.venus-orb {
-		position: absolute;
-		bottom: -20%;
-		left: 50%;
-		transform: translateX(-50%);
-		width: clamp(300px, 50vw, 600px);
-		height: clamp(300px, 50vw, 600px);
-		pointer-events: none;
-	}
-
-	.orb-core {
-		position: absolute;
-		inset: 20%;
-		border-radius: 50%;
-		background: radial-gradient(
-			circle at 30% 30%,
-			#f5e6c8 0%,
-			#d4af37 30%,
-			#b8941f 60%,
-			#8b6914 100%
-		);
-		box-shadow:
-			0 0 60px rgba(212, 175, 55, 0.6),
-			0 0 120px rgba(212, 175, 55, 0.3),
-			inset 0 0 60px rgba(0, 0, 0, 0.3);
-	}
-
-	.orb-glow {
-		position: absolute;
-		inset: -20%;
-		border-radius: 50%;
-		background: radial-gradient(
-			circle,
-			rgba(212, 175, 55, 0.4) 0%,
-			rgba(212, 175, 55, 0.1) 40%,
-			transparent 70%
-		);
-		filter: blur(20px);
-		animation: orbPulse 4s ease-in-out infinite;
-	}
-
-	.orb-ring {
-		position: absolute;
-		inset: 10%;
-		border-radius: 50%;
-		border: 1px solid rgba(212, 175, 55, 0.3);
-		animation: orbRingPulse 3s ease-in-out infinite;
-	}
-
-	@keyframes orbPulse {
-		0%, 100% { transform: scale(1); opacity: 0.6; }
-		50% { transform: scale(1.1); opacity: 0.8; }
-	}
-
-	@keyframes orbRingPulse {
-		0%, 100% { transform: scale(1); opacity: 0.3; }
-		50% { transform: scale(1.05); opacity: 0.5; }
+		background: var(--vr-night);
 	}
 
 	/* Hero Content */
@@ -468,447 +292,501 @@
 		position: relative;
 		z-index: 10;
 		text-align: center;
-		padding: var(--space-2xl) 0;
-	}
-
-	.hero-title {
-		font-family: var(--font-sans);
-		font-weight: 700;
-		margin: 0;
-		line-height: 0.9;
-		text-transform: uppercase;
-	}
-
-	.title-line {
-		display: block;
-		font-size: clamp(3.5rem, 15vw, 10rem);
-		letter-spacing: -0.03em;
-		color: #fff;
-		text-shadow:
-			0 0 40px rgba(255, 255, 255, 0.3),
-			0 0 80px rgba(255, 255, 255, 0.1);
-	}
-
-	.title-line.accent {
-		color: var(--color-gold);
-		text-shadow:
-			0 0 40px rgba(212, 175, 55, 0.5),
-			0 0 80px rgba(212, 175, 55, 0.3),
-			0 0 120px rgba(212, 175, 55, 0.2);
-	}
-
-	.title-line.small {
-		font-size: clamp(1.5rem, 5vw, 3rem);
-		letter-spacing: 0.2em;
-		margin-top: var(--space-sm);
-		opacity: 0.8;
-	}
-
-	.hero-tagline {
-		font-family: var(--font-serif);
-		font-size: clamp(1rem, 2.5vw, 1.5rem);
-		color: rgba(255, 255, 255, 0.7);
-		margin: var(--space-lg) 0 0;
-		letter-spacing: 0.1em;
-	}
-
-	/* Scroll Indicator */
-	.scroll-indicator {
-		position: absolute;
-		bottom: var(--space-xl);
-		left: 50%;
-		transform: translateX(-50%);
+		padding: var(--space-xl) 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: var(--space-sm);
-		opacity: 0.6;
-		animation: scrollBounce 2s ease-in-out infinite;
-	}
-
-	.scroll-text {
-		font-family: var(--font-sans);
-		font-size: 0.75rem;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
-		color: rgba(255, 255, 255, 0.5);
-	}
-
-	.scroll-line {
-		width: 1px;
-		height: 40px;
-		background: linear-gradient(to bottom, var(--color-gold), transparent);
-	}
-
-	@keyframes scrollBounce {
-		0%, 100% { transform: translateX(-50%) translateY(0); }
-		50% { transform: translateX(-50%) translateY(10px); }
-	}
-
-	/* ===== PILLARS SECTION ===== */
-	.pillars-section {
-		position: relative;
-		background: var(--color-gold);
-		color: var(--color-graphite-dark);
-		padding: var(--space-2xl) 0;
-		overflow: hidden;
-	}
-
-	.section-glow {
-		position: absolute;
-		left: 0;
-		right: 0;
-		height: 200px;
-		pointer-events: none;
-	}
-
-	.section-glow.top {
-		top: 0;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
-	}
-
-	.section-glow.bottom {
-		bottom: 0;
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-	}
-
-	.lead-statement {
-		font-family: var(--font-sans);
-		font-weight: 700;
-		font-size: clamp(2rem, 6vw, 4rem);
-		line-height: 1;
-		letter-spacing: -0.02em;
-		text-transform: uppercase;
-		max-width: 15ch;
-		margin: 0 0 var(--space-2xl);
-	}
-
-	.pillars-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: var(--space-lg);
 	}
 
-	.pillar-card {
+	.logo-wrapper {
 		position: relative;
-		background: rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(10px);
-		border-radius: 4px;
-		padding: var(--space-lg);
-		overflow: hidden;
-		transition: transform 0.4s ease, box-shadow 0.4s ease;
+		width: clamp(350px, 85vw, 900px);
 	}
 
-	.pillar-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+	.hero-logo {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 8px;
 	}
 
-	.pillar-beam {
+	.stars-background {
+		position: absolute;
+		inset: 0;
+		z-index: 15;
+		pointer-events: none;
+	}
+
+	/* Hero Badge - Sharp Electronic Style */
+	.hero-badge {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.15em;
+		border: 1px solid rgba(205, 114, 89, 0.4);
+		padding: var(--space-sm) var(--space-xl);
+		background: rgba(12, 0, 23, 0.4);
+	}
+
+	.badge-date {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+		text-transform: uppercase;
+		letter-spacing: 0.35em;
+		color: var(--vr-gold);
+		opacity: 0.8;
+	}
+
+	.badge-slogan {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(1.1rem, 3vw, 1.6rem);
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		color: var(--vr-coral);
+	}
+
+	/* ===== IDEA SECTION ===== */
+	.idea-section {
+		background: linear-gradient(180deg, var(--vr-night) 0%, var(--vr-plum) 100%);
+		padding: var(--space-2xl) 0 calc(var(--space-2xl) * 1.5);
+		position: relative;
+	}
+
+	.idea-section::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 1px;
+		height: 60px;
+		background: linear-gradient(180deg, var(--vr-coral), transparent);
+	}
+
+	.idea-content {
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+		gap: 0;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.idea-block {
+		flex: 1;
+		padding: var(--space-xl);
+		text-align: center;
+		position: relative;
+	}
+
+	.idea-number {
+		display: block;
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 100;
+		font-size: clamp(3rem, 8vw, 5rem);
+		color: var(--vr-coral);
+		opacity: 0.3;
+		line-height: 1;
+		margin-bottom: var(--space-sm);
+	}
+
+	.idea-label {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		text-transform: uppercase;
+		letter-spacing: 0.3em;
+		color: var(--vr-gold);
+		margin: 0 0 var(--space-md);
+	}
+
+	.idea-text {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		line-height: 1.7;
+		color: var(--vr-sun);
+		margin: 0;
+		opacity: 0.9;
+	}
+
+	.idea-divider {
+		width: 1px;
+		background: linear-gradient(180deg, transparent, var(--vr-coral), transparent);
+		margin: var(--space-lg) 0;
+	}
+
+	/* ===== LINEUP SECTION ===== */
+	.lineup-section {
+		background: var(--vr-plum);
+		padding: var(--space-2xl) 0;
+	}
+
+	.section-title {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(2.5rem, 8vw, 5rem);
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: var(--vr-coral);
+		margin: 0 0 var(--space-md);
+		text-align: center;
+	}
+
+	.section-intro {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		color: var(--vr-gold);
+		text-align: center;
+		max-width: 60ch;
+		margin: 0 auto var(--space-xl);
+		opacity: 0.9;
+		line-height: 1.6;
+	}
+
+	.artists-grid {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
+	}
+
+	.artist-card {
+		background: transparent;
+		border: none;
+		border-left: 4px solid var(--vr-coral);
+		border-radius: 0;
+		padding: var(--space-lg) var(--space-xl);
+		position: relative;
+		transition: border-color 0.3s ease;
+	}
+
+	.artist-card::before {
+		content: '';
 		position: absolute;
 		left: 0;
 		top: 0;
 		bottom: 0;
-		width: 3px;
-		background: linear-gradient(
-			to top,
-			transparent,
-			var(--color-graphite-dark) 20%,
-			var(--color-graphite-dark) 80%,
-			transparent
-		);
-		transform: scaleY(0);
-		transform-origin: bottom;
-		transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+		width: 100%;
+		background: linear-gradient(90deg, rgba(205, 114, 89, 0.08) 0%, transparent 50%);
+		pointer-events: none;
 	}
 
-	.pillar-card:hover .pillar-beam {
-		transform: scaleY(1);
+	.artist-card:hover {
+		border-color: var(--vr-gold);
 	}
 
-	.pillar-icon {
-		font-size: 2rem;
-		margin-bottom: var(--space-md);
+	.artist-name {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(1.8rem, 4vw, 2.8rem);
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--vr-coral);
+		margin: 0 0 var(--space-xs);
+		line-height: 1;
+		position: relative;
+	}
+
+	.artist-lead {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2vw, 1.15rem);
+		line-height: 1.5;
+		color: var(--vr-gold);
+		margin: 0 0 var(--space-sm);
+		max-width: 65ch;
+	}
+
+	.artist-bio {
+		font-family: var(--font-serif);
+		font-size: clamp(0.8rem, 1.4vw, 0.88rem);
+		line-height: 1.7;
+		color: rgba(243, 176, 90, 0.55);
+		margin: 0;
+		max-width: 70ch;
+	}
+
+	/* ===== ABOUT SECTION ===== */
+	.about-section {
+		background: var(--vr-plum);
+		padding: var(--space-xl) 0;
+		position: relative;
+	}
+
+	.about-content {
+		max-width: 700px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+	}
+
+	.about-hero {
+		text-align: center;
+	}
+
+	.about-lead {
+		font-family: var(--font-serif);
+		font-size: clamp(0.95rem, 2vw, 1.1rem);
+		line-height: 1.7;
+		color: var(--vr-gold);
+		margin: 0;
+		opacity: 0.8;
+	}
+
+	.about-details {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		text-align: center;
+	}
+
+	.about-text {
+		font-family: var(--font-serif);
+		font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+		line-height: 1.6;
+		color: var(--vr-gold);
+		margin: 0;
 		opacity: 0.6;
 	}
 
-	.pillar-text {
-		font-family: var(--font-serif);
-		font-size: clamp(1rem, 2.5vw, 1.2rem);
-		line-height: 1.5;
-		margin: 0;
+	.about-cta {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		color: var(--vr-gold);
+		font-size: clamp(0.9rem, 2vw, 1.1rem);
+		text-align: center;
+		margin: var(--space-sm) 0 0;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		opacity: 0.7;
 	}
 
-	/* ===== DATE SECTION ===== */
-	.date-section {
-		position: relative;
-		background: #fff;
-		color: var(--color-graphite-dark);
+	/* ===== ENTRY SECTION - Orange ===== */
+	.entry-section {
+		background: var(--vr-coral);
 		padding: var(--space-2xl) 0;
-		overflow: hidden;
 	}
 
-	.date-reveal-bg {
-		position: absolute;
-		inset: 0;
-		background: var(--color-gold);
-		transform: scaleX(var(--reveal-progress));
-		transform-origin: left;
-	}
-
-	.date-content {
-		position: relative;
-		z-index: 1;
-	}
-
-	.date-chars {
+	.entry-content {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		gap: 0.05em;
-		margin-bottom: var(--space-md);
-		perspective: 1000px;
-	}
-
-	.date-char {
-		font-family: var(--font-sans);
-		font-weight: 700;
-		font-size: clamp(2.5rem, 8vw, 6rem);
-		line-height: 1;
-		letter-spacing: -0.02em;
-		text-transform: uppercase;
-		display: inline-block;
-		transform-style: preserve-3d;
-	}
-
-	.date-char.space {
-		width: 0.3em;
-	}
-
-	.date-location {
-		font-family: var(--font-sans);
-		font-weight: 700;
-		font-size: clamp(1.5rem, 4vw, 2.5rem);
-		line-height: 1.2;
-		text-transform: uppercase;
-		margin: 0 0 var(--space-xl);
-		max-width: 20ch;
-	}
-
-	.announcement-block {
-		max-width: 45ch;
-	}
-
-	.announcement {
-		font-family: var(--font-serif);
-		font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-		line-height: 1.5;
-		margin: 0 0 var(--space-sm);
-	}
-
-	.announcement strong {
-		font-family: var(--font-sans);
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-	}
-
-	.social-icons-row {
-		display: flex;
-		gap: var(--space-xs);
-		margin-top: var(--space-lg);
-	}
-
-	.social-icon-link {
-		color: var(--color-graphite-dark);
-		display: flex;
+		flex-direction: column;
 		align-items: center;
-		transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-		animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+		gap: var(--space-xl);
 	}
 
-	.social-icon-link:nth-child(2) {
-		animation-delay: 0.1s;
-	}
-
-	.social-icon-link:hover {
-		transform: scale(1.25);
-	}
-
-	.social-icon-link :global(svg) {
-		fill: currentColor;
-		width: 44px;
-		height: 44px;
-	}
-
-	@keyframes bounceIn {
-		0% {
-			transform: scale(0);
-		}
-		60% {
-			transform: scale(1.15);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
-
-	/* ===== CTA SECTION ===== */
-	.cta-section {
-		position: relative;
-		background: var(--color-graphite-dark);
-		color: #fff;
-		padding: var(--space-2xl) 0;
-		overflow: hidden;
-		min-height: 60vh;
-		display: flex;
-		align-items: center;
-	}
-
-	.cta-particles {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-	}
-
-	.particle {
-		position: absolute;
-		width: 4px;
-		height: 4px;
-		background: var(--color-gold);
-		border-radius: 50%;
-		left: var(--x);
-		bottom: -10px;
-		opacity: 0;
-		animation: particleRise var(--duration) ease-out infinite;
-		animation-delay: var(--delay);
-	}
-
-	@keyframes particleRise {
-		0% {
-			transform: translateY(0) scale(0);
-			opacity: 0;
-		}
-		10% {
-			opacity: 0.8;
-			transform: scale(1);
-		}
-		90% {
-			opacity: 0.3;
-		}
-		100% {
-			transform: translateY(-100vh) scale(0.5);
-			opacity: 0;
-		}
-	}
-
-	.cta-content {
-		position: relative;
-		z-index: 1;
+	.entry-typography {
 		text-align: center;
 	}
 
-	.cta-headline {
-		font-family: var(--font-sans);
-		font-weight: 700;
-		font-size: clamp(2.5rem, 8vw, 5rem);
+	.entry-word {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(2.5rem, 10vw, 6rem);
+		text-transform: uppercase;
+		color: #ffffff;
+		letter-spacing: 0.12em;
 		line-height: 1.1;
-		text-transform: uppercase;
-		letter-spacing: -0.02em;
-		margin: 0 0 var(--space-md);
-		color: #fff;
-		text-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
 	}
 
-	.cta-subtext {
-		font-family: var(--font-serif);
-		font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-		color: #fff;
-		margin: 0;
-	}
-
-	/* ===== CLOSING SECTION ===== */
-	.closing-section {
-		background: #fff;
-		padding: var(--space-lg) 0;
+	.entry-info {
 		text-align: center;
-		position: relative;
-		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-lg);
 	}
 
-	.closing-bg-logo {
-		position: absolute;
-		inset: -50%;
-		background-size: contain;
-		background-position: center;
-		background-repeat: no-repeat;
-		opacity: 0.06;
-		pointer-events: none;
-		transform: rotate(-8deg);
+	.entry-info .location-text {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(0.9rem, 2vw, 1.1rem);
+		color: #ffffff;
+		line-height: 1.5;
+		letter-spacing: 0.02em;
+		white-space: pre-line;
+		margin: 0;
+		opacity: 0.9;
 	}
 
-	.venus-logo {
-		display: block;
-		width: clamp(550px, 85vw, 1000px);
-		height: auto;
-		margin: 0 auto;
-		position: relative;
-		z-index: 2;
+	.entry-section .social-block {
+		display: flex;
+		gap: var(--space-lg);
 	}
 
+	.entry-section .social-icon-link {
+		color: #ffffff;
+		display: flex;
+		align-items: center;
+		transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	.entry-section .social-icon-link:hover {
+		opacity: 0.7;
+		transform: scale(1.15);
+	}
+
+	.entry-section .social-icon-link :global(svg) {
+		fill: currentColor;
+		width: 48px;
+		height: 48px;
+	}
 
 	/* ===== RESPONSIVE ===== */
 	@media (max-width: 768px) {
-		.hero-title .title-line {
-			font-size: clamp(2.5rem, 12vw, 5rem);
+		.logo-wrapper {
+			width: clamp(280px, 95vw, 500px);
 		}
 
-		.venus-orb {
-			bottom: -30%;
-			width: 250px;
-			height: 250px;
+		.hero-badge {
+			padding: var(--space-sm) var(--space-md);
 		}
 
-		.pillars-grid {
-			grid-template-columns: 1fr;
+		.badge-date {
+			font-size: 0.6rem;
+			letter-spacing: 0.2em;
 		}
 
-		.date-chars {
-			justify-content: center;
+		.badge-slogan {
+			font-size: 0.95rem;
+			letter-spacing: 0.12em;
 		}
 
-		.date-location {
-			text-align: center;
-			margin-left: auto;
-			margin-right: auto;
+		.idea-content {
+			flex-direction: column;
+			gap: var(--space-lg);
 		}
 
-		.announcement-block {
-			text-align: center;
+		.idea-divider {
+			width: 60%;
+			height: 1px;
 			margin: 0 auto;
+		}
+
+		.idea-block {
+			padding: var(--space-md);
+		}
+
+		.idea-number {
+			font-size: 2.5rem;
+		}
+
+		.idea-label {
+			font-size: 1.8rem;
+			letter-spacing: 0.2em;
+		}
+
+		.section-title {
+			font-size: 2rem;
+			letter-spacing: 0.1em;
+		}
+
+		.artist-card {
+			padding: var(--space-md) var(--space-lg);
+		}
+
+		.artist-name {
+			font-size: 1.5rem;
+			letter-spacing: 0.1em;
+		}
+
+		.artist-lead {
+			font-size: 0.95rem;
+		}
+
+		.artist-bio {
+			font-size: 0.8rem;
+		}
+
+		.entry-word {
+			font-size: 2rem;
+		}
+
+		.entry-info .location-text {
+			font-size: 0.85rem;
+		}
+
+		.entry-section .social-icon-link :global(svg) {
+			width: 36px;
+			height: 36px;
+		}
+
+		.about-lead {
+			font-size: 0.95rem;
+		}
+
+		.about-text {
+			font-size: 0.85rem;
+		}
+
+		.about-cta {
+			font-size: 0.85rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-content {
+			padding: var(--space-md) 0;
+			gap: var(--space-md);
+		}
+
+		.logo-wrapper {
+			width: 95vw;
+		}
+
+		.hero-badge {
+			padding: var(--space-xs) var(--space-sm);
+		}
+
+		.badge-date {
+			font-size: 0.55rem;
+		}
+
+		.badge-slogan {
+			font-size: 0.85rem;
+		}
+
+		.idea-section,
+		.lineup-section,
+		.about-section,
+		.entry-section {
+			padding: var(--space-xl) 0;
+		}
+
+		.section-title {
+			font-size: 1.6rem;
+		}
+
+		.artist-name {
+			font-size: 1.3rem;
+		}
+
+		.artist-lead {
+			font-size: 0.9rem;
+		}
+
+		.entry-word {
+			font-size: 1.6rem;
+		}
+
+		.entry-section .social-icon-link :global(svg) {
+			width: 32px;
+			height: 32px;
 		}
 	}
 
 	/* ===== REDUCED MOTION ===== */
 	@media (prefers-reduced-motion: reduce) {
-		.orb-glow,
-		.orb-ring,
-		.scroll-indicator,
-		.particle {
-			animation: none;
-		}
-
-		.pillar-card,
-		.cta-button,
-		.back-link {
+		.artist-card,
+		.social-icon-link {
 			transition: none;
 		}
 	}
 
 	/* Loading state */
-	.hero-section:not(.loaded) .hero-title,
-	.hero-section:not(.loaded) .hero-tagline {
+	.hero-section:not(.loaded) .hero-logo,
+	.hero-section:not(.loaded) .hero-badge {
 		opacity: 0;
 	}
-
 </style>

@@ -6,7 +6,7 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
 
-	let { noMarginTop = false, smallLogo = false }: { noMarginTop?: boolean; smallLogo?: boolean } = $props();
+	let { noMarginTop = false, smallLogo = false, variant = 'default' }: { noMarginTop?: boolean; smallLogo?: boolean; variant?: 'default' | 'dark' } = $props();
 
 	let translations = $state<any>({});
 
@@ -29,7 +29,7 @@
 	}
 </script>
 
-<footer class="modernist-footer" class:no-margin-top={noMarginTop} class:small-logo={smallLogo}>
+<footer class="modernist-footer" class:no-margin-top={noMarginTop} class:small-logo={smallLogo} class:dark={variant === 'dark'}>
 	<Container>
 		<div class="footer-composition">
 			<!-- Dominant logotype positioned as visual anchor -->
@@ -87,6 +87,10 @@
 
 	.modernist-footer.no-margin-top {
 		margin-top: 0;
+	}
+
+	.modernist-footer.dark {
+		background: #0C0017;
 	}
 
 	.modernist-footer.small-logo .institutional-logotype {
