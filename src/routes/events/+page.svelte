@@ -6,6 +6,7 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import type { PageData } from './$types';
 	import MotionReveal from '$lib/components/MotionReveal.svelte';
+	import { formatEventDate } from '$lib/utils/dateFormat';
 
 	let { data }: { data: any } = $props();
 	console.log('Events Page Data:', data);
@@ -56,30 +57,11 @@
 	function getEventUrl(locale: string, slug: string): string {
 		return localizeHref(`/events/${slug}`, { locale: locale as 'pl' | 'en' | 'de' });
 	}
-
-	function formatDate(dateString: string, locale: string): string {
-		// Parse date as local date to avoid timezone issues
-		const [year, month, day] = dateString.split('-').map(Number);
-		const date = new Date(year, month - 1, day);
-		
-		const localeMap: Record<string, string> = {
-			pl: 'pl-PL',
-			en: 'en-US',
-			de: 'de-DE',
-			uk: 'uk-UA'
-		};
-		const dateLocale = localeMap[locale] || 'pl-PL';
-		
-		return date.toLocaleDateString(dateLocale, {
-			year: 'numeric',
-			month: 'long'
-		});
-	}
 </script>
 
 <style>
 	/* Poster Typography for Events Page */
-	
+
 	/* Elegant Latin Separators */
 	.latin-separator {
 		display: flex;
@@ -348,7 +330,7 @@
 				<Timeline order="vertical" class="events-timeline">
 					{#each data.upcomingEvents as event, index}
 						{@const isLast = index === data.upcomingEvents.length - 1}
-						{@const formattedDate = formatDate(event.date, data.locale)}
+						{@const formattedDate = formatEventDate(event.date, event.dateEnd, data.locale)}
 						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
 							{#snippet orientationSlot()}
 								<span class="timeline-icon">
@@ -399,7 +381,7 @@
 				<Timeline order="vertical" class="events-timeline">
 					{#each data.pastEvents as event, index}
 						{@const isLast = index === data.pastEvents.length - 1}
-						{@const formattedDate = formatDate(event.date, data.locale)}
+						{@const formattedDate = formatEventDate(event.date, event.dateEnd, data.locale)}
 						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
 							{#snippet orientationSlot()}
 								<span class="timeline-icon">

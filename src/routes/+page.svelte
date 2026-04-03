@@ -6,6 +6,7 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { onMount } from 'svelte';
 	import { motionController } from '$lib/utils/motionController';
+	import { formatEventDate } from '$lib/utils/dateFormat';
 
 	let { data }: { data: any } = $props();
 
@@ -71,21 +72,6 @@
 
 	function getAboutUrl(locale: string): string {
 		return localizeHref('/about', { locale: locale as 'pl' | 'en' | 'de' });
-	}
-
-	function formatDate(dateString: string, locale: string): string {
-		const date = new Date(dateString);
-		const localeMap: Record<string, string> = {
-			pl: 'pl-PL',
-			en: 'en-US',
-			de: 'de-DE'
-		};
-		const dateLocale = localeMap[locale] || 'en-US';
-
-		return date.toLocaleDateString(dateLocale, {
-			year: 'numeric',
-			month: 'long'
-		});
 	}
 </script>
 
@@ -695,7 +681,7 @@
 								<article class="event-block">
 									<div class="event-meta">
 										<h3>{event.title}</h3>
-										<time datetime={event.date}>{formatDate(event.date, data.locale)}</time>
+										<time datetime={event.date}>{formatEventDate(event.date, event.dateEnd, data.locale)}</time>
 										{#if event.venue && event.city}
 											<p class="event-location">{event.venue}, {event.city}</p>
 										{/if}

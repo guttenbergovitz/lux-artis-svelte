@@ -4,6 +4,7 @@
 	import { getTranslation } from '$lib/i18n';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import type { PageData } from './$types';
+	import { formatEventDate } from '$lib/utils/dateFormat';
 
 	let { data }: { data: any } = $props();
 
@@ -13,22 +14,6 @@
 
 	function getEventsUrl(locale: string): string {
 		return localizeHref('/events', { locale: locale as 'pl' | 'en' | 'de' });
-	}
-
-	function formatDate(dateString: string, locale: string): string {
-		const date = new Date(dateString);
-		const localeMap: Record<string, string> = {
-			pl: 'pl-PL',
-			en: 'en-US',
-			de: 'de-DE'
-		};
-		const dateLocale = localeMap[locale] || 'en-US';
-		
-		return date.toLocaleDateString(dateLocale, {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
 	}
 </script>
 
@@ -45,7 +30,7 @@
 				<h1>{data.event.title}</h1>
 				<div style="margin-top: calc(var(--baseline) * 2);">
 					<p class="meta">
-						<time datetime={data.event.date}>{formatDate(data.event.date, data.locale)}</time>
+						<time datetime={data.event.date}>{formatEventDate(data.event.date, data.event.dateEnd, data.locale)}</time>
 					</p>
 					{#if data.event.venue && data.event.city}
 						<p style="margin-top: calc(var(--baseline) * 1);">

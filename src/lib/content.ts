@@ -8,6 +8,7 @@ export interface Event {
 	id: string;
 	slug: string;
 	date: string;
+	dateEnd?: string;
 	venue: string;
 	city: string;
 	title: string;
@@ -109,18 +110,28 @@ export async function loadOrganization(locale: Locale): Promise<Organization | n
 }
 
 /**
- * Get upcoming events (events with date >= today)
+ * Get upcoming events (events whose last day >= today)
  */
 export function getUpcomingEvents(events: Event[]): Event[] {
-	const now = new Date();
-	return events.filter((e) => new Date(e.date) >= now);
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+	return events.filter((e) => {
+		const endIso = e.dateEnd ?? e.date;
+		const [y, m, d] = endIso.split('-').map(Number);
+		return new Date(y, m - 1, d) >= today;
+	});
 }
 
 /**
- * Get past events (events with date < today)
+ * Get past events (events whose last day < today)
  */
 export function getPastEvents(events: Event[]): Event[] {
-	const now = new Date();
-	return events.filter((e) => new Date(e.date) < now);
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+	return events.filter((e) => {
+		const endIso = e.dateEnd ?? e.date;
+		const [y, m, d] = endIso.split('-').map(Number);
+		return new Date(y, m - 1, d) < today;
+	});
 }
 
