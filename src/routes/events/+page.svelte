@@ -213,6 +213,16 @@
 		padding-left: var(--space-lg);
 	}
 
+	.event-date {
+		display: block;
+		font-family: var(--font-sans);
+		font-weight: 700;
+		font-size: clamp(1rem, 2vw, 1.25rem);
+		letter-spacing: 0.02em;
+		color: var(--color-graphite-dark);
+		margin: 0 0 var(--space-sm) 0;
+	}
+
 	.event-meta {
 		font-family: var(--font-sans);
 		font-weight: 400;
@@ -330,14 +340,14 @@
 				<Timeline order="vertical" class="events-timeline">
 					{#each data.upcomingEvents as event, index}
 						{@const isLast = index === data.upcomingEvents.length - 1}
-						{@const formattedDate = formatEventDate(event.date, event.dateEnd, data.locale)}
-						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
+						<TimelineItem title={event.title} isLast={isLast}>
 							{#snippet orientationSlot()}
 								<span class="timeline-icon">
 									<CalendarWeekSolid class="h-3 w-3" style="color: var(--color-graphite-dark);" />
 								</span>
 							{/snippet}
 							<div class="event-content">
+								<time class="event-date" datetime={event.date}>{formatEventDate(event.date, event.dateEnd, data.locale)}</time>
 								{#if event.venue && event.city}
 									<p class="event-meta">{event.venue}, {event.city}</p>
 								{/if}
@@ -381,14 +391,14 @@
 				<Timeline order="vertical" class="events-timeline">
 					{#each data.pastEvents as event, index}
 						{@const isLast = index === data.pastEvents.length - 1}
-						{@const formattedDate = formatEventDate(event.date, event.dateEnd, data.locale)}
-						<TimelineItem title={event.title} date={formattedDate} isLast={isLast}>
+						<TimelineItem title={event.title} isLast={isLast}>
 							{#snippet orientationSlot()}
 								<span class="timeline-icon">
 									<CalendarWeekSolid class="h-3 w-3" style="color: var(--color-graphite-dark);" />
 								</span>
 							{/snippet}
 							<div class="event-content">
+								<time class="event-date" datetime={event.date}>{formatEventDate(event.date, event.dateEnd, data.locale)}</time>
 								{#if event.venue && event.city}
 									<p class="event-meta">{event.venue}, {event.city}</p>
 								{/if}
