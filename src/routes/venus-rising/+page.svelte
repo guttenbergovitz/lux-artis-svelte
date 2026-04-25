@@ -6,6 +6,7 @@
 	import { getTranslation } from '$lib/i18n';
 	import venusLogo from '$lib/assets/venus-rising-violet-background.jpg';
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
+	import SponsorsSection from '$lib/components/SponsorsSection.svelte';
 
 	let { data }: { data: { locale: string; translations: Record<string, unknown> } } = $props();
 
@@ -278,6 +279,9 @@
 		</div>
 	</Container>
 </section>
+
+<!-- Partners & Sponsors Section -->
+<SponsorsSection />
 
 <style>
 	/* CSS Custom Properties - Venus Gradient Palette */
