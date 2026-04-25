@@ -44,9 +44,7 @@
 		},
 		{
 			title: 'Patronat',
-			items: [
-				{ name: 'Radio Czwórka', logo: '/sponsors/patronat-czworka.jpg' }
-			]
+			items: [{ name: 'Radio Czwórka', logo: '/sponsors/patronat-czworka.jpg' }]
 		}
 	];
 
@@ -185,16 +183,9 @@
 		object-fit: contain;
 		filter: grayscale(100%);
 		opacity: 0.6;
-		transition: filter 0.5s ease, opacity 0.5s ease;
-	}
-
-	.logo-item:hover {
-		transform: scale(1.06);
-	}
-
-	.logo-item:hover img {
-		filter: grayscale(0%);
-		opacity: 1;
+		transition:
+			filter 0.5s ease,
+			opacity 0.5s ease;
 	}
 
 	/* Scroll reveal */
@@ -276,40 +267,42 @@
 		}
 	}
 
-	/* Small mobile — 1 column for very wide logos, 2 for others */
-	@media (max-width: 480px) {
-		.sponsors-section {
-			padding: calc(var(--space-xl) * 1.5) 0;
-		}
-
-		.sponsors-content {
-			gap: calc(var(--space-xl) * 1.5);
-		}
-
-		.group-title {
-			font-size: clamp(0.7rem, 3vw, 0.85rem);
-			letter-spacing: 0.3em;
-		}
-
+	/* Mobile — single column, larger logos, no grayscale */
+	@media (max-width: 640px) {
 		.logos-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: var(--space-lg);
+			grid-template-columns: 1fr;
+			gap: calc(var(--space-lg) * 1.2);
 		}
 
 		.logo-item {
-			padding: var(--space-sm);
-			min-height: 90px;
+			padding: var(--space-md);
+			min-height: 110px;
 		}
 
 		.logo-item img {
-			max-height: clamp(110px, 26vw, 150px);
+			max-height: clamp(130px, 30vw, 180px);
+			filter: grayscale(0%);
+			opacity: 1;
+		}
+
+		.sponsor-group.patronat .logo-item {
+			min-height: 140px;
+		}
+
+		.sponsor-group.patronat .logo-item img {
+			max-height: clamp(160px, 36vw, 220px);
 		}
 	}
 
-	/* Very small screens — single column */
-	@media (max-width: 360px) {
-		.logos-grid {
-			grid-template-columns: 1fr;
+	/* Very small screens */
+	@media (max-width: 400px) {
+		.logo-item {
+			min-height: 90px;
+			padding: var(--space-sm);
+		}
+
+		.logo-item img {
+			max-height: clamp(100px, 28vw, 140px);
 		}
 	}
 
