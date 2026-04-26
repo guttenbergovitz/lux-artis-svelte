@@ -18,33 +18,32 @@
 		{
 			title: 'Sponsorzy',
 			items: [
-				{ name: 'Dolice Gmina Energii', logo: '/sponsors/sponsor-dolice-gmina.png' },
-				{ name: 'PAD RES', logo: '/sponsors/sponsor-pad-res.png' },
-				{ name: 'Dworek Wiktoria', logo: '/sponsors/sponsor-dworek-wiktoria.jpg' },
-				{ name: 'EKO SERWIS', logo: '/sponsors/sponsor-eko-serwis.png' },
-				{ name: 'Gmina Dolice', logo: '/sponsors/sponsor-gmina-dolice-herb.png' },
-				{ name: 'Renesans', logo: '/sponsors/sponsor-renesans.png' },
-				{ name: 'GRODZKI', logo: '/sponsors/sponsor-grodzki.png' },
-				{ name: 'PUTRI BALI', logo: '/sponsors/sponsor-putri-bali.jpg' },
+				{ name: 'Gmina Dolice', logo: '/sponsors/sponsor-gmina-dolice-herb.png', url: 'https://dolice.pl/' },
+				{ name: 'PAD RES', logo: '/sponsors/sponsor-pad-res.png', url: 'https://www.pad-res.pl/' },
+				{ name: 'Dworek Wiktoria', logo: '/sponsors/sponsor-dworek-wiktoria.jpg', url: 'https://dworekwiktoria.pl/' },
+				{ name: 'EKO SERWIS', logo: '/sponsors/sponsor-eko-serwis.png', url: 'https://www.ekoserwis.szczecin.pl/' },
+				{ name: 'Renesans', logo: '/sponsors/sponsor-renesans.png', url: 'https://renesanspolska.pl/' },
+				{ name: 'GRODZKI', logo: '/sponsors/sponsor-grodzki.png', url: 'http://hotel-grodzki.pl/' },
+				{ name: 'PUTRI BALI', logo: '/sponsors/sponsor-putri-bali.jpg', url: 'https://www.facebook.com/ZanetaMiskiewiczKobidoUp/' },
 				{ name: 'Hubertus', logo: '/sponsors/sponsor-hubertus.jpg' }
 			]
 		},
 		{
 			title: 'Partnerzy',
 			items: [
-				{ name: 'GCK Dolice', logo: '/sponsors/partner-gck-dolice.jpg' },
-				{ name: 'No Exit DJ Academy', logo: '/sponsors/partner-no-exit.png' },
-				{ name: 'TCC', logo: '/sponsors/partner-tcc.png' },
-				{ name: 'LS Project', logo: '/sponsors/partner-ls-project.png' },
-				{ name: 'Primary Talent Agency', logo: '/sponsors/partner-primary-talent.jpg' },
-				{ name: 'C & C Bookings', logo: '/sponsors/partner-c-and-c.jpg' },
-				{ name: 'Little Big Agency', logo: '/sponsors/partner-little-big.jpg' },
-				{ name: 'Różowy Patrol', logo: '/sponsors/partner-rozowy-patrol.png' }
+				{ name: 'GCK Dolice', logo: '/sponsors/partner-gck-dolice.jpg', url: 'https://centrumdolice.pl/' },
+				{ name: 'No Exit DJ Academy', logo: '/sponsors/partner-no-exit.png', url: 'https://www.instagram.com/noexit.djacademy/' },
+				{ name: 'TCC', logo: '/sponsors/partner-tcc.png', url: 'https://www.instagram.com/time.capsule.cars/' },
+				{ name: 'LS Project', logo: '/sponsors/partner-ls-project.png', url: 'http://lsproject.pl/' },
+				{ name: 'Primary Talent Agency', logo: '/sponsors/partner-primary-talent.jpg', url: 'https://primarytalent.com/' },
+				{ name: 'C & C Bookings', logo: '/sponsors/partner-c-and-c.jpg', url: 'https://www.cc-bookings.com/' },
+				{ name: 'Little Big Agency', logo: '/sponsors/partner-little-big.jpg', url: 'https://www.lb-agency.net/about' },
+				{ name: 'Różowy Patrol', logo: '/sponsors/partner-rozowy-patrol.png', url: 'https://rozowypatrol.pl/' }
 			]
 		},
 		{
 			title: 'Patronat',
-			items: [{ name: 'Radio Czwórka', logo: '/sponsors/patronat-czworka.jpg' }]
+			items: [{ name: 'Radio Czwórka', logo: '/sponsors/patronat-czworka.jpg', url: 'https://czworka.polskieradio.pl/' }]
 		}
 	];
 
@@ -58,6 +57,8 @@
 		prefersReducedMotion = mediaQuery.matches;
 		if (prefersReducedMotion) return;
 
+		const revealEls = sectionRef.querySelectorAll('.reveal');
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -70,8 +71,15 @@
 			{ threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
 		);
 
-		const revealEls = sectionRef.querySelectorAll('.reveal');
-		revealEls.forEach((el) => observer.observe(el));
+		revealEls.forEach((el) => {
+			const rect = el.getBoundingClientRect();
+			// Show immediately if already in viewport (fixes mobile IO misses)
+			if (rect.top < window.innerHeight && rect.bottom > 0) {
+				el.classList.add('is-visible');
+			} else {
+				observer.observe(el);
+			}
+		});
 
 		return () => observer.disconnect();
 	});
@@ -94,6 +102,7 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									class="logo-item reveal"
+	
 									aria-label={item.name}
 									style="transition-delay: {delay}s"
 								>
@@ -102,6 +111,7 @@
 							{:else}
 								<div
 									class="logo-item reveal"
+	
 									aria-label={item.name}
 									style="transition-delay: {delay}s"
 								>
@@ -175,6 +185,10 @@
 		cursor: pointer;
 	}
 
+	.logo-item[href]:hover {
+		transform: translateY(-6px) scale(1.04);
+	}
+
 	.logo-item img {
 		max-width: 100%;
 		max-height: clamp(160px, 18vw, 260px);
@@ -186,6 +200,11 @@
 		transition:
 			filter 0.5s ease,
 			opacity 0.5s ease;
+	}
+
+	.logo-item[href]:hover img {
+		filter: grayscale(0%);
+		opacity: 1;
 	}
 
 	/* Scroll reveal */

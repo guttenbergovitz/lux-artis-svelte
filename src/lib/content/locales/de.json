@@ -6,7 +6,12 @@
   "common": {
     "loading": "Wird geladen...",
     "noUpcomingEvents": "Keine kommenden Veranstaltungen",
-    "errorLoadingEvents": "Fehler beim Laden der Veranstaltungen"
+    "errorLoadingEvents": "Fehler beim Laden der Veranstaltungen",
+    "festivalBanner": {
+      "ariaLabel": "Zur Venus Rising Festival Seite",
+      "date": "1.–2. Mai 2026",
+      "slogan": "Macht ist eine Frau"
+    }
   },
   "nav": {
     "home": "Startseite",
@@ -510,7 +515,65 @@
       "locationLabel": "Standort",
       "location": "Dolice, Landkreis Stargard, Woiwodschaft Westpommern.\nSportplatz am Städtischen Stadion.",
       "freeEntry": "Eintritt frei",
-      "regulationsLabel": "Festivalreglement (PL)"
+      "regulationsLabel": "Festivalreglement (PL)",
+      "regulations": {
+        "title": "Veranstaltungsreglement: Venus Rising Festival 2026",
+        "subtitle": "Ort: Dolice (GCK / Gemeindestadion / Dworek Wiktoria)\nDatum: 1.–2. Mai 2026",
+        "close": "Schließen",
+        "sections": [
+          {
+            "title": "§1. Allgemeine Bestimmungen",
+            "points": [
+              "Veranstalter des Festivals ist die Stiftung Lux Artis in Zusammenarbeit mit dem Wójt der Gemeinde Dolice und dem Gemeindekulturzentrum in Dolice.",
+              "Die Veranstaltung ist öffentlich und kostenlos.",
+              "Der Betreten des Festivalgeländes bedeutet die Akzeptanz dieser Regeln.",
+              "Die Teilnehmer sind verpflichtet, den Anweisungen des Sicherheitspersonals und der Vertreter des Veranstalters Folge zu leisten."
+            ]
+          },
+          {
+            "title": "§2. Sicherheit und Infrastruktur",
+            "points": [
+              "Medizinische Versorgung: Auf dem Festivalgelände befindet sich in den Stunden 12:00–22:00 ein gekennzeichneter Erste-Hilfe-Punkt sowie mobile Rettungspatrouillen.",
+              "Sanitäreinrichtungen: Der Veranstalter stellt öffentlich zugängliche Sanitärcontainer und Handwaschstellen an sichtbaren Stellen auf dem Festivalgelände zur Verfügung.",
+              "Beleuchtung und Gelände: Die Hauptfestivalarena und die Zufahrtswege sind beleuchtet. Die Teilnehmer werden gebeten, in Bereichen mit erhöhtem Verkehrsaufkommen besondere Vorsicht walten zu lassen."
+            ]
+          },
+          {
+            "title": "§3. Ordnungsvorschriften und Verbote",
+            "points": [
+              "Alkohol und Drogen: Auf dem Festivalgelände gilt ein striktes Verbot des Alkoholkonsums außerhalb der dafür vorgesehenen Gastronomiezonen. Das Mitbringen von eigenem Alkohol und Rauschmitteln ist verboten.",
+              "Getränke und Lebensmittel: Das Mitbringen eigener Getränke und Lebensmittel auf das Festivalgelände ist verboten.",
+              "Gefährliche Gegenstände: Das Mitbringen von Gegenständen, die eine Sicherheitsgefahr darstellen können, ist verboten (Waffen, scharfe Werkzeuge, pyrotechnische Materialien, Glasbehälter).",
+              "Verhalten: Personen, die sich aggressiv verhalten, unter sichtbarem Einfluss von Rauschmitteln stehen oder die öffentliche Ordnung stören, werden vom Veranstaltungsgelände durch das Sicherheitspersonal verwiesen."
+            ]
+          },
+          {
+            "title": "§4. Parken und Transport",
+            "points": [
+              "Die Veranstalter stellen Parkzonen für die Festivalteilnehmer an öffentlich zugänglichen Standorten zur Verfügung.",
+              "Das Parken außerhalb der vorgesehenen Zonen in einer Weise, die Rettungsdiensten den Durchgang erschwert und den öffentlichen Verkehr stört, führt zum Eingreifen der zuständigen Dienste.",
+              "Die Teilnehmer werden ermutigt, öffentliche Verkehrsmittel zu nutzen (PKP Dolice ist fußläufig vom Festivalgelände entfernt)."
+            ]
+          },
+          {
+            "title": "§5. Bildschutz (DSGVO)",
+            "points": [
+              "Das Festival wird in Form von Foto- und Videoaufnahmen dokumentiert.",
+              "Das Betreten des Veranstaltungsgeländes ist gleichbedeutend mit der freiwilligen Zustimmung zur kostenlosen Aufzeichnung und Veröffentlichung des Erscheinungsbilds des Teilnehmers in Werbe-, Presse- und Social-Media-Materialien des Veranstalters und der Partner."
+            ]
+          },
+          {
+            "title": "§6. Haftung",
+            "points": [
+              "Der Veranstalter haftet nicht für Eigentum der Teilnehmer, das auf dem Festivalgelände unbeaufsichtigt zurückgelassen oder verloren wird.",
+              "Als VRF kümmern wir uns um unsere gemeinsame Sicherheit, weshalb wir auf dem Festivalgelände einen Fundbüro-Punkt einrichten. Unsere Freiwilligen kümmern sich um jeden verlorenen Gegenstand und helfen euch, eure Sachen sicher zurückzuerhalten.",
+              "Die Festivalteilnehmer sind verpflichtet, den gemeinsamen Bereich zu pflegen, nicht zu vermüllen und keine Gegenstände unbeaufsichtigt zu lassen.",
+              "Minderjährige dürfen sich nur unter Aufsicht erwachsener Personen auf dem Veranstaltungsgelände aufhalten, die die volle Verantwortung für sie übernehmen.",
+              "Der Veranstalter behält sich das Recht vor, Änderungen am Programm aus Gründen, die außerhalb seiner Kontrolle liegen (z. B. Wetterbedingungen), vorzunehmen."
+            ]
+          }
+        ]
+      }
     },
     "legal": {
       "title": "Impressum",

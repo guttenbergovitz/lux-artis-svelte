@@ -6,7 +6,12 @@
   "common": {
     "loading": "Loading...",
     "noUpcomingEvents": "No upcoming events",
-    "errorLoadingEvents": "Failed to load events"
+    "errorLoadingEvents": "Failed to load events",
+    "festivalBanner": {
+      "ariaLabel": "Go to Venus Rising Festival page",
+      "date": "May 1–2, 2026",
+      "slogan": "Power is a Woman"
+    }
   },
   "nav": {
     "home": "Home",
@@ -510,7 +515,65 @@
       "locationLabel": "Location",
       "location": "Dolice, Stargard County, West Pomeranian Voivodeship.\nField at the Municipal Stadium.",
       "freeEntry": "Free entry",
-      "regulationsLabel": "Festival Regulations (PL)"
+      "regulationsLabel": "Festival Regulations (PL)",
+      "regulations": {
+        "title": "Event Regulations: Venus Rising Festival 2026",
+        "subtitle": "Venue: Dolice (GCK / Municipal Stadium / Dworek Wiktoria)\nDate: May 1–2, 2026",
+        "close": "Close",
+        "sections": [
+          {
+            "title": "§1. General Provisions",
+            "points": [
+              "The Festival is organized by the Lux Artis Foundation in cooperation with the Mayor of Dolice Commune and the Commune Cultural Center in Dolice.",
+              "The event is open and free of charge.",
+              "Entering the Festival grounds constitutes acceptance of these Regulations.",
+              "Participants are obliged to comply with instructions issued by security services and representatives of the Organizer."
+            ]
+          },
+          {
+            "title": "§2. Safety and Infrastructure",
+            "points": [
+              "Medical Care: During the hours of 12:00–22:00, a marked first aid point and mobile rescue patrols are available on the Festival grounds.",
+              "Sanitary Facilities: The Organizer provides publicly accessible sanitary containers and hand washing points, located in visible places on the festival grounds.",
+              "Lighting and Terrain: The main festival arena and access roads are illuminated. Participants are asked to exercise particular caution in areas with increased traffic."
+            ]
+          },
+          {
+            "title": "§3. Order Rules and Prohibitions",
+            "points": [
+              "Alcohol and Substances: The consumption of alcohol outside designated gastronomic zones is strictly prohibited. Bringing your own alcohol and intoxicants is forbidden.",
+              "Drinks and Food: Bringing your own beverages and food items onto the festival grounds is prohibited.",
+              "Dangerous Items: Bringing items that may pose a safety threat is prohibited (weapons, sharp tools, pyrotechnic materials, glass containers).",
+              "Behavior: Persons behaving aggressively, visibly under the influence of intoxicants, or disturbing public order will be removed from the event premises by security services."
+            ]
+          },
+          {
+            "title": "§4. Parking and Transport",
+            "points": [
+              "The Organizers provide parking zones for Festival participants in publicly accessible locations.",
+              "Parking outside designated zones in a manner that obstructs emergency services and disrupts public traffic will result in intervention by the appropriate services.",
+              "Participants are encouraged to use public transport (PKP Dolice is within walking distance of the Festival grounds)."
+            ]
+          },
+          {
+            "title": "§5. Image Protection (GDPR)",
+            "points": [
+              "The Festival is documented in photo and video form.",
+              "Entering the event premises is equivalent to expressing voluntary consent to the free recording and publication of the Participant's image in promotional, press, and social media materials of the Organizer and Partners."
+            ]
+          },
+          {
+            "title": "§6. Liability",
+            "points": [
+              "The Organizer is not liable for Participants' property left unattended or lost on the Festival grounds.",
+              "As VRF, we care about our collective safety, which is why we will launch a Lost and Found Point on the festival grounds. Our volunteers will take care of every lost item and help you safely recover your belongings.",
+              "Festival participants are obliged to take care of the common area, not to litter, and not to leave items unattended.",
+              "Minors may stay on the event premises only under the supervision of adults who take full responsibility for them.",
+              "The Organizer reserves the right to make changes to the program for reasons beyond their control (e.g., weather conditions)."
+            ]
+          }
+        ]
+      }
     },
     "legal": {
       "title": "Legal",

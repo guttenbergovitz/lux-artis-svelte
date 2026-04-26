@@ -6,6 +6,7 @@
 	import { getTranslation } from '$lib/i18n';
 	import venusLogo from '$lib/assets/venus-rising-violet-background.jpg';
 	import { FacebookSolid, InstagramSolid } from 'flowbite-svelte-icons';
+	import RegulationsModal from '$lib/components/RegulationsModal.svelte';
 	import SponsorsSection from '$lib/components/SponsorsSection.svelte';
 
 	let { data }: { data: { locale: string; translations: Record<string, unknown> } } = $props();
@@ -238,21 +239,7 @@
 			</div>
 			<p class="about-cta">{t('pages.venusRising.about4')}</p>
 			<div class="regulations-block">
-				<a
-					href="/regulamin-venus-rising-festival.pdf"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="regulations-link"
-					aria-label={t('pages.venusRising.regulationsLabel')}
-				>
-					<svg class="regulations-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-						<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-						<polyline points="14 2 14 8 20 8"/>
-						<line x1="12" y1="18" x2="12" y2="12"/>
-						<polyline points="9 15 12 18 15 15"/>
-					</svg>
-					{t('pages.venusRising.regulationsLabel')}
-				</a>
+				<RegulationsModal translations={data.translations} />
 			</div>
 		</div>
 	</Container>
@@ -589,34 +576,6 @@
 		display: flex;
 		justify-content: center;
 		padding-top: var(--space-sm);
-	}
-
-	.regulations-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5em;
-		font-family: 'Lato', var(--font-sans);
-		font-weight: 300;
-		font-size: clamp(0.75rem, 1.5vw, 0.85rem);
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		color: var(--vr-coral);
-		text-decoration: none;
-		border: 1px solid rgba(205, 114, 89, 0.35);
-		padding: 0.55em 1.2em;
-		transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-	}
-
-	.regulations-link:hover {
-		color: var(--vr-gold);
-		border-color: rgba(243, 176, 90, 0.5);
-		background: rgba(243, 176, 90, 0.05);
-	}
-
-	.regulations-icon {
-		width: 1em;
-		height: 1em;
-		flex-shrink: 0;
 	}
 
 	/* ===== ENTRY SECTION - Orange ===== */

@@ -6,7 +6,12 @@
   "common": {
     "loading": "Ładowanie...",
     "noUpcomingEvents": "Brak nadchodzących wydarzeń",
-    "errorLoadingEvents": "Nie udało się załadować wydarzeń"
+    "errorLoadingEvents": "Nie udało się załadować wydarzeń",
+    "festivalBanner": {
+      "ariaLabel": "Przejdź do strony Venus Rising Festival",
+      "date": "1–2 maja 2026",
+      "slogan": "Moc jest Kobietą"
+    }
   },
   "nav": {
     "home": "Strona główna",
@@ -511,7 +516,65 @@
       "locationLabel": "Lokalizacja",
       "location": "Dolice, powiat stargardzki, woj. zachodniopomorskie.\nBoisko przy Stadionie Miejskim.",
       "freeEntry": "Wstęp bezpłatny",
-      "regulationsLabel": "Regulamin festiwalu"
+      "regulationsLabel": "Regulamin festiwalu",
+      "regulations": {
+        "title": "Regulamin wydarzenia: Venus Rising Festival 2026",
+        "subtitle": "Miejsce: Dolice (GCK / Stadion Gminny / Dworek Wiktoria)\nData: 1–2 maja 2026 r.",
+        "close": "Zamknij",
+        "sections": [
+          {
+            "title": "§1. Postanowienia ogólne",
+            "points": [
+              "Organizatorem Festiwalu jest Fundacja Lux Artis we współpracy z Wójtem Gminy Dolice oraz Gminnym Centrum Kultury w Dolicach.",
+              "Wydarzenie ma charakter otwarty i bezpłatny.",
+              "Wejście na teren Festiwalu oznacza akceptację niniejszego Regulaminu.",
+              "Uczestnicy są zobowiązani do przestrzegania instrukcji wydawanych przez służby porządkowe oraz przedstawicieli Organizatora."
+            ]
+          },
+          {
+            "title": "§2. Bezpieczeństwo i Infrastruktura",
+            "points": [
+              "Opieka Medyczna: Na terenie Festiwalu w godzinach 12:00–22:00 znajduje się oznakowany punkt pierwszej pomocy medycznej oraz mobilne patrole ratowników.",
+              "Zaplecze Sanitarne: Organizator zapewnia ogólnodostępne kontenery sanitarne oraz punkty mycia rąk, zlokalizowane w widocznych miejscach na terenie festiwalowym.",
+              "Oświetlenie i Teren: Główna arena festiwalowa oraz drogi dojścia są doświetlone. Uczestnicy proszeni są o zachowanie szczególnej ostrożności w strefach o podwyższonym natężeniu ruchu."
+            ]
+          },
+          {
+            "title": "§3. Zasady Porządkowe i Zakazy",
+            "points": [
+              "Alkohol i Używki: Na terenie Festiwalu obowiązuje bezwzględny zakaz spożywania alkoholu poza wyznaczonymi do tego celu strefami gastronomicznymi. Wnoszenie własnego alkoholu oraz środków odurzających jest zabronione.",
+              "Napoje i artykuły spożywcze: Zabrania się wnoszenia własnych napojów oraz artykułów spożywczych na teren festiwalu.",
+              "Przedmioty Niebezpieczne: Zabrania się wnoszenia przedmiotów mogących zagrażać bezpieczeństwu (broń, ostre narzędzia, materiały pirotechniczne, opakowania szklane).",
+              "Zachowanie: Osoby zachowujące się agresywnie, będące pod widocznym wpływem środków odurzających lub zakłócające porządek publiczny, zostaną usunięte z terenu wydarzenia przez służby porządkowe."
+            ]
+          },
+          {
+            "title": "§4. Parkingi i Transport",
+            "points": [
+              "Organizatorzy zapewniają strefy parkingowe dla uczestników Festiwalu w ogólnodostępnch lokalizacjach.",
+              "Parkowanie poza wyznaczonymi strefami w sposób utrudniający przejazd służbom ratunkowym i zaburzające ruch publiczny skutkować będzie interwencją odpowiednich służb.",
+              "Zachęca się uczestników do korzystania z transportu zbiorowego (PKP Dolice znajduje się w pieszej odległości od terenu Festiwalu)."
+            ]
+          },
+          {
+            "title": "§5. Ochrona Wizerunku (RODO)",
+            "points": [
+              "Festiwal jest dokumentowany w formie foto i wideo.",
+              "Wejście na teren wydarzenia jest równoznaczne z wyrażeniem dobrowolnej zgody na nieodpłatne utrwalenie i publikację wizerunku Uczestnika w materiałach promocyjnych, prasowych oraz w mediach społecznościowych Organizatora i Partnerów."
+            ]
+          },
+          {
+            "title": "§6. Odpowiedzialność",
+            "points": [
+              "Organizator nie ponosi odpowiedzialności za mienie Uczestników pozostawione bez nadzoru lub zgubione na terenie Festiwalu.",
+              "Jako VRF dbamy o wspólne bezpieczeństwo, dlatego na terenie festiwalu uruchomimy Punkt Rzeczy Znalezionych. Nasi wolontariusze zaopiekują się każdą zgubą i pomogą Wam bezpiecznie odzyskać Wasze przedmioty.",
+              "Uczestnicy festwialu mają obowiązek dbania o wspólny teren, nie zaśmiecania oraz pozostawiania rzeczy bez nadzoru.",
+              "Osoby małoletnie mogą przebywać na terenie wydarzenia wyłącznie pod opieką osób dorosłych, które biorą za nie pełną odpowiedzialność.",
+              "Organizator zastrzega sobie prawo do zmian w programie z przyczyn niezależnych (np. warunki atmosferyczne)."
+            ]
+          }
+        ]
+      }
     },
     "legal": {
       "title": "Informacje prawne",
