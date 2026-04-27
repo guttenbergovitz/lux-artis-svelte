@@ -55,9 +55,13 @@
 
 		const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 		prefersReducedMotion = mediaQuery.matches;
-		if (prefersReducedMotion) return;
 
 		const revealEls = sectionRef.querySelectorAll('.reveal');
+
+		if (prefersReducedMotion) {
+			revealEls.forEach((el) => el.classList.add('is-visible'));
+			return;
+		}
 
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -216,7 +220,7 @@
 			transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.reveal.is-visible {
+	:global(.reveal.is-visible) {
 		opacity: 1;
 		transform: translateY(0) scale(1);
 	}
