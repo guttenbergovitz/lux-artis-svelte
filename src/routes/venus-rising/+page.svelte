@@ -182,6 +182,10 @@
 				<span class="badge-date">{t('pages.venusRising.tagline')}</span>
 				<span class="badge-slogan">{t('pages.venusRising.slogan')}</span>
 			</div>
+
+			<div class="festival-ended-badge">
+				<span class="festival-ended-text">{t('pages.venusRising.festivalEnded')}</span>
+			</div>
 		</div>
 	</Container>
 </section>
@@ -354,6 +358,25 @@
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
 		color: var(--vr-coral);
+	}
+
+	/* Festival Ended Badge */
+	.festival-ended-badge {
+		border: 1px solid rgba(243, 176, 90, 0.5);
+		padding: var(--space-sm) var(--space-xl);
+		background: rgba(12, 0, 23, 0.6);
+		text-align: center;
+		max-width: 600px;
+	}
+
+	.festival-ended-text {
+		font-family: 'Lato', var(--font-sans);
+		font-weight: 300;
+		font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+		letter-spacing: 0.1em;
+		line-height: 1.6;
+		color: var(--vr-gold);
+		opacity: 0.9;
 	}
 
 	/* ===== IDEA SECTION ===== */
@@ -666,6 +689,16 @@
 		.badge-slogan {
 			font-size: 0.95rem;
 			letter-spacing: 0.12em;
+		}
+
+		.festival-ended-badge {
+			padding: var(--space-sm) var(--space-md);
+			max-width: 100%;
+		}
+
+		.festival-ended-text {
+			font-size: 0.75rem;
+			letter-spacing: 0.06em;
 		}
 
 		.idea-content {

@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import './layout.css';
 	import 'flowbite/dist/flowbite.min.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import FestivalBanner from '$lib/components/FestivalBanner.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
@@ -17,12 +15,6 @@
 	function toggleSidebar() {
 		sidebarOpen = !sidebarOpen;
 	}
-
-	$effect(() => {
-		if (!browser) return;
-		const bannerVisible = !page.url.pathname.includes('/venus-rising');
-		document.body.style.paddingBottom = bannerVisible ? '2.5rem' : '';
-	});
 </script>
 
 <svelte:head>
@@ -49,9 +41,6 @@
 			variant={page.url.pathname.includes('/venus-rising') ? 'dark' : 'default'}
 		/>
 	</div>
-
-	<!-- Sticky Festival Banner -->
-	<FestivalBanner translations={data.translations} />
 
 	<!-- Sticky Language Switcher -->
 	<LanguageSwitcher />
