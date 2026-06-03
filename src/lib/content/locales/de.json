@@ -581,7 +581,8 @@
             ]
           }
         ]
-      }
+      },
+      "festivalEnded": "Das Festival ist zu Ende. Vielen Dank an alle Teilnehmer, Künstler und Organisatoren, die Teil dieses besonderen Ereignisses waren."
     },
     "legal": {
       "title": "Impressum",
